@@ -4,7 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import theme from './Common/theme/theme';
-import { ChakraProvider, Flex, ColorModeScript } from '@chakra-ui/react';
+import {Flex} from './Common/styles';
+import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
 import { ThemeProvider } from 'styled-components';
 import ThemeButton from './Common/theme/theme_button';
 import TopBar from './Components/Top_bar/top_bar';
@@ -17,8 +18,7 @@ ReactDOM.render(
     <ChakraProvider vider theme={theme}>
         <ThemeButton />
         <TopBar />
-        <SideBar />
-        <App />
+          <App />
     </ChakraProvider>
   </ThemeProvider>
   </>,
