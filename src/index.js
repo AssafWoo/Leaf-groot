@@ -3,11 +3,25 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import theme from './Common/theme/theme';
+import { ChakraProvider, Flex, ColorModeScript } from '@chakra-ui/react';
+import { ThemeProvider } from 'styled-components';
+import ThemeButton from './Common/theme/theme_button';
+import TopBar from './Components/Top_bar/top_bar';
+import SideBar from './Components/Side_bar/side_bar';
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <>
+  <ThemeProvider theme={theme}>
+    <ChakraProvider vider theme={theme}>
+        <ThemeButton />
+        <TopBar />
+        <SideBar />
+        <App />
+    </ChakraProvider>
+  </ThemeProvider>
+  </>,
   document.getElementById('root')
 );
 
