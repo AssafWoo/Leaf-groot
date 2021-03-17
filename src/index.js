@@ -4,12 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import theme from './Common/theme/theme';
-import {Flex} from './Common/styles';
-import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
 import { ThemeProvider } from 'styled-components';
 import ThemeButton from './Common/theme/theme_button';
 import TopBar from './Components/Top_bar/top_bar';
-import SideBar from './Components/Side_bar/side_bar';
 
 
 ReactDOM.render(

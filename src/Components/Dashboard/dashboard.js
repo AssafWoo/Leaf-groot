@@ -1,6 +1,6 @@
 import React from 'react';
-import { Flex } from '../../Common/styles';
-import { DetailsBox, MainChartBox,InsightsWrapper,InsightBoxMD,InsightBoxSM, ProgressBox, TimelineBox } from './style';
+import { Flex,InsightBoxMD,InsightBoxSM  } from '../../Common/styles';
+import { DetailsBox, MainChartBox,InsightsWrapper,ProgressBox, TimelineBox } from './style';
 
 const Dashboard = () => {
 

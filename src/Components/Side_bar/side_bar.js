@@ -44,6 +44,7 @@ const SideBar = () => {
     return(
         <SideBarWrapper>
             <ItemsNav>
+                <MyIcon className="icon" />
                 {MenuNames.map((value, index)=> (
                 <Flex key={index} >
                     <MyIcon className="icon" />

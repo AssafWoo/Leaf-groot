@@ -3,12 +3,12 @@ import styled from 'styled-components';
 export const TopBarWrapper = styled.div`
     position:fixed;
     width:100%;
-    border-bottom:1px solid #8de7c3;
-    background:#8de7c3;
-    color:black;
+    background:#B794F4;
     padding:.5rem;
     z-index:3;
     top:0;
+    color:white;
+    
 `
 
 export const Flex = styled.div`

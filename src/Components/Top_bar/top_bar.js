@@ -9,7 +9,7 @@ const TopBar = () => {
                 <Icon>
                     <Flex>
                         <div className="icon" />
-                        <span>Welcome Assaf</span>
+                        <p>Hey Assaf!</p>
                     </Flex>
                 </Icon>
                 <Img />
