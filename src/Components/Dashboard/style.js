@@ -5,19 +5,28 @@ export const DetailsBox = styled.div`
     flex:1;
     text-align:left;
     ${internalBoxStracture};
+    padding:1rem;
+
 `
 
 export const MainChartBox = styled.div`
     flex:1;
     ${internalBoxStracture};
+    padding:1rem;
+
 
 `
 export const ProgressBox = styled.div`
     ${internalBoxStracture};
+    padding:1rem;
+    
+
 
 `
 export const TimelineBox = styled.div`
     ${internalBoxStracture};
+    padding:1rem;
+
 
 `
 export const InsightBoxMD = styled.div`

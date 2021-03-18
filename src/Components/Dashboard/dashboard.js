@@ -1,30 +1,53 @@
+import { Heading } from '@chakra-ui/layout';
 import React from 'react';
-import { Flex,InsightBoxMD,InsightBoxSM  } from '../../Common/styles';
-import { DetailsBox, MainChartBox,InsightsWrapper,ProgressBox, TimelineBox } from './style';
+import { Flex,BoxLG,BoxMD,BoxSM,BreakLine, MyIcon  } from '../../Common/styles';
+import { DetailsBox, MainChartBox,InsightsWrapper,ProgressBox } from './style';
+import { SettingsIcon, BellIcon } from '@chakra-ui/icons'
 
 const Dashboard = () => {
 
     return(
         <>
         <Flex>
-            <DetailsBox>left box</DetailsBox>
-            <MainChartBox>right box</MainChartBox>
-        </Flex>
-        <ProgressBox>Progress</ProgressBox>
-        <TimelineBox>Timeline</TimelineBox>
-        <InsightsWrapper>
+            <BoxMD isInvisible={true}>
             <Flex>
-                <InsightBoxMD>a</InsightBoxMD>
-                <InsightBoxMD>a</InsightBoxMD>
-                <InsightBoxSM>a</InsightBoxSM>
+                <BoxLG>
+                    <Heading textAlign="left">Hello Assaf</Heading>
+                    <BreakLine />
+                    <p style={{textAlign:"left"}}>Welcome back to Leaf</p>
+                </BoxLG>
             </Flex>
-            <Flex>
-                <InsightBoxMD>a</InsightBoxMD>
-                <InsightBoxSM>a</InsightBoxSM>
-                <InsightBoxMD>a</InsightBoxMD>
+                <Flex>
+                    <DetailsBox>left box</DetailsBox>
+                    <MainChartBox>right box</MainChartBox>
+                </Flex>
+                <ProgressBox>Progress</ProgressBox>
+                <InsightsWrapper>
+                    <Flex>
+                        <BoxMD>a</BoxMD>
+                        <BoxMD>a</BoxMD>
+                        <BoxSM>a</BoxSM>
+                    </Flex>
+                    <Flex>
+                        <BoxMD>a</BoxMD>
+                        <BoxSM>a</BoxSM>
+                        <BoxMD>a</BoxMD>
+                    </Flex>
+                </InsightsWrapper>
+            </BoxMD>
+            <BoxSM isInvisible={true}>
+                <Flex>
+                    <BoxSM isInvisible={true}><SettingsIcon cursor="pointer" w={5} h={5} color="white" /></BoxSM>
+                    <BoxSM isInvisible={true}><BellIcon cursor="pointer" w={5} h={5} color="white" /></BoxSM>
+                    <BoxSM isInvisible={true}>
+                        <MyIcon className="icon" />
+                    </BoxSM>
+                </Flex>
+                <BoxMD>Company's details</BoxMD>
 
-            </Flex>
-        </InsightsWrapper>
+            </BoxSM>
+        </Flex>
+        
         </>
     )
 }

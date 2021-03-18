@@ -23,11 +23,11 @@ export const internalBoxStracture = `
     background:white;
     border-radius:20px;
     color:black;
-    padding:1rem;
-    margin:.4rem;    
+    margin:.4rem;
+ 
 `
 export const ShadowEffect = `
-
+    box-shadow: 0 12px 30px rgba(102, 102, 102, 0.1);
 
 `
 export const Ripple = `
@@ -43,14 +43,27 @@ export const Ripple = `
     }
 `
 
-export const InsightBoxMD = styled.div`
+export const BoxMD = styled.div`
     flex:3;
-    ${internalBoxStracture};
+    padding:1rem;
+
+    ${props => props.isInvisible ? '' : internalBoxStracture }
 
 `
-export const InsightBoxSM = styled.div`
+
+export const BoxLG = styled.div`
+    flex:5;
+
+    ${props => props.isInvisible ? '' : internalBoxStracture }
+    padding:2rem;
+
+`
+
+export const BoxSM = styled.div`
     flex:1;
-    ${internalBoxStracture};
+    padding:1rem;
+
+    ${props => props.isInvisible ? '' : internalBoxStracture }
 
 `
 export const BreakLine = styled.div`

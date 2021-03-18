@@ -7,7 +7,6 @@ import theme from './Common/theme/theme';
 import { ChakraProvider } from '@chakra-ui/react';
 import { ThemeProvider } from 'styled-components';
 import ThemeButton from './Common/theme/theme_button';
-import TopBar from './Components/Top_bar/top_bar';
 
 
 ReactDOM.render(
@@ -15,7 +14,6 @@ ReactDOM.render(
   <ThemeProvider theme={theme}>
     <ChakraProvider vider theme={theme}>
         <ThemeButton />
-        <TopBar />
           <App />
     </ChakraProvider>
   </ThemeProvider>
