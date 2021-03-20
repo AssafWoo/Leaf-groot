@@ -1,10 +1,16 @@
-import { Heading } from '@chakra-ui/layout';
 import React from 'react';
-import { Flex,BoxLG,BoxMD,BoxSM,BreakLine, MyIcon  } from '../../Common/styles';
+
+import { Heading } from '@chakra-ui/layout';
+import { useColorMode } from "@chakra-ui/react"
+
+import { Flex,BoxLG,BoxMD,BoxSM, MyIcon  } from '../../Common/styles';
 import { DetailsBox, MainChartBox,InsightsWrapper,ProgressBox } from './style';
 import { SettingsIcon, BellIcon } from '@chakra-ui/icons'
+import { DarkTheme } from '../../Common/colors';
+
 
 const Dashboard = () => {
+    const { colorMode, toggleColorMode } = useColorMode();
 
     return(
         <>
@@ -12,9 +18,9 @@ const Dashboard = () => {
             <BoxMD isInvisible={true}>
             <Flex>
                 <BoxLG header={true}>
-                    <Heading textAlign="left">Hello Assaf</Heading>
-                    <BreakLine />
+                    <Heading textAlign="left" fontWeight="400">Hello Assaf</Heading>
                     <p style={{textAlign:"left"}}>Pleasure to see you again!</p>
+                    
                 </BoxLG>
             </Flex>
                 <Flex>
@@ -37,8 +43,8 @@ const Dashboard = () => {
             </BoxMD>
             <BoxSM isInvisible={true}>
                 <Flex>
-                    <BoxSM isInvisible={true}><SettingsIcon cursor="pointer" w={5} h={5} color="white" /></BoxSM>
-                    <BoxSM isInvisible={true}><BellIcon cursor="pointer" w={5} h={5} color="white" /></BoxSM>
+                    <BoxSM isInvisible={true}><SettingsIcon cursor="pointer" w={5} h={5} color={colorMode === 'dark' ? 'white' : DarkTheme} /></BoxSM>
+                    <BoxSM isInvisible={true}><BellIcon cursor="pointer" w={5} h={5} color={colorMode === 'dark' ? 'white' : DarkTheme} /></BoxSM>
                     <BoxSM isInvisible={true}>
                         <MyIcon className="icon" />
                     </BoxSM>

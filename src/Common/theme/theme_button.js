@@ -1,9 +1,6 @@
 import { useColorMode } from "@chakra-ui/react"
 import { MoonIcon } from '@chakra-ui/icons';
 
-
-
-
 const ThemeButton = () => {
     const { colorMode, toggleColorMode } = useColorMode();
     return (

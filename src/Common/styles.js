@@ -6,32 +6,33 @@ export const Flex = styled.div`
     flex-wrap:wrap;
 `
 
+export const Wrapper = styled.div`
+    width:80%;
+    margin:auto;
+`
+
+
 export const MyIcon = styled.span`
-    width:1.4rem;
-    height:1.4rem;
+    width:2rem;
+    height:2rem;
     background:white;
     border-radius:50%;
     margin:0rem .5rem 0rem .5rem;
     display:inline-block;
+    border:2px solid ${MainGreen};
     
 `
+
+export const BreakLine = styled.div`
+    margin:2.5rem 0;
+`
+
 
 export const LeafIcon = styled.img`
     width:90%;
     display:inline-block;
     margin-bottom:1rem;
     
-`
-export const LeafDashboardIcon = styled.img`
-    width:10%;
-    display:inline-block;
-    margin-bottom:1rem;
-
-`
-
-export const Wrapper = styled.div`
-    width:80%;
-    margin:auto;
 `
 
 export const internalBoxStracture = `
@@ -42,6 +43,8 @@ export const internalBoxStracture = `
 `
 
 
+
+// Boxes
 export const BoxMD = styled.div`
     flex:3;
     padding:1rem;
@@ -55,7 +58,7 @@ export const BoxLG = styled.div`
 
     ${props => props.isInvisible ? '' : internalBoxStracture }
     padding:2rem;
-    ${props => props.header ? {background:MainGreen, color:DarkTheme} : '' }
+    ${props => props.header ? {background:MainGreen, color:DarkTheme, position:'relative'} : '' }
 
 `
 
@@ -65,8 +68,5 @@ export const BoxSM = styled.div`
 
     ${props => props.isInvisible ? '' : internalBoxStracture }
 
-`
-export const BreakLine = styled.div`
-    margin:2.5rem 0;
 `
 

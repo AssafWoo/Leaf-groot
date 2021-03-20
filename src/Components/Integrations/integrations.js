@@ -9,18 +9,26 @@ const Integrations = () => {
 
     return(
         <>
-            <Heading textAlign="left" color={colorMode === 'dark' ? 'white' : 'gray.700'} >Integration with Apps</Heading>
+            <Heading textAlign="left" color={colorMode === 'dark' ? 'white' : 'gray.700'} >Your Apps</Heading>
             <BreakLine />
             <InputGroup>
-                <InputLeftElement
+            <InputLeftElement
                 pointerEvents="none"
                 children={<SearchIcon color="gray.700" />}
                 />  
-                <Input type="search" placeholder="Search" background="white" borderRadius="20px" color="gray.700" />
+                <Input type="search" placeholder="Search for apps" background="white" borderRadius="20px" color="gray.700" />
             </InputGroup>
             <BreakLine />
-
-              <Heading textAlign="left" color={colorMode === 'dark' ? 'white' : 'gray.700'} >Popular Apps</Heading>
+            <Flex>
+                <BoxSM>a</BoxSM>
+                <BoxSM>a</BoxSM>
+                <BoxSM>a</BoxSM>
+                <BoxSM>a</BoxSM>
+                <BoxSM>a</BoxSM>
+                <BoxSM>a</BoxSM>
+            </Flex>
+            <BreakLine />
+            <Heading textAlign="left" color={colorMode === 'dark' ? 'white' : 'gray.700'} >Popular Apps</Heading>
             <BreakLine />
             <Flex>
                 <BoxSM>a</BoxSM>

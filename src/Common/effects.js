@@ -17,3 +17,5 @@ export const Ripple = `
 export const TransitionEffect = `
 transition:.4s all ease-in-out;
 `
+
+

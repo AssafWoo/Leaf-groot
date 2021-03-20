@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import theme from './Common/theme/theme';
+import theme from './Common/Theme/theme';
 import { ChakraProvider } from '@chakra-ui/react';
 import { ThemeProvider } from 'styled-components';
-import ThemeButton from './Common/theme/theme_button';
+import ThemeButton from './Common/Theme/theme_button';
 
 
 ReactDOM.render(
