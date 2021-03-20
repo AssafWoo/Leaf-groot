@@ -6,8 +6,8 @@ import { extendTheme } from "@chakra-ui/react"
 const styles = {
     global: props => ({
       body: {
-        color: mode('gray.200', 'gray.800')(props),
-        bg: mode('gray.200', 'gray.800')(props),
+        color: mode('gray.200', '#1A1D53')(props),
+        bg: mode('gray.200', '#1A1D53')(props),
       },
     }),
   };
@@ -17,8 +17,8 @@ const styles = {
       // setup light/dark mode component defaults
       baseStyle: props => ({
         dialog: {
-          color: mode('gray.200', 'gray.800')(props),
-          bg: mode('gray.200', 'gray.800')(props),
+          color: mode('gray.200', '#1A1D53')(props),
+          bg: mode('gray.200', '#1A1D53')(props),
         },
       }),
     },

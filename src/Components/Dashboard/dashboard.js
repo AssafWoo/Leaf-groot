@@ -11,10 +11,10 @@ const Dashboard = () => {
         <Flex>
             <BoxMD isInvisible={true}>
             <Flex>
-                <BoxLG>
+                <BoxLG header={true}>
                     <Heading textAlign="left">Hello Assaf</Heading>
                     <BreakLine />
-                    <p style={{textAlign:"left"}}>Welcome back to Leaf</p>
+                    <p style={{textAlign:"left"}}>Pleasure to see you again!</p>
                 </BoxLG>
             </Flex>
                 <Flex>

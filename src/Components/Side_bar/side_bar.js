@@ -1,7 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import { Flex, MyIcon } from '../../Common/styles';
-import { ItemsNav, SideBarWrapper } from './style';
+import { Flex, LeafIcon } from '../../Common/styles';
+import { ItemsNav, SideBarWrapper, Item } from './style';
+import LeafLogo from '../../Assets/images/Leaf-logo-white-leaf.png';
+import { useState } from 'react';
+
 
 const MenuNames = [
     {
@@ -39,19 +42,21 @@ const MenuNames = [
 
 ]
 
-
 const SideBar = () => {
+    const [activeItem, setActiveItem] = useState('')
+
     return(
         <SideBarWrapper>
             <ItemsNav>
-                <MyIcon className="icon" />
-                <span>Logo</span>
+                <LeafIcon src={LeafLogo} />
                 {MenuNames.map((value, index)=> (
-                <Flex key={index} >
-                    <MyIcon className="icon" />
-                        <Link to={`${value.link}`}>
+                <Flex key={index}>
+                    <Item>
+                        <Link onClick={() => setActiveItem(value.name)} className={activeItem === value.name ? 'active' : ''} to={`${value.link}`}>
                             <span>{value.name}</span>
                         </Link>
+                    </Item>
+
                 </Flex>
                 ))}
             </ItemsNav>

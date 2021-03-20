@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {DarkTheme, MainGreen} from './colors';
 
 export const Flex = styled.div`
     display:flex;
@@ -14,6 +15,20 @@ export const MyIcon = styled.span`
     display:inline-block;
     
 `
+
+export const LeafIcon = styled.img`
+    width:90%;
+    display:inline-block;
+    margin-bottom:1rem;
+    
+`
+export const LeafDashboardIcon = styled.img`
+    width:10%;
+    display:inline-block;
+    margin-bottom:1rem;
+
+`
+
 export const Wrapper = styled.div`
     width:80%;
     margin:auto;
@@ -24,24 +39,8 @@ export const internalBoxStracture = `
     border-radius:20px;
     color:black;
     margin:.4rem;
- 
 `
-export const ShadowEffect = `
-    box-shadow: 0 12px 30px rgba(102, 102, 102, 0.1);
 
-`
-export const Ripple = `
-    animation: at-ripple 0.5s linear infinite;
-    overflow: hidden;
-    @keyframes at-ripple {
-        0% {
-            box-shadow: 0 12px 30px rgba(102, 102, 102, 0.1), 0 0 0 0 rgba(102, 102, 102, 0.1), 0 0 0 15px rgba(102, 102, 102, 0.1), 0 0 0 20px rgba(102, 102, 102, 0.1);
-        }
-        100% {
-            box-shadow: 0 12px 30px rgba(102, 102, 102, 0.1), 0 0 0 20px rgba(102, 102, 102, 0.1), 0 0 0 30px rgba(102, 102, 102, 0.1), 0 0 0 60px rgba(102, 102, 102, 0);
-        }
-    }
-`
 
 export const BoxMD = styled.div`
     flex:3;
@@ -56,6 +55,7 @@ export const BoxLG = styled.div`
 
     ${props => props.isInvisible ? '' : internalBoxStracture }
     padding:2rem;
+    ${props => props.header ? {background:MainGreen, color:DarkTheme} : '' }
 
 `
 
