@@ -1,12 +1,10 @@
 import { CirclesEffect } from './style';
 
-
-
 const FloatEffect = () => {
   return (
 
         <CirclesEffect>
-            <ul class='circles'>
+            <ul className='circles'>
                 <li></li>
                 <li></li>
                 <li></li>

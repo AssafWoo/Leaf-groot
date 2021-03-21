@@ -1,6 +1,6 @@
 import React from 'react';
 import { Heading } from '@chakra-ui/layout';
-import { BreakLine, Flex, BoxSM } from '../../Common/styles';
+import { BreakLine, Flex, BoxSM } from '../../Styles/styles';
 import { Input, InputGroup, InputLeftElement, useColorMode } from "@chakra-ui/react"
 import { SearchIcon } from '@chakra-ui/icons';
 

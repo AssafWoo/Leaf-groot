@@ -1,9 +1,10 @@
 import styled from 'styled-components';
-import {DarkTheme, MainGreen} from '../../Common/colors';
-import { TransitionEffect } from '../../Common/effects';
+import {DarkTheme, MainGreen} from '../../Styles/colors';
+import { TransitionEffect } from '../../Styles/effects';
 
 export const SideBarWrapper = styled.div`
   height: 100vh;
+  position:sticky;
   border-radius:40px;
   z-index: 2;
   top: 1rem;

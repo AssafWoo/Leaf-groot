@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {MainGreen} from '../colors';
+import {MainGreen} from '../../Styles/colors';
 
 export const CirclesEffect = styled.div`
 position:relative;

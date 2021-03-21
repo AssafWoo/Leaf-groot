@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import { Flex, LeafIcon } from '../../Common/styles';
+import { Flex, LeafIcon } from '../../Styles/styles';
 import { ItemsNav, SideBarWrapper, Item } from './style';
 import LeafLogo from '../../Assets/images/Leaf-logo-white-leaf.png';
 import { useState } from 'react';
@@ -48,7 +48,9 @@ const SideBar = () => {
     return(
         <SideBarWrapper>
             <ItemsNav>
-                <LeafIcon src={LeafLogo} />
+                <Link to="/">
+                    <LeafIcon src={LeafLogo} />
+                </Link>
                 {MenuNames.map((value, index)=> (
                 <Flex key={index}>
                     <Item>

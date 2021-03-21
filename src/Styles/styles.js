@@ -11,18 +11,6 @@ export const Wrapper = styled.div`
     margin:auto;
 `
 
-
-export const MyIcon = styled.span`
-    width:2rem;
-    height:2rem;
-    background:white;
-    border-radius:50%;
-    margin:0rem .5rem 0rem .5rem;
-    display:inline-block;
-    border:2px solid ${MainGreen};
-    
-`
-
 export const BreakLine = styled.div`
     margin:2.5rem 0;
 `
@@ -36,7 +24,7 @@ export const LeafIcon = styled.img`
 `
 
 export const internalBoxStracture = `
-    background:white;
+    padding:1rem;
     border-radius:20px;
     color:black;
     margin:.4rem;
@@ -47,26 +35,23 @@ export const internalBoxStracture = `
 // Boxes
 export const BoxMD = styled.div`
     flex:3;
-    padding:1rem;
-
-    ${props => props.isInvisible ? '' : internalBoxStracture }
+    ${internalBoxStracture}
+    background: ${props => props.isInvisible ? '' : 'white' };
 
 `
 
 export const BoxLG = styled.div`
     flex:5;
-
-    ${props => props.isInvisible ? '' : internalBoxStracture }
-    padding:2rem;
-    ${props => props.header ? {background:MainGreen, color:DarkTheme, position:'relative'} : '' }
+    ${internalBoxStracture}
+    background: ${props => props.isInvisible ? '' : 'white' };
+    ${props => props.header ? {background:MainGreen, color:DarkTheme, position:'relative'} : '' };
 
 `
 
 export const BoxSM = styled.div`
     flex:1;
-    padding:1rem;
-
-    ${props => props.isInvisible ? '' : internalBoxStracture }
+    ${internalBoxStracture}
+    background: ${props => props.isInvisible ? '' : 'white' };
 
 `
 
