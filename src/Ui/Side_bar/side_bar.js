@@ -4,6 +4,8 @@ import { Flex, LeafIcon } from '../../Styles/styles';
 import { ItemsNav, SideBarWrapper, Item } from './style';
 import LeafLogo from '../../Assets/images/Leaf-logo-white-leaf.png';
 import { useState } from 'react';
+import SubHeader from './sub-header';
+import { SettingsIcon } from '@chakra-ui/icons';
 
 
 const MenuNames = [
@@ -20,30 +22,36 @@ const MenuNames = [
         link:'/integrations'
     },
     {
-        name:'Divions',
-        link:'/divisions'
+        name:'Marketing',
+        link:'/marketing'
     },
     {
-        name:'Volunteer',
+        name:'Market Place',
         link:'/volunteer'
     },
     {
-        name:'Certificate',
-        link:'/certificate'
+        name:'Plan',
+        link:'/plan'
     },
+
     {
-        name:'Offsets',
-        link:'/offsets'
-    },
-    {
-        name:'Settings',
-        link:'/settings'
+        name:<SettingsIcon h={6} w={6} />,
+        link:'/settings',
+        children:[{name:'User',
+        link:'/settings/user',},
+        {name:'Company',
+        link:'/settings/company',}]
     },
 
 ]
 
 const SideBar = () => {
-    const [activeItem, setActiveItem] = useState('')
+    const [activeItem, setActiveItem] = useState('');
+    
+    const handleClick = ({name, children}) => {
+        console.log(name)
+        setActiveItem(name)
+    }
 
     return(
         <SideBarWrapper>
@@ -54,9 +62,14 @@ const SideBar = () => {
                 {MenuNames.map((value, index)=> (
                 <Flex key={index}>
                     <Item>
-                        <Link onClick={() => setActiveItem(value.name)} className={activeItem === value.name ? 'active' : ''} to={`${value.link}`}>
+                        {value.children ?  
+                        <SubHeader header={value.name} children={value.children} activeItem={activeItem} handleClick={handleClick} />
+                        :
+                        <Link onClick={(e) => handleClick(value)} className={activeItem === value.name ? 'active' : ''} to={`${value.link}`}>
                             <span>{value.name}</span>
-                        </Link>
+                        </Link> 
+                        }
+
                     </Item>
 
                 </Flex>

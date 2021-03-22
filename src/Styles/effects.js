@@ -18,4 +18,3 @@ export const TransitionEffect = `
 transition:.4s all ease-in-out;
 `
 
-

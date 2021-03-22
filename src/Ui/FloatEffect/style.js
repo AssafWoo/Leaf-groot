@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {MainGreen} from '../../Styles/colors';
+import {MainBlue, MainGreen, MainGreenBlue, MainGrey, MainYellow} from '../../Styles/colors';
 
 export const CirclesEffect = styled.div`
 position:relative;
@@ -25,8 +25,8 @@ position:relative;
 
 .circles li:nth-child(1) {
 	left: 25%;
-	width: 80px;
-	height: 80px;
+	width: 90px;
+	height: 90px;
 	animation-delay: 0s;
 	animation-duration: 20s;
 	border-radius: 50%;
@@ -36,13 +36,13 @@ position:relative;
 
 .circles li:nth-child(2) {
 	left: 10%;
-	width: 20px;
-	height: 20px;
+	width: 25px;
+	height: 25px;
 	animation-delay: 0s;
 	animation-duration: 25s;
 	border-radius: 50%;
 	border-top-left-radius: 0 !important;
-	background:${MainGreen};
+	background:${MainGrey}
 }
 
 .circles li:nth-child(3) {
@@ -53,7 +53,7 @@ position:relative;
 	animation-duration: 20s;
 	border-radius: 50%;
 	border-top-left-radius: 0 !important;
-	background:${MainGreen};
+	background:${MainBlue}
 }
 
 .circles li:nth-child(4) {
@@ -64,29 +64,29 @@ position:relative;
 	animation-duration: 15s;
 	border-radius: 50%;
 	border-top-left-radius: 0 !important;
-	background:${MainGreen};
+	background:${MainGreenBlue}
 }
 
 .circles li:nth-child(5) {
 	left: 65%;
-	width: 20px;
-	height: 20px;
+	width: 35px;
+	height: 35px;
 	animation-delay: 0s;
 	animation-duration: 20s;
 	border-radius: 50%;
 	border-top-left-radius: 0 !important;
-	background:${MainGreen};
+	background:${MainYellow}
 }
 
 .circles li:nth-child(6) {
 	left: 75%;
-	width: 90px;
-	height: 90px;
+	width: 100px;
+	height: 100px;
 	animation-delay: 0s;
 	animation-duration: 25s;
 	border-radius: 50%;
 	border-top-left-radius: 0 !important;
-	background:${MainGreen};
+	background:${MainGreenBlue};
 }
 
 .circles li:nth-child(7) {
@@ -97,18 +97,18 @@ position:relative;
 	animation-duration: 30s;
 	border-radius: 50%;
 	border-top-left-radius: 0 !important;
-	background:${MainGreen};
+	background:${MainBlue};
 }
 
 .circles li:nth-child(8) {
 	left: 50%;
-	width: 25px;
-	height: 25px;
+	width: 17px;
+	height: 17px;
 	animation-delay: 0s;
 	animation-duration: 35s;
 	border-radius: 50%;
 	border-top-left-radius: 0 !important;
-	background:${MainGreen};
+	background:${MainYellow};
 }
 
 .circles li:nth-child(9) {
@@ -130,7 +130,7 @@ position:relative;
 	animation-duration: 45s;
 	border-radius: 50%;
 	border-top-left-radius: 0 !important;
-	background:${MainGreen};
+	background:${MainGreenBlue};
 }
 
 @keyframes animate {

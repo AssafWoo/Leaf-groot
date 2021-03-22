@@ -1,7 +1,7 @@
 import React from 'react';
 import { Flex  } from '../../Styles/styles'
-import DashboardLeftPart from './left-part/dashboard-left';
-import DashboardRightPart from './right-part/dashboard-right';
+import DashboardLeftPart from './right-part/dashboard-right';
+import DashboardRightPart from './left-part/dashboard-left';
 
 
 const Dashboard = () => {

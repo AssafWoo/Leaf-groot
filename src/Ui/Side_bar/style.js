@@ -5,7 +5,7 @@ import { TransitionEffect } from '../../Styles/effects';
 export const SideBarWrapper = styled.div`
   height: 100vh;
   position:sticky;
-  border-radius:40px;
+  border-radius:20px;
   z-index: 2;
   top: 1rem;
   margin:.5rem 0;
@@ -26,9 +26,10 @@ export const ItemsNav = styled.div`
 export const Item = styled.div`
     margin-top:1rem;
     text-align:center;
-    color:white;
-    font-weight:400;
+    color:${DarkTheme};
+    font-weight:500;
     width:100%;
+    font-size:1.1rem;
     ${TransitionEffect};
     &:hover{
       color:${DarkTheme};
@@ -39,7 +40,9 @@ export const Item = styled.div`
       padding:.8rem;
       color:white;
       ${TransitionEffect};
-      border-radius:50% 50% 50% 50% / 100% 1% 99% 0%;
+      /* border-radius:50% 50% 50% 50% / 100% 1% 99% 0%; */
+      border-radius:10px;
+      width:100%;
     }
 
 `

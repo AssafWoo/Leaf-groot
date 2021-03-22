@@ -1,44 +1,27 @@
 import React from 'react';
-import { Heading } from '@chakra-ui/layout';
-import { Flex,BoxMD,BoxSM, BoxLG } from '../../../Styles/styles'
+import { useColorMode } from "@chakra-ui/react"
+import { Flex,BoxMD,BoxSM  } from '../../../Styles/styles'
+import { SettingsIcon, BellIcon } from '@chakra-ui/icons'
+import { DarkTheme } from '../../../Styles/colors';
 import SingleUser from '../../../Ui/UserAvatar/SingelUser';
 
 
-const DashboardRightPart = () => {
+const DashboardLeftPart = () => {
+    const { colorMode, toggleColorMode } = useColorMode();
 
     return(
-        <BoxMD isInvisible={true}>
-        <Flex>
-            <BoxLG header={true}>
-                <Flex>
-                    <BoxLG isInvisible="true">
-                        <Heading textAlign="left" fontWeight="400">Hello Assaf</Heading>
-                        <p style={{textAlign:"left"}}>Pleasure to see you again!</p>
-                    </BoxLG>
-                    <BoxMD isInvisible={true}>
-                        <SingleUser desiredPhoto="company" />
-                    </BoxMD>
-                </Flex>
-            </BoxLG>
-
-        </Flex>
+        <BoxSM isInvisible={true}>
             <Flex>
-                <BoxMD>left box</BoxMD>
-                <BoxMD>right box</BoxMD>
+                <BoxSM isInvisible={true}><SettingsIcon cursor="pointer" w={6} h={6} color={colorMode === 'dark' ? 'white' : DarkTheme} /></BoxSM>
+                <BoxSM isInvisible={true}><BellIcon cursor="pointer" w={7} h={7} color={colorMode === 'dark' ? 'white' : DarkTheme} /></BoxSM>
+                <BoxMD isInvisible={true}>
+                    <SingleUser />
+                </BoxMD>
             </Flex>
-            <BoxLG>Progress</BoxLG>
-                <Flex>
-                    <BoxMD>a</BoxMD>
-                    <BoxMD>a</BoxMD>
-                    <BoxSM>a</BoxSM>
-                </Flex>
-                <Flex>
-                    <BoxMD>a</BoxMD>
-                    <BoxSM>a</BoxSM>
-                    <BoxMD>a</BoxMD>
-                </Flex>
-        </BoxMD>
+            <BoxMD>Company's details</BoxMD>
+
+        </BoxSM>
     )
 }
 
-export default DashboardRightPart;
+export default DashboardLeftPart;

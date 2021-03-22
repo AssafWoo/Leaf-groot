@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {DarkTheme, MainGreen} from './colors';
+import {DarkTheme, MainGreen, MainGrey} from './colors';
 
 export const Flex = styled.div`
     display:flex;
@@ -25,8 +25,8 @@ export const LeafIcon = styled.img`
 
 export const internalBoxStracture = `
     padding:1rem;
-    border-radius:20px;
-    color:black;
+    border-radius:15px;
+    color:white;
     margin:.4rem;
 `
 
@@ -36,22 +36,26 @@ export const internalBoxStracture = `
 export const BoxMD = styled.div`
     flex:3;
     ${internalBoxStracture}
-    background: ${props => props.isInvisible ? '' : 'white' };
+    background: ${props => props.isInvisible ? '' : DarkTheme };
+    border: ${props => props.isInvisible ? '' : `1px solid ${MainGrey}` };
+
 
 `
 
 export const BoxLG = styled.div`
     flex:5;
     ${internalBoxStracture}
-    background: ${props => props.isInvisible ? '' : 'white' };
-    ${props => props.header ? {background:MainGreen, color:DarkTheme, position:'relative'} : '' };
+    background: ${props => props.isInvisible ? '' : DarkTheme };
+    border: ${props => props.isInvisible ? '' : `1px solid ${MainGrey}` };
+    ${props => props.header ? {background:MainGreen, color:DarkTheme, position:'relative', border:'none'} : '' };
 
 `
 
 export const BoxSM = styled.div`
     flex:1;
     ${internalBoxStracture}
-    background: ${props => props.isInvisible ? '' : 'white' };
+    background: ${props => props.isInvisible ? '' : DarkTheme };
+    border: ${props => props.isInvisible ? '' : `1px solid ${MainGrey}` };
 
 `
 

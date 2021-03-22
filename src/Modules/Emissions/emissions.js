@@ -2,27 +2,27 @@ import React from 'react';
 
 
 import { Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/tabs';
-import { DarkTheme } from '../../Styles/colors';
+import { DarkTheme, MainGrey } from '../../Styles/colors';
 
  
 const EmissionsComponent = () => {
 
     return (
-        <Tabs variant="soft-rounded" borderRadius="20px" padding="1rem" colorScheme="green" bg={'white'} >
+        <Tabs variant="soft-rounded" borderRadius="20px" padding="1rem" colorScheme="facebook" bg={DarkTheme} border={`1px solid ${MainGrey}`} >
             <TabList marginBottom="1rem">
-                <Tab fontSize="1.2rem" color={DarkTheme}>Travel</Tab>
-                <Tab fontSize="1.2rem" color={DarkTheme}>Electricity</Tab>
-                <Tab fontSize="1.2rem" color={DarkTheme}>Employees</Tab>
+                <Tab fontSize="1.2rem" color="white" >Travel</Tab>
+                <Tab fontSize="1.2rem" color="white" >Electricity</Tab>
+                <Tab fontSize="1.2rem" color="white" >Employees</Tab>
             </TabList>
-            <TabPanels textAlign="left" borderTop={`1px solid ${DarkTheme}`}>
-                <TabPanel color={DarkTheme}>
-                <p>Travel!</p>
+            <TabPanels textAlign="left" borderTop={`2px solid ${MainGrey}`}>
+                <TabPanel color="white" >
+                    <p>Travel!</p>
                 </TabPanel>
-                <TabPanel color={DarkTheme}>
-                <p>Electricity</p>
+                <TabPanel color="white" >
+                    <p>Electricity</p>
                 </TabPanel>
-                <TabPanel color={DarkTheme}>
-                <p>Employees!</p>
+                <TabPanel color="white" >
+                    <p>Employees!</p>
                 </TabPanel>
             </TabPanels>
         </Tabs>
