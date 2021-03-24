@@ -9,7 +9,8 @@ import { Button } from '@chakra-ui/button';
 
 
 const DashboardLeftPart = ({companyName, userName}) => {
-
+    const [filter, setFilter] = useState('Display By');
+    
     return(
         <BoxMD isInvisible={true}>
         <Flex>
@@ -29,13 +30,13 @@ const DashboardLeftPart = ({companyName, userName}) => {
         </Flex>
             <Menu>
                 <MenuButton mt="0.4rem" as={Button} rightIcon={<ChevronDownIcon />} float="right">
-                    Display by
+                    {filter}
                 </MenuButton>
                 <MenuList>
-                    <MenuItem>Daily</MenuItem>
-                    <MenuItem>Weekly</MenuItem>
-                    <MenuItem>Monthly</MenuItem>
-                    <MenuItem>Yearly</MenuItem>
+                    <MenuItem onClick={() => setFilter('Daily')}>Daily</MenuItem>
+                    <MenuItem onClick={() => setFilter('Weekly')}>Weekly</MenuItem>
+                    <MenuItem onClick={() => setFilter('Monthly')}>Monthly</MenuItem>
+                    <MenuItem onClick={() => setFilter('Yearly')}>Yearly</MenuItem>
                 </MenuList>
             </Menu>
             <Flex>
