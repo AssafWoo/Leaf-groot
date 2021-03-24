@@ -14,6 +14,10 @@ const MenuNames = [
         link:'/'
     },
     {
+        name:'Insights',
+        link:'/insights'
+    },
+    {
         name:'Emissons',
         link:'/emissions'
     },

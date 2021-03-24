@@ -20,18 +20,18 @@ const Integrations = () => {
             </InputGroup>
             <BreakLine />
             <Flex>
-                <BoxSM>a</BoxSM>
-                <BoxSM>a</BoxSM>
-                <BoxSM>a</BoxSM>
-                <BoxSM>a</BoxSM>
-                <BoxSM>a</BoxSM>
-                <BoxSM>a</BoxSM>
+                <BoxSM>Slack</BoxSM>
+                <BoxSM>Monday</BoxSM>
+                <BoxSM>Jira</BoxSM>
+                <BoxSM>Trello</BoxSM>
+                <BoxSM>AWS</BoxSM>
+                <BoxSM>Azure</BoxSM>
             </Flex>
             <BreakLine />
             <Heading textAlign="left" color={colorMode === 'dark' ? 'white' : 'gray.700'} >Popular Apps</Heading>
             <BreakLine />
             <Flex>
-                <BoxSM>a</BoxSM>
+                <BoxSM>Vee</BoxSM>
                 <BoxSM>a</BoxSM>
                 <BoxSM>a</BoxSM>
                 <BoxSM>a</BoxSM>

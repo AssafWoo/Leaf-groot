@@ -15,9 +15,9 @@ const DashboardRightPart = () => {
             <Flex>
                 <BoxSM isInvisible={true}><SettingsIcon cursor="pointer" w={6} h={6} color={colorMode === 'dark' ? 'white' : DarkTheme} /></BoxSM>
                 <BoxSM isInvisible={true}><BellIcon cursor="pointer" w={7} h={7} color={colorMode === 'dark' ? 'white' : DarkTheme} /></BoxSM>
-                <BoxMD isInvisible={true}>
+                <BoxSM isInvisible={true}>
                     <SingleUser />
-                </BoxMD>
+                </BoxSM>
             </Flex>
             <BoxMD>
                 <Flex>

@@ -12,6 +12,7 @@ import Store from './global-context/global-context';
 import { useContext, useEffect, useReducer } from 'react';
 import { usePersistedContext, usePersistedReducer } from './Shared-hooks/usePersist';
 import reducer from './global-context/reducer';
+import Insights from './Modules/Insights/insights';
 
 
 
@@ -57,6 +58,7 @@ function App() {
           <BreakLine />
             <Wrapper>
                 <Switch>
+                  <Route expact path="/insights" component={Insights} />
                   <Route expact path="/plan" component={Subscription} />
                   <Route expact path="/settings" component={Settings} />
                   <Route expact path="/integrations" component={Integrations} />
