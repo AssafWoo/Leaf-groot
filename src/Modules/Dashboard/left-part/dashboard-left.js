@@ -2,9 +2,10 @@ import React from 'react';
 import { Heading } from '@chakra-ui/layout';
 import { Flex,BoxMD,BoxSM, BoxLG } from '../../../Styles/styles'
 import SingleUser from '../../../Ui/UserAvatar/SingelUser';
+import { DarkTheme } from '../../../Styles/colors';
 
 
-const DashboardRightPart = () => {
+const DashboardLeftPart = ({companyName, userName}) => {
 
     return(
         <BoxMD isInvisible={true}>
@@ -12,8 +13,9 @@ const DashboardRightPart = () => {
             <BoxLG header={true}>
                 <Flex>
                     <BoxLG isInvisible="true">
-                        <Heading textAlign="left" fontWeight="400">Hello Assaf</Heading>
-                        <p style={{textAlign:"left"}}>Pleasure to see you again!</p>
+                        <Heading textAlign="left" fontWeight="400" color={DarkTheme}>Wazzaa {userName}</Heading>
+                        <p style={{textAlign:"left", color:DarkTheme}}>Pleasure to see you again.</p>
+                        <p style={{textAlign:"left", color:'white'}}>Lets see how {companyName} is doing!</p>
                     </BoxLG>
                     <BoxMD isInvisible={true}>
                         <SingleUser desiredPhoto="company" />
@@ -41,4 +43,4 @@ const DashboardRightPart = () => {
     )
 }
 
-export default DashboardRightPart;
+export default DashboardLeftPart;

@@ -18,7 +18,7 @@ const SubHeader = ({header, children, handleClick, activeItem}) => {
                     </Box>
                 </AccordionButton>
                 {children.map((value, index) => (
-                    <AccordionPanel key={index} pb={2}>
+                    <AccordionPanel key={index} pb={3} mt={2}>
                         <Link onClick={() => handleClick(value)} className={activeItem === value.name ? 'active' : ''} to={`${value.link}`}>
                             <span>{value.name}</span>
                         </Link> 

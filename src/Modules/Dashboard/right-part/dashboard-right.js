@@ -4,9 +4,10 @@ import { Flex,BoxMD,BoxSM  } from '../../../Styles/styles'
 import { SettingsIcon, BellIcon } from '@chakra-ui/icons'
 import { DarkTheme } from '../../../Styles/colors';
 import SingleUser from '../../../Ui/UserAvatar/SingelUser';
+import RankIcon from '../../../Ui/RankIcon/rank-icon';
 
 
-const DashboardLeftPart = () => {
+const DashboardRightPart = () => {
     const { colorMode, toggleColorMode } = useColorMode();
 
     return(
@@ -18,10 +19,21 @@ const DashboardLeftPart = () => {
                     <SingleUser />
                 </BoxMD>
             </Flex>
-            <BoxMD>Company's details</BoxMD>
+            <BoxMD>
+                <Flex>
+                    <BoxSM isInvisible="true">
+                        Leaf corp.
+                    </BoxSM>
+                    <BoxSM isInvisible="true">
+                        <RankIcon />
+                    </BoxSM>
+                </Flex>
+                
+                
+            </BoxMD>
 
         </BoxSM>
     )
 }
 
-export default DashboardLeftPart;
+export default DashboardRightPart;

@@ -8,11 +8,11 @@ const SingleUser = ({desiredPhoto}) => {
     
     if(desiredPhoto === 'company') {
         return(
-            <img style={{width:'100%', display:'inline-block', border:`2px solid ${MainGreen}`, borderRadius:"20px"}} src={CompanyAvatar}  />
+            <img alt='company' style={{width:'100%', display:'inline-block', border:`2px solid ${MainGreen}`, borderRadius:"20px"}} src={CompanyAvatar}  />
         )
     }
     return(
-        <img style={{width:'100%', display:'inline-block', boxShadow:ShadowEffect, borderRadius:"20px"}} src={UserAvatar}  />
+        <img alt='user' style={{width:'100%', display:'inline-block', boxShadow:ShadowEffect, borderRadius:"20px"}} src={UserAvatar}  />
     )
 }
 

@@ -8,15 +8,14 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { ThemeProvider } from 'styled-components';
 import ThemeButton from './Ui/Theme/theme_button';
 
-
 ReactDOM.render(
   <>
-  <ThemeProvider theme={theme}>
-    <ChakraProvider vider theme={theme}>
-        <ThemeButton />
-          <App />
-    </ChakraProvider>
-  </ThemeProvider>
+    <ThemeProvider theme={theme}>
+      <ChakraProvider vider theme={theme}>
+          <ThemeButton />
+            <App />
+      </ChakraProvider>
+    </ThemeProvider>
   </>,
   document.getElementById('root')
 );
