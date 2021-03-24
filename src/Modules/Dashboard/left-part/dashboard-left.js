@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Heading } from '@chakra-ui/layout';
-import { Flex,BoxMD,BoxSM, BoxLG, BreakLine } from '../../../Styles/styles'
+import { Flex,BoxMD,BoxSM, BoxLG } from '../../../Styles/styles'
 import SingleUser from '../../../Ui/UserAvatar/SingelUser';
 import { DarkTheme } from '../../../Styles/colors';
 import { Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/menu';
@@ -9,8 +9,8 @@ import { Button } from '@chakra-ui/button';
 
 
 const DashboardLeftPart = ({companyName, userName}) => {
-    const [filter, setFilter] = useState('Display By');
-    
+    const [filter, setFilter] = useState('Daily');
+
     return(
         <BoxMD isInvisible={true}>
         <Flex>
@@ -18,7 +18,6 @@ const DashboardLeftPart = ({companyName, userName}) => {
                 <Flex>
                     <BoxLG isInvisible="true">
                         <Heading mb="2" textAlign="left" fontWeight="400" color={DarkTheme}>Wazzaa {userName}</Heading>
-                        
                         <p style={{textAlign:"left", color:DarkTheme}}>Pleasure to see you again.</p>
                         <p style={{textAlign:"left", color:'white'}}>Lets see how {companyName} is doing!</p>
                     </BoxLG>

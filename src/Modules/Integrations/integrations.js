@@ -3,6 +3,7 @@ import { Heading } from '@chakra-ui/layout';
 import { BreakLine, Flex, BoxSM } from '../../Styles/styles';
 import { Input, InputGroup, InputLeftElement, useColorMode } from "@chakra-ui/react"
 import { SearchIcon } from '@chakra-ui/icons';
+import useRandomColorPick from '../../Shared-hooks/useRandomColor';
 
 const Integrations = () => {
     const { colorMode, toggleColorMode } = useColorMode();
@@ -20,7 +21,7 @@ const Integrations = () => {
             </InputGroup>
             <BreakLine />
             <Flex>
-                <BoxSM>Slack</BoxSM>
+                <BoxSM style={{background: useRandomColorPick()}}>Slack</BoxSM>
                 <BoxSM>Monday</BoxSM>
                 <BoxSM>Jira</BoxSM>
                 <BoxSM>Trello</BoxSM>
