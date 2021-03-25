@@ -1,9 +1,9 @@
 import React  from 'react';
 import { Heading } from '@chakra-ui/layout';
-import { Flex,BoxMD,BoxSM, BoxLG } from '../../../Styles/styles'
-import SingleUser from '../../../Ui/UserAvatar/SingelUser';
-import { DarkTheme } from '../../../Styles/colors';
-import FilterBy from '../../../Ui/Filter/filter_by';
+import { Flex,BoxMD,BoxSM, BoxLG } from '../../Styles/styles'
+import SingleUser from '../../Components/UserAvatar/SingelUser';
+import { DarkTheme } from '../../Styles/colors';
+import FilterBy from '../../Components/Filter/filter_by';
 
 
 const DashboardLeftPart = ({companyName, userName}) => {

@@ -3,7 +3,7 @@ import { Input } from "@chakra-ui/input";
 import { Heading } from "@chakra-ui/layout";
 import { MainGreen } from "../../Styles/colors";
 import { BoxLG, BoxMD, Flex, BoxSM } from "../../Styles/styles";
-import FilterBy from "../../Ui/Filter/filter_by";
+import FilterBy from "../../Components/Filter/filter_by";
 
 
 const ElectricityPanel = () => {

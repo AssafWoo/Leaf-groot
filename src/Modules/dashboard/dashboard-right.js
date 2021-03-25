@@ -1,10 +1,10 @@
 import React from 'react';
 import { useColorMode } from "@chakra-ui/react"
-import { Flex,BoxMD,BoxSM  } from '../../../Styles/styles'
+import { Flex,BoxMD,BoxSM  } from '../../Styles/styles'
 import { SettingsIcon, BellIcon } from '@chakra-ui/icons'
-import { DarkTheme } from '../../../Styles/colors';
-import SingleUser from '../../../Ui/UserAvatar/SingelUser';
-import RankIcon from '../../../Ui/RankIcon/rank-icon';
+import { DarkTheme } from '../../Styles/colors';
+import SingleUser from '../../Components/UserAvatar/SingelUser';
+import RankIcon from '../../Components/RankIcon/rank-icon';
 
 
 const DashboardRightPart = () => {

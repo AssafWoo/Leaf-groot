@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { Flex  } from '../../Styles/styles'
-import DashboardLeftPart from './left-part/dashboard-left';
-import DashboardRightPart from './right-part/dashboard-right';
-import Store from '../../global-context/global-context';
+import { Flex  } from '../Styles/styles'
+import DashboardLeftPart from '../Modules/dashboard/dashboard-left';
+import DashboardRightPart from '../Modules/dashboard/dashboard-right';
+import Store from '../global-context/global-context';
 
 
 const Dashboard = () => {

@@ -1,18 +1,18 @@
 import './App.css';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import Dashboard from './Modules/Dashboard/main-dashboard';
+import Dashboard from './Pages/main-dashboard';
 import {BreakLine, Flex, Wrapper} from './Styles/styles';
-import Integrations from './Modules/Integrations/integrations';
-import SideBar from './Ui/Side_bar/side_bar';
-import FloatEffect  from './Ui/FloatEffect/floatEffect';
-import EmissionsComponent from './Modules/Emissions/emissions';
-import Settings from './Modules/Settings/settings';
-import Subscription from './Modules/Subscription/subscription';
+import Integrations from './Pages/integrations';
+import SideBar from './Components/Side_bar/side_bar';
+import FloatEffect  from './Components/FloatEffect/floatEffect';
+import EmissionsComponent from './Pages/emissions';
+import Settings from './Pages/settings';
+import Subscription from './Pages/subscription';
 import Store from './global-context/global-context';
 import { useContext, useEffect, useReducer } from 'react';
-import { usePersistedContext, usePersistedReducer } from './Shared-hooks/usePersist';
+import { usePersistedContext, usePersistedReducer } from './Utils/usePersist';
 import reducer from './global-context/reducer';
-import Insights from './Modules/Insights/insights';
+import Insights from './Pages/insights';
 
 
 

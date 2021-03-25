@@ -2,10 +2,10 @@ import { Button } from "@chakra-ui/button";
 import { Input } from "@chakra-ui/input";
 import { Heading } from "@chakra-ui/layout";
 import { NumberDecrementStepper, NumberIncrementStepper, NumberInput, NumberInputField, NumberInputStepper } from "@chakra-ui/number-input";
-import { DarkTheme, MainBlue, MainGreen, MainGrey } from "../../Styles/colors";
-import { BoxLG, BoxMD, Flex } from "../../Styles/styles";
-import RankIcon from "../../Ui/RankIcon/rank-icon";
-import SingleUser from "../../Ui/UserAvatar/SingelUser";
+import { DarkTheme, MainBlue, MainGreen, MainGrey } from "../Styles/colors";
+import { BoxLG, BoxMD, Flex } from "../Styles/styles";
+import RankIcon from "../Components/RankIcon/rank-icon";
+import SingleUser from "../Components/UserAvatar/SingelUser";
 
 
 const InputStyle = {

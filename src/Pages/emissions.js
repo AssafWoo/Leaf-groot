@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/tabs';
-import { DarkTheme, MainGrey } from '../../Styles/colors';
-import ElectricityPanel from './electricity-panel';
+import { DarkTheme, MainGrey } from '../Styles/colors';
+import ElectricityPanel from '../Modules/emissions/electricity-panel';
 
 
 

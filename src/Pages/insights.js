@@ -1,5 +1,5 @@
 import React from 'react';
-import { BoxLG, BoxMD, BoxSM, Flex } from '../../Styles/styles';
+import { BoxLG, BoxMD, BoxSM, Flex } from '../Styles/styles';
 
 
 const Insights = () => {
