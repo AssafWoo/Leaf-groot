@@ -8,12 +8,14 @@ import FloatEffect  from './Components/FloatEffect/floatEffect';
 import EmissionsComponent from './Pages/emissions';
 import Settings from './Pages/settings';
 import Subscription from './Pages/subscription';
-import Store from './global-context/global-context';
+import Store from './Context/global/global-context';
 import { useContext, useEffect, useReducer } from 'react';
 import { usePersistedContext, usePersistedReducer } from './Utils/usePersist';
-import reducer from './global-context/reducer';
+import reducer from './Context/global/reducer';
 import Insights from './Pages/insights';
 import Login from './Pages/login';
+import Targets from './Modules/signup-questions/signup-questions';
+import Signup from './Pages/sign-up';
 
 
 
@@ -59,6 +61,7 @@ function App() {
           <BreakLine />
             <Wrapper>
                 <Switch>
+                  <Route expact path="/signup" component={Signup} />
                   <Route expact path="/login" component={Login} />
                   <Route expact path="/insights" component={Insights} />
                   <Route expact path="/plan" component={Subscription} />

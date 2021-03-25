@@ -1,6 +1,6 @@
 import { Button } from "@chakra-ui/button";
 import { useContext } from "react";
-import Store from "../../global-context/global-context";
+import Store from "../../Context/global/global-context";
 import { DarkTheme,MainBlue,MainYellow } from "../../Styles/colors";
 
 const RankIcon = () => {

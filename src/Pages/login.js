@@ -4,12 +4,13 @@ import { Heading } from "@chakra-ui/layout"
 import { DarkTheme, MainBlue, MainGreen } from "../Styles/colors"
 import { BoxLG, BoxSM, Flex } from "../Styles/styles"
 
+// insert logo in the left top and remove the sidebar 
 const Login = () => {
     return (
         <Flex>
             <BoxLG isInvisible="true">
                 <Flex>
-                    <BoxSM isInvisible="true"  />
+                    <BoxSM isInvisible="true"  /> 
                     <BoxSM style={{padding:'1.5rem', background:'transparent'}}>
                         <Heading color='white' fontSize="1.1rem" textAlign="left" pb="2">Username or email address</Heading>
                         <Input border="1px solid white" bg={DarkTheme} mb="5" />

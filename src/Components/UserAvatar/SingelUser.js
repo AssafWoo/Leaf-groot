@@ -12,7 +12,9 @@ const SingleUser = ({desiredPhoto}) => {
         )
     }
     return(
-        <Image alt='user' borderRadius="full" w={10} h={10} src={UserAvatar}  />
+        <>
+            <Image alt='user' borderRadius="full" w={10} h={10} src={UserAvatar}  />
+        </>
     )
 }
 
