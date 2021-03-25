@@ -13,6 +13,7 @@ import { useContext, useEffect, useReducer } from 'react';
 import { usePersistedContext, usePersistedReducer } from './Utils/usePersist';
 import reducer from './global-context/reducer';
 import Insights from './Pages/insights';
+import Login from './Pages/login';
 
 
 
@@ -58,6 +59,7 @@ function App() {
           <BreakLine />
             <Wrapper>
                 <Switch>
+                  <Route expact path="/login" component={Login} />
                   <Route expact path="/insights" component={Insights} />
                   <Route expact path="/plan" component={Subscription} />
                   <Route expact path="/settings" component={Settings} />
