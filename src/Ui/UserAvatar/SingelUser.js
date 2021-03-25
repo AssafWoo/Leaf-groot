@@ -1,7 +1,7 @@
 import UserAvatar from '../../Assets/images/userImage.png';
 import CompanyAvatar from '../../Assets/images/Leaf-logo-white-leaf.png';
 import { MainGreen } from "../../Styles/colors";
-import { ShadowEffect } from '../../Styles/effects';
+import { Image } from '@chakra-ui/image';
 
 
 const SingleUser = ({desiredPhoto}) => {
@@ -12,7 +12,7 @@ const SingleUser = ({desiredPhoto}) => {
         )
     }
     return(
-        <img alt='user' style={{width:'100%', display:'inline-block', boxShadow:ShadowEffect, borderRadius:"20px"}} src={UserAvatar}  />
+        <Image alt='user' borderRadius="full" w={10} h={10} src={UserAvatar}  />
     )
 }
 

@@ -8,6 +8,10 @@ import RankIcon from "../../Ui/RankIcon/rank-icon";
 import SingleUser from "../../Ui/UserAvatar/SingelUser";
 
 
+const InputStyle = {
+    borderRadius:'10px' ,color:'gray.700', border:`1px sold ${MainGrey}`
+}
+
 const Settings = () => {
 
     return(
@@ -24,11 +28,11 @@ const Settings = () => {
                 <Flex>
                     <BoxMD isInvisible="true">
                         <Heading color={MainGreen} size="sm" textAlign="left" marginBottom="1rem">Company's Name</Heading>
-                        <Input bg={DarkTheme} style={{borderRadius:'10px' ,color:'gray.700', border:`1px sold ${MainGrey}`}}  placeholder="Name" />
+                        <Input bg={DarkTheme} style={InputStyle}  placeholder="Name" />
                     </BoxMD>
                     <BoxMD isInvisible="true">
                         <Heading color={MainGreen} size="sm" textAlign="left" marginBottom="1rem">Company's Info</Heading>
-                        <Input bg={DarkTheme} style={{borderRadius:'10px' ,color:'gray.700' ,border:`1px sold ${MainGrey}`}}  placeholder="Name" />
+                        <Input bg={DarkTheme} style={InputStyle}  placeholder="Name" />
                     </BoxMD>
                     <BoxMD isInvisible="true">
                         <Heading color={MainGreen} size="sm" textAlign="left" marginBottom="1rem">Headcount</Heading>
@@ -44,15 +48,15 @@ const Settings = () => {
                 <Flex>
                     <BoxMD isInvisible="true">
                         <Heading color={MainGreen} size="sm" textAlign="left" marginBottom="1rem">Sector/s</Heading>
-                        <Input bg={DarkTheme} style={{borderRadius:'10px' ,color:'gray.700', border:`1px sold ${MainGrey}`}}  placeholder="Sector"  />
+                        <Input bg={DarkTheme} style={InputStyle}  placeholder="Sector"  />
                     </BoxMD>
                     <BoxMD isInvisible="true">
                         <Heading color={MainGreen} size="sm" textAlign="left" marginBottom="1rem">Country/ies</Heading>
-                        <Input bg={DarkTheme} style={{borderRadius:'10px' ,color:'gray.700', border:`1px sold ${MainGrey}`}}  placeholder="Country"  />
+                        <Input bg={DarkTheme} style={InputStyle}  placeholder="Country"  />
                     </BoxMD>
                     <BoxMD isInvisible="true">
                         <Heading color={MainGreen} size="sm" textAlign="left" marginBottom="1rem">State</Heading>
-                        <Input bg={DarkTheme} style={{borderRadius:'10px' ,color:'gray.700', border:`1px sold ${MainGrey}`}}  placeholder="State"  />
+                        <Input bg={DarkTheme} style={InputStyle}  placeholder="State"  />
                     </BoxMD>
                 </Flex>
             </BoxLG>

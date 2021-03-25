@@ -12,7 +12,6 @@ const useRandomColorPick = () => {
     const [choosenColor, setChoosenColor] = useState('')
     const randomNumber = Math.floor(Math.random() * 4) + 1;
     const randomColor = COLORS[randomNumber];
-    console.log(randomColor)
     useEffect(() => {
         setChoosenColor(randomColor);
     },[])

@@ -1,15 +1,12 @@
-import React, { useState } from 'react';
+import React  from 'react';
 import { Heading } from '@chakra-ui/layout';
 import { Flex,BoxMD,BoxSM, BoxLG } from '../../../Styles/styles'
 import SingleUser from '../../../Ui/UserAvatar/SingelUser';
 import { DarkTheme } from '../../../Styles/colors';
-import { Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/menu';
-import { ChevronDownIcon } from '@chakra-ui/icons';
-import { Button } from '@chakra-ui/button';
+import FilterBy from '../../../Ui/Filter/filter_by';
 
 
 const DashboardLeftPart = ({companyName, userName}) => {
-    const [filter, setFilter] = useState('Daily');
 
     return(
         <BoxMD isInvisible={true}>
@@ -27,17 +24,9 @@ const DashboardLeftPart = ({companyName, userName}) => {
                 </Flex>
             </BoxLG>
         </Flex>
-            <Menu>
-                <MenuButton mt="0.4rem" as={Button} rightIcon={<ChevronDownIcon />} float="right">
-                    {filter}
-                </MenuButton>
-                <MenuList>
-                    <MenuItem onClick={() => setFilter('Daily')}>Daily</MenuItem>
-                    <MenuItem onClick={() => setFilter('Weekly')}>Weekly</MenuItem>
-                    <MenuItem onClick={() => setFilter('Monthly')}>Monthly</MenuItem>
-                    <MenuItem onClick={() => setFilter('Yearly')}>Yearly</MenuItem>
-                </MenuList>
-            </Menu>
+           
+        <FilterBy />
+
             <Flex>
                 <BoxMD>left box</BoxMD>
                 <BoxMD>right box</BoxMD>

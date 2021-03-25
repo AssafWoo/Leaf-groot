@@ -5,6 +5,8 @@ import { Input, InputGroup, InputLeftElement, useColorMode } from "@chakra-ui/re
 import { SearchIcon } from '@chakra-ui/icons';
 import useRandomColorPick from '../../Shared-hooks/useRandomColor';
 
+
+// need to build a database for integrations data
 const Integrations = () => {
     const { colorMode, toggleColorMode } = useColorMode();
 

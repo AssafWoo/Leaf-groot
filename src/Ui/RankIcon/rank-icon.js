@@ -8,17 +8,17 @@ const RankIcon = () => {
     const Rank = state.companyDetails.rank;
     if(Rank > 4){
         return(
-            <Button _hover={{background:MainYellow}} bg={MainYellow} margin=".2rem" color={DarkTheme} size="sm" textAlign="left" marginBottom="1rem">Rank: {state.companyDetails.rank}</Button>
+            <Button _hover={{background:MainYellow}} mt=".4rem" bg={MainYellow} color={DarkTheme} size="sm" textAlign="left" marginBottom="1rem">Rank: {state.companyDetails.rank}</Button>
         )
     }
     if(Rank < 4){
         return(
-            <Button _hover={{background:MainBlue}} bg={MainBlue} margin=".2rem" color={DarkTheme} size="sm" textAlign="left" marginBottom="1rem">Rank: {state.companyDetails.rank}</Button>
+            <Button _hover={{background:MainBlue}} mt=".4rem" bg={MainBlue} color={DarkTheme} size="sm" textAlign="left" marginBottom="1rem">Rank: {state.companyDetails.rank}</Button>
         )
     }
     else {
         return(
-            <Button _hover={{background:DarkTheme}} bg={DarkTheme} margin=".2rem" color={DarkTheme} size="sm" textAlign="left" marginBottom="1rem">Rank: {state.companyDetails.rank}</Button>
+            <Button _hover={{background:DarkTheme}} mt=".4rem" bg={DarkTheme} color={DarkTheme} size="sm" textAlign="left" marginBottom="1rem">Rank: {state.companyDetails.rank}</Button>
         )
     }
 }
