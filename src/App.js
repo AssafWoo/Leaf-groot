@@ -16,10 +16,12 @@ import Insights from './Pages/insights';
 import Login from './Pages/login';
 import Targets from './Modules/signup-questions/signup-questions';
 import Signup from './Pages/sign-up';
+import { useState } from 'react';
 
 
 
 function App() {
+  const [isLogged, isIsLogged] = useState(true);
 
   const globalStore = usePersistedContext(useContext(Store), "state");
 
@@ -55,23 +57,32 @@ function App() {
     <Store.Provider value={{state, dispatch}}>
       <Flex>
         <BrowserRouter>
+        {isLogged ? 
+        <>
           <SideBar />
-          <div className="App">
-          <FloatEffect />
-          <BreakLine />
-            <Wrapper>
-                <Switch>
+            <div className="App">
+            <FloatEffect />
+            <BreakLine />
+              <Wrapper>
+                  <Switch>
+                    <Route expact path="/insights" component={Insights} />
+                    <Route expact path="/plan" component={Subscription} />
+                    <Route expact path="/settings" component={Settings} />
+                    <Route expact path="/integrations" component={Integrations} />
+                    <Route expact path="/emissions" component={EmissionsComponent} />
+                    <Route expact path="/" component={Dashboard} />
+                  </Switch>
+              </Wrapper>
+            </div>
+          </> :
+            <Switch>
+                <div className="App">
+                  <FloatEffect />
                   <Route expact path="/signup" component={Signup} />
                   <Route expact path="/login" component={Login} />
-                  <Route expact path="/insights" component={Insights} />
-                  <Route expact path="/plan" component={Subscription} />
-                  <Route expact path="/settings" component={Settings} />
-                  <Route expact path="/integrations" component={Integrations} />
-                  <Route expact path="/emissions" component={EmissionsComponent} />
-                  <Route expact path="/" component={Dashboard} />
-                </Switch>
-            </Wrapper>
-          </div>
+                </div>
+            </Switch> }
+          
         </BrowserRouter>
       </Flex>
     </Store.Provider>

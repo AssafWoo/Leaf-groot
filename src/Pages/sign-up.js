@@ -27,7 +27,7 @@ const Signup = () => {
     return (
         <>
             <Targets questionNumber={questionNumber} handleAnswers={handleAnswers} questions={QUESTIONS} />
-            <Button onClick={handleQuestionNumber} mt="5" w="100%" bg={MainGreen} color="white" colorScheme="green">Lets Roll</Button>        
+            <Button onClick={handleQuestionNumber} mt="5" w="50%" bg={MainGreen} color="white" colorScheme="green">Lets Roll</Button>        
         </>
     )
 }

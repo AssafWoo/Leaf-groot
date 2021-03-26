@@ -10,10 +10,13 @@ const SignupQuestions = ({questionNumber, handleAnswers, questions}) => {
     return (
         <>
             <Flex>
-                <BoxSize flexSize="5">
+                <BoxSize isInvisible="true" flexSize="1" />
+                <BoxSize flexSize="3">
                     <Heading color='white' fontSize="1.1rem" textAlign="left" pb="4">{questions[questionNumber]?.question}</Heading>
                     <p onClick={(e) => handlePick(e.target.name)} name={questions[questionNumber]?.answers} style={{textAlign:'left'}}>{questions[questionNumber]?.answers}</p>
                 </BoxSize>
+                <BoxSize isInvisible="true" flexSize="1" />
+
             </Flex>
   
         </>
