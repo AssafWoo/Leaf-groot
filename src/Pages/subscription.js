@@ -1,7 +1,7 @@
 import { Heading } from "@chakra-ui/layout";
 import { DarkTheme } from "../Styles/colors";
 import { BreakLine, Flex } from "../Styles/styles";
-import { Card } from "../Components/Cards/cards";
+import { Card } from "../Styles/styles";
 
 const Subscription = () => {
     return(

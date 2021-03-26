@@ -1,6 +1,6 @@
 import React  from 'react';
 import { Heading } from '@chakra-ui/layout';
-import { Flex,BoxMD,BoxSM, BoxLG } from '../../Styles/styles'
+import { Flex, BoxSize } from '../../Styles/styles'
 import SingleUser from '../../Components/UserAvatar/SingelUser';
 import { DarkTheme } from '../../Styles/colors';
 import FilterBy from '../../Components/Filter/filter_by';
@@ -9,40 +9,40 @@ import FilterBy from '../../Components/Filter/filter_by';
 const DashboardLeftPart = ({companyName, userName}) => {
 
     return(
-        <BoxMD isInvisible={true}>
+        <BoxSize flexSize="3" isInvisible={true}>
         <Flex>
-            <BoxLG header={true}>
+            <BoxSize flexSize="5" header={true}>
                 <Flex>
-                    <BoxLG isInvisible="true">
+                    <BoxSize flexSize="5" isInvisible="true">
                         <Heading mb="2" textAlign="left" fontWeight="400" color={DarkTheme}>Wazzaa {userName}</Heading>
                         <p style={{textAlign:"left", color:DarkTheme}}>Pleasure to see you again.</p>
                         <p style={{textAlign:"left", color:'white'}}>Lets see how {companyName} is doing!</p>
-                    </BoxLG>
-                    <BoxMD isInvisible={true}>
+                    </BoxSize>
+                    <BoxSize flexSize="3" isInvisible={true}>
                         <SingleUser desiredPhoto="company" />
-                    </BoxMD>
+                    </BoxSize>
                 </Flex>
-            </BoxLG>
+            </BoxSize>
         </Flex>
            
         <FilterBy />
 
             <Flex>
-                <BoxMD>left box</BoxMD>
-                <BoxMD>right box</BoxMD>
+                <BoxSize flexSize="3" >left box</BoxSize>
+                <BoxSize flexSize="3">right box</BoxSize>
             </Flex>
-            <BoxLG>Progress</BoxLG>
+            <BoxSize flexSize="5">Progress</BoxSize>
                 <Flex>
-                    <BoxMD>a</BoxMD>
-                    <BoxMD>a</BoxMD>
-                    <BoxSM>a</BoxSM>
+                    <BoxSize flexSize="3">a</BoxSize>
+                    <BoxSize flexSize="3">a</BoxSize>
+                    <BoxSize flexSize="1">a</BoxSize>
                 </Flex>
                 <Flex>
-                    <BoxMD>a</BoxMD>
-                    <BoxSM>a</BoxSM>
-                    <BoxMD>a</BoxMD>
+                    <BoxSize flexSize="3">a</BoxSize>
+                    <BoxSize flexSize="1">a</BoxSize>
+                    <BoxSize flexSize="3">a</BoxSize>
                 </Flex>
-        </BoxMD>
+        </BoxSize>
     )
 }
 

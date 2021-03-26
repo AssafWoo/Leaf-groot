@@ -1,5 +1,5 @@
 import React from 'react';
-import { BoxLG, BoxMD, BoxSM, Flex } from '../Styles/styles';
+import {BoxSize, Flex } from '../Styles/styles';
 
 
 const Insights = () => {
@@ -7,18 +7,18 @@ const Insights = () => {
     return(
         <>
             <Flex>
-                <BoxSM>Worse / Best Division</BoxSM>
-                <BoxSM>Worse / Best Integration</BoxSM>
-                <BoxMD>Monday Saved</BoxMD>
+                <BoxSize flexSize="1">Worse / Best Division</BoxSize>
+                <BoxSize flexSize="1">Worse / Best Integration</BoxSize>
+                <BoxSize>Monday Saved</BoxSize>
             </Flex>
             <Flex>
-                <BoxSM>Where can we save more</BoxSM>
-                <BoxMD>Rank comppared to other companies</BoxMD>
-                <BoxMD>Taxes return</BoxMD>
+                <BoxSize flexSize="1">Where can we save more</BoxSize>
+                <BoxSize flexSize="3">Rank comppared to other companies</BoxSize>
+                <BoxSize flexSize="3">Taxes return</BoxSize>
             </Flex>
             <Flex>
-                <BoxLG>Trees / offsets planted / contributed to</BoxLG>
-                <BoxSM>Electricity saved since</BoxSM>
+                <BoxSize flexSize="5">Trees / offsets planted / contributed to</BoxSize>
+                <BoxSize flexSize="1">Electricity saved since</BoxSize>
             </Flex>
         </>
     )

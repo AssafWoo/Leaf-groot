@@ -2,7 +2,7 @@ import { Button } from "@chakra-ui/button";
 import { Input } from "@chakra-ui/input";
 import { Heading } from "@chakra-ui/layout";
 import { MainGreen } from "../../Styles/colors";
-import { BoxLG, BoxMD, Flex, BoxSM } from "../../Styles/styles";
+import { BoxSize, Flex } from "../../Styles/styles";
 import FilterBy from "../../Components/Filter/filter_by";
 
 
@@ -10,31 +10,31 @@ const ElectricityPanel = () => {
 
     return(
         <Flex>
-            <BoxMD isInvisible="true">
+            <BoxSize flexSize="3" isInvisible="true">
                 <Flex>
-                    <BoxMD isInvisible="true">
+                    <BoxSize flexSize="3" isInvisible="true">
                         <Heading color={MainGreen} size="sm" textAlign="left" marginBottom="1rem">Icon and input name</Heading>
                         <Input />
-                    </BoxMD>
-                    <BoxMD isInvisible="true">
+                    </BoxSize>
+                    <BoxSize flexSize="3" isInvisible="true">
                         <Heading color={MainGreen} size="sm" textAlign="left" marginBottom="1rem">Icon and input name</Heading>
                         <Input />
-                    </BoxMD>
+                    </BoxSize>
                 </Flex>
-                <BoxMD isInvisible="true">
+                <BoxSize flexSize="3" isInvisible="true">
                 <Button bg={MainGreen} colorScheme="white">GOOO</Button>
-                </BoxMD>
-            </BoxMD>
-            <BoxMD isInvisible="true">
+                </BoxSize>
+            </BoxSize>
+            <BoxSize flexSize="3" isInvisible="true">
                 <Flex>
-                    <BoxLG isInvisible="true">
+                    <BoxSize flexSize="5" isInvisible="true">
                         Chart
-                    </BoxLG>
-                    <BoxSM isInvisible="true">
+                    </BoxSize>
+                    <BoxSize flexSize="1" isInvisible="true">
                     <FilterBy />
-                    </BoxSM>
+                    </BoxSize >
                 </Flex>
-            </BoxMD>
+            </BoxSize>
         </Flex>
     )
 }

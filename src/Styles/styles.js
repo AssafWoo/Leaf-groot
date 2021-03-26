@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import {DarkTheme, MainGreen, MainGrey} from './colors';
+import {ShadowEffect} from './effects';
 
 export const Flex = styled.div`
     display:flex;
@@ -31,31 +32,24 @@ export const internalBoxStracture = `
 `
 
 
-
 // Boxes
-export const BoxMD = styled.div`
-    flex:3;
-    ${internalBoxStracture}
+// SM - flex:1
+// MD - flex:3
+// LG - flex:5
+
+export const BoxSize = styled.div`
+    flex:${props => props.flexSize};
     background: ${props => props.isInvisible ? '' : DarkTheme };
-    border: ${props => props.isInvisible ? '' : `1px solid ${MainGrey}` };
-
-
-`
-
-export const BoxLG = styled.div`
-    flex:5;
     ${internalBoxStracture}
-    background: ${props => props.isInvisible ? '' : DarkTheme };
     border: ${props => props.isInvisible ? '' : `1px solid ${MainGrey}` };
     ${props => props.header ? {background:MainGreen, color:DarkTheme, position:'relative', border:'none'} : '' };
 
 `
 
-export const BoxSM = styled.div`
-    flex:1;
-    ${internalBoxStracture}
-    background: ${props => props.isInvisible ? '' : DarkTheme };
-    border: ${props => props.isInvisible ? '' : `1px solid ${MainGrey}` };
-
+export const Card = styled.div`
+    flex:2;
+    ${internalBoxStracture};
+    border:1px solid ${MainGrey};
+    background: ${props => props.isInvisible ? '' : `1px solid ${DarkTheme}` };
+    ${ShadowEffect}
 `
-
