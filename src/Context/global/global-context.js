@@ -2,36 +2,37 @@ import React from 'react';
 
 const emissionsInitialData = [
     {
-        KWH:Number,
-        Gasoline:Number,
+        KWH:1,
+        Gasoline:1,
     }
 ]
 
 const userDetails = {
-        name:String,
-        image:String,
-        role:String,
-        email:String,
-        auth:String,
-        loggedIn:Boolean
+        name:'',
+        image:'',
+        role:'',
+        email:'',
+        auth:'',
+        loggedIn:false
 }
 
 const companyDetails = {
-    name:String,
-    rank:String,
-    numberOfWorkers:Number,
-    street:String,
-    city:String,
-    state:String,
-    image:String,
-
+    name:'Leaf',
+    rank:1,
+    numberOfWorkers:100,
+    street:'Baker',
+    city:'NYC',
+    states:['N/A'],
+    image:'',
+    countries:['ISRAEL','USA'],
+    sectors:['SaaS'],
 }
 
 
 const Store = React.createContext({
         company:companyDetails,
-        userDetails:userDetails,
-        emissionsDetails:emissionsInitialData,
+        user:userDetails,
+        emissions:emissionsInitialData,
 });
 
 export default Store;

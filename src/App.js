@@ -21,7 +21,7 @@ import { useState } from 'react';
 
 
 function App() {
-  const [isLogged, isIsLogged] = useState(true);
+  const [isLogged, isIsLogged] = useState(true); // is the user logged demo
 
   const globalStore = usePersistedContext(useContext(Store), "state");
 
@@ -29,29 +29,12 @@ function App() {
     useReducer(reducer, globalStore),
     "state" // The localStorage key
   );
-  
+
+
   useEffect(() => {
-    dispatch({type:'PLAYING_AROUND', payload:
-    {
-      companyDetails:{
-        name:'Leaf',
-        rank:2,
-        numberOfWorkers:100, 
-        street:'baker',
-        city:'NY', 
-        state:'N/A' 
-      },
-      userDetails:
-      {
-        name:'Assaf',
-        role:'CEO', 
-        email:'Assaf@', 
-        auth:'ALL', 
-        loggedIn:true
-      },
-      emissionsDetails:{KHW:150, Gasoline:123}, 
-  }})
-  }, [])
+    dispatch({type:'USER_CHANGE', payload:{name:'Assaf', role:'CEO', email:'@', auth:'ALL', loggedIn:true} })
+  },[])
+  
 
   return (
     <Store.Provider value={{state, dispatch}}>

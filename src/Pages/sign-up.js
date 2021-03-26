@@ -1,5 +1,6 @@
 import { Button } from "@chakra-ui/button";
 import { Heading } from "@chakra-ui/layout";
+import { useCallback } from "react";
 import { useState } from "react";
 import { QUESTIONS } from "../Mocks/target-questions";
 import Targets from "../Modules/signup-questions/signup-questions"
@@ -9,13 +10,13 @@ const Signup = () => {
     const [questionNumber, setQuestionNumber] = useState(0);
     const [answers, setAnswers] = useState([]);
 
-    const handleAnswers = (answer) => {
+    const handleAnswers = useCallback(answer => {
         setAnswers(answers => [...answers, answer])
-    }
+    },[answers]);
 
-    const handleQuestionNumber = () => {
+    const handleQuestionNumber = useCallback(() => {
         setQuestionNumber(questionNumber => questionNumber + 1) 
-    }
+    },[questionNumber]);
 
     if(questionNumber >= QUESTIONS.length) {
         // send the answers to the server

@@ -1,0 +1,1 @@
+// logout hook to delete information from the client and send a request to the server

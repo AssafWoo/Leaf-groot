@@ -2,46 +2,52 @@ export default function reducer(state, action) {
     switch (action.type) {
         case 'PLAYING_AROUND':
             return{
-                companyDetails: {
-                    name:action.payload.companyDetails.name,
-                    rank:action.payload.companyDetails.rank,
-                    numberOfWorkers:action.payload.companyDetails.numberOfWorkers,
-                    street:action.payload.companyDetails.street,
-                    city:action.payload.companyDetails.city,
-                    state:action.payload.companyDetails.state
+                company: {
+                    name:action.payload.company.name,
+                    rank:action.payload.company.rank,
+                    numberOfWorkers:action.payload.company.numberOfWorkers,
+                    street:action.payload.company.street,
+                    city:action.payload.company.city,
+                    states:[...state.company.states, action.payload.company.states],
+                    image: action.payload.company.image,
+                    countries: [...state.company.countries, action.payload.company.countries],
+                    sectors:[...state.company.sectors, action.payload.company.sectors]
                 },
-                userDetails:{
-                    name:action.payload.userDetails.name,
-                    role:action.payload.userDetails.role,
-                    email:action.payload.userDetails.email,
-                    auth:action.payload.userDetails.auth,
-                    loggedIn:action.payload.userDetails.loggedIn,
+                user:{
+                    name:action.payload.user.name,
+                    image:action.payload.user.image,
+                    role:action.payload.user.role,
+                    email:action.payload.user.email,
+                    auth:action.payload.user.auth,
+                    loggedIn:action.payload.user.loggedIn,
+
                 },
-                emissionsDetails:{
-                    KWH:action.payload.emissionsDetails.KWH,
-                    Gasoline:action.payload.emissionsDetails.Gasoline,
+                emissions:{
+                    KWH:action.payload.emissions.KWH,
+                    Gasoline:action.payload.emissions.Gasoline,
+
                 },
 
             }
         case 'USER_CHANGE':
             return {
                 ...state,
-                userDetails:{
-                    name:action.payload.userName.name,
-                    role:action.payload.userName.role,
-                    email:action.payload.userName.email,
-                    auth:action.payload.userName.auth.Gasoline,
-                    loggedIn:action.payload.userName.loggedIn,
-
+                user:{
+                    name:action.payload.name,
+                    role:action.payload.role,
+                    email:action.payload.email,
+                    auth:action.payload.auth.Gasoline,
+                    loggedIn:action.payload.loggedIn,
                 },
             }
 
         case 'EMISSIONS_CHANGE':
             return {
                 ...state,
-                emissionsDetails:{
+                emissions:{
                     KWH:action.payload.emissions.KWH,
                     Gasoline:action.payload.emissions.Gasoline,
+
                 },
             }
       default:

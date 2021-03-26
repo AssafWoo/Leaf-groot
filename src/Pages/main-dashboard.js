@@ -10,7 +10,7 @@ const Dashboard = () => {
     return(
         <>
         <Flex>
-            <DashboardLeftPart companyName={state.companyDetails.name} userName={state.userDetails.name} />
+            <DashboardLeftPart companyName={state.company.name} userName={state.user.name} />
             <DashboardRightPart />
         </Flex>
         
