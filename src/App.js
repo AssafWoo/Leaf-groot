@@ -40,6 +40,7 @@ function App() {
     <Store.Provider value={{state, dispatch}}>
       <Flex>
         <BrowserRouter>
+        <div className="Wrapper">
         {isLogged ? 
         <>
           <SideBar />
@@ -65,7 +66,7 @@ function App() {
                   <Route expact path="/login" component={Login} />
                 </div>
             </Switch> }
-          
+            </div>
         </BrowserRouter>
       </Flex>
     </Store.Provider>

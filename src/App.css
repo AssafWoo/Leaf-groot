@@ -1,6 +1,13 @@
 .App {
   text-align: center;
-  width:90%;
   margin:1rem auto;
-  flex:2 0 85%;
+  grid-area:'content'
+}
+.Wrapper {
+  display:grid;
+  grid-template-columns: 140px 1fr 0px;
+  grid-template-areas: "sidebar content";
+  grid-template-rows: auto 1fr auto;
+  grid-gap:60px;
+  height:100vh;
 }

@@ -12,7 +12,7 @@ export const SideBarWrapper = styled.div`
   background-color: ${MainGreen};
   overflow-x: hidden;
   padding-top: 20px;
-  flex:2 0 5%;
+  grid-area:'sidebar'
 `
 export const ItemsNav = styled.div`
     margin-top:.1rem;
