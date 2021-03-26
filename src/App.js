@@ -14,7 +14,6 @@ import { usePersistedContext, usePersistedReducer } from './Utils/usePersist';
 import reducer from './Context/global/reducer';
 import Insights from './Pages/insights';
 import Login from './Pages/login';
-import Targets from './Modules/signup-questions/signup-questions';
 import Signup from './Pages/sign-up';
 import { useState } from 'react';
 
@@ -38,16 +37,14 @@ function App() {
 
   return (
     <Store.Provider value={{state, dispatch}}>
-      <Flex>
         <BrowserRouter>
-        <div className="Wrapper">
         {isLogged ? 
         <>
+        <div className="Wrapper">
           <SideBar />
             <div className="App">
             <FloatEffect />
             <BreakLine />
-              <Wrapper>
                   <Switch>
                     <Route expact path="/insights" component={Insights} />
                     <Route expact path="/plan" component={Subscription} />
@@ -56,8 +53,8 @@ function App() {
                     <Route expact path="/emissions" component={EmissionsComponent} />
                     <Route expact path="/" component={Dashboard} />
                   </Switch>
-              </Wrapper>
             </div>
+          </div>
           </> :
             <Switch>
                 <div className="App">
@@ -66,9 +63,7 @@ function App() {
                   <Route expact path="/login" component={Login} />
                 </div>
             </Switch> }
-            </div>
         </BrowserRouter>
-      </Flex>
     </Store.Provider>
 
   );

@@ -12,10 +12,6 @@ export const Flex = styled.div`
     flex-wrap:wrap;
 `
 
-export const Wrapper = styled.div`
-    width:80%;
-    margin:auto;
-`
 
 export const BreakLine = styled.div`
     margin:2.5rem 0;

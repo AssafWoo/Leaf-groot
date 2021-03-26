@@ -11,7 +11,7 @@ const DashboardRightPart = () => {
     const { colorMode, toggleColorMode } = useColorMode();
 
     return(
-        <BoxSize flexSize="1" isInvisible="true">
+        <BoxSize flexSize="1" isInvisible="true" style={{position:'sticky', top:'1rem', height:'fit-content'}}>
             <Flex>
                 <BoxSize flexSize="1" isInvisible="true"><BellIcon cursor="pointer" w={7} h={7} color={colorMode === 'dark' ? 'white' : DarkTheme} /></BoxSize>
                 <BoxSize flexSize="1" isInvisible="true">

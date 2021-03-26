@@ -3,7 +3,7 @@ import {DarkTheme, MainGreen} from '../../Styles/colors';
 import { TransitionEffect } from '../../Styles/effects';
 
 export const SideBarWrapper = styled.div`
-  height: 100vh;
+  height: 95vh;
   position:sticky;
   border-radius:20px;
   z-index: 2;
@@ -12,7 +12,7 @@ export const SideBarWrapper = styled.div`
   background-color: ${MainGreen};
   overflow-x: hidden;
   padding-top: 20px;
-  grid-area:'sidebar'
+  grid-area:sidebar;
 `
 export const ItemsNav = styled.div`
     margin-top:.1rem;

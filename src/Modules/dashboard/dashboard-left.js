@@ -9,7 +9,7 @@ import FilterBy from '../../Components/Filter/filter_by';
 const DashboardLeftPart = ({companyName, userName}) => {
 
     return(
-        <BoxSize flexSize="3" isInvisible={true}>
+        <BoxSize flexSize="3" isInvisible={true} > 
         <Flex>
             <BoxSize flexSize="5" header={true}>
                 <Flex>
@@ -42,6 +42,12 @@ const DashboardLeftPart = ({companyName, userName}) => {
                     <BoxSize flexSize="1" style={{background:MainGrey, color:DarkTheme}}>a</BoxSize>
                     <BoxSize flexSize="3">a</BoxSize>
                 </Flex>
+                <Flex>
+                    <BoxSize flexSize="3">a</BoxSize>
+                    <BoxSize flexSize="1" style={{background:MainGrey, color:DarkTheme}}>a</BoxSize>
+                    <BoxSize flexSize="3">a</BoxSize>
+                </Flex>
+                
         </BoxSize>
     )
 }
