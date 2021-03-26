@@ -2,10 +2,11 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import { Flex, LeafIcon } from '../../Styles/styles';
 import { ItemsNav, SideBarWrapper, Item } from './style';
-import LeafLogo from '../../Assets/images/Leaf-logo-white-leaf.png';
+import LeafLogo from '../../Assets/images/White-leaf.png';
 import { useState } from 'react';
 import SubHeader from './sub-header';
 import { SettingsIcon } from '@chakra-ui/icons';
+import FloatEffect from '../FloatEffect/floatEffect';
 
 
 const MenuNames = [
@@ -39,7 +40,7 @@ const MenuNames = [
     },
 
     {
-        name:<SettingsIcon h={6} w={6} />,
+        name:<SettingsIcon h={5} w={5} />,
         link:'/settings',
         children:[{name:'User',
         link:'/settings/user',},
@@ -59,6 +60,7 @@ const SideBar = () => {
 
     return(
         <SideBarWrapper>
+            <FloatEffect size="sm" />
             <ItemsNav>
                 <Link to="/">
                     <LeafIcon src={LeafLogo} />

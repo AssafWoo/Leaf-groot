@@ -43,7 +43,7 @@ function App() {
         <div className="Wrapper">
           <SideBar />
             <div className="App">
-            <FloatEffect />
+            <FloatEffect size="lg" />
             <BreakLine />
                   <Switch>
                     <Route expact path="/insights" component={Insights} />
@@ -58,7 +58,7 @@ function App() {
           </> :
             <Switch>
                 <div className="App">
-                  <FloatEffect />
+                  <FloatEffect size="lg" />
                   <Route expact path="/signup" component={Signup} />
                   <Route expact path="/login" component={Login} />
                 </div>

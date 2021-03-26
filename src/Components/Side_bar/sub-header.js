@@ -4,17 +4,17 @@ import { AccordionPanel } from "@chakra-ui/accordion"
 import { AccordionItem } from "@chakra-ui/accordion"
 import { Accordion } from "@chakra-ui/accordion"
 import { Box } from '@chakra-ui/layout';
-import { MainGreen } from '../../Styles/colors';
+import { DarkerTheme } from '../../Styles/colors';
 
 const SubHeader = ({header, children, handleClick, activeItem}) => {
 
     return(
         <Accordion allowMultiple margin="0">
-            <AccordionItem  border='none' bg={MainGreen}>
-                <AccordionButton _hover={{background:MainGreen}}>
-                    <Box flex="1" textAlign="center">
+            <AccordionItem  border='none' bg={DarkerTheme}>
+                <AccordionButton _hover={{background:DarkerTheme}} >
+                    <Box flex="1" textAlign="left" paddingLeft='.5rem'>
                     {header}
-                    <AccordionIcon position="absolute" right="2rem" />
+                    <AccordionIcon position="absolute" left="2.5rem" />
                     </Box>
                 </AccordionButton>
                 {children.map((value, index) => (

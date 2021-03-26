@@ -25,8 +25,8 @@ position:relative;
 
 .circles li:nth-child(1) {
 	left: 25%;
-	width: 90px;
-	height: 90px;
+	width: 15px;
+	height: 15px;
 	animation-delay: 0s;
 	animation-duration: 20s;
 	border-radius: 50%;
@@ -36,8 +36,8 @@ position:relative;
 
 .circles li:nth-child(2) {
 	left: 10%;
-	width: 25px;
-	height: 25px;
+	width: 20px;
+	height: 20px;
 	animation-delay: 0s;
 	animation-duration: 25s;
 	border-radius: 50%;
@@ -124,8 +124,8 @@ position:relative;
 
 .circles li:nth-child(10) {
 	left: 85%;
-	width: 50px;
-	height: 50px;
+	width: 90px;
+	height: 90px;
 	animation-delay: 0s;
 	animation-duration: 45s;
 	border-radius: 50%;

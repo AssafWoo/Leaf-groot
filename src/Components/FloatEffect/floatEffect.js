@@ -1,8 +1,9 @@
 import { CirclesEffect } from './style';
 
-const FloatEffect = () => {
-  return (
+const FloatEffect = ({size}) => {
 
+  if(size === 'lg') {
+    return (
         <CirclesEffect>
             <ul className='circles'>
                 <li></li>
@@ -15,6 +16,16 @@ const FloatEffect = () => {
                 <li></li>
                 <li></li>
                 <li></li>
+            </ul>
+      </CirclesEffect>
+    )
+  }
+  return (
+        <CirclesEffect>
+            <ul className='circles'>
+                <li></li>
+                <li></li>
+
             </ul>
         </CirclesEffect>
 

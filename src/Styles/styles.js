@@ -22,6 +22,7 @@ export const LeafIcon = styled.img`
     width:90%;
     display:inline-block;
     margin-bottom:1rem;
+    border-radius:15px;
     
 `
 

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ShadowEffect = `
-    box-shadow: 10px 10px 18px -11px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 14px -12px rgba(0,0,0,0.75);
 
 `
 export const Ripple = `
