@@ -6,13 +6,21 @@ export const SideBarWrapper = styled.div`
   height: 100vh;
   position:sticky;
   z-index: 2;
+  margin:.4rem;
   background-color: ${DarkerTheme};
   overflow-x: hidden;
   padding-top: 20px;
-  border-top-right-radius:15px;
+  border-radius:15px;
   grid-area:sidebar;
   ${ShadowEffect}
 `
+
+export const LeftNav = styled.div`
+    grid-area:leftsidebar;
+    height: 100vh;
+    position:sticky;
+`
+
 export const ItemsNav = styled.div`
     margin-top:.1rem;
     text-align:left;

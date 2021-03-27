@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {DarkTheme, MainGreen, MainGrey} from './colors';
+import {DarkerTheme, DarkTheme, MainGreen, MainGrey} from './colors';
 import {ShadowEffect} from './effects';
 
 
@@ -41,9 +41,8 @@ export const internalBoxStracture = `
 
 export const BoxSize = styled.div`
     flex:${props => props.flexSize};
-    background: ${props => props.isInvisible ? '' : DarkTheme };
+    background: ${props => props.isInvisible ? '' : DarkerTheme };
     ${internalBoxStracture}
-    border: ${props => props.isInvisible ? '' : `1px solid ${MainGrey}` };
     ${props => props.header ? {background:MainGreen, color:DarkTheme, position:'relative', border:'none'} : '' };
 
 `

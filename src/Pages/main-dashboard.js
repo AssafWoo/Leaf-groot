@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { Flex  } from '../Styles/styles'
-import DashboardLeftPart from '../Modules/dashboard/dashboard-left';
-import DashboardRightPart from '../Modules/dashboard/dashboard-right';
+import DashboardContent from '../Modules/dashboard/dashboard-content';
 import Store from '../Context/global/global-context';
 
 
@@ -10,8 +9,7 @@ const Dashboard = () => {
     return(
         <>
         <Flex>
-            <DashboardLeftPart companyName={state.company.name} userName={state.user.name} />
-            <DashboardRightPart />
+            <DashboardContent companyName={state.company.name} userName={state.user.name} />
         </Flex>
         
         </>

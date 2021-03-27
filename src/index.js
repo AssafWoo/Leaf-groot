@@ -6,13 +6,11 @@ import reportWebVitals from './reportWebVitals';
 import theme from './Components/Theme/theme';
 import { ChakraProvider } from '@chakra-ui/react';
 import { ThemeProvider } from 'styled-components';
-import ThemeButton from './Components/Theme/theme_button';
 
 ReactDOM.render(
   <>
     <ThemeProvider theme={theme}>
       <ChakraProvider vider theme={theme}>
-          <ThemeButton />
             <App />
       </ChakraProvider>
     </ThemeProvider>

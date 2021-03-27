@@ -11,10 +11,10 @@ const SubHeader = ({header, children, handleClick, activeItem}) => {
     return(
         <Accordion allowMultiple margin="0">
             <AccordionItem  border='none' bg={DarkerTheme}>
-                <AccordionButton _hover={{background:DarkerTheme}} >
+                <AccordionButton _hover={{background:DarkerTheme}} paddingLeft='0' >
                     <Box flex="1" textAlign="left" paddingLeft='.5rem'>
                     {header}
-                    <AccordionIcon position="absolute" left="2.5rem" />
+                    <AccordionIcon position="absolute" left="3rem" />
                     </Box>
                 </AccordionButton>
                 {children.map((value, index) => (
