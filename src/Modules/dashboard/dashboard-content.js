@@ -9,46 +9,45 @@ import {useGetTime} from '../../Utils/useGetTime';
 const DashboardContent = ({companyName, userName}) => {
     const CurrentTime = useGetTime();
     return(
-        <BoxSize flexSize="3" isInvisible={true} > 
-        <Flex>
-            <BoxSize flexSize="5" header={true}>
-                <Flex>
-                    <BoxSize flexSize="5" isInvisible="true">
-                        <Heading mb="2" textAlign="left" fontWeight="500" color={DarkerTheme}>{CurrentTime} {userName}</Heading>
-                        <p style={{textAlign:"left", color:DarkerTheme}}>Pleasure to see you again.</p>
-                        <p style={{textAlign:"left", color:'white'}}>Lets see how {companyName} is doing!</p>
-                    </BoxSize>
-                    <BoxSize flexSize="3" isInvisible={true}>
-                        <SingleUser desiredPhoto="company" />
-                    </BoxSize>
-                </Flex>
-            </BoxSize>
-        </Flex>
-           
-        <FilterBy />
+        <>
 
+            <BoxSize flexSize="5" isInvisible={true} > 
             <Flex>
-                <BoxSize flexSize="3" >left box</BoxSize>
-                <BoxSize flexSize="3">right box</BoxSize>
+                <BoxSize flexSize="3" isInvisible="true">
+                    <Heading fontSize="2rem" mb="2" textAlign="left" fontWeight="300" color='white'>Howdy <b>{userName}</b>, {CurrentTime}</Heading>
+                    <p style={{textAlign:"left", color:'white'}}>Lets change the world!</p>
+                    
+                </BoxSize>
+                <BoxSize flexSize="3" isInvisible={true} style={{textAlign:'right', padding:'0'}}>
+                    <SingleUser desiredPhoto="company" />
+                </BoxSize>
             </Flex>
-            <BoxSize flexSize="5">Progress</BoxSize>
+            
+            <FilterBy />
+
                 <Flex>
-                    <BoxSize flexSize="3" style={{background:MainGrey, color:DarkerTheme}}>a</BoxSize>
-                    <BoxSize flexSize="3">a</BoxSize>
-                    <BoxSize flexSize="1">a</BoxSize>
+                    <BoxSize flexSize="3" >left box</BoxSize>
+                    <BoxSize flexSize="3">right box</BoxSize>
                 </Flex>
-                <Flex>
-                    <BoxSize flexSize="3">a</BoxSize>
-                    <BoxSize flexSize="1" style={{background:MainGrey, color:DarkerTheme}}>a</BoxSize>
-                    <BoxSize flexSize="3">a</BoxSize>
-                </Flex>
-                <Flex>
-                    <BoxSize flexSize="3">a</BoxSize>
-                    <BoxSize flexSize="1" style={{background:MainGrey, color:DarkerTheme}}>a</BoxSize>
-                    <BoxSize flexSize="3">a</BoxSize>
-                </Flex>
-                
-        </BoxSize>
+                <BoxSize flexSize="5">Progress</BoxSize>
+                    <Flex>
+                        <BoxSize flexSize="3" style={{background:MainGrey, color:DarkerTheme}}>a</BoxSize>
+                        <BoxSize flexSize="3">a</BoxSize>
+                        <BoxSize flexSize="1">a</BoxSize>
+                    </Flex>
+                    <Flex>
+                        <BoxSize flexSize="3">a</BoxSize>
+                        <BoxSize flexSize="1">a</BoxSize>
+                        <BoxSize flexSize="3">a</BoxSize>
+                    </Flex>
+                    <Flex>
+                        <BoxSize flexSize="3">a</BoxSize>
+                        <BoxSize flexSize="1" style={{background:MainGrey, color:DarkerTheme}}>a</BoxSize>
+                        <BoxSize flexSize="3">a</BoxSize>
+                    </Flex>
+                    
+            </BoxSize>
+        </>
     )
 }
 

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {DarkerTheme, DarkTheme, MainGreen, MainGrey} from './colors';
+import {DarkTheme, MainGreen, MainGrey} from './colors';
 import {ShadowEffect} from './effects';
 
 
@@ -17,13 +17,10 @@ export const BreakLine = styled.div`
     margin:2.5rem 0;
 `
 
-
 export const LeafIcon = styled.img`
-    width:90%;
-    display:inline-block;
-    margin-bottom:1rem;
-    border-radius:15px;
-    
+    width:25%;
+    display:block;
+    margin:auto;
 `
 
 export const internalBoxStracture = `
@@ -33,7 +30,6 @@ export const internalBoxStracture = `
     margin:.4rem;
 `
 
-
 // Boxes
 // SM - flex:1
 // MD - flex:3
@@ -41,7 +37,7 @@ export const internalBoxStracture = `
 
 export const BoxSize = styled.div`
     flex:${props => props.flexSize};
-    background: ${props => props.isInvisible ? '' : DarkerTheme };
+    background: ${props => props.isInvisible ? '' : DarkTheme };
     ${internalBoxStracture}
     ${props => props.header ? {background:MainGreen, color:DarkTheme, position:'relative', border:'none'} : '' };
 

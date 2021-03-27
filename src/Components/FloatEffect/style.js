@@ -58,8 +58,8 @@ position:relative;
 
 .circles li:nth-child(4) {
 	left: 40%;
-	width: 60px;
-	height: 60px;
+	width: 45px;
+	height: 45px;
 	animation-delay: 0s;
 	animation-duration: 15s;
 	border-radius: 50%;
@@ -80,8 +80,8 @@ position:relative;
 
 .circles li:nth-child(6) {
 	left: 75%;
-	width: 100px;
-	height: 100px;
+	width: 45px;
+	height: 45px;
 	animation-delay: 0s;
 	animation-duration: 25s;
 	border-radius: 50%;
@@ -124,8 +124,8 @@ position:relative;
 
 .circles li:nth-child(10) {
 	left: 85%;
-	width: 90px;
-	height: 90px;
+	width: 35px;
+	height: 35px;
 	animation-delay: 0s;
 	animation-duration: 45s;
 	border-radius: 50%;

@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import { Flex, LeafIcon } from '../../Styles/styles';
 import { ItemsNav, SideBarWrapper, Item } from './style';
-import LeafLogo from '../../Assets/images/White-leaf.png';
+import LeafLogo from '../../Assets/images/leaf-green.png';
 import { useState } from 'react';
 import SubHeader from './sub-header';
 import { SettingsIcon } from '@chakra-ui/icons';
@@ -54,7 +54,6 @@ const SideBar = () => {
     const [activeItem, setActiveItem] = useState('');
     
     const handleClick = ({name, children}) => {
-        console.log(name)
         setActiveItem(name)
     }
 

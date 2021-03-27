@@ -1,16 +1,15 @@
 import styled from 'styled-components';
-import {Black, DarkerTheme} from '../../Styles/colors';
+import {Black, DarkTheme} from '../../Styles/colors';
 import { ShadowEffect, TransitionEffect } from '../../Styles/effects';
 
 export const SideBarWrapper = styled.div`
   height: 100vh;
   position:sticky;
   z-index: 2;
-  margin:.4rem;
-  background-color: ${DarkerTheme};
+  background-color: ${DarkTheme};
   overflow-x: hidden;
   padding-top: 20px;
-  border-radius:15px;
+  border-top-right-radius:15px;
   grid-area:sidebar;
   ${ShadowEffect}
 `
@@ -19,6 +18,10 @@ export const LeftNav = styled.div`
     grid-area:leftsidebar;
     height: 100vh;
     position:sticky;
+    background-color:${DarkTheme};
+    border-top-left-radius:15px;
+    ${ShadowEffect}
+
 `
 
 export const ItemsNav = styled.div`

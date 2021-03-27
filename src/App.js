@@ -3,7 +3,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Dashboard from './Pages/main-dashboard';
 import {BreakLine} from './Styles/styles';
 import Integrations from './Pages/integrations';
-import SideBar from './Components/Side_bar/right-sidebar';
+import SideBar from './Components/Side_bar/left-side-bar';
 import FloatEffect  from './Components/FloatEffect/floatEffect';
 import EmissionsComponent from './Pages/emissions';
 import Settings from './Pages/settings';
@@ -16,12 +16,11 @@ import Insights from './Pages/insights';
 import Login from './Pages/login';
 import Signup from './Pages/sign-up';
 import { useState } from 'react';
-import { LeftNav } from './Components/Side_bar/style';
-import LeftSideBar from './Components/Side_bar/left-sidebar';
+import RightSideBar from './Components/Side_bar/right-side-bar';
 
 
 function App() {
-  const [isLogged, isIsLogged] = useState(true); // is the user logged demo
+  const [isLogged, setIsLogged] = useState(true); // is the user logged demo
 
   const globalStore = usePersistedContext(useContext(Store), "state");
 
@@ -55,7 +54,7 @@ function App() {
                     <Route expact path="/" component={Dashboard} />
                   </Switch>
             </div>
-            <LeftSideBar />
+            <RightSideBar />
           </div>
           </> :
             <Switch>
