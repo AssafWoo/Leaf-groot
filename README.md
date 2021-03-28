@@ -1,5 +1,7 @@
 # Leaf's aiming to change the world
 
+# Leaf-groot = React client
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
