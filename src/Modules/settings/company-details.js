@@ -31,9 +31,8 @@ const CompanyDetails = ({companyDetails}) => {
     return (
         <>
             <Flex style={{marginBottom:'2rem'}}>
-                <BoxSize flexSize="5" style={{background:MainGreen}}><SingleUser desiredPhoto="company" />
+                <BoxSize flexSize="3" isInvisible="true"><SingleUser desiredPhoto="company" />
                 </BoxSize>
-                <RankIcon />
                 <Button margin=".4rem" bg={MainGreen} colorScheme="white" variant="solid">Change Picture</Button>
                 <BoxSize flexSize="5" isInvisible="true"></BoxSize>
             </Flex>

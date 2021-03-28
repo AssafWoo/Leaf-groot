@@ -6,7 +6,6 @@
   display:grid;
   grid-template-columns: 160px auto 100px;
   grid-template-areas: "sidebar content leftsidebar";
-  grid-template-rows: auto auto auto;
   grid-gap:170px;
   height:100vh;
 }

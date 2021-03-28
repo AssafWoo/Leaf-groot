@@ -3,11 +3,9 @@ import {Black, DarkTheme} from '../../Styles/colors';
 import { ShadowEffect, TransitionEffect } from '../../Styles/effects';
 
 export const SideBarWrapper = styled.div`
-  height: 100vh;
   position:sticky;
   z-index: 2;
   background-color: ${DarkTheme};
-  overflow-x: hidden;
   padding-top: 20px;
   border-top-right-radius:15px;
   grid-area:sidebar;
@@ -16,7 +14,6 @@ export const SideBarWrapper = styled.div`
 
 export const LeftNav = styled.div`
     grid-area:leftsidebar;
-    height: 100vh;
     position:sticky;
     background-color:${DarkTheme};
     border-top-left-radius:15px;
@@ -27,6 +24,8 @@ export const LeftNav = styled.div`
 export const ItemsNav = styled.div`
     margin-top:.1rem;
     text-align:left;
+    position:sticky;
+    height:fit-content;
     span {
       margin:.4rem;
     }

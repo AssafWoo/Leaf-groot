@@ -30,6 +30,44 @@ const CompanyTargets = () => {
                 Array
             </BoxSize>
         </Flex>
+        <Flex>
+            <BoxSize flexSize="3" isInvisible="true">
+                <Heading color={MainGreen} size="sm" textAlign="left" marginBottom="1rem">Usage purpose</Heading>
+                Array
+            </BoxSize>
+            <BoxSize flexSize="3" isInvisible="true">
+                <Heading color={MainGreen} size="sm" textAlign="left" marginBottom="1rem">Employees engagment</Heading>
+                <RadioGroup defaultValue="1">
+                    <Stack spacing={4} direction="row">
+                        <Radio value="1">No</Radio>
+                        <Radio value="2">Yes</Radio>
+                    </Stack>
+                </RadioGroup>
+            </BoxSize>
+            <BoxSize flexSize="3" isInvisible="true">
+                <Heading color={MainGreen} size="sm" textAlign="left" marginBottom="1rem">Kpis</Heading>
+                Array
+            </BoxSize>
+        </Flex>
+        <Flex>
+            <BoxSize flexSize="3" isInvisible="true">
+                <Heading color={MainGreen} size="sm" textAlign="left" marginBottom="1rem">Usage purpose</Heading>
+                Array
+            </BoxSize>
+            <BoxSize flexSize="3" isInvisible="true">
+                <Heading color={MainGreen} size="sm" textAlign="left" marginBottom="1rem">Employees engagment</Heading>
+                <RadioGroup defaultValue="1">
+                    <Stack spacing={4} direction="row">
+                        <Radio value="1">No</Radio>
+                        <Radio value="2">Yes</Radio>
+                    </Stack>
+                </RadioGroup>
+            </BoxSize>
+            <BoxSize flexSize="3" isInvisible="true">
+                <Heading color={MainGreen} size="sm" textAlign="left" marginBottom="1rem">Kpis</Heading>
+                Array
+            </BoxSize>
+        </Flex>
         </>
     )
 }
