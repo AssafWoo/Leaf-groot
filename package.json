@@ -27,6 +27,16 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "stylelint": {
+    "extends": "stylelint-config-recommended",
+    "rules": {
+      "at-rule-no-unknown": [ false, {
+        "ignoreAtRules": [
+          "extends"
+        ]
+      }]
+    }
+  },
   "eslintConfig": {
     "extends": [
       "react-app",

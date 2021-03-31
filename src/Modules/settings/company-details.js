@@ -8,7 +8,7 @@ import { Tag } from "@chakra-ui/tag"
 import { useCallback } from "react"
 import RankIcon from "../../Components/RankIcon/rank-icon"
 import SingleUser from "../../Components/UserAvatar/SingelUser"
-import { DarkTheme, MainGreen, MainGrey } from "../../Styles/colors"
+import { DarkerTheme, DarkTheme, MainGreen, MainGrey } from "../../Styles/colors"
 import { BoxSize, Flex } from "../../Styles/styles"
 
 const InputStyle = {borderRadius: '10px', color: 'gray.700', border: `1px sold ${MainGrey}`}
@@ -33,7 +33,7 @@ const CompanyDetails = ({companyDetails}) => {
             <Flex style={{marginBottom:'2rem'}}>
                 <BoxSize flexSize="3" isInvisible="true"><SingleUser desiredPhoto="company" />
                 </BoxSize>
-                <Button margin=".4rem" bg={MainGreen} colorScheme="white" variant="solid">Change Picture</Button>
+                <Button color={DarkerTheme} margin=".4rem" bg={MainGreen} colorScheme="white" variant="solid">Change Picture</Button>
                 <BoxSize flexSize="5" isInvisible="true"></BoxSize>
             </Flex>
 
