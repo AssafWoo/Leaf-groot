@@ -1,16 +1,21 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import axios from 'axios';
 import { Flex  } from '../Styles/styles'
 import DashboardContent from '../Modules/dashboard/dashboard-content';
 import Store from '../Context/global/global-context';
 
 
 const Dashboard = () => {
-
+    const [data, setData] = useState(null);
     useEffect(() => {
         const fetchFunc = async () => {
-            const res = await fetch('http://localhost:9000/emissions');         }
-        fetchFunc();
+            const res = await axios.get('http://localhost:8000');
+            await setData(res.data);
+        }
+            fetchFunc();
     }, [])
+    console.log(data);
+
 
     const {state} = useContext(Store);
     return(

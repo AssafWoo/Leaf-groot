@@ -7,8 +7,8 @@ import { DarkerTheme } from '../../Styles/colors';
 const styles = {
     global: props => ({
       body: {
-        color: mode('gray.400 ', DarkerTheme)(props),
-        bg: mode('gray.200', DarkerTheme)(props),
+        color: mode(DarkerTheme, DarkerTheme)(props),
+        bg: mode(DarkerTheme, DarkerTheme)(props),
       },
     }),
   };
@@ -18,8 +18,8 @@ const styles = {
       // setup light/dark mode component defaults
       baseStyle: props => ({
         dialog: {
-          color: mode('gray.400', DarkerTheme)(props),
-          bg: mode('gray.200', DarkerTheme)(props),
+          color: mode(DarkerTheme, DarkerTheme)(props),
+          bg: mode(DarkerTheme, DarkerTheme)(props),
         },
       }),
     },
