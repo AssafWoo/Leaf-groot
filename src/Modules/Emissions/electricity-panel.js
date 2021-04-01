@@ -1,6 +1,6 @@
 import { BoxSize, Flex } from "../../Styles/styles";
 import FilterBy from "../../Components/Filter/filter_by";
-import DoughNut from "../../Components/Charts/Doughnut";
+import DoughNut from "../../Components/Charts/doughnut";
 
 const ElectricityPanel = () => {
 

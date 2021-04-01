@@ -9,7 +9,7 @@ import ElectricityPanel from '../Modules/emissions/electricity-panel';
 const EmissionsComponent = () => {
 
     return (
-        <Tabs variant="soft-rounded" borderRadius="20px" padding="1rem" colorScheme="facebook" bg={DarkTheme} border={`1px solid ${MainGrey}`} >
+        <Tabs variant="soft-rounded" borderRadius="20px" padding="1rem" colorScheme="facebook" bg={DarkTheme} >
             <TabList marginBottom="1rem">
                 <Tab fontSize="1.2rem" color="white" >Total</Tab>
                 <Tab fontSize="1.2rem" color="white" >Per Employee</Tab>

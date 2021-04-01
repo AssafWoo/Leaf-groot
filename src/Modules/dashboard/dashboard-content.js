@@ -5,6 +5,8 @@ import SingleUser from '../../Components/UserAvatar/SingelUser';
 import { DarkerTheme, MainGrey } from '../../Styles/colors';
 import FilterBy from '../../Components/Filter/filter_by';
 import {useGetTime} from '../../Utils/useGetTime';
+import DoughNut from '../../Components/Charts/doughnut';
+import StackedArea from '../../Components/Charts/stackedArea';
 
 const DashboardContent = ({companyName, userName}) => {
     const CurrentTime = useGetTime();
@@ -26,10 +28,14 @@ const DashboardContent = ({companyName, userName}) => {
             <FilterBy />
 
                 <Flex>
-                    <BoxSize flexSize="3" >left box</BoxSize>
+                    <BoxSize flexSize="3" >
+                        <DoughNut /> 
+                    </BoxSize>
                     <BoxSize flexSize="3">right box</BoxSize>
                 </Flex>
-                <BoxSize flexSize="5">Progress</BoxSize>
+                <BoxSize flexSize="5">
+                    <StackedArea />
+                </BoxSize>
                     <Flex>
                         <BoxSize flexSize="3" style={{background:MainGrey, color:DarkerTheme}}>a</BoxSize>
                         <BoxSize flexSize="3">a</BoxSize>

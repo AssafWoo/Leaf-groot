@@ -4,10 +4,10 @@ import { LightBlue, MainBlue,MainPink, MainPurple } from "../../Styles/colors";
 import {Wrapper} from './styles';
 
 const data = [
-  { name: "Electricity", value: 400 },
-  { name: "Employee Commute", value: 300 },
-  { name: "Travel", value: 300 },
-  { name: "Office Supplies", value: 200 }
+  { name: "Electricity", value: 40 },
+  { name: "Employee Commute", value: 30 },
+  { name: "Travel", value: 20 },
+  { name: "Office Supplies", value: 10 }
 ];
 const COLORS = [MainPink, MainPurple, MainBlue, LightBlue];
 
@@ -28,13 +28,15 @@ const CustomLabel = ({viewBox, value1, value2}) => {
 
 // should get data object, custom values as props
 const DoughNut = () => {
+    const width = 400;
+    const height = 250;
   return (
       <Wrapper>
-          <ResponsiveContainer width={500} height={250}>
-            <PieChart width={400} height={150}>
+          <ResponsiveContainer height={height}>
+            <PieChart width={width} height={height - 100}>
                 <Pie
                     data={data}
-                    cx={200}
+                    cx={(width / 2) - (width / 4)}
                     cy={120}
                     innerRadius={60}
                     outerRadius={80}
