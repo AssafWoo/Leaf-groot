@@ -9,9 +9,8 @@ const UserMenu = ({icon, children}) => {
             <MenuButton color='white' rightIcon={<ChevronDownIcon />}>{icon}</MenuButton>
             <Portal>
                 <MenuList>
-                    {children.map(v =>(
-                        <MenuItem color='white'>{v.content}</MenuItem>
-
+                    {children.map((value,index) =>(
+                        <MenuItem key={index} color='white'>{value.content}</MenuItem>
                     ))}
                 </MenuList>
             </Portal>

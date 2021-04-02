@@ -1,6 +1,6 @@
 import React from 'react';
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { LightBlue, MainPink, MainPurple } from '../../Styles/colors';
+import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { LightBlue, MainPurple } from '../../Styles/colors';
 import {Wrapper} from './styles';
 
 const data = [
@@ -21,15 +21,11 @@ const data = [
   },
 ];
 
-const StackedArea = () =>  {
-    const width = 500;
-    const height = 200;
+const StackedArea = ({width}) =>  {
     return (
         <Wrapper>
-            <ResponsiveContainer height={height}>
+            <ResponsiveContainer width={width} height={250}>
                 <AreaChart
-                width={width}
-                height={height}
                 data={data}
                 >
                 <XAxis tick={{fill:'white'}} dataKey="name" />

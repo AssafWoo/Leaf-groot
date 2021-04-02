@@ -12,11 +12,11 @@ const Signup = () => {
 
     const handleAnswers = useCallback(answer => {
         setAnswers(answers => [...answers, answer])
-    },[answers]);
+    },[]);
 
     const handleQuestionNumber = useCallback(() => {
         setQuestionNumber(questionNumber => questionNumber + 1) 
-    },[questionNumber]);
+    },[]);
 
     if(questionNumber >= QUESTIONS.length) {
         // send the answers to the server

@@ -27,13 +27,11 @@ const CustomLabel = ({viewBox, value1, value2}) => {
 
 
 // should get data object, custom values as props
-const DoughNut = () => {
-    const width = 400;
-    const height = 250;
+const DoughNut = ({width}) => {
   return (
       <Wrapper>
-          <ResponsiveContainer height={height}>
-            <PieChart width={width} height={height - 100}>
+          <ResponsiveContainer width={width} height={250}>
+            <PieChart>
                 <Pie
                     data={data}
                     cx={(width / 2) - (width / 4)}
@@ -53,7 +51,7 @@ const DoughNut = () => {
                     content={<CustomLabel value1={'1,254Kg'} />}>
                     </Label>
                 </Pie>
-                <Tooltip position={{x: 300, y: 100}} animationEasing="linear" />
+                <Tooltip position={{x: width - 200, y: 150}} animationEasing="linear" />
                 <Legend verticalAlign="top" height={36} formatter={LegenedText} />
             </PieChart>
         </ResponsiveContainer>
