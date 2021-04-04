@@ -7,7 +7,7 @@ import { TagLabel } from "@chakra-ui/tag"
 import { Tag } from "@chakra-ui/tag"
 import { useCallback } from "react"
 import SingleUser from "../../Components/UserAvatar/SingelUser"
-import { DarkerTheme, DarkTheme, MainGreen, MainGrey } from "../../Styles/colors"
+import { DarkerTheme, DarkTheme, MainGreen } from "../../Styles/colors"
 import { BoxSize, Flex } from "../../Styles/styles"
 
 const InputProperties = {size:'sm', borderRadius:"full", variant:"solid", colorScheme:"pink", margin:'0.5'}

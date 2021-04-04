@@ -1,6 +1,6 @@
 import React from 'react';
-import { BarChart, Bar,Tooltip, Legend, ResponsiveContainer, CartesianGrid, XAxis, YAxis } from 'recharts';
-import { DarkerTheme, LightBlue, MainPurple } from '../../Styles/colors';
+import { BarChart, Bar,Tooltip, ResponsiveContainer, XAxis, YAxis } from 'recharts';
+import { DarkerTheme, LightBlue } from '../../Styles/colors';
 import { Wrapper } from './styles';
 
 const data = [

@@ -2,7 +2,7 @@ import React, { useRef }  from 'react';
 import { Heading } from '@chakra-ui/layout';
 import { Flex, BoxSize, BreakLine } from '../../Styles/styles'
 import SingleUser from '../../Components/UserAvatar/SingelUser';
-import { DarkerTheme, MainGrey,MainBlue, MainGreen, LightBlue } from '../../Styles/colors';
+import { DarkerTheme,MainBlue, LightBlue } from '../../Styles/colors';
 import FilterBy from '../../Components/Filter/filter_by';
 import {useGetTime} from '../../Utils/useGetTime';
 import DoughNut from '../../Components/Charts/doughnut';
