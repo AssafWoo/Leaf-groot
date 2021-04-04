@@ -46,6 +46,7 @@ function App() {
             <FloatEffect size="lg" />
             <BreakLine />
                   <Switch>
+                    <Route expact path="/marketplace" component={Insights} />
                     <Route expact path="/insights" component={Insights} />
                     <Route expact path="/plan" component={Subscription} />
                     <Route expact path="/settings" component={Settings} />

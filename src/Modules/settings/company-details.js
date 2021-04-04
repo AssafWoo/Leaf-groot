@@ -10,13 +10,14 @@ import SingleUser from "../../Components/UserAvatar/SingelUser"
 import { DarkerTheme, DarkTheme, MainGreen, MainGrey } from "../../Styles/colors"
 import { BoxSize, Flex } from "../../Styles/styles"
 
-const InputStyle = {borderRadius: '10px', color: 'gray.700', border: `1px sold ${MainGrey}`}
+const InputProperties = {size:'sm', borderRadius:"full", variant:"solid", colorScheme:"pink", margin:'0.5'}
+
 
 const InputBox = ({name, size, children, handleChange}) => {
     return(
         <BoxSize flexSize={size} isInvisible="true">
             <Heading color={MainGreen} size="sm" textAlign="left" marginBottom="1rem">{name}</Heading>
-            <Input bg={DarkTheme} style={InputStyle} placeholder={name} onChange={(e) => handleChange(name , e.target.value)} />
+            <Input bg={DarkTheme} style={InputProperties} placeholder={name} onChange={(e) => handleChange(name , e.target.value)} />
             {children}
         </BoxSize>
     )
@@ -40,7 +41,7 @@ const CompanyDetails = ({companyDetails}) => {
             <Flex>
                 <InputBox handleChange={handleChange} name="Name" size='3' children=''  />
                 <InputBox handleChange={handleChange} name="Sectors" size='3' children= {companyDetails.sectors.map((value, index) => (
-                        <Tag size={'sm'} key={index} borderRadius="full" variant="solid" colorScheme="pink" margin='0.5'>
+                        <Tag key={index} {...InputProperties}>
                             <TagLabel>{value}</TagLabel>
                             <TagCloseButton />
                         </Tag>                            
@@ -60,14 +61,14 @@ const CompanyDetails = ({companyDetails}) => {
                     </NumberInput>
                 </BoxSize>
                 <InputBox handleChange={handleChange} name="Country/ies" size='5' children={companyDetails?.countries.map((value, index) => (
-                        <Tag size={'sm'} key={index} borderRadius="full" variant="solid" colorScheme="pink" margin='0.5'>
+                        <Tag key={index} {...InputProperties}>
                             <TagLabel>{value}</TagLabel>
                             <TagCloseButton />
                         </Tag>                            
                     ))} />
 
                 <InputBox handleChange={handleChange} name="State" size='5' children={companyDetails?.states.map((value, index) => (
-                        <Tag size={'sm'} key={index} borderRadius="full" variant="solid" colorScheme="pink" margin='0.5'>
+                        <Tag key={index} {...InputProperties}>
                             <TagLabel>{value}</TagLabel>
                             <TagCloseButton />
                         </Tag>                            

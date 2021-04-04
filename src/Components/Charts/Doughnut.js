@@ -19,9 +19,14 @@ const LegenedText = (value) => {
 const CustomLabel = ({viewBox, value1, value2}) => {
     const {cx, cy} = viewBox;
     return (
-     <text fill="white" x={cx} y={cy} className="recharts-text recharts-label" textAnchor="middle" dominantBaseline="central">
-        <tspan alignmentBaseline="middle" fontSize="24">{value1}</tspan>
-     </text>
+      <>
+        <text fill="white" x={cx} y={cy} className="recharts-text recharts-label" textAnchor="middle" dominantBaseline="central">
+          <tspan alignmentBaseline="middle" fontSize="24">{value1}</tspan>
+        </text>
+        <text fill="white" x={cx} y={cy + 20} className="recharts-text recharts-label" textAnchor="middle" dominantBaseline="bottom">
+          <tspan alignmentBaseline="left" fontSize="14">{value2}</tspan>
+        </text>
+       </>
     )
   }
 
@@ -48,7 +53,7 @@ const DoughNut = ({width}) => {
                         key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                     ))}
                     <Label width={30} position="center"
-                    content={<CustomLabel value1={'1,254Kg'} />}>
+                    content={<CustomLabel value1={'1,254Kg'}  value2={'co2e'}/>}>
                     </Label>
                 </Pie>
                 <Tooltip position={{x: width - 200, y: 150}} animationEasing="linear" />

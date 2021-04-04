@@ -6,6 +6,8 @@ import { MainGreen } from "../../Styles/colors";
 import { BoxSize, Flex } from "../../Styles/styles";
 
 
+const HeadingProps =  {color: MainGreen, size:"sm", textAlign:"left", marginBottom:"1rem"}
+
 const CompanyTargets = () => {
 
     return(
@@ -13,11 +15,11 @@ const CompanyTargets = () => {
         <Heading mt="2rem" color='white' size="sm" textAlign="left" marginBottom="1rem">Company's targets</Heading>
         <Flex>
             <BoxSize flexSize="3" isInvisible="true">
-                <Heading color={MainGreen} size="sm" textAlign="left" marginBottom="1rem">Usage purpose</Heading>
+                <Heading {...HeadingProps}>Usage purpose</Heading>
                 Array
             </BoxSize>
             <BoxSize flexSize="3" isInvisible="true">
-                <Heading color={MainGreen} size="sm" textAlign="left" marginBottom="1rem">Employees engagment</Heading>
+                <Heading {...HeadingProps}>Employees engagment</Heading>
                 <RadioGroup defaultValue="1">
                     <Stack spacing={4} direction="row">
                         <Radio value="1">No</Radio>
@@ -26,17 +28,17 @@ const CompanyTargets = () => {
                 </RadioGroup>
             </BoxSize>
             <BoxSize flexSize="3" isInvisible="true">
-                <Heading color={MainGreen} size="sm" textAlign="left" marginBottom="1rem">Kpis</Heading>
+                <Heading {...HeadingProps}>Kpis</Heading>
                 Array
             </BoxSize>
         </Flex>
         <Flex>
             <BoxSize flexSize="3" isInvisible="true">
-                <Heading color={MainGreen} size="sm" textAlign="left" marginBottom="1rem">Usage purpose</Heading>
+                <Heading {...HeadingProps}>Usage purpose</Heading>
                 Array
             </BoxSize>
             <BoxSize flexSize="3" isInvisible="true">
-                <Heading color={MainGreen} size="sm" textAlign="left" marginBottom="1rem">Employees engagment</Heading>
+                <Heading {...HeadingProps}>Employees engagment</Heading>
                 <RadioGroup defaultValue="1">
                     <Stack spacing={4} direction="row">
                         <Radio value="1">No</Radio>
@@ -45,17 +47,17 @@ const CompanyTargets = () => {
                 </RadioGroup>
             </BoxSize>
             <BoxSize flexSize="3" isInvisible="true">
-                <Heading color={MainGreen} size="sm" textAlign="left" marginBottom="1rem">Kpis</Heading>
+                <Heading {...HeadingProps}>Kpis</Heading>
                 Array
             </BoxSize>
         </Flex>
         <Flex>
             <BoxSize flexSize="3" isInvisible="true">
-                <Heading color={MainGreen} size="sm" textAlign="left" marginBottom="1rem">Usage purpose</Heading>
+                <Heading {...HeadingProps}>Usage purpose</Heading>
                 Array
             </BoxSize>
             <BoxSize flexSize="3" isInvisible="true">
-                <Heading color={MainGreen} size="sm" textAlign="left" marginBottom="1rem">Employees engagment</Heading>
+                <Heading {...HeadingProps}>Employees engagment</Heading>
                 <RadioGroup defaultValue="1">
                     <Stack spacing={4} direction="row">
                         <Radio value="1">No</Radio>
