@@ -2,7 +2,7 @@ import React, { useRef }  from 'react';
 import { Heading } from '@chakra-ui/layout';
 import { Flex, BoxSize, BreakLine } from '../../Styles/styles'
 import SingleUser from '../../Components/UserAvatar/SingelUser';
-import { DarkerTheme, MainGrey,MainBlue } from '../../Styles/colors';
+import { DarkerTheme, MainGrey,MainBlue, MainGreen, LightBlue } from '../../Styles/colors';
 import FilterBy from '../../Components/Filter/filter_by';
 import {useGetTime} from '../../Utils/useGetTime';
 import DoughNut from '../../Components/Charts/doughnut';
@@ -66,10 +66,10 @@ const DashboardContent = ({companyName, userName}) => {
                             <p style={{color:MainBlue, cursor:'pointer' }}>Explore offsets market</p>
 
                         </BoxSize>
-                        <BoxSize flexSize="3">
+                        <BoxSize flexSize="3" style={{background:LightBlue}}>
                             <Heading fontWeight="300" textAlign="left" fontSize="1.4rem">Volunteer</Heading>
                             <BreakLine />
-                            <p style={{color:MainBlue, cursor:'pointer' }}>Explore volunteer opportunities</p>
+                            <p style={{color:DarkerTheme, cursor:'pointer' }}>Explore volunteer opportunities</p>
                         </BoxSize>
                         <BoxSize flexSize="3">
                             <Heading fontWeight="300" textAlign="left" fontSize="1.4rem">Our Blog</Heading>

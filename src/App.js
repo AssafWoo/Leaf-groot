@@ -17,6 +17,7 @@ import Login from './Pages/login';
 import Signup from './Pages/sign-up';
 import { useState } from 'react';
 import RightSideBar from './Components/Side_bar/right-side-bar';
+import MarketPlace from './Pages/market_place';
 
 
 function App() {
@@ -46,7 +47,7 @@ function App() {
             <FloatEffect size="lg" />
             <BreakLine />
                   <Switch>
-                    <Route expact path="/marketplace" component={Insights} />
+                    <Route expact path="/marketplace" component={MarketPlace} />
                     <Route expact path="/insights" component={Insights} />
                     <Route expact path="/plan" component={Subscription} />
                     <Route expact path="/settings" component={Settings} />

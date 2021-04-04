@@ -32,7 +32,7 @@ const MenuNames = [
     },
     {
         name:'Market Place',
-        link:'/volunteer'
+        link:'/marketplace'
     },
     {
         name:'Plan',
