@@ -22,7 +22,7 @@ export const LeftNav = styled.div`
 `
 
 export const ItemsNav = styled.div`
-    top:.5rem;
+    top:1.3rem;
     text-align:left;
     position:sticky;
     height:fit-content;
