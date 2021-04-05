@@ -57,3 +57,9 @@ export const Card = styled.div`
 export const SubHeader = {
     fontSize:"2rem", textAlign:"left", fontWeight:"300", color:'white'
 }
+
+export const Parag = styled.p`
+    font-size:1.1rem;
+    font-weight:300;
+    text-align:left;
+`

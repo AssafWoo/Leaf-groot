@@ -11,3 +11,4 @@ export const MainPurple = '#B5179E';
 export const DarkPurple = '#7209B7';
 export const PurpleBlue = '#560BAD';
 export const LightBlue = '#4361EE';
+export const MainRed = '#F56565';
