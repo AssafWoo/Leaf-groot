@@ -1,6 +1,7 @@
-import { BoxSize, Flex } from "../../Styles/styles";
+import { BoxSize, BreakLine, Flex, SubHeader } from "../../Styles/styles";
 import FilterBy from "../../Components/Filter/filter_by";
 import DoughNut from "../../Components/Charts/doughnut";
+import { Heading } from "@chakra-ui/layout";
 
 const ElectricityPanel = () => {
 
@@ -15,6 +16,19 @@ const ElectricityPanel = () => {
                     <FilterBy />
                     </BoxSize >
                 </Flex>
+                <BreakLine />
+                <Heading {...SubHeader}>Electricity</Heading>
+                <p>Disterbution of the Electricity</p>
+
+                <BreakLine style={{borderTop:'1px solid white'}} />
+                <Heading {...SubHeader}>Employee commute</Heading>
+
+                <BreakLine style={{borderTop:'1px solid white'}} />
+                <Heading {...SubHeader}>Travel</Heading>
+
+                <BreakLine style={{borderTop:'1px solid white'}} />
+                <Heading {...SubHeader}>Office supplies</Heading>
+
             </BoxSize>
         </Flex>
     )

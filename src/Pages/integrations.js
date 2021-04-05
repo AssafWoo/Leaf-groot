@@ -1,6 +1,6 @@
 import React from 'react';
 import { Heading } from '@chakra-ui/layout';
-import { BreakLine, Flex, BoxSize } from '../Styles/styles';
+import { BreakLine, Flex, BoxSize, SubHeader } from '../Styles/styles';
 import { Input, InputGroup, InputLeftElement, useColorMode } from "@chakra-ui/react"
 import { SearchIcon } from '@chakra-ui/icons';
 import useRandomColorPick from '../Utils/useRandomColor';
@@ -12,7 +12,7 @@ const Integrations = () => {
 
     return(
         <>
-            <Heading textAlign="left" color={colorMode === 'dark' ? 'white' : 'gray.700'} >Your Apps</Heading>
+            <Heading {...SubHeader}>Your Apps</Heading>
             <BreakLine />
             <InputGroup>
             <InputLeftElement
@@ -31,7 +31,7 @@ const Integrations = () => {
                 <BoxSize flexSize="1">Azure</BoxSize>
             </Flex>
             <BreakLine />
-            <Heading textAlign="left" color={colorMode === 'dark' ? 'white' : 'gray.700'} >Popular Apps</Heading>
+            <Heading {...SubHeader}>Popular Apps</Heading>
             <BreakLine />
             <Flex>
                 <BoxSize flexSize="1">Vee</BoxSize>

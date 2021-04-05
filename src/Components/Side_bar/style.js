@@ -12,12 +12,10 @@ export const SideBarWrapper = styled.div`
   ${ShadowEffect}
 `
 
-export const LeftNav = styled.div`
+export const RightNav = styled.div`
     grid-area:leftsidebar;
     position:sticky;
-    background-color:${DarkTheme};
     border-top-left-radius:15px;
-    ${ShadowEffect}
 
 `
 

@@ -1,11 +1,14 @@
+import { Heading } from '@chakra-ui/layout';
 import React from 'react';
-import {BoxSize, Flex } from '../Styles/styles';
+import {BoxSize, BreakLine, Flex, SubHeader } from '../Styles/styles';
 
 
 const Insights = () => {
 
     return(
         <>
+            <Heading {...SubHeader}>Our insights</Heading>
+            <BreakLine />
             <Flex>
                 <BoxSize flexSize="1">Worse / Best Division</BoxSize>
                 <BoxSize flexSize="1">Worse / Best Integration</BoxSize>

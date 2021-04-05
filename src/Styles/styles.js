@@ -50,3 +50,10 @@ export const Card = styled.div`
     background: ${props => props.isInvisible ? '' : `1px solid ${DarkTheme}` };
     ${ShadowEffect}
 `
+
+
+// headers
+
+export const SubHeader = {
+    fontSize:"2rem", textAlign:"left", fontWeight:"300", color:'white'
+}
