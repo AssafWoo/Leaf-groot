@@ -1,7 +1,7 @@
 export const Settings = [
     {
         content:'Settings',
-        link:''
+        link:'/settings'
     },
     {
         content:'Logout',

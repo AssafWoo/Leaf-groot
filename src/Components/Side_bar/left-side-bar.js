@@ -42,8 +42,7 @@ const MenuNames = [
     {
         name:<SettingsIcon h={5} w={5} />,
         link:'/settings',
-        children:[{name:'User',
-        link:'/settings/user',},
+        children:[
         {name:'Company',
         link:'/settings/company',}]
     },
