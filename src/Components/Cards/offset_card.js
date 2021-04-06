@@ -3,16 +3,8 @@ import { Heading } from "@chakra-ui/layout"
 import { Tag, TagLabel } from "@chakra-ui/tag"
 import { DarkerTheme, MainGreen } from "../../Styles/colors"
 import { BoxSize, Flex } from "../../Styles/styles"
-import {
-    Modal,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalFooter,
-    ModalBody,
-    ModalCloseButton,
-    useDisclosure,
-  } from "@chakra-ui/react"
+import {useDisclosure} from "@chakra-ui/react"
+import ModalComponent from "../Modal/modal"
 
 
 
@@ -36,22 +28,17 @@ const OffsetCard = () => {
 
             </BoxSize>
             <BoxSize flexSize="1">
-                <Button background={MainGreen} color="white" onClick={onOpen} colorScheme="blue">See details</Button>
-                <Modal isOpen={isOpen} onClose={onClose}>
-                    <ModalOverlay />
-                    <ModalContent color="white">
-                        <ModalHeader>Reforestation for remote villiagers</ModalHeader>
-                        <ModalCloseButton />
-                        <ModalBody>
-                            Planting trees
-                        </ModalBody>
-                        <ModalFooter>
-                            <Button background={MainGreen} color="white" mr={3} onClick={onClose} colorScheme="blue">
-                                Buy and go to action   
-                            </Button>
-                        </ModalFooter>
-                    </ModalContent>
-                </Modal>
+                <ModalComponent
+                    isOpen={isOpen} 
+                    onClose={onClose} 
+                    trigger={<Button background={MainGreen} color="white" onClick={onOpen} colorScheme="blue">See details</Button>}
+                    header='Reforestation for remote villiagers' 
+                    content='Planting trees'
+                    actionTrigger={
+                        <Button background={MainGreen} color="white" mr={3} onClick={onClose} colorScheme="blue">
+                            Buy and go to action   
+                        </Button>}
+                />
             </BoxSize>
         </Flex>
       

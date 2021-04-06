@@ -1,7 +1,6 @@
-import './App.css';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Dashboard from './Pages/main-dashboard';
-import {BreakLine} from './Styles/styles';
+import {AppWrapper, BreakLine, MainWrapper} from './Styles/styles';
 import Integrations from './Pages/integrations';
 import SideBar from './Components/Side_bar/left-side-bar';
 import FloatEffect  from './Components/FloatEffect/floatEffect';
@@ -41,9 +40,9 @@ function App() {
         <BrowserRouter>
         {isLogged ? 
         <>
-        <div className="Wrapper">
+        <MainWrapper>
           <SideBar />
-            <div className="App">
+            <AppWrapper>
             <FloatEffect size="lg" />
             <BreakLine />
                   <Switch>
@@ -55,16 +54,16 @@ function App() {
                     <Route expact path="/emissions" component={EmissionsComponent} />
                     <Route expact path="/" component={Dashboard} />
                   </Switch>
-            </div>
+            </AppWrapper>
             <RightSideBar />
-          </div>
+          </MainWrapper>
           </> :
             <Switch>
-                <div className="App">
+                <AppWrapper>
                   <FloatEffect size="lg" />
                   <Route expact path="/signup" component={Signup} />
                   <Route expact path="/login" component={Login} />
-                </div>
+                </AppWrapper>
             </Switch> }
         </BrowserRouter>
     </Store.Provider>

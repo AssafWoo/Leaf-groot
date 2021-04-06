@@ -12,6 +12,19 @@ export const Flex = styled.div`
     flex-wrap:wrap;
 `
 
+export const AppWrapper = styled.div`
+    text-align: center;
+    grid-area:content;
+`
+export const MainWrapper = styled.div`
+    display:grid;
+    grid-template-columns: 160px auto 100px;
+    grid-template-areas: "sidebar content leftsidebar";
+    grid-gap:170px;
+    height:100vh;
+`
+  
+  
 
 export const BreakLine = styled.div`
     margin:2.5rem 0;
