@@ -2,15 +2,12 @@ import { Button } from "@chakra-ui/button"
 import { Input } from "@chakra-ui/input"
 import { Heading } from "@chakra-ui/layout"
 import { NumberDecrementStepper, NumberIncrementStepper, NumberInput, NumberInputField, NumberInputStepper } from "@chakra-ui/number-input"
-import { TagCloseButton } from "@chakra-ui/tag"
-import { TagLabel } from "@chakra-ui/tag"
-import { Tag } from "@chakra-ui/tag"
 import { useCallback } from "react"
+import TagComponent from "../../Components/Tags/tag"
 import SingleUser from "../../Components/UserAvatar/SingelUser"
 import { DarkerTheme, DarkTheme, MainGreen } from "../../Styles/colors"
-import { BoxSize, Flex } from "../../Styles/styles"
+import { BoxSize, Flex, InputProperties } from "../../Styles/styles"
 
-const InputProperties = {size:'sm', borderRadius:"full", variant:"solid", colorScheme:"pink", margin:'0.5'}
 
 
 const InputBox = ({name, size, children, handleChange}) => {
@@ -36,19 +33,14 @@ const CompanyDetails = ({companyDetails}) => {
                 <Button color={DarkerTheme} margin=".4rem" bg={MainGreen} colorScheme="white" variant="solid">Change Picture</Button>
                 <BoxSize flexSize="5" isInvisible="true"></BoxSize>
             </Flex>
-
             <Heading color='white' size="sm" textAlign="left" marginBottom="1rem">Company Information</Heading>
             <Flex>
                 <InputBox handleChange={handleChange} name="Name" size='3' children=''  />
                 <InputBox handleChange={handleChange} name="Sectors" size='3' children= {companyDetails.sectors.map((value, index) => (
-                        <Tag key={index} {...InputProperties}>
-                            <TagLabel>{value}</TagLabel>
-                            <TagCloseButton />
-                        </Tag>                            
+                        <TagComponent key={index} color="green" content={value} />                            
                     ))}
                      />
             </Flex>
-
             <Flex>
                 <BoxSize flexSize="3" isInvisible="true">
                     <Heading color={MainGreen} size="sm" textAlign="left" marginBottom="1rem">Headcount</Heading>
@@ -61,17 +53,11 @@ const CompanyDetails = ({companyDetails}) => {
                     </NumberInput>
                 </BoxSize>
                 <InputBox handleChange={handleChange} name="Country/ies" size='5' children={companyDetails?.countries.map((value, index) => (
-                        <Tag key={index} {...InputProperties}>
-                            <TagLabel>{value}</TagLabel>
-                            <TagCloseButton />
-                        </Tag>                            
+                        <TagComponent key={index} color="green" content={value} />                            
                     ))} />
 
                 <InputBox handleChange={handleChange} name="State" size='5' children={companyDetails?.states.map((value, index) => (
-                        <Tag key={index} {...InputProperties}>
-                            <TagLabel>{value}</TagLabel>
-                            <TagCloseButton />
-                        </Tag>                            
+                        <TagComponent key={index} color="green" content={value} />                            
                     ))} />
             </Flex>
         </>

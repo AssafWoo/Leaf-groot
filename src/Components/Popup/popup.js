@@ -10,7 +10,6 @@ const Popup = ({trigger, header, content, actionTrigger }) => {
         closeOnBlur={false}
       >
         <PopoverTrigger>
-          {/* <Button>Trigger</Button> */}
           {trigger}
         </PopoverTrigger>
         <PopoverContent color="white" bg="blue.800" borderColor="blue.800">
@@ -29,9 +28,6 @@ const Popup = ({trigger, header, content, actionTrigger }) => {
             justifyContent="space-between"
             pb={4}
           >
-              {/* <Button colorScheme="blue" ref={initialFocusRef}>
-                Next
-              </Button> */}
               {actionTrigger}
           </PopoverFooter>
         </PopoverContent>

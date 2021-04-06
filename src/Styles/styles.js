@@ -76,3 +76,5 @@ export const Parag = styled.p`
     font-weight:300;
     text-align:left;
 `
+
+export const InputProperties = {size:'sm', borderRadius:"full", variant:"solid", margin:'0.5'}

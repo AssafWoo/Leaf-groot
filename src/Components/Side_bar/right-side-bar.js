@@ -1,8 +1,7 @@
 import React  from 'react';
-import { Flex, BoxSize, BreakLine } from '../../Styles/styles'
+import { Flex, BoxSize } from '../../Styles/styles'
 import {RightNav} from './style';
 import UserMenu from '../User_menu/user_menu';
-import RankIcon from '../RankIcon/rank-icon';
 import { Settings } from '../../Mocks/settins-options';
 import SingleUser from '../UserAvatar/SingelUser';
 

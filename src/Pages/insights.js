@@ -1,7 +1,7 @@
 import { Heading } from '@chakra-ui/layout';
 import React from 'react';
 import BarsChart from '../Components/Charts/bar';
-import { DarkerTheme, LightBlue, MainRed, MainYellow } from '../Styles/colors';
+import { DarkerTheme, LightBlue, MainRed } from '../Styles/colors';
 import {BoxSize, BreakLine, Flex, Parag, SubHeader } from '../Styles/styles';
 import {FaBicycle} from 'react-icons/fa';
 

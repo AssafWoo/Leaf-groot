@@ -1,9 +1,10 @@
 import React from 'react';
 import { Heading } from '@chakra-ui/layout';
 import { BreakLine, Flex, BoxSize, SubHeader } from '../Styles/styles';
-import { Input, InputGroup, InputLeftElement, useColorMode } from "@chakra-ui/react"
+import { Button, Input, InputGroup, InputLeftElement, useColorMode } from "@chakra-ui/react"
 import { SearchIcon } from '@chakra-ui/icons';
 import useRandomColorPick from '../Utils/useRandomColor';
+import Popup from '../Components/Popup/popup';
 
 
 // need to build a database for integrations data
@@ -34,7 +35,14 @@ const Integrations = () => {
             <Heading {...SubHeader}>Popular Apps</Heading>
             <BreakLine />
             <Flex>
-                <BoxSize flexSize="1">Vee</BoxSize>
+                <Popup
+                    trigger={<BoxSize style={{cursor:'pointer'}} flexSize="1">Vee</BoxSize>}
+                    header="Vee application"
+                    content="This is the the vee data content"
+                    actionTrigger={<Button colorScheme="green">
+                        Yes I understand
+                  </Button>}
+                  />
                 <BoxSize flexSize="1">a</BoxSize>
                 <BoxSize flexSize="1">a</BoxSize>
                 <BoxSize flexSize="1">a</BoxSize>
