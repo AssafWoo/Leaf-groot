@@ -1,5 +1,7 @@
 import { Route, Switch } from "react-router"
-import CompanyTargets from "./Modules/settings/company-targets"
+import SideBar from "./Components/Side_bar/left-side-bar"
+import RightSideBar from "./Components/Side_bar/right-side-bar"
+import SignUpQuestions from "./Pages/signup-questions";
 import EmissionsComponent from "./Pages/emissions"
 import Insights from "./Pages/insights"
 import Integrations from "./Pages/integrations"
@@ -9,28 +11,42 @@ import MarketPlace from "./Pages/market_place"
 import Settings from "./Pages/settings"
 import Signup from "./Pages/sign-up"
 import Subscription from "./Pages/subscription"
+import { AppWrapper, MainWrapper } from "./Styles/styles"
+import { useGetPersistedToken } from "./Utils/usePersist";
 
+const Layout = ({children}) => {
+    return(
+        <MainWrapper>{/*Prive routes - login required */}
+            <SideBar />
+            <AppWrapper>
+               {children}
+            </AppWrapper>
+            <RightSideBar />
+        </MainWrapper>
+    )
+}
 
-
-const Routes = ({hasTokens}) => { // should be a function to check auth tokens
-     console.log(hasTokens)
+const Routes = () => {
+    const hasTokens = useGetPersistedToken('id');
 
 
     return(
         <Switch>
             {hasTokens ?           
-            <Switch> {/*Prive routes - login required */}
-                <Route exact path="/marketplace" component={MarketPlace} />
-                <Route exact path="/insights" component={Insights} />
-                <Route exact path="/plan" component={Subscription} />
-                <Route exact path="/settings" component={Settings} />
-                <Route exact path="/integrations" component={Integrations} />
-                <Route exact path="/emissions" component={EmissionsComponent} />
-                <Route exact path="/dashboard" component={Dashboard} />
-            </Switch> 
+                <Layout>
+                    <Switch> 
+                        <Route exact path="/marketplace" component={MarketPlace} />
+                        <Route exact path="/insights" component={Insights} />
+                        <Route exact path="/plan" component={Subscription} />
+                        <Route exact path="/settings" component={Settings} />
+                        <Route exact path="/integrations" component={Integrations} />
+                        <Route exact path="/emissions" component={EmissionsComponent} />
+                        <Route exact path="/" component={Dashboard} />
+                    </Switch> 
+                </Layout> 
             : 
             <>
-                <Route exact path="/signup/questions" component={CompanyTargets} />
+                <Route exact path="/signup/questions" component={SignUpQuestions} />
                 <Route exact path="/signup" component={Signup} />
                 <Route exact path="/" component={Login} />
             </>

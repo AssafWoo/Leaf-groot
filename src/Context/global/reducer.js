@@ -41,6 +41,26 @@ export default function reducer(state, action) {
                 },
             }
 
+        case 'USER_LOGOUT':
+            localStorage.removeItem('id');
+            return {
+                ...state,
+                user:{
+                    ...state.user,
+                    loggedIn:false,
+                },
+           }
+           
+           case 'USER_LOGIN':
+            localStorage.setItem('id', action.payload)
+            return {
+                ...state,
+                user:{
+                    ...state.user,
+                    loggedIn:true,
+                },
+           }
+
         case 'EMISSIONS_CHANGE':
             return {
                 ...state,

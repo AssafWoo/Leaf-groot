@@ -7,18 +7,18 @@ import {Flex} from '@chakra-ui/react';
 import LeafLogo from '../Assets/images/leaf-green.png';
 import { useState } from "react"
 import { Link } from "react-router-dom"
-import { createBrowserHistory } from "history";
+import { useContext } from "react"
+import Store from "../Context/global/global-context"
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const {_, dispatch} = useContext(Store);
 
     const handleLogin = async (e) => {
         const data = { email:email, passsword:password};
         const demoToken = '23123412432534645grvgdfgeg234cvdfsbdhdsty'
-        localStorage.setItem('id', demoToken);
-        const history = createBrowserHistory();
-        history.push('/dashboard')
+        dispatch({type:'USER_LOGIN', payload: demoToken})
     }
 
 

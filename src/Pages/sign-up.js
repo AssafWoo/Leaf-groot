@@ -8,7 +8,6 @@ import { Input } from "@chakra-ui/input";
 import { Link } from "react-router-dom";
 
 const Signup = () => {
-    const [isSigned, setIsSigned] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -17,7 +16,6 @@ const Signup = () => {
         if(password === confirmPassword){
             const data = { email:email, passsword:password};
             console.log('post request', data);
-            setIsSigned(true);
         } else {
             console.log('passwords not matching')
         }

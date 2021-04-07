@@ -1,7 +1,7 @@
 import { ChevronDownIcon } from "@chakra-ui/icons";
-import { Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/menu";
+import { Menu, MenuButton, MenuList } from "@chakra-ui/menu";
 import { Portal } from "@chakra-ui/portal";
-import { Link } from "react-router-dom";
+import { DarkerTheme } from "../../Styles/colors";
 
 
 const UserMenu = ({icon, children}) => {
@@ -9,12 +9,8 @@ const UserMenu = ({icon, children}) => {
         <Menu>
             <MenuButton color='white' rightIcon={<ChevronDownIcon />}>{icon}</MenuButton>
             <Portal>
-                <MenuList>
-                    {children.map((value,index) =>(
-                        <Link to={value.link}>
-                            <MenuItem key={index} color='white'>{value.content}</MenuItem>
-                        </Link>
-                    ))}
+                <MenuList _hover={{background:DarkerTheme}} bg={DarkerTheme}>
+                   {children}
                 </MenuList>
             </Portal>
         </Menu> 
