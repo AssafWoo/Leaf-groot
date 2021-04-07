@@ -12,7 +12,8 @@ import Settings from "./Pages/settings"
 import Signup from "./Pages/sign-up"
 import Subscription from "./Pages/subscription"
 import { AppWrapper, MainWrapper } from "./Styles/styles"
-import { useGetPersistedToken } from "./Utils/usePersist";
+import { useContext } from "react";
+import Store from './Context/global/global-context';
 
 const Layout = ({children}) => {
     return(
@@ -27,7 +28,8 @@ const Layout = ({children}) => {
 }
 
 const Routes = () => {
-    const hasTokens = useGetPersistedToken('id');
+    const {state, _} = useContext(Store);
+    const hasTokens = state.user.loggedIn;
 
 
     return(
