@@ -3,7 +3,7 @@ import { Input } from "@chakra-ui/input"
 import { Heading } from "@chakra-ui/layout"
 import { DarkTheme, MainBlue, MainGreen } from "../Styles/colors"
 import { BoxSize, LeafIcon } from "../Styles/styles"
-import {Flex} from '@chakra-ui/react';
+import {Flex, FormControl} from '@chakra-ui/react';
 import LeafLogo from '../Assets/images/leaf-green.png';
 import { useState } from "react"
 import { Link } from "react-router-dom"
@@ -23,20 +23,21 @@ const Login = () => {
 
 
     return (
-        <Flex Flex justify='center' align="center" m="auto" w="fit-content" h="93vh">
-            <BoxSize flexSize="5" isInvisible="true">
+        <Flex Flex justify='center' align="center" m="auto" w="fit-content" h="93vh" >
+            <BoxSize flexSize="5" isInvisible="true" style={{border:"1px solid white"}} > 
                 <LeafIcon src={LeafLogo} />
                 <Flex>
-                    <BoxSize flexSize="1" style={{padding:'1.5rem', background:'transparent'}}>
-                        <Heading color='white' fontSize="1.1rem" textAlign="left" pb="2" >Email address</Heading>
-                        <Input type="email" border="1px solid white" bg={DarkTheme} mb="5" onChange={(e) => setEmail(e.target.value)} />
-                        <Heading color='white' fontSize="1.1rem" textAlign="left" pb="2">
-                            <Flex>
-                                <BoxSize flexSize="1" isInvisible="true" style={{padding:'0', color:'white'}} >Password</BoxSize>
-                                <BoxSize flexSize="1" isInvisible="true" style={{padding:'0', cursor:'pointer', color:MainBlue, fontSize:'.9rem', textAlign:'right'}}>Forgot password?</BoxSize>
-                            </Flex>
-                        </Heading>
-                        <Input type="password" border="1px solid white" bg={DarkTheme} mb="5"onChange={(e) => setPassword(e.target.value)}  />
+                    <BoxSize flexSize="1" style={{padding:'1.5rem', background:'transparent'}} >
+                            <FormControl id="email">
+                                <Heading color='white' fontSize="1.1rem" textAlign="left" pb="2" >Email address</Heading>
+                                <Input type="email" border="1px solid white" bg={DarkTheme} mb="5" onChange={(e) => setEmail(e.target.value)} />
+                            </FormControl>
+
+                            <FormControl id="password">
+                                <Heading color='white' fontSize="1.1rem" textAlign="left" pb="2" >Password</Heading>
+                                <Input type="password" border="1px solid white" bg={DarkTheme} mb="5"onChange={(e) => setPassword(e.target.value)}  />
+                            </FormControl>
+
                         <Button w="100%" bg={MainGreen} color="white" colorScheme="green" onClick={handleLogin}>Lets roll</Button>
                         <Flex>
                             <BoxSize flexSize="1" isInvisible="true"><span style={{fontSize:'.7rem'}}>New around?</span></BoxSize>
