@@ -11,7 +11,7 @@ import MarketPlace from "./Pages/market_place"
 import Settings from "./Pages/settings"
 import Signup from "./Pages/sign-up"
 import Subscription from "./Pages/subscription"
-import { AppWrapper, MainWrapper } from "./Styles/styles"
+import { AppWrapper, BreakLine, MainWrapper } from "./Styles/styles"
 import { useContext } from "react";
 import Store from './Context/global/global-context';
 
@@ -20,6 +20,7 @@ const Layout = ({children}) => {
         <MainWrapper>{/*Prive routes - login required */}
             <SideBar />
             <AppWrapper>
+                <BreakLine />
                {children}
             </AppWrapper>
             <RightSideBar />
@@ -40,7 +41,7 @@ const Routes = () => {
                         <Route exact path="/marketplace" component={MarketPlace} />
                         <Route exact path="/insights" component={Insights} />
                         <Route exact path="/plan" component={Subscription} />
-                        <Route exact path="/settings" component={Settings} />
+                        <Route exact path="/settings/company" component={Settings} />
                         <Route exact path="/integrations" component={Integrations} />
                         <Route exact path="/emissions" component={EmissionsComponent} />
                         <Route exact path="/" component={Dashboard} />

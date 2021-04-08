@@ -12,7 +12,6 @@ const MarketPlace = () => {
                 <BoxSize flexSize="1"><OffsetCard /></BoxSize>
                 <BoxSize flexSize="1"><OffsetCard /></BoxSize>
                 <BoxSize flexSize="1"><OffsetCard /></BoxSize>
-
             </Flex>
         </>
     )

@@ -14,11 +14,11 @@ const OffsetCard = () => {
     return(
         <>
         <div style={{height:'15rem', width:'15rem',borderRadius:'15px', background:DarkerTheme, textAlign:'center', margin:'1rem auto'}} />
-        <Tag margin="3px">
-            <TagLabel>Madagascar</TagLabel>
+        <Tag margin="3px" bg={MainGreen}>
+            <TagLabel padding=".2rem">Madagascar</TagLabel>
         </Tag> 
-        <Tag margin="3px">
-            <TagLabel>Tree Planting</TagLabel>
+        <Tag margin="3px" bg={MainGreen}>
+            <TagLabel padding=".2rem">Tree Planting</TagLabel>
         </Tag> 
         <Heading padding="1.4rem" fontWeight="300" textAlign="left" fontSize="1.2rem">Reforestation for remote villiagers</Heading>
         <Flex>                         

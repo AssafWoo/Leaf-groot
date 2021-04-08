@@ -1,4 +1,5 @@
 import { Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay } from "@chakra-ui/modal"
+import { DarkerTheme } from "../../Styles/colors";
 
 const ModalComponent = ({isOpen, onClose,trigger, header, content, actionTrigger}) => {
     return (
@@ -6,7 +7,7 @@ const ModalComponent = ({isOpen, onClose,trigger, header, content, actionTrigger
             {trigger}
             <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
-                <ModalContent color="white">
+                <ModalContent color="white" bg={DarkerTheme}>
                 <ModalHeader>{header}</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody>
