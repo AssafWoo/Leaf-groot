@@ -33,7 +33,7 @@ const Signup = () => {
                         <BoxSize flexSize="1" style={{padding:'1.5rem', background:'transparent'}}>
                             <Formik
                                 initialValues={{email:'', password:'', confirmPassword:''}}
-                                onSubmit={(data, {setSubmitting}) => {
+                                onSubmit={async (data, {setSubmitting}) => {
                                     setSubmitting(true);
                                     //make async call
                                     console.log('submit: ', data);

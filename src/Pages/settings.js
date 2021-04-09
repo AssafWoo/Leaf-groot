@@ -19,7 +19,6 @@ const Settings = () => {
                 <CompanyDetails companyDetails={state.company} />
                 <CompanyTargets />
                 </BoxSize>
-                <Button bg={MainBlue} colorScheme="white" variant="solid">Save</Button>
             </Flex>
         </>
     )

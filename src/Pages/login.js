@@ -28,7 +28,7 @@ const Login = () => {
 
                     <Formik
                         initialValues={{email:'', password:''}}
-                        onSubmit={(data, {setSubmitting}) => {
+                        onSubmit={async (data, {setSubmitting}) => {
                             setSubmitting(true);
                             //make async call
                             console.log('submit: ', data);
