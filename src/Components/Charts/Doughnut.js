@@ -53,7 +53,7 @@ const DoughNut = ({width}) => {
                         key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                     ))}
                     <Label width={30} position="center"
-                    content={<CustomLabel value1={'1,254Kg'}  value2={'co2e'}/>}>
+                    content={<CustomLabel value1={'1,254Kg'}  value2={'co2'}/>}>
                     </Label>
                 </Pie>
                 <Tooltip position={{x: width - 200, y: 150}} animationEasing="linear" />

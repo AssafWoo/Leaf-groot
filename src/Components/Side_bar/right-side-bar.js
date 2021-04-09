@@ -24,7 +24,7 @@ const RightSideBar = () => {
                 <Flex>
                     <BoxSize isInvisible="true" style={{padding:'0', textAlign:'right'}} flexSize="1">
                         <UserMenu icon={<SingleUser />} >
-                            <Link to='/settings'>
+                            <Link to='/settings/company'>
                                 <MenuItem _focus={{background:'trasparent'}} _hover={{background:MainBlue}} color='white'>Settings</MenuItem>
                             </Link>
                             <Link to='/'>

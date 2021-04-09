@@ -6,17 +6,17 @@ import {Wrapper} from './styles';
 const data = [
   {
     name: 'Jan',
-    co2e: 4000,
+    co2: 4000,
     kwh: 2400,
   },
   {
     name: 'Feb',
-    co2e: 3000,
+    co2: 3000,
     kwh: 1398,
   },
   {
     name: 'Mar',
-    co2e: 2000,
+    co2: 2000,
     kwh: 9800,
   },
 ];

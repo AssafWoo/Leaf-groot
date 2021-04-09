@@ -18,12 +18,9 @@ const Dashboard = () => {
 
     const {state} = useContext(Store);
     return(
-        <>
         <Flex>
             <DashboardContent companyName={state.company.name} userName={state.user.name} />
         </Flex>
-        
-        </>
     )
 }
 

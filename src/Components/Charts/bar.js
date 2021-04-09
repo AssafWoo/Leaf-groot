@@ -6,24 +6,24 @@ import { Wrapper } from './styles';
 const data = [
   {
     name: 'A',
-    co2e: 4000,
+    co2: 4000,
   },
   {
     name: 'B',
-    co2e: 3523,
+    co2: 3523,
   },
   {
     name: 'You',
-    co2e: 2143,
+    co2: 2143,
   },
 
   {
     name: 'D',
-    co2e: 4535,
+    co2: 4535,
   }, 
 {
     name: 'E',
-    co2e: 854,
+    co2: 854,
   }
 
 ];
@@ -34,7 +34,7 @@ const BarsChart = () => {
         <Wrapper>
             <ResponsiveContainer width={370} height={200}>
                 <BarChart data={data}>
-                    <Bar barSize={20}  dataKey="co2e" fill={LightBlue} />
+                    <Bar barSize={20}  dataKey="co2" fill={LightBlue} />
                     <XAxis tick={{fill:'white'}} dataKey="name" />
                     <YAxis tick={{fill:'white'}}  />
                     <Tooltip cursor={{fill:DarkerTheme, fillOpacity:0.5}} />

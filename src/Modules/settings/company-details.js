@@ -12,24 +12,28 @@ import { FormControl, FormErrorMessage, FormLabel } from "@chakra-ui/form-contro
 const CompanyDetails = ({companyDetails}) => {
     return (
         <>
-            <Flex style={{marginBottom:'2rem'}}>
-                <BoxSize flexSize="3" isInvisible="true" style={{border:'1px solid white'}}><SingleUser desiredPhoto="company" />
-                </BoxSize>
-                <Button margin=".4rem" bg={MainGreen} colorScheme="green" variant="solid">Change Picture</Button>
-                <BoxSize flexSize="5" isInvisible="true"></BoxSize>
-            </Flex>
-            <Heading color='white' size="sm" textAlign="left" marginBottom="1rem">Company Information</Heading>
-                <Formik
-                    initialValues={{name:'Leaf Inc.', sectors:'', headCount:50, countries:'', state:'', userName:'Assaf'}}
-                    onSubmit={async(data, {setSubmitting}) => {
-                        setSubmitting(true)
-                        //async call
-                        console.log('submit: ', data)
-                        setSubmitting(false)
-                    }}
-                > 
+            <Formik
+                initialValues={{name:'Leaf Inc.', sectors:'', headCount:50, countries:'', state:'', userName:'Assaf'}}
+                onSubmit={async(data, {setSubmitting}) => {
+                    setSubmitting(true)
+                    //async call
+                    console.log('submit: ', data)
+                    setSubmitting(false)
+                }}
+            > 
+            
                 {({values, isSubmitting, handleChange, handleBlur, handleSubmit}) =>(
                     <Form>
+                        <Flex style={{marginBottom:'2rem'}}>
+                            <BoxSize flexSize="3" isInvisible="true" style={{border:'1px solid white'}}><SingleUser desiredPhoto="company" /></BoxSize>
+                            <BoxSize flexSize="5" isInvisible="true">
+                                <FormControl id="imageFile" border="none">
+                                    <FormLabel color='white' fontSize="1.1rem" textAlign="left" >Change picture</FormLabel>
+                                    <Input type="file" name="file" mb="5" border="none" />
+                                </FormControl>
+                            </BoxSize>
+                        </Flex>
+                        <Heading color='white' size="sm" textAlign="left" marginBottom="1rem">Company Information</Heading>
 
                         <Flex>
                             <BoxSize flexSize="1" isInvisible="true">
