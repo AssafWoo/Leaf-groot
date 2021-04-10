@@ -14,8 +14,6 @@ const FloatEffect = ({size}) => {
                 <li></li>
                 <li></li>
                 <li></li>
-                <li></li>
-                <li></li>
             </ul>
       </CirclesEffect>
     )

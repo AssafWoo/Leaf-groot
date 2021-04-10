@@ -20,7 +20,7 @@ position:relative;
 	height: 20px;
 	background:${MainGreen};
 	animation: animate 25s linear infinite;
-	bottom: calc(-150px - 40vh);
+	bottom: calc(-160px - 60vh);
 }
 
 .circles li:nth-child(1) {
@@ -111,27 +111,6 @@ position:relative;
 	background:${MainYellow};
 }
 
-.circles li:nth-child(9) {
-	left: 20%;
-	width: 15px;
-	height: 15px;
-	animation-delay: 0s;
-	animation-duration: 40s;
-	border-radius: 50%;
-	border-top-left-radius: 0 !important;
-	background:${MainGreen};
-}
-
-.circles li:nth-child(10) {
-	left: 85%;
-	width: 35px;
-	height: 35px;
-	animation-delay: 0s;
-	animation-duration: 45s;
-	border-radius: 50%;
-	border-top-left-radius: 0 !important;
-	background:${MainGreenBlue};
-}
 
 @keyframes animate {
 	0% {

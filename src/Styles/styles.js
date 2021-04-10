@@ -18,9 +18,50 @@ export const AppWrapper = styled.div`
 `
 export const MainWrapper = styled.div`
     display:grid;
-    grid-template-columns: 160px auto 100px;
-    grid-template-areas: "sidebar content leftsidebar";
-    grid-gap:170px;
+    grid-template-columns: ${props =>{
+        switch(props.size){
+            case '3-cols':
+                return '160px auto 100px';
+            case '2-cols':
+                return '90px auto 0px';
+            case '1-cols':
+                return '50px auto 0px';
+            case 'fullscreen':
+                return '0px auto 0px';
+            default:
+                return '160px auto 100px';
+        }
+    }};
+    grid-gap: ${props =>{
+        switch(props.size){
+            case '3-cols':
+                return '170px';
+            case '2-cols':
+                return '100px';
+            case '1-cols':
+                return '30px';
+            case 'fullscreen':
+                return '0px';
+            default:
+                return '170px';
+        }
+    }};
+
+    grid-template-areas: ${props => {
+        switch(props.size){
+            case '3-cols':
+                return '"sidebar content leftsidebar"';
+            case '2-cols':
+                return '"sidebar content leftsidebar"';
+            case '1-cols':
+                return '"sidebar content"';
+            case 'fullscreen':
+                return '"content"';
+            default:
+                return '"sidebar content leftsidebar"';
+        }
+    }};
+
     height:100vh;
 `
   

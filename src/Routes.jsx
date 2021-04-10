@@ -11,22 +11,9 @@ import MarketPlace from "./Pages/market_place"
 import Settings from "./Pages/settings"
 import Signup from "./Pages/sign-up"
 import Subscription from "./Pages/subscription"
-import { AppWrapper, BreakLine, MainWrapper } from "./Styles/styles"
 import { useContext } from "react";
 import Store from './Context/global/global-context';
-
-const Layout = ({children}) => {
-    return(
-        <MainWrapper>{/*Prive routes - login required */}
-            <SideBar />
-            <AppWrapper>
-                <BreakLine />
-               {children}
-            </AppWrapper>
-            <RightSideBar />
-        </MainWrapper>
-    )
-}
+import { Layout } from "./Layout";
 
 const Routes = () => {
     const {state, _} = useContext(Store);

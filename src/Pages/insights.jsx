@@ -1,7 +1,7 @@
 import { Heading } from '@chakra-ui/layout';
 import React from 'react';
 import BarsChart from '../Components/Charts/bar';
-import { DarkerTheme, LightBlue, MainRed } from '../Styles/colors';
+import {LightBlue, MainRed } from '../Styles/colors';
 import {BoxSize, BreakLine, Flex, Parag, SubHeader } from '../Styles/styles';
 import {FaBicycle} from 'react-icons/fa';
 
@@ -15,7 +15,7 @@ const Insights = () => {
                 <BoxSize flexSize="1">
                     <Parag>Worse / Best Division</Parag>
                     <Flex>
-                        <BoxSize flexSize="1" style={{background:MainRed, color:DarkerTheme}}>
+                        <BoxSize flexSize="1" style={{background:MainRed}}>
                         <Heading {...SubHeader} style={{fontSize:'1.4rem', fontWeight:'600'}} >312Kg</Heading>
                             <Parag>Marketing</Parag>
 
@@ -30,7 +30,7 @@ const Insights = () => {
                 <BoxSize flexSize="1"> 
                     <FaBicycle size="4rem" style={{margin:'auto'}} />
                     <Heading {...SubHeader} style={{fontSize:'1.2rem' , marginBottom:'1rem'}} >Save up to 53Kg per month by improving employees Commute</Heading>
-                    <Parag style={{color:LightBlue, cursor:'pointer'}}>Checkout possibilites</Parag>
+                    <Parag style={{color:LightBlue, cursor:'pointer', fontWeight:'600'}}>Checkout possibilites</Parag>
 
                     </BoxSize>
                 <BoxSize flexSize="1" style={{background:LightBlue}}>
@@ -50,7 +50,7 @@ const Insights = () => {
                 <BoxSize flexSize="1">
                     <Parag>Worse / Best Integration</Parag>
                     <Flex>
-                        <BoxSize flexSize="1" style={{background:MainRed, color:DarkerTheme}}>
+                        <BoxSize flexSize="1" style={{background:MainRed}}>
                         <Heading {...SubHeader} style={{fontSize:'1.4rem', fontWeight:'600'}} >312Kg</Heading>
                             <Parag>Slack</Parag>
 

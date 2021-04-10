@@ -24,16 +24,12 @@ export const ItemsNav = styled.div`
     text-align:left;
     position:sticky;
     height:fit-content;
-    span {
-      margin:.4rem;
-    }
 
 `
 
 export const Item = styled.div`
-    margin-top:1rem;
+    margin:.8rem;
     text-align:left;
-    margin-left:.5rem;
     color:white;
     font-weight:500;
     width:100%;
@@ -44,7 +40,8 @@ export const Item = styled.div`
     }
     .active{
       background:${Black};
-      padding:.8rem;
+      padding:.5rem;
+      display:block;
       color:'white';
       ${TransitionEffect};
       /* border-radius:50% 50% 50% 50% / 100% 1% 99% 0%; */
