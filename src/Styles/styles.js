@@ -10,11 +10,17 @@ import {ShadowEffect} from './effects';
 export const Flex = styled.div`
     display:flex;
     flex-wrap:wrap;
+    grid-area:content;
 `
 
 export const AppWrapper = styled.div`
     text-align: center;
     grid-area:content;
+    ${props => {
+        if(props.size){
+            return {display:'flex', padding:'2rem'};
+        }
+    }}
 `
 export const MainWrapper = styled.div`
     display:grid;

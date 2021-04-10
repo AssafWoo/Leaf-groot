@@ -6,17 +6,14 @@ import { Heading } from "@chakra-ui/layout";
 const ElectricityPanel = () => {
 
     return(
-        <Flex>
+        <>
             <BoxSize flexSize="3" isInvisible="true">
-                <Flex>
+                <BoxSize flexSize="1" isInvisible="true">
+                <FilterBy />
+                    </BoxSize >
                     <BoxSize flexSize="5" isInvisible="true">
                         <DoughNut /> 
                     </BoxSize>
-                    <BoxSize flexSize="1" isInvisible="true">
-                    <FilterBy />
-                    </BoxSize >
-                </Flex>
-                <BreakLine />
                 <Heading {...SubHeader}>Electricity</Heading>
                 <p>Disterbution of the Electricity</p>
 
@@ -30,7 +27,7 @@ const ElectricityPanel = () => {
                 <Heading {...SubHeader}>Office supplies</Heading>
 
             </BoxSize>
-        </Flex>
+        </>
     )
 }
 

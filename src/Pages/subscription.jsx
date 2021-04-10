@@ -4,7 +4,7 @@ import { Card } from "../Styles/styles";
 
 const Subscription = () => {
     return(
-        <>
+        <Flex>
             <Heading {...SubHeader}>Subscription</Heading>
             <BreakLine />
             <Flex>
@@ -12,7 +12,7 @@ const Subscription = () => {
                 <Card>Medium</Card>
                 <Card>Premium</Card>
             </Flex>
-        </>
+        </Flex>
     )
 }
 export default Subscription;

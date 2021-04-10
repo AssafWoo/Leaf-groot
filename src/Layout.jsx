@@ -11,7 +11,7 @@ export const Layout = ({children}) => {
         middle = (
             <>
                 <SideBar size={false} />
-                <AppWrapper>
+                <AppWrapper size={false}>
                     <BreakLine />
                     {children}
                 </AppWrapper>
@@ -23,7 +23,7 @@ export const Layout = ({children}) => {
         middle = (
             <>
                 <SideBar size={true}  />
-                <AppWrapper>
+                <AppWrapper size={false}>
                     <BreakLine />
                     {children}
                 </AppWrapper>
@@ -34,7 +34,7 @@ export const Layout = ({children}) => {
         middle = (
             <>
                 <SideBar size={true} />
-                <AppWrapper>
+                <AppWrapper size={true}>
                     <BreakLine />
                     {children}
                 </AppWrapper>
@@ -44,7 +44,7 @@ export const Layout = ({children}) => {
     else if(screenSize === 'fullscreen') {
         middle = (
             <>
-                <AppWrapper>
+                <AppWrapper size={true}>
                     <BreakLine />
                     {children}
                 </AppWrapper>

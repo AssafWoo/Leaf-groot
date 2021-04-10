@@ -1,5 +1,3 @@
-import { Button } from "@chakra-ui/button";
-import { MainBlue } from "../Styles/colors";
 import { BoxSize, BreakLine, Flex, SubHeader } from "../Styles/styles";
 import CompanyDetails from "../Modules/settings/company-details";
 import CompanyTargets from "../Modules/settings/company-targets";
@@ -11,7 +9,7 @@ import { Heading } from "@chakra-ui/layout";
 const Settings = () => {
     const {state} = useContext(Store);
     return(
-        <>
+        <Flex>
             <Heading {...SubHeader}>Settings</Heading>
             <BreakLine />
             <Flex>
@@ -20,7 +18,7 @@ const Settings = () => {
                 <CompanyTargets />
                 </BoxSize>
             </Flex>
-        </>
+        </Flex>
     )
 }
 
