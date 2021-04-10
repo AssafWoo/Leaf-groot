@@ -1,6 +1,4 @@
 import { Route, Switch } from "react-router"
-import SideBar from "./Components/Side_bar/left-side-bar"
-import RightSideBar from "./Components/Side_bar/right-side-bar"
 import SignUpQuestions from "./Pages/signup-questions";
 import EmissionsComponent from "./Pages/emissions"
 import Insights from "./Pages/insights"

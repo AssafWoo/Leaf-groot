@@ -1,4 +1,4 @@
-import { BoxSize, BreakLine, Flex, SubHeader } from "../../Styles/styles";
+import { BoxSize, BreakLine, SubHeader } from "../../Styles/styles";
 import FilterBy from "../../Components/Filter/filter_by";
 import DoughNut from "../../Components/Charts/doughnut";
 import { Heading } from "@chakra-ui/layout";

@@ -18,7 +18,7 @@ export const AppWrapper = styled.div`
     grid-area:content;
     ${props => {
         if(props.size){
-            return {display:'flex', padding:'2rem'};
+            return {display:'flex'};
         }
     }}
 `
