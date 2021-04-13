@@ -44,6 +44,7 @@ export const Layout = ({children}) => {
     else if(screenSize === 'fullscreen') {
         middle = (
             <>
+                <SideBar size={true} />
                 <AppWrapper size={true}>
                     <BreakLine />
                     {children}

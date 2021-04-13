@@ -52,10 +52,10 @@ const DashboardContent = ({companyName, userName}) => {
                         <BarsChart />
                     </BoxSize>
                 </Flex>
-                <BoxSize ref={myStackedRef} flexSize="5">
+                <BoxSize ref={myStackedRef} flexSize="3">
                     <Heading fontWeight="300" textAlign="left" fontSize="1.4rem">My progress</Heading>
                     <BreakLine />
-                    <StackedArea width={itemWidth2} />
+                    <StackedArea width={itemWidth1} />
                 </BoxSize>
                     <Flex>
                         <BoxSize flexSize="3" >

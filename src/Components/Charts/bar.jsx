@@ -28,11 +28,11 @@ const data = [
 
 ];
 
-const BarsChart = () => {
+const BarsChart = ({width}) => {
 
     return (
         <Wrapper>
-            <ResponsiveContainer width={370} height={200}>
+            <ResponsiveContainer width={width} height={200}>
                 <BarChart data={data}>
                     <Bar barSize={20}  dataKey="co2" fill={LightBlue} />
                     <XAxis tick={{fill:'white'}} dataKey="name" />

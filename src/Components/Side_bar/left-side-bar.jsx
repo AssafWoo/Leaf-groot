@@ -63,7 +63,6 @@ const SideBar = ({size}) => {
     }
     return(
         <SideBarWrapper>
-            <FloatEffect size="sm" />
             <ItemsNav>
                 <Link to="/">
                     <LeafIcon src={LeafLogo} style={{marginBottom:'1rem', width: size ? '40%' : '25%'}} />

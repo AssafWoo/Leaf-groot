@@ -16,6 +16,7 @@ export const Flex = styled.div`
 export const AppWrapper = styled.div`
     text-align: center;
     grid-area:content;
+    padding:.4rem;
     ${props => {
         if(props.size){
             return {display:'flex'};
@@ -33,7 +34,7 @@ export const MainWrapper = styled.div`
             case '1-cols':
                 return '50px auto 0px';
             case 'fullscreen':
-                return '0px auto 0px';
+                return '40px auto';
             default:
                 return '160px auto 100px';
         }
@@ -62,7 +63,7 @@ export const MainWrapper = styled.div`
             case '1-cols':
                 return '"sidebar content"';
             case 'fullscreen':
-                return '"content"';
+                return '"sidebar content"';
             default:
                 return '"sidebar content leftsidebar"';
         }

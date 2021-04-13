@@ -40,7 +40,8 @@ export const Item = styled.div`
     }
     .active{
       background:${Black};
-      padding:.5rem;
+      padding:.5rem .4rem;
+      margin:auto;
       display:block;
       color:'white';
       ${TransitionEffect};
