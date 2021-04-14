@@ -16,7 +16,7 @@ import { Layout } from "./Layout";
 const Routes = () => {
     const {state, _} = useContext(Store);
     const hasTokens = state.user.loggedIn;
-
+    console.log(hasTokens);
 
     return(
         <Switch>
@@ -36,7 +36,7 @@ const Routes = () => {
             <>
                 <Route exact path="/signup/questions" component={SignUpQuestions} />
                 <Route exact path="/signup" component={Signup} />
-                <Route exact path="/" component={Login} />
+                <Route exact path="/login" component={Login} />
             </>
             }
         </Switch>

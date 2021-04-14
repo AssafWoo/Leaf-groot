@@ -1,15 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {Link} from 'react-router-dom';
 import { Flex, LeafIcon } from '../../Styles/styles';
 import { ItemsNav, SideBarWrapper, Item } from './style';
 import LeafLogo from '../../Assets/images/leaf-green.png';
 import { useState } from 'react';
 import { SettingsIcon } from '@chakra-ui/icons';
-import FloatEffect from '../FloatEffect/floatEffect';
-import {FaDollarSign, FaPlus, FaHome, FaEye} from 'react-icons/fa';
+import {FaDollarSign, FaPlus, FaHome, FaEye, FaPowerOff} from 'react-icons/fa';
 import { HiLightningBolt, HiShoppingCart } from "react-icons/hi";
 import { GoMegaphone } from "react-icons/go";
-
+import Store from '../../Context/global/global-context';
 
 const MenuNames = [
     {
@@ -52,13 +51,26 @@ const MenuNames = [
         name:'Settings',
         link:'/settings/company',
         icon:<SettingsIcon style={{margin:'auto', display:'block'}} />,
+        
+    },
+    {
+        name:'Exit',
+        link:'/login',
+        icon:<FaPowerOff style={{margin:'auto', display:'block'}} />,
     }
 
 ]
 
 const SideBar = ({size}) => {
     const [activeItem, setActiveItem] = useState('');
+    const {_, dispatch} = useContext(Store);
+
     const handleClick = ({name, children}) => {
+        console.log(name)
+        if(name === 'Exit') {
+            
+           dispatch({type:'USER_LOGOUT'})
+        }
         setActiveItem(name)
     }
     return(

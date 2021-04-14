@@ -28,7 +28,13 @@ export const ItemsNav = styled.div`
 `
 
 export const Item = styled.div`
-    margin:.8rem;
+    margin: ${props => {
+       if(props.size === 'fullscreen' || props.size === '1-cols'){
+         return '1rem auto'
+        } else {
+          return '0.6rem'
+        }
+    }};
     text-align:left;
     color:white;
     font-weight:500;
