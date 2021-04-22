@@ -1,3 +1,5 @@
+import LeafHeaderandSearch from "./Components/Header/header";
+import { HeaderAndSearch } from "./Components/Header/style";
 import SideBar from "./Components/Side_bar/left-side-bar";
 import RightSideBar from "./Components/Side_bar/right-side-bar";
 import { AppWrapper, BreakLine, MainWrapper } from "./Styles/styles";
@@ -10,12 +12,13 @@ export const Layout = ({children}) => {
     if(screenSize === '3-cols') {
         middle = (
             <>
-                <SideBar size={false} />
+                {/* <SideBar size={false} /> */}
+                <LeafHeaderandSearch />
                 <AppWrapper size={false}>
                     <BreakLine />
                     {children}
                 </AppWrapper>
-                <RightSideBar />
+                {/* <RightSideBar /> */}
             </>
         )
     }

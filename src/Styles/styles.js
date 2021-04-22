@@ -7,6 +7,10 @@ import {ShadowEffect} from './effects';
 // text fontsize - .7rem;
 // font weight - 500;
 
+export const LayoutGapWrapper = styled.div`
+    padding:2rem;
+`
+
 export const Flex = styled.div`
     display:flex;
     flex-wrap:wrap;
@@ -28,7 +32,7 @@ export const MainWrapper = styled.div`
     grid-template-columns: ${props =>{
         switch(props.size){
             case '3-cols':
-                return '160px auto 100px';
+                return '1fr 4fr 1fr';
             case '2-cols':
                 return '90px auto 0px';
             case '1-cols':
@@ -42,22 +46,25 @@ export const MainWrapper = styled.div`
     grid-gap: ${props =>{
         switch(props.size){
             case '3-cols':
-                return '170px';
+                return '20px'; //170px prev
             case '2-cols':
-                return '100px';
+                return '20px';//100px prev
             case '1-cols':
-                return '30px';
+                return '5px';//30px prev
             case 'fullscreen':
-                return '0px';
+                return '0px';//0px prev
             default:
-                return '170px';
+                return '50px';//170px prev
         }
     }};
 
     grid-template-areas: ${props => {
         switch(props.size){
             case '3-cols':
-                return '"sidebar content leftsidebar"';
+                return `
+                "header header header"
+                "content content content"
+                `;
             case '2-cols':
                 return '"sidebar content leftsidebar"';
             case '1-cols':

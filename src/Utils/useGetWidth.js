@@ -7,8 +7,8 @@ const useGetWidth = (element) => {
 
     useEffect(() => {
         function updateSize(){
-            setItemWidth((element.current).offsetWidth);
-            setItemHeight((element.current).offsetHeight);
+            setItemWidth((element.current)?.offsetWidth);
+            setItemHeight((element.current)?.offsetHeight);
         }
          window.addEventListener('resize', updateSize);
          updateSize();

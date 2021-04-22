@@ -12,6 +12,7 @@ import Subscription from "./Pages/subscription"
 import { useContext } from "react";
 import Store from './Context/global/global-context';
 import { Layout } from "./Layout";
+import DashboardMarketPlace from "./Modules/dashboard/dashboard-marketplace";
 
 const Routes = () => {
     const {state, _} = useContext(Store);
@@ -29,7 +30,7 @@ const Routes = () => {
                         <Route exact path="/settings/company" component={Settings} />
                         <Route exact path="/integrations" component={Integrations} />
                         <Route exact path="/emissions" component={EmissionsComponent} />
-                        <Route exact path="/" component={Dashboard} />
+                        <Route exact path="/" component={DashboardMarketPlace} />
                     </Switch> 
                 </Layout> 
             : 
