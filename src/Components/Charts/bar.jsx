@@ -5,24 +5,32 @@ import { Wrapper } from './styles';
 
 const data = [
   {
-    name: 'A',
+    name: 'S',
     co2: 4000,
   },
   {
-    name: 'B',
+    name: 'S',
     co2: 3523,
   },
   {
-    name: 'You',
+    name: 'M',
     co2: 2143,
   },
 
   {
-    name: 'D',
+    name: 'T',
     co2: 4535,
   }, 
-{
-    name: 'E',
+  {
+    name: 'W',
+    co2: 874,
+  },
+  {
+    name: 'T',
+    co2: 84,
+  },
+  {
+    name: 'F',
     co2: 854,
   }
 

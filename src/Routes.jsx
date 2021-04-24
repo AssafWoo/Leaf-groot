@@ -30,7 +30,7 @@ const Routes = () => {
                         <Route exact path="/settings/company" component={Settings} />
                         <Route exact path="/integrations" component={Integrations} />
                         <Route exact path="/emissions" component={EmissionsComponent} />
-                        <Route exact path="/" component={DashboardMarketPlace} />
+                        <Route exact path="/" component={Dashboard} />
                     </Switch> 
                 </Layout> 
             : 

@@ -5,9 +5,7 @@ import { ItemsNav, SideBarWrapper, Item } from './style';
 import LeafLogo from '../../Assets/images/leaf-green.png';
 import { useState } from 'react';
 import { SettingsIcon } from '@chakra-ui/icons';
-import {FaDollarSign, FaPlus, FaHome, FaEye, FaPowerOff} from 'react-icons/fa';
-import { HiLightningBolt, HiShoppingCart } from "react-icons/hi";
-import { GoMegaphone } from "react-icons/go";
+import {FaDollarSign, FaHome, FaEye, FaPowerOff, FaTruck, FaLock, FaBook} from 'react-icons/fa';
 import Store from '../../Context/global/global-context';
 
 const MenuNames = [
@@ -22,28 +20,23 @@ const MenuNames = [
         icon:<FaEye style={{margin:'auto'}} />
     },
     {
-        name:'Emissons',
-        link:'/emissions',
-        icon: <HiLightningBolt style={{margin:'auto'}} />
+        name:'Orders',
+        link:'/orders',
+        icon: <FaTruck style={{margin:'auto'}} />
     },
     {
-        name:'Integrations',
-        link:'/integrations',
-        icon:<FaPlus style={{margin:'auto'}} />
+        name:'API Keys',
+        link:'/apikeys',
+        icon:<FaLock style={{margin:'auto'}} />
     },
     {
-        name:'Marketing',
-        link:'/marketing',
-        icon:<GoMegaphone style={{margin:'auto'}} />
+        name:'Documentation',
+        link:'/documentation',
+        icon:<FaBook style={{margin:'auto'}} />
     },
     {
-        name:'Market Place',
-        link:'/marketplace',
-        icon:<HiShoppingCart style={{margin:'auto'}} />
-    },
-    {
-        name:'Plan',
-        link:'/plan',
+        name:'Billing',
+        link:'/billing',
         icon:<FaDollarSign style={{margin:'auto'}} />
     },
 

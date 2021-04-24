@@ -7,7 +7,7 @@ const SingleUser = ({desiredPhoto}) => {
     
     if(desiredPhoto === 'company') {
         return(
-            <img alt='company' style={{width:'8%', top:'1px', display:'inline-block', borderRadius:"20px", position:'absolute', left:'2rem'}} src={CompanyAvatar}  />
+            <img alt='company' style={{width:'40%', display:'inline-block', borderRadius:"20px"}} src={CompanyAvatar}  />
         )
     }
     return(

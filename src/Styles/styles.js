@@ -32,7 +32,7 @@ export const MainWrapper = styled.div`
     grid-template-columns: ${props =>{
         switch(props.size){
             case '3-cols':
-                return '1fr 4fr 1fr';
+                return '160px auto 100px';
             case '2-cols':
                 return '90px auto 0px';
             case '1-cols':
@@ -46,25 +46,22 @@ export const MainWrapper = styled.div`
     grid-gap: ${props =>{
         switch(props.size){
             case '3-cols':
-                return '20px'; //170px prev
+                return '170px';
             case '2-cols':
-                return '20px';//100px prev
+                return '100px';//100px prev
             case '1-cols':
-                return '5px';//30px prev
+                return '30px';//30px prev
             case 'fullscreen':
                 return '0px';//0px prev
             default:
-                return '50px';//170px prev
+                return '170px';//170px prev
         }
     }};
 
     grid-template-areas: ${props => {
         switch(props.size){
             case '3-cols':
-                return `
-                "header header header"
-                "content content content"
-                `;
+                return '"sidebar content leftsidebar"';
             case '2-cols':
                 return '"sidebar content leftsidebar"';
             case '1-cols':
