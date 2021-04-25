@@ -1,4 +1,4 @@
-import { CirclesEffect } from './style';
+import { CirclesEffect } from '../../Styles/effects';
 
 const FloatEffect = ({size}) => {
 
