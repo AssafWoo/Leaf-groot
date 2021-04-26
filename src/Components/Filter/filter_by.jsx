@@ -11,7 +11,7 @@ const ItemStyle = {
 }
 const FilterBy = ({byParameter}) => {
     const [timeFilter, setTimeFilter] = useState('Daily');
-    const [CO2filter, setCO2Filter] = useState('CO2 Volume');
+    const [CO2filter, setCO2Filter] = useState('CO2');
 
     if(byParameter === 'time') {
         return (

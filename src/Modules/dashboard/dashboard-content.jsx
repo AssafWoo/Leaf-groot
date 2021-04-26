@@ -7,6 +7,7 @@ import FilterBy from '../../Components/Filter/filter_by';
 import {useGetTime} from '../../Utils/useGetTime';
 import BarsChart from '../../Components/Charts/bar';
 import { useScreenSize } from '../../Utils/useScreenSize';
+import OrdersTable from '../../Components/Table/orders_table';
 
 const DashboardContent = ({companyName, userName}) => {
     const CurrentTime = useGetTime();
@@ -33,7 +34,14 @@ const DashboardContent = ({companyName, userName}) => {
 
                 <Flex>
                     <BoxSize flexSize="3">
-                        <FilterBy byParameter="CO2 Volume" />
+                        <Flex>
+                            <BoxSize isInvisible="true" flexSize="1">
+                                <Heading fontWeight="300" textAlign="left" fontSize="1.4rem">CO2 Volume</Heading>
+                            </BoxSize>
+                            <BoxSize isInvisible="true" flexSize="1">
+                                <FilterBy byParameter="CO2" />
+                            </BoxSize>
+                        </Flex>
                         <BreakLine />
                         <BarsChart />
                     </BoxSize>
@@ -41,7 +49,7 @@ const DashboardContent = ({companyName, userName}) => {
                 <BoxSize ref={myStackedRef} flexSize="3">
                     <Heading fontWeight="300" textAlign="left" fontSize="1.4rem">Orders</Heading>
                     <BreakLine />
-                    insert table
+                    <OrdersTable />
                 </BoxSize>
                     <Flex>
                         <BoxSize flexSize="3" style={{background:LightBlue}}>

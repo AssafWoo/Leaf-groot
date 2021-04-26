@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {DarkTheme, MainGreen, MainGrey} from './colors';
+import {DarkTheme, MainGreen, MainGrey, MainPink, MainPurple} from './colors';
 import {ShadowEffect} from './effects';
 
 
@@ -130,3 +130,36 @@ export const Parag = styled.p`
 `
 
 export const InputProperties = {size:'sm', borderRadius:"full", variant:"solid", margin:'0.5rem 0.3rem'}
+
+
+export const TableWrapper = styled.div`
+    overflow-x:${props =>  {
+         switch(props.size){
+            case '3-cols':
+                return 'hidden';
+            case '2-cols':
+                return 'hidden';
+            case '1-cols':
+                return 'scroll';
+            case 'fullscreen':
+                return 'scroll';
+            default:
+                return 'hidden';
+        }
+    }};
+    tr{
+        cursor: pointer;
+        font-size:.8rem;
+
+        &:hover{
+            background-color:${MainPurple}
+        }
+        
+    }
+    th{
+        font-weight:400;
+        font-size:1rem;
+        text-transform: none;
+    }
+
+`
