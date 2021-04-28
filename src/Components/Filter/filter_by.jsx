@@ -9,33 +9,19 @@ import { DarkerTheme, MainBlue, MainGrey } from "../../Styles/colors";
 const ItemStyle = {
     background: MainBlue, color:'white'
 }
-const FilterBy = ({byParameter}) => {
-    const [timeFilter, setTimeFilter] = useState('Daily');
-    const [CO2filter, setCO2Filter] = useState('CO2');
+const FilterBy = ({parameters}) => {
+    const [filter, setFilter] = useState(parameters[0]);
 
-    if(byParameter === 'time') {
-        return (
-            <Menu>
-                <MenuButton mt="0.4rem" colorScheme="black" bg={DarkerTheme} border={`1px solid ${MainGrey}`} color="white" as={Button} rightIcon={<ChevronDownIcon />} float="right">
-                    {timeFilter}
-                </MenuButton>
-                <MenuList bg={DarkerTheme}>
-                    <MenuItem _focus={{background:'trasparent'}} _hover={{...ItemStyle}} onClick={() => setTimeFilter('Daily')}>Daily</MenuItem>
-                    <MenuItem _hover={{...ItemStyle}}  onClick={() => setTimeFilter('Weekly')}>Weekly</MenuItem>
-                    <MenuItem _hover={{...ItemStyle}}  onClick={() => setTimeFilter('Monthly')}>Monthly</MenuItem>
-                    <MenuItem _hover={{...ItemStyle}}  onClick={() => setTimeFilter('Yearly')}>Yearly</MenuItem>
-                </MenuList>
-            </Menu>
-        )
-    }
     return (
         <Menu>
             <MenuButton mt="0.4rem" colorScheme="black" bg={DarkerTheme} border={`1px solid ${MainGrey}`} color="white" as={Button} rightIcon={<ChevronDownIcon />} float="right">
-                {CO2filter}
+                {filter}
             </MenuButton>
             <MenuList bg={DarkerTheme}>
-                <MenuItem _focus={{background:'trasparent'}} _hover={{...ItemStyle}} onClick={() => setCO2Filter('CO2')}>CO2 Volume</MenuItem>
-                <MenuItem _hover={{...ItemStyle}}  onClick={() => setCO2Filter('Orders')}>Orders</MenuItem>
+                {parameters.map((value, index) => (
+                <MenuItem _focus={{background:'trasparent'}} _hover={{...ItemStyle}} onClick={() => setFilter(value)}>{value}</MenuItem>
+
+                ))}
             </MenuList>
         </Menu>
     )

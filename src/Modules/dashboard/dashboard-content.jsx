@@ -3,17 +3,21 @@ import { Heading } from '@chakra-ui/layout';
 import { Flex, BoxSize, BreakLine } from '../../Styles/styles'
 import SingleUser from '../../Components/UserAvatar/SingelUser';
 import { DarkerTheme,MainBlue, LightBlue } from '../../Styles/colors';
-import FilterBy from '../../Components/Filter/filter_by';
 import {useGetTime} from '../../Utils/useGetTime';
 import BarsChart from '../../Components/Charts/bar';
 import { useScreenSize } from '../../Utils/useScreenSize';
 import OrdersTable from '../../Components/Table/orders_table';
+import { SwitchToggleButton } from '../../Components/Switch/switch';
 
-const DashboardContent = ({companyName, userName}) => {
+const DashboardContent = ({companyName, userName, selected, handleToggleFilter}) => {
     const CurrentTime = useGetTime();
     const screenSize = useScreenSize();
 
     const myStackedRef = useRef();
+
+    const toggleFilter = () => {
+        handleToggleFilter();
+    } 
 
     return(
         <>
@@ -28,18 +32,15 @@ const DashboardContent = ({companyName, userName}) => {
                 <BoxSize flexSize="3" isInvisible={true} style={{textAlign:'right', padding:'0'}}>
                     <SingleUser desiredPhoto="company" />
                 </BoxSize> : ''}
-
             </Flex>
-            
-
                 <Flex>
                     <BoxSize flexSize="3">
                         <Flex>
                             <BoxSize isInvisible="true" flexSize="1">
-                                <Heading fontWeight="300" textAlign="left" fontSize="1.4rem">CO2 Volume</Heading>
-                            </BoxSize>
-                            <BoxSize isInvisible="true" flexSize="1">
-                                <FilterBy byParameter="CO2" />
+                                <SwitchToggleButton
+                                    selected={selected}
+                                    toggleSelected={toggleFilter}
+                                />
                             </BoxSize>
                         </Flex>
                         <BreakLine />
