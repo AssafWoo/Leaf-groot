@@ -2,12 +2,14 @@ import React, { useRef }  from 'react';
 import { Heading } from '@chakra-ui/layout';
 import { Flex, BoxSize, BreakLine } from '../../Styles/styles'
 import SingleUser from '../../Components/UserAvatar/SingelUser';
-import { DarkerTheme,MainBlue, LightBlue } from '../../Styles/colors';
+import { PurpleBlue } from '../../Styles/colors';
 import {useGetTime} from '../../Hooks/useGetTime';
 import BarsChart from '../../Components/Charts/bar';
 import { useScreenSize } from '../../Hooks/useScreenSize';
 import OrdersTable from '../../Components/Table/orders_table';
 import { SwitchToggleButton } from '../../Components/Switch/switch';
+import BlogCard from '../../Components/Cards/blog_card';
+import VolunteerCard from '../../Components/Cards/volunteer_card';
 
 const DashboardContent = ({companyName, userName, selected, handleToggleFilter, dashboardData}) => {
     const CurrentTime = useGetTime();
@@ -53,15 +55,15 @@ const DashboardContent = ({companyName, userName, selected, handleToggleFilter, 
                     <OrdersTable />
                 </BoxSize>
                     <Flex>
-                        <BoxSize flexSize="3" style={{background:LightBlue}}>
-                            <Heading fontWeight="300" textAlign="left" fontSize="1.4rem">Volunteer</Heading>
+                        <BoxSize flexSize="3" style={{background:PurpleBlue}}>
+                            <Heading  fontWeight="300" textAlign="left" fontSize="1.4rem">Volunteer</Heading>
                             <BreakLine />
-                            <p style={{color:DarkerTheme, cursor:'pointer' }}>Explore volunteer opportunities</p>
+                            <VolunteerCard />
                         </BoxSize>
                         <BoxSize flexSize="3">
                             <Heading fontWeight="300" textAlign="left" fontSize="1.4rem">Our Blog</Heading>
                             <BreakLine />
-                            <p style={{color:MainBlue, cursor:'pointer' }}>Put blog link and card</p>
+                            <BlogCard />
                         </BoxSize>
                    </Flex>
                     

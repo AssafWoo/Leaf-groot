@@ -27,24 +27,24 @@ const OrdersTable = () => {
                 </Thead>
                 <Tbody>
                     <Tr>
-                        <Td>1</Td>
-                        <Td>1</Td>
-                        <Td>1</Td>
-                        <Td>1</Td>
-                        <Td>1</Td>
-                        <Td>1</Td>
-                        <Td>1</Td>
-
+                        <Td>Amazon Tribe</Td>
+                        <Td>Transfered</Td>
+                        <Td>Forestation</Td>
+                        <Td>150Kg</Td>
+                        <Td>10$</Td>
+                        <Td>10/5/21</Td>
+                        <Td>Go to details</Td>
                     </Tr>
                     <Tr>
-                        <Td>2</Td>
-                        <Td>2</Td>
-                        <Td>2</Td>
-                        <Td>2</Td>
-                        <Td>2</Td>
-                        <Td>2</Td>
-                        <Td>2</Td>
+                        <Td>Amazon Tribe</Td>
+                        <Td>Transfered</Td>
+                        <Td>Forestation</Td>
+                        <Td>150Kg</Td>
+                        <Td>10$</Td>
+                        <Td>10/5/21</Td>
+                        <Td>Go to details</Td>
                     </Tr>
+                
                 </Tbody>
             </Table>
         </TableWrapper>
