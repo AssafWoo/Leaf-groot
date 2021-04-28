@@ -9,7 +9,7 @@ import { useScreenSize } from '../../Utils/useScreenSize';
 import OrdersTable from '../../Components/Table/orders_table';
 import { SwitchToggleButton } from '../../Components/Switch/switch';
 
-const DashboardContent = ({companyName, userName, selected, handleToggleFilter}) => {
+const DashboardContent = ({companyName, userName, selected, handleToggleFilter, dashboardData}) => {
     const CurrentTime = useGetTime();
     const screenSize = useScreenSize();
 
@@ -44,7 +44,7 @@ const DashboardContent = ({companyName, userName, selected, handleToggleFilter})
                             </BoxSize>
                         </Flex>
                         <BreakLine />
-                        <BarsChart />
+                        <BarsChart data={dashboardData} />
                     </BoxSize>
                 </Flex>
                 <BoxSize ref={myStackedRef} flexSize="3">
