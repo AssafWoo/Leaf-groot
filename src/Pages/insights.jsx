@@ -4,8 +4,11 @@ import BarsChart from '../Components/Charts/bar';
 import {LightBlue, MainRed } from '../Styles/colors';
 import {BoxSize, BreakLine, Flex, Parag, SubHeader } from '../Styles/styles';
 import {FaBicycle} from 'react-icons/fa';
+import { useState } from 'react';
+import { dashboardContentCO2Data } from '../Mocks/dashboard';
 
 const Insights = () => {
+    const[dashboardData, setDashboardData] = useState(dashboardContentCO2Data)
 
     return(
         <Flex>
@@ -65,7 +68,7 @@ const Insights = () => {
                 <BoxSize flexSize="3">
                         <Heading {...SubHeader} style={{fontSize:'1.4rem'}} >Companies comprasion</Heading>
                         <BreakLine />
-                        <BarsChart />
+                        <BarsChart data={dashboardData} />
                 </BoxSize>
 
                 <BoxSize flexSize="1" style={{background:LightBlue}}>

@@ -17,6 +17,10 @@ export const Flex = styled.div`
     display:flex;
     flex-wrap:wrap;
     grid-area:content;
+    align-content:flex-start;
+    justify-content:flex-start;
+    align-items:flex-start;
+
 `
 
 export const AppWrapper = styled.div`
@@ -31,6 +35,7 @@ export const AppWrapper = styled.div`
 `
 export const MainWrapper = styled.div`
     display:grid;
+    row-gap: 0;
     grid-template-columns: ${props =>{
         switch(props.size){
             case '3-cols':

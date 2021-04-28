@@ -19,7 +19,7 @@ const RightSideBar = () => {
         dispatch({type:'USER_LOGOUT', payload: ''})
     }
     return(
-        <RightNav style={{position:'sticky', top:'1rem', height:'fit-content'}}>
+        <RightNav style={{position:'sticky', top:'.1rem', height:'fit-content'}}>
             <BoxSize  flexSize="1" isInvisible="true" style={{position:'sticky', top:'1rem', padding:'0px'}} >
                 <Flex>
                     <BoxSize isInvisible="true" style={{padding:'0', textAlign:'right'}} flexSize="1">

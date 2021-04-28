@@ -3,9 +3,9 @@ import { Heading } from '@chakra-ui/layout';
 import { Flex, BoxSize, BreakLine } from '../../Styles/styles'
 import SingleUser from '../../Components/UserAvatar/SingelUser';
 import { DarkerTheme,MainBlue, LightBlue } from '../../Styles/colors';
-import {useGetTime} from '../../Utils/useGetTime';
+import {useGetTime} from '../../Hooks/useGetTime';
 import BarsChart from '../../Components/Charts/bar';
-import { useScreenSize } from '../../Utils/useScreenSize';
+import { useScreenSize } from '../../Hooks/useScreenSize';
 import OrdersTable from '../../Components/Table/orders_table';
 import { SwitchToggleButton } from '../../Components/Switch/switch';
 

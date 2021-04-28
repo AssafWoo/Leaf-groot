@@ -1,6 +1,6 @@
 import { Table, Tr, Th, Thead, Tbody,Td } from "@chakra-ui/table"
 import { TableWrapper } from "../../Styles/styles";
-import { useScreenSize } from "../../Utils/useScreenSize";
+import { useScreenSize } from "../../Hooks/useScreenSize";
 
 
 const TheadStyle = {

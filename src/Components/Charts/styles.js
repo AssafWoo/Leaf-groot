@@ -12,17 +12,18 @@ export const Wrapper = styled.div`
     }
     
     .recharts-default-tooltip{
-        border-radius:20px;
-        font-size:1rem;
-        border:.4px solid white;
+        border-radius:15px;
+        font-size:1.2rem;
+        border:none;
+        color:black;
         ${ShadowEffect}
     }
     .recharts-default-legend{
         text-align:left;
     }
-    .recharts-tooltip-label{
+    /* .recharts-tooltip-label{
         color:white !important;
-    }
+    } */
     .recharts-sector {
         width:10rem;
     }
