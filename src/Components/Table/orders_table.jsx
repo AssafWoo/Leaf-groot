@@ -3,6 +3,8 @@ import { TableWrapper } from "../../Styles/styles";
 import { useScreenSize } from "../../Hooks/useScreenSize";
 import ModalComponent from "../Modal/modal";
 import { useState } from "react";
+import useSortedElementIndex from "../../Hooks/useSortedElement";
+// import useSort from '../../Hooks/useSort';
 
 const TheadStyle = {
     color:'white'
@@ -44,27 +46,20 @@ const sortTypes = [
 ];
 
 const TableComponent = ({tableData}) => {
+    const [currrentHeaderTableHeaderToSort, setCurrentTableHeaderToSort] = useState('Mass(Tonne)')
+    const sortedElementIndex = useSortedElementIndex(currrentHeaderTableHeaderToSort);
+
+    // const currentSort = useSort();
     const ScreenSize = useScreenSize();
     const [currentSort, setCurrentSort] = useState('up');
-    const [sortedElementIndex, setSortedElementIndex] = useState(0);
 
 
-    const getIndexOfSortType = (header) => {
-        console.log(header);
-        let index = sortTypes.findIndex(obj => obj.name === header);
-        console.log(index);
-        if(index < 0){
-            return 0;
-        }
-        return index;
-    }
 
     const onSortChange = (header) => {
         let nextSort;
-        setSortedElementIndex(getIndexOfSortType(header));
-        console.log(sortedElementIndex);
+        setCurrentTableHeaderToSort(header);
         if (currentSort === 'down') nextSort = 'up';
-		else if (currentSort === 'up') nextSort = 'down';
+		if (currentSort === 'up') nextSort = 'down';
         setCurrentSort(nextSort);
     }
 
@@ -72,7 +67,7 @@ const TableComponent = ({tableData}) => {
     return(
         <>
             <TableWrapper size={ScreenSize}>
-                <Table variant='simple'>
+                <Table size="sm" variant='simple'>
                     <Thead>
                         <Tr>
                             {tableData?.headers?.map((header, _) => (
@@ -94,7 +89,7 @@ const TableComponent = ({tableData}) => {
                                     <ModalComponent
                                         openButtonContent='...'
                                         header={project.name} 
-                                        content={`The project was bought on ${project.date} and saved ${project.mass} CO2, the transaction is ${project.status}`}
+                                        content={`The project was bought on ${project.date} and saved ${project.mass} Tonne CO2, the transaction is ${project.status}`}
                                         goToActionButton='empty'
                                     />
                                 </Td>
