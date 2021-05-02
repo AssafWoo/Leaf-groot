@@ -3,7 +3,7 @@ import { Flex  } from '../Styles/styles'
 import DashboardContent from '../Modules/dashboard/dashboard-content';
 import Store from '../Context/global/global-context';
 import { useState } from 'react';
-import { dashboardContentCO2Data, dashboardContentOrdersData } from '../Mocks/dashboard';
+import { dashboardContentCO2Data, dashboardContentOrdersData, dashboardContentTableData } from '../Mocks/dashboard';
 
 
 const Dashboard = () => {
@@ -26,6 +26,7 @@ const Dashboard = () => {
               selected={selected}
               handleToggleFilter={handleToggleFilter}
               dashboardData={dashboardData}
+              tableData={dashboardContentTableData}
             />
         </Flex>
     )

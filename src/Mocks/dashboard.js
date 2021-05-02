@@ -70,3 +70,30 @@ export const dashboardContentOrdersData = {
         }
     ] 
 };
+
+
+export const dashboardContentTableData = {
+    headers:['Project', 'Status', 'Type', 'Mass', 'Total', 'Date', 'Details'],
+    data:[
+        {
+            name: 'Amazon Tribe',
+            status:'Pending',
+            orders:'Transfered',
+            type: 'Forestation',
+            mass:'150Kg',
+            total: '10$',
+            date:'10/5/21',
+            details: '...',
+        },
+        {
+            name: 'Indian waterfall',
+            status:'Success',
+            orders:'Transfered',
+            type: 'Forestation',
+            mass:'124kg',
+            total: '5$',
+            date:'14/4/21',
+            details: '...',
+        },
+    ] 
+};

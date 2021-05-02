@@ -1,10 +1,14 @@
+import { Button } from "@chakra-ui/button";
+import { useDisclosure } from "@chakra-ui/hooks";
 import { Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay } from "@chakra-ui/modal"
-import { DarkerTheme } from "../../Styles/colors";
+import { DarkerTheme, MainGreen } from "../../Styles/colors";
 
-const ModalComponent = ({isOpen, onClose,trigger, header, content, actionTrigger}) => {
+const ModalComponent = ({openButtonContent, trigger, header, content, goToActionButton}) => {
+    const { isOpen, onOpen, onClose } = useDisclosure()
+
     return (
         <>
-            {trigger}
+            <Button background={MainGreen} color="white" onClick={onOpen} colorScheme="blue">{openButtonContent}</Button>
             <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
                 <ModalContent color="white" bg={DarkerTheme}>
@@ -13,9 +17,15 @@ const ModalComponent = ({isOpen, onClose,trigger, header, content, actionTrigger
                 <ModalBody>
                     {content}
                 </ModalBody>
+                {goToActionButton === 'empty' ?
+                 ''
+                :  
                 <ModalFooter>
-                    {actionTrigger}
-                </ModalFooter>
+                    <Button background={MainGreen} color="white" mr={3} onClick={onClose} colorScheme="blue">
+                        {goToActionButton}
+                    </Button>
+                </ModalFooter>}
+               
                 </ModalContent>
             </Modal>
         </>

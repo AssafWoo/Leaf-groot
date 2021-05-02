@@ -8,7 +8,7 @@ import { useState } from 'react';
 import { dashboardContentCO2Data } from '../Mocks/dashboard';
 
 const Insights = () => {
-    const[dashboardData, setDashboardData] = useState(dashboardContentCO2Data)
+    const[dashboardData, _] = useState(dashboardContentCO2Data)
 
     return(
         <Flex>

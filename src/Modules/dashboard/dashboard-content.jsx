@@ -6,12 +6,13 @@ import { PurpleBlue } from '../../Styles/colors';
 import {useGetTime} from '../../Hooks/useGetTime';
 import BarsChart from '../../Components/Charts/bar';
 import { useScreenSize } from '../../Hooks/useScreenSize';
-import OrdersTable from '../../Components/Table/orders_table';
+import TableComponent from '../../Components/Table/orders_table';
 import { SwitchToggleButton } from '../../Components/Switch/switch';
 import BlogCard from '../../Components/Cards/blog_card';
 import VolunteerCard from '../../Components/Cards/volunteer_card';
+import SearchBar from '../../Components/Search/search';
 
-const DashboardContent = ({companyName, userName, selected, handleToggleFilter, dashboardData}) => {
+const DashboardContent = ({companyName, userName, selected, handleToggleFilter, dashboardData, tableData}) => {
     const CurrentTime = useGetTime();
     const screenSize = useScreenSize();
 
@@ -52,7 +53,8 @@ const DashboardContent = ({companyName, userName, selected, handleToggleFilter, 
                 <BoxSize ref={myStackedRef} flexSize="3">
                     <Heading fontWeight="300" textAlign="left" fontSize="1.4rem">Orders</Heading>
                     <BreakLine />
-                    <OrdersTable />
+                    <SearchBar />
+                    <TableComponent tableData={tableData} />
                 </BoxSize>
                     <Flex>
                         <BoxSize flexSize="3" style={{background:PurpleBlue}}>

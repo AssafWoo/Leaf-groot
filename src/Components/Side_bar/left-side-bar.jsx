@@ -25,8 +25,8 @@ const MenuNames = [
         icon: <FaTruck style={{margin:'auto'}} />
     },
     {
-        name:'API Keys',
-        link:'/apikeys',
+        name:'API',
+        link:'/api',
         icon:<FaLock style={{margin:'auto'}} />
     },
     {

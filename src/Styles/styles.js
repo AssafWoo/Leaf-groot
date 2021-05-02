@@ -99,20 +99,21 @@ export const TableWrapper = styled.div`
                 return 'hidden';
         }
     }};
+    th{
+        font-weight:400;
+        font-size:1.1rem;
+        text-transform: none;
+    }
     tr{
         cursor: pointer;
-        font-size:.8rem;
+        font-size:.9rem;
 
         &:hover{
             background-color:${DarkerTheme};
         }
         
     }
-    th{
-        font-weight:400;
-        font-size:1rem;
-        text-transform: none;
-    }
+
 
 `
 export const SwitchWrapper = styled.div`

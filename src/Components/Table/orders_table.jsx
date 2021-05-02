@@ -1,54 +1,52 @@
 import { Table, Tr, Th, Thead, Tbody,Td } from "@chakra-ui/table"
 import { TableWrapper } from "../../Styles/styles";
 import { useScreenSize } from "../../Hooks/useScreenSize";
-
+import ModalComponent from "../Modal/modal";
 
 const TheadStyle = {
     color:'white'
 };
 
-const OrdersTable = () => {
+
+const TableComponent = ({tableData}) => {
     const ScreenSize = useScreenSize();
 
     return(
-        <TableWrapper size={ScreenSize}>
-            <Table variant='simple'>
-                <Thead>
-                    <Tr>
-                        <Th style={TheadStyle}>Project</Th>
-                        <Th style={TheadStyle}>Status</Th>
-                        <Th style={TheadStyle}>Type</Th>
-                        <Th style={TheadStyle}>Mass</Th>
-                        <Th style={TheadStyle}>Total</Th>
-                        <Th style={TheadStyle}>Created on</Th>
-                        <Th style={TheadStyle}>Details</Th>
+        <>
+            <TableWrapper size={ScreenSize}>
+                <Table variant='simple'>
+                    <Thead>
+                        <Tr>
+                            {tableData?.headers?.map((header, _) => (
+                            <Th style={TheadStyle}>{header}</Th>
+                            ))}
+                        </Tr>
+                    </Thead>
+                    <Tbody>
+                        {tableData?.data?.map((project, index) => (
+                            <Tr>
+                                <Td>{project.name}</Td>
+                                <Td>{project.status}</Td>
+                                <Td>{project.type}</Td>
+                                <Td>{project.mass}</Td>
+                                <Td>{project.total}</Td>
+                                <Td>{project.date}</Td>
 
-                    </Tr>
-                </Thead>
-                <Tbody>
-                    <Tr>
-                        <Td>Amazon Tribe</Td>
-                        <Td>Transfered</Td>
-                        <Td>Forestation</Td>
-                        <Td>150Kg</Td>
-                        <Td>10$</Td>
-                        <Td>10/5/21</Td>
-                        <Td>Go to details</Td>
-                    </Tr>
-                    <Tr>
-                        <Td>Amazon Tribe</Td>
-                        <Td>Transfered</Td>
-                        <Td>Forestation</Td>
-                        <Td>150Kg</Td>
-                        <Td>10$</Td>
-                        <Td>10/5/21</Td>
-                        <Td>Go to details</Td>
-                    </Tr>
-                
-                </Tbody>
-            </Table>
-        </TableWrapper>
+                                <Td>
+                                    <ModalComponent
+                                        openButtonContent='...'
+                                        header={project.name} 
+                                        content={`The project was bought on ${project.date} and saved ${project.mass} CO2, the transaction is ${project.status}`}
+                                        goToActionButton='empty'
+                                    />
+                                </Td>
+                            </Tr>
+                        ))}
+                    </Tbody>
+                </Table>
+            </TableWrapper>
+        </>
     )
 }
 
-export default OrdersTable;
+export default TableComponent;
