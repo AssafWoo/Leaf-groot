@@ -12,7 +12,6 @@ import Subscription from "./Pages/subscription"
 import { useContext } from "react";
 import Store from './Context/global/global-context';
 import { Layout } from "./Layout";
-import DashboardMarketPlace from "./Modules/dashboard/dashboard-marketplace";
 
 const Routes = () => {
     const {state, _} = useContext(Store);

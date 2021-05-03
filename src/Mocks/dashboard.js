@@ -73,7 +73,7 @@ export const dashboardContentOrdersData = {
 
 
 export const dashboardContentTableData = {
-    headers:['Project', 'Status', 'Type', 'Mass(Tonne)', 'Total($)', 'Date', 'Details'],
+    headers:['Name', 'Status', 'Type', 'Mass(Tonne)', 'Total($)', 'Date', 'Details'],
     data:[
         {
             name: 'Amazon Tribe',
@@ -82,6 +82,16 @@ export const dashboardContentTableData = {
             type: 'Forestation',
             mass:'170',
             total: '2',
+            date:'10/5/21',
+            details: '...',
+        },
+        {
+            name: 'AA',
+            status:'Pending',
+            orders:'',
+            type: 'Water',
+            mass:'190',
+            total: '1',
             date:'10/5/21',
             details: '...',
         },
