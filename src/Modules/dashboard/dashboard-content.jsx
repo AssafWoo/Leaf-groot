@@ -54,7 +54,7 @@ const DashboardContent = ({companyName, userName, selected, handleToggleFilter, 
                     <Heading fontWeight="300" textAlign="left" fontSize="1.4rem">Orders & Projects</Heading>
                     <BreakLine />
                     <SearchBar />
-                    <TableComponent tableData={tableData} />
+                    <TableComponent size="sm" tableData={tableData} />
                 </BoxSize>
                     <Flex>
                         <BoxSize flexSize="3" style={{background:PurpleBlue}}>

@@ -12,7 +12,7 @@ const TheadStyle = {
 
 
 
-const TableComponent = ({tableData}) => {
+const TableComponent = ({tableData, size}) => {
     const [currentSort, setCurrentSort] = useState('default');
     const [currrentHeaderTableHeaderToSort, setCurrentTableHeaderToSort] = useState('Mass(Tonne)')
     
@@ -33,7 +33,7 @@ const TableComponent = ({tableData}) => {
     return(
         <>
             <TableWrapper size={ScreenSize}>
-                <Table size="sm" variant='simple'>
+                <Table size={size} variant='simple'>
                     <Thead>
                         <Tr>
                             {tableData?.headers?.map((header, _) => (

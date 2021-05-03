@@ -31,7 +31,7 @@ const MenuNames = [
     },
     {
         name:'Documentation',
-        link:'/documentation',
+        link:'/docs',
         icon:<FaBook style={{margin:'auto'}} />
     },
     {

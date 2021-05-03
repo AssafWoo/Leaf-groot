@@ -85,6 +85,8 @@ export const MainWrapper = styled.div`
 
 export const TableWrapper = styled.div`
     padding:1rem;
+    background-color:${DarkTheme};
+    border-radius:15px;
     overflow-x:${props =>  {
          switch(props.size){
             case '3-cols':
@@ -107,7 +109,7 @@ export const TableWrapper = styled.div`
     tr{
         cursor: pointer;
         font-size:.9rem;
-
+        color:white;
         &:hover{
             background-color:${DarkerTheme};
         }
