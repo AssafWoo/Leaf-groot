@@ -3,8 +3,8 @@ import { Flex  } from '../Styles/styles'
 import DashboardContent from '../Modules/dashboard/dashboard-content';
 import Store from '../Context/global/global-context';
 import { useState } from 'react';
-import { dashboardContentCO2Data, dashboardContentOrdersData, dashboardContentTableData } from '../Mocks/dashboard';
-
+import { dashboardContentCO2Data, dashboardContentOrdersData } from '../Mocks/dashboard';
+import {dashboardContentTableData } from '../Mocks/order_sort_types';
 
 const Dashboard = () => {
     const[selected, setSelected] = useState(true)

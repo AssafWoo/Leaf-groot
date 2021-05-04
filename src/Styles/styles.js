@@ -85,6 +85,7 @@ export const MainWrapper = styled.div`
 
 export const TableWrapper = styled.div`
     padding:1rem;
+    width:100%;
     background-color:${DarkTheme};
     border-radius:15px;
     overflow-x:${props =>  {

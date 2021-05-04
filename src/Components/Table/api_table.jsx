@@ -12,11 +12,11 @@ const TheadStyle = {
 
 
 
-const OrderTableComponent = ({tableData, size}) => {
+const APITableComponent = ({tableData, size}) => {
     const [currentSort, setCurrentSort] = useState('default');
     const [currrentHeaderTableHeaderToSort, setCurrentTableHeaderToSort] = useState('Mass(Tonne)')
     
-    const sortedArray= useSortedArray(currrentHeaderTableHeaderToSort, tableData, currentSort, 'Orders');
+    const sortedArray= useSortedArray(currrentHeaderTableHeaderToSort, tableData, currentSort, 'API');
 
     const ScreenSize = useScreenSize();
 
@@ -44,21 +44,9 @@ const OrderTableComponent = ({tableData, size}) => {
                     <Tbody>
                         {sortedArray.map((project, index) => (
                             <Tr>
-                                <Td>{project.name}</Td>
-                                <Td>{project.status}</Td>
+                                <Td>{project.id}</Td>
                                 <Td>{project.type}</Td>
-                                <Td>{project.mass}</Td>
-                                <Td>{project.total}</Td>
-                                <Td>{project.date}</Td>
-
-                                <Td>
-                                    <ModalComponent
-                                        openButtonContent='...'
-                                        header={project.name} 
-                                        content={`The project was bought on ${project.date} and saved ${project.mass} Tonne CO2, the transaction is ${project.status}`}
-                                        goToActionButton='empty'
-                                    />
-                                </Td>
+                                <Td>{project.status}</Td>
                             </Tr>
                         ))}
                     </Tbody>
@@ -68,4 +56,4 @@ const OrderTableComponent = ({tableData, size}) => {
     )
 }
 
-export default OrderTableComponent;
+export default APITableComponent;

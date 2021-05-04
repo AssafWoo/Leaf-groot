@@ -2,7 +2,7 @@ import React from 'react';
 import { Heading } from '@chakra-ui/layout';
 import { BreakLine, Flex, SubHeader } from '../Styles/styles';
 import TableComponent from '../Components/Table/orders_table';
-import { dashboardContentTableData } from '../Mocks/dashboard';
+import { dashboardContentTableData } from '../Mocks/order_sort_types';
 
 
 
