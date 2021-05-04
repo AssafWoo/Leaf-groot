@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import {DarkerTheme, DarkTheme, LightBlue, MainGreen, MainGrey} from './colors';
-import {ShadowEffect} from './effects';
+import {DarkerTheme, DarkTheme, LightBlue, MainGreen} from './colors';
+import {Ripple, ShadowEffect} from './effects';
 
 
 // heading fontsize - 1.1rem;
@@ -179,9 +179,10 @@ export const LeafIcon = styled.img`
 export const Card = styled.div`
     flex:2;
     ${internalBoxStracture};
-    border:1px solid ${MainGrey};
     background: ${props => props.isInvisible ? '' : `1px solid ${DarkTheme}` };
     ${ShadowEffect}
+    ${props => props.isChoosen ? Ripple : '' };
+
 `
 
 

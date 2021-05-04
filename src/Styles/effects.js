@@ -5,14 +5,14 @@ export const ShadowEffect = `
     box-shadow: 10px 10px 14px -12px rgba(0,0,0,0.75);
 `
 export const Ripple = `
-    animation: at-ripple 0.5s linear infinite;
+    animation: at-ripple 1s linear infinite;
     overflow: hidden;
     @keyframes at-ripple {
         0% {
-            box-shadow: 0 12px 30px rgba(102, 102, 102, 0.1), 0 0 0 0 rgba(102, 102, 102, 0.1), 0 0 0 15px rgba(102, 102, 102, 0.1), 0 0 0 20px rgba(102, 102, 102, 0.1);
+            box-shadow: 0 3px 7px rgba(109, 185, 102, 0.2), 0 0 0 5px rgba(109, 185, 102, 0.2), 0 0 0 3.5px rgba(109, 185, 102, 0.3), 0 0 3px 7.5px rgba(109, 185, 102, 0.2);
         }
         100% {
-            box-shadow: 0 12px 30px rgba(102, 102, 102, 0.1), 0 0 0 20px rgba(102, 102, 102, 0.1), 0 0 0 30px rgba(102, 102, 102, 0.1), 0 0 0 60px rgba(102, 102, 102, 0);
+            box-shadow: 0 3px 7.5px rgba(109, 185, 102, 0.3), 0 0 0 5px rgba(109, 185, 102, 0.3), 0 0 0 7.5px rgba(109, 185, 102, 0.2), 0 0 0 15px rgba(109, 185, 102, 0.1);
         }
     }
 `
