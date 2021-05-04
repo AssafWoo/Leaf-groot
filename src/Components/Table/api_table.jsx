@@ -1,7 +1,6 @@
 import { Table, Tr, Th, Thead, Tbody,Td } from "@chakra-ui/table"
 import { TableWrapper } from "../../Styles/styles";
 import { useScreenSize } from "../../Hooks/useScreenSize";
-import ModalComponent from "../Modal/modal";
 import { useState } from "react";
 import useSortedArray from "../../Hooks/useSortedElement";
 // import useSort from '../../Hooks/useSort';

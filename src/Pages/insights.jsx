@@ -1,14 +1,9 @@
 import { Heading } from '@chakra-ui/layout';
 import React from 'react';
-import BarsChart from '../Components/Charts/bar';
-import {LightBlue, MainRed } from '../Styles/colors';
+import {DarkerTheme, DarkTheme, LightBlue, MainGreen, MainPink, MainYellow } from '../Styles/colors';
 import {BoxSize, BreakLine, Flex, Parag, SubHeader } from '../Styles/styles';
-import {FaBicycle} from 'react-icons/fa';
-import { useState } from 'react';
-import { dashboardContentCO2Data } from '../Mocks/dashboard';
 
 const Insights = () => {
-    const[dashboardData, _] = useState(dashboardContentCO2Data)
 
     return(
         <Flex>
@@ -17,67 +12,34 @@ const Insights = () => {
 
 
             <Flex>
-                <BoxSize flexSize="1">
-                    <Parag>Worse / Best Division</Parag>
-                    <Flex>
-                        <BoxSize flexSize="1" style={{background:MainRed}}>
-                        <Heading {...SubHeader} style={{fontSize:'1.4rem', fontWeight:'600'}} >312Kg</Heading>
-                            <Parag>Marketing</Parag>
-
-                        </BoxSize>
-                        <BoxSize flexSize="1" style={{background:LightBlue}}>
-                            <Heading {...SubHeader} style={{fontSize:'1.4rem', fontWeight:'600'}} >115Kg</Heading>
-                            <Parag>R&D</Parag>
-
-                        </BoxSize>
-                    </Flex>
-                </BoxSize>
-
-
-                <BoxSize flexSize="1"> 
-                    <FaBicycle size="4rem" style={{margin:'auto'}} />
-                    <Heading {...SubHeader} style={{fontSize:'1.2rem' , marginBottom:'1rem'}} >Save up to 53Kg per month by improving employees Commute</Heading>
-                    <Parag style={{color:LightBlue, cursor:'pointer', fontWeight:'600'}}>Checkout possibilites</Parag>
-                </BoxSize>
-
-                <BoxSize flexSize="1" style={{background:LightBlue}}>
-                    <Heading {...SubHeader} style={{fontSize:'1.8rem' , marginBottom:'1rem'}} >1500KWh</Heading>
+                    <BoxSize flexSize="1" style={{background:MainPink}}>
+                        <Heading {...SubHeader} style={{fontSize:'1.8rem' , marginBottom:'1rem'}} >23,000 Tonne CO2</Heading>
+                        <Parag>CO2 saved Total since joining the program</Parag>
+                    </BoxSize>
+                    <BoxSize flexSize="1" style={{background:LightBlue}}>
+                        <Heading {...SubHeader} style={{fontSize:'1.8rem' , marginBottom:'1rem'}} >20,000 Tonne Water</Heading>
+                        <Parag>Water saved Total since joining the program</Parag>
+                    </BoxSize>
+                <BoxSize flexSize="1" style={{background:MainYellow, color:'black'}}>
+                    <Heading {...SubHeader} style={{fontSize:'1.8rem' , marginBottom:'1rem', color:'black'}} >1500KWh</Heading>
                     <Parag>Electricity saved Total since joining the program</Parag>
                 </BoxSize>
             </Flex>
-
-
-
             <Flex>
-
-                <BoxSize flexSize="1">
-                    <Parag>Worse / Best Division</Parag>
-                    <Flex>
-                        <BoxSize flexSize="1" style={{background:MainRed}}>
-                        <Heading {...SubHeader} style={{fontSize:'1.4rem', fontWeight:'600'}} >312Kg</Heading>
-                            <Parag>Marketing</Parag>
-
-                        </BoxSize>
-                        <BoxSize flexSize="1" style={{background:LightBlue}}>
-                            <Heading {...SubHeader} style={{fontSize:'1.4rem', fontWeight:'600'}} >115Kg</Heading>
-                            <Parag>R&D</Parag>
-
-                        </BoxSize>
-                    </Flex>
+                    <BoxSize flexSize="1" style={{background:DarkTheme}}>
+                        <Heading {...SubHeader} style={{fontSize:'1.8rem' , marginBottom:'1rem'}} >230,000 Customers</Heading>
+                        <Parag>Customers approved to reduce their carbon footprint since joining the program</Parag>
+                    </BoxSize>
+                    <BoxSize flexSize="1" style={{background:DarkerTheme, border:'1px solid white'}}>
+                        <Heading {...SubHeader} style={{fontSize:'1.8rem' , marginBottom:'1rem'}} >5 Countries</Heading>
+                        <Parag>Are benefeting from your projects since joining the program</Parag>
+                    </BoxSize>
+                <BoxSize flexSize="1" style={{background:MainGreen}}>
+                    <Heading {...SubHeader} style={{fontSize:'1.8rem' , marginBottom:'1rem'}} >50,000$</Heading>
+                    <Parag>Donated to projects in total since joining the program</Parag>
                 </BoxSize>
-                <BoxSize flexSize="3">
-                        <Heading {...SubHeader} style={{fontSize:'1.4rem'}} >Companies comprasion</Heading>
-                        <BreakLine />
-                        <BarsChart data={dashboardData} />
-                </BoxSize>
-
-                <BoxSize flexSize="1" style={{background:LightBlue}}>
-                    <Heading {...SubHeader} style={{fontSize:'1.8rem' , marginBottom:'1rem'}} >Another header</Heading>
-                    <Parag>Blah</Parag>
-                </BoxSize>
-                </Flex>
-
-            
+            </Flex>
+        
         </Flex>
     )
 }

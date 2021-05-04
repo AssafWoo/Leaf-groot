@@ -8,7 +8,7 @@ import Dashboard from "./Pages/main-dashboard"
 import DocumentationsComponent from "./Pages/documentations"
 import Settings from "./Pages/settings"
 import Signup from "./Pages/sign-up"
-import Subscription from "./Pages/subscription"
+import Billing from "./Pages/billing"
 import { useContext } from "react";
 import Store from './Context/global/global-context';
 import { Layout } from "./Layout";
@@ -23,7 +23,7 @@ const Routes = () => {
                 <Layout>
                     <Switch> 
                         <Route exact path="/docs" component={DocumentationsComponent} />
-                        <Route exact path="/billing" component={Subscription} />
+                        <Route exact path="/billing" component={Billing} />
                         <Route exact path="/settings/company" component={Settings} />
                         <Route exact path="/api" component={APICallsComponent} />
                         <Route exact path="/orders" component={OrdersComponent} />

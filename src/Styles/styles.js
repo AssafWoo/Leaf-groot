@@ -116,8 +116,6 @@ export const TableWrapper = styled.div`
         }
         
     }
-
-
 `
 export const SwitchWrapper = styled.div`
     width: 10rem;
