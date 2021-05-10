@@ -1,8 +1,8 @@
 import React, { useRef }  from 'react';
 import { Heading } from '@chakra-ui/layout';
-import { Flex, BoxSize, BreakLine } from '../../Styles/styles'
+import { Flex, BoxSize, BreakLine, Parag } from '../../Styles/styles'
 import SingleUser from '../../Components/UserAvatar/SingelUser';
-import { PurpleBlue } from '../../Styles/colors';
+import { DarkerTheme, PurpleBlue } from '../../Styles/colors';
 import {useGetTime} from '../../Hooks/useGetTime';
 import BarsChart from '../../Components/Charts/bar';
 import { useScreenSize } from '../../Hooks/useScreenSize';
@@ -11,6 +11,7 @@ import { SwitchToggleButton } from '../../Components/Switch/switch';
 import BlogCard from '../../Components/Cards/blog_card';
 import VolunteerCard from '../../Components/Cards/volunteer_card';
 import SearchBar from '../../Components/Search/search';
+import { Button } from '@chakra-ui/button';
 
 const DashboardContent = ({companyName, userName, selected, handleToggleFilter, dashboardData, tableData}) => {
     const CurrentTime = useGetTime();
@@ -36,7 +37,30 @@ const DashboardContent = ({companyName, userName, selected, handleToggleFilter, 
                     <SingleUser desiredPhoto="company" />
                 </BoxSize> : ''}
             </Flex>
-                <Flex>
+                <BoxSize flexSize="3" style={{textAlign:'center'}}>
+                    <Heading fontWeight="300" textAlign="left" fontSize="1.4rem" >Cashback Amount</Heading>
+                    <BreakLine />
+                    <Flex>
+                        <BoxSize flexSize="3" isInvisible={true} style={{background:DarkerTheme}}>
+                            <Heading fontWeight="600" textAlign="center" fontSize="3rem" >15</Heading>
+                            <Parag style={{textAlign:'center'}}>Different non-profit options suited for your goals</Parag>
+                            <Button colorScheme="yellow" marginTop=".5rem">View</Button>
+
+                        </BoxSize>
+                        <BoxSize flexSize="3" isInvisible={true} style={{background:DarkerTheme}}>
+                            <Heading fontWeight="600" textAlign="center" fontSize="3rem" >243$</Heading>
+                            <Parag style={{textAlign:'center'}}>In donations credits</Parag>
+                            <Button colorScheme="green" marginTop=".5rem">Use</Button>
+                        </BoxSize>
+                        <BoxSize flexSize="3" isInvisible={true} style={{background:DarkerTheme}}>
+                            <Heading fontWeight="600" textAlign="center" fontSize="3rem" >2,431</Heading>
+                            <Parag style={{textAlign:'center'}}>Transactions in total </Parag>
+                            <Button colorScheme="blue" marginTop=".5rem">View</Button>
+
+                        </BoxSize>
+                    </Flex>
+                </BoxSize>
+
                     <BoxSize flexSize="3">
                         <Flex>
                             <BoxSize isInvisible="true" flexSize="1">
@@ -49,13 +73,14 @@ const DashboardContent = ({companyName, userName, selected, handleToggleFilter, 
                         <BreakLine />
                         <BarsChart data={dashboardData} />
                     </BoxSize>
-                </Flex>
+
                 <BoxSize ref={myStackedRef} flexSize="3">
                     <Heading fontWeight="300" textAlign="left" fontSize="1.4rem">Orders & Projects</Heading>
                     <BreakLine />
                     <SearchBar />
                     <TableComponent size="sm" tableData={tableData} />
                 </BoxSize>
+
                     <Flex>
                         <BoxSize flexSize="3" style={{background:PurpleBlue}}>
                             <Heading  fontWeight="300" textAlign="left" fontSize="1.4rem">Volunteer</Heading>
