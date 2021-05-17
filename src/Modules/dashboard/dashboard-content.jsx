@@ -38,26 +38,19 @@ const DashboardContent = ({companyName, userName, selected, handleToggleFilter, 
                 </BoxSize> : ''}
             </Flex>
                 <BoxSize flexSize="3" style={{textAlign:'center'}}>
-                    <Heading fontWeight="300" textAlign="left" fontSize="1.4rem" >Cashback Amount</Heading>
-                    <BreakLine />
                     <Flex>
-                        <BoxSize flexSize="3" isInvisible={true} style={{background:DarkerTheme}}>
-                            <Heading fontWeight="600" textAlign="center" fontSize="3rem" >15</Heading>
-                            <Parag style={{textAlign:'center'}}>Different non-profit options suited for your goals</Parag>
-                            <Button colorScheme="yellow" marginTop=".5rem">View</Button>
+                        <BoxSize flexSize="1" isInvisible={true} style={{background:DarkerTheme}}>
+                            <Heading fontWeight="600" textAlign="center" fontSize="3rem" >15,124 </Heading>
+                            <Parag style={{textAlign:'center'}}>Tonnn of C02 saved since started using</Parag>
+                            <Button colorScheme="green" marginTop=".5rem">View</Button>
 
                         </BoxSize>
-                        <BoxSize flexSize="3" isInvisible={true} style={{background:DarkerTheme}}>
-                            <Heading fontWeight="600" textAlign="center" fontSize="3rem" >243$</Heading>
+                        <BoxSize flexSize="1" isInvisible={true} style={{background:DarkerTheme}}>
+                            <Heading fontWeight="600" textAlign="center" fontSize="3rem" >20,432$</Heading>
                             <Parag style={{textAlign:'center'}}>In donations credits</Parag>
                             <Button colorScheme="green" marginTop=".5rem">Use</Button>
                         </BoxSize>
-                        <BoxSize flexSize="3" isInvisible={true} style={{background:DarkerTheme}}>
-                            <Heading fontWeight="600" textAlign="center" fontSize="3rem" >2,431</Heading>
-                            <Parag style={{textAlign:'center'}}>Transactions in total </Parag>
-                            <Button colorScheme="blue" marginTop=".5rem">View</Button>
-
-                        </BoxSize>
+                       
                     </Flex>
                 </BoxSize>
 

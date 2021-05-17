@@ -4,10 +4,6 @@ export const dashboardContentCO2Data = {
     data:[
         {
         name: 'S',
-        co2: 4000,
-        },
-        {
-        name: 'S',
         co2: 3523,
         },
         {
@@ -30,7 +26,11 @@ export const dashboardContentCO2Data = {
         {
         name: 'F',
         co2: 854,
-        }
+        },
+        {
+        name: 'S',
+        co2: 4000,
+        },
     ]
 }
 
@@ -39,10 +39,7 @@ export const dashboardContentCO2Data = {
 export const dashboardContentOrdersData = {
     name:'orders',
     data:[
-        {
-        name: 'S',
-        orders:41,
-        },
+
         {
         name: 'S',
         orders:59,
@@ -67,7 +64,11 @@ export const dashboardContentOrdersData = {
         {
         name: 'F',
         orders:412,
-        }
+        },
+        {
+            name: 'S',
+            orders:41,
+        },
     ] 
 };
 

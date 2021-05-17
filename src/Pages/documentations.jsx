@@ -1,5 +1,5 @@
 import { Heading } from "@chakra-ui/layout";
-import { BreakLine, Flex, SubHeader } from "../Styles/styles";
+import { BoxSize, BreakLine, Flex, SubHeader } from "../Styles/styles";
 
 
 const DocumentationsComponent = () => {
@@ -7,7 +7,9 @@ const DocumentationsComponent = () => {
         <Flex>
             <Heading {...SubHeader}>Documentations</Heading>
             <BreakLine />
-           
+            <BoxSize FlexSize="5">
+                Using Leaf API 2021Beta
+            </BoxSize>
         </Flex>
     )
 }

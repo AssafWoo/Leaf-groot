@@ -159,7 +159,7 @@ export const BreakLine = styled.div`
     margin:2.5rem 0;
 `
 export const SubHeader = {
-    fontSize:"2rem", textAlign:"left", fontWeight:"300", color:'white'
+    fontSize:"2rem", textAlign:"left", fontWeight:"300", color:'white', width:'100%'
 }
 
 export const Parag = styled.p`

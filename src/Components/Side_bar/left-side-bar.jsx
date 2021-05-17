@@ -5,7 +5,7 @@ import { ItemsNav, SideBarWrapper, Item } from './style';
 import LeafLogo from '../../Assets/images/leaf-green.png';
 import { useState } from 'react';
 import { SettingsIcon } from '@chakra-ui/icons';
-import {FaDollarSign, FaHome, FaEye, FaPowerOff, FaTruck, FaLock, FaBook} from 'react-icons/fa';
+import {FaDollarSign, FaHome, FaEye, FaPowerOff, FaTruck, FaLock, FaBook, FaDesktop} from 'react-icons/fa';
 import Store from '../../Context/global/global-context';
 
 const MenuNames = [
@@ -33,6 +33,11 @@ const MenuNames = [
         name:'Documentation',
         link:'/docs',
         icon:<FaBook style={{margin:'auto'}} />
+    },
+    {
+        name:'Console',
+        link:'/console',
+        icon:<FaDesktop style={{margin:'auto'}} />
     },
     {
         name:'Billing',
