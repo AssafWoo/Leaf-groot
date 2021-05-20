@@ -6,20 +6,30 @@ import {Flex, FormControl, FormErrorMessage, FormLabel} from '@chakra-ui/react';
 import LeafLogo from '../Assets/images/leaf-green.png';
 import { Link } from "react-router-dom"
 import {Formik, Form, Field} from 'formik';
+import { useContext, useState } from "react";
+import Store from "../Context/global/global-context";
+import { useHistory } from "react-router";
 
 const Login = () => {
-    // const [email, setEmail] = useState('');
-    // const [password, setPassword] = useState('');
-    // const {_, dispatch} = useContext(Store);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const {_, dispatch} = useContext(Store);
+    const history = useHistory();
 
-    // const handleLogin = async (e) => {
-    //     const data = { email:email, passsword:password};
-    //     const demoToken = '23123412432534645grvgdfgeg234cvdfsbdhdsty'
-    //     dispatch({type:'USER_LOGIN', payload: demoToken})
-    // }
+
+    const handleLogin = async (e) => {
+        e.preventDefault();
+        const data = { email:email, passsword:password};
+        const demoToken = '23123412432534645grvgdfgeg234cvdfsbdhdsty'
+        dispatch({type:'USER_LOGIN', payload: demoToken})
+        history.push({
+            pathname:  "/"
+         });
+        }
 
 
     return (
+        
         <Flex Flex justify='center' align="center" m="auto" w="fit-content" h="93vh" >
             <BoxSize flexSize="5" isInvisible="true" style={{border:"1px solid white"}} > 
                 <LeafIcon src={LeafLogo} />
@@ -57,7 +67,7 @@ const Login = () => {
                                     </FormControl>
                                     )}
                                 </Field>
-                                <Button disabled={isSubmitting} type="submit" w="100%" bg={MainGreen} color="white" colorScheme="green">Lets roll</Button>
+                                <Button disabled={isSubmitting} type="submit" w="100%" bg={MainGreen} color="white" colorScheme="green" onClick={handleLogin}>Lets roll</Button>
                             </Form>
                         )}
                     </Formik>

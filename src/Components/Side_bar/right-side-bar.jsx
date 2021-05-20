@@ -27,7 +27,7 @@ const RightSideBar = () => {
                             <Link to='/settings/company'>
                                 <MenuItem _focus={{background:'trasparent'}} _hover={{background:MainBlue}} color='white'>Settings</MenuItem>
                             </Link>
-                            <Link to='/'>
+                            <Link to='/login'>
                                 <MenuItem _hover={{background:MainBlue}} onClick={() => handleLogout()} color='white'>Logout</MenuItem>
                             </Link>
                         </UserMenu>

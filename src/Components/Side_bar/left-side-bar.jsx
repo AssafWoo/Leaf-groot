@@ -64,9 +64,7 @@ const SideBar = ({size}) => {
     const {_, dispatch} = useContext(Store);
 
     const handleClick = ({name, children}) => {
-        console.log(name)
         if(name === 'Exit') {
-            
            dispatch({type:'USER_LOGOUT'})
         }
         setActiveItem(name)

@@ -15,7 +15,7 @@ const App = () => {
   );
 
   useEffect(() => {
-    dispatch({type:'USER_CHANGE', payload:{name:'Assaf', role:'CEO', email:'@', auth:'ALL', loggedIn:true} })
+    dispatch({type:'USER_CHANGE', payload:{name:'Assaf', role:'CEO', email:'@', auth:'ALL'} })
   },[])
   
 

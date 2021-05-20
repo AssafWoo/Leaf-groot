@@ -9,14 +9,15 @@ import DocumentationsComponent from "./Pages/documentations"
 import Settings from "./Pages/settings"
 import Signup from "./Pages/sign-up"
 import Billing from "./Pages/billing"
+import ErrorPage from './Pages/404';
 import { useContext } from "react";
 import Store from './Context/global/global-context';
 import { Layout } from "./Layout";
 
 const Routes = () => {
     const {state, _} = useContext(Store);
-    const hasTokens = state.user.loggedIn;
-
+    const hasTokens = localStorage.getItem('id')
+    console.log(hasTokens);
     return(
         <Switch>
             {hasTokens ?           
@@ -36,6 +37,8 @@ const Routes = () => {
                 <Route exact path="/signup/questions" component={SignUpQuestions} />
                 <Route exact path="/signup" component={Signup} />
                 <Route exact path="/login" component={Login} />
+                <Route exact path="/" component={ErrorPage} />
+
             </>
             }
         </Switch>
