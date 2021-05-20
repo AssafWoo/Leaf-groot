@@ -1,8 +1,8 @@
 import { Table, Tr, Th, Thead, Tbody,Td } from "@chakra-ui/table"
 import { TableWrapper } from "../../Styles/styles";
-import { useScreenSize } from "../../Hooks/useScreenSize";
+import { useScreenSize } from "../../Utils/useScreenSize";
 import { useState } from "react";
-import useSortedArray from "../../Hooks/useSortedElement";
+import useSortedArray from "../../Utils/useSortedElement";
 // import useSort from '../../Hooks/useSort';
 
 const TheadStyle = {
@@ -11,10 +11,9 @@ const TheadStyle = {
 
 
 
-const APITableComponent = ({tableData, size}) => {
+const APITableComponent = ({tableData = [], size}) => {
     const [currentSort, setCurrentSort] = useState('default');
     const [currrentHeaderTableHeaderToSort, setCurrentTableHeaderToSort] = useState('Mass(Tonne)')
-    
     const sortedArray= useSortedArray(currrentHeaderTableHeaderToSort, tableData, currentSort, 'API');
 
     const ScreenSize = useScreenSize();
@@ -28,7 +27,9 @@ const APITableComponent = ({tableData, size}) => {
         setCurrentTableHeaderToSort(header);
     }
 
-
+    if(!sortedArray) {
+        return <p>No data found</p>
+    }
     return(
         <>
             <TableWrapper size={ScreenSize}>
@@ -41,7 +42,7 @@ const APITableComponent = ({tableData, size}) => {
                         </Tr>
                     </Thead>
                     <Tbody>
-                        {sortedArray.map((project, index) => (
+                        {sortedArray && sortedArray.map((project, index) => (
                             <Tr>
                                 <Td>{project.id}</Td>
                                 <Td>{project.type}</Td>

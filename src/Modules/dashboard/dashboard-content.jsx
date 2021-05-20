@@ -3,9 +3,9 @@ import { Heading } from '@chakra-ui/layout';
 import { Flex, BoxSize, BreakLine, Parag } from '../../Styles/styles'
 import SingleUser from '../../Components/UserAvatar/SingelUser';
 import { DarkerTheme, PurpleBlue } from '../../Styles/colors';
-import {useGetTime} from '../../Hooks/useGetTime';
+import {useGetTime} from '../../Utils/useGetTime';
 import BarsChart from '../../Components/Charts/bar';
-import { useScreenSize } from '../../Hooks/useScreenSize';
+import { useScreenSize } from '../../Utils/useScreenSize';
 import TableComponent from '../../Components/Table/orders_table';
 import { SwitchToggleButton } from '../../Components/Switch/switch';
 import BlogCard from '../../Components/Cards/blog_card';
@@ -41,7 +41,7 @@ const DashboardContent = ({companyName, userName, selected, handleToggleFilter, 
                     <Flex>
                         <BoxSize flexSize="1" isInvisible={true} style={{background:DarkerTheme}}>
                             <Heading fontWeight="600" textAlign="center" fontSize="3rem" >15,124 </Heading>
-                            <Parag style={{textAlign:'center'}}>Tonnn of C02 saved since started using</Parag>
+                            <Parag style={{textAlign:'center'}}>Tonnn of CO2 saved since started using</Parag>
                             <Button colorScheme="green" marginTop=".5rem">View</Button>
 
                         </BoxSize>

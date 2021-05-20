@@ -5,7 +5,6 @@ import { Wrapper } from './styles';
 
 
 const BarsChart = ({width, data}) => {
-  console.log(data)
   const chartData = data.data;
     return (
         <Wrapper>

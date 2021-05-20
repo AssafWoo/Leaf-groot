@@ -82,7 +82,7 @@ export const dashboardContentTableData = {
     data:[
         {
             name: 'Amazon Tribe',
-            status:'Pending',
+            status:'Success',
             orders:'',
             type: 'Forestation',
             mass:'170',
@@ -92,7 +92,7 @@ export const dashboardContentTableData = {
         },
         {
             name: 'AA',
-            status:'Pending',
+            status:'Success',
             orders:'',
             type: 'Water',
             mass:'190',

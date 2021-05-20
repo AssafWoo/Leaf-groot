@@ -1,9 +1,9 @@
 import { Table, Tr, Th, Thead, Tbody,Td } from "@chakra-ui/table"
 import { TableWrapper } from "../../Styles/styles";
-import { useScreenSize } from "../../Hooks/useScreenSize";
+import { useScreenSize } from "../../Utils/useScreenSize";
 import ModalComponent from "../Modal/modal";
 import { useState } from "react";
-import useSortedArray from "../../Hooks/useSortedElement";
+import useSortedArray from "../../Utils/useSortedElement";
 // import useSort from '../../Hooks/useSort';
 
 const TheadStyle = {
@@ -12,7 +12,7 @@ const TheadStyle = {
 
 
 
-const OrderTableComponent = ({tableData, size}) => {
+const OrderTableComponent = ({tableData = [], size}) => {
     const [currentSort, setCurrentSort] = useState('default');
     const [currrentHeaderTableHeaderToSort, setCurrentTableHeaderToSort] = useState('Mass(Tonne)')
     
@@ -28,7 +28,9 @@ const OrderTableComponent = ({tableData, size}) => {
         setCurrentSort(nextSort);
         setCurrentTableHeaderToSort(header);
     }
-
+    if(tableData.length === 0 || !sortedArray){
+        return <p>Error accured</p>
+    }
 
     return(
         <>
@@ -42,7 +44,7 @@ const OrderTableComponent = ({tableData, size}) => {
                         </Tr>
                     </Thead>
                     <Tbody>
-                        {sortedArray.map((project, index) => (
+                        {sortedArray && sortedArray.map((project, index) => (
                             <Tr>
                                 <Td>{project.name}</Td>
                                 <Td>{project.status}</Td>

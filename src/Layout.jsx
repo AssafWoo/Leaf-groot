@@ -1,7 +1,7 @@
 import SideBar from "./Components/Side_bar/left-side-bar";
 import RightSideBar from "./Components/Side_bar/right-side-bar";
 import { AppWrapper, BreakLine, MainWrapper } from "./Styles/styles";
-import { useScreenSize } from "./Hooks/useScreenSize";
+import { useScreenSize } from "./Utils/useScreenSize";
 
 export const Layout = ({children}) => {
     const screenSize = useScreenSize();

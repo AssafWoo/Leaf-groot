@@ -11,7 +11,7 @@ const ModalComponent = ({openButtonContent, trigger, header, content, goToAction
             <Button background={MainGreen} color="white" onClick={onOpen} colorScheme="blue">{openButtonContent}</Button>
             <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
-                <ModalContent color="white" bg={DarkerTheme}>
+                <ModalContent color="white" bg={DarkerTheme} transform={'translate(-50%, -50%) !important'} style={{position:'absolute', top:'50%', left:'50%', margin:'0'}}>
                 <ModalHeader>{header}</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody>
