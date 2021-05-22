@@ -4,7 +4,7 @@ import Store from './Context/global/global-context';
 import { useContext, useEffect, useReducer } from 'react';
 import { usePersistedContext, usePersistedReducer } from './Utils/usePersist';
 import reducer from './Context/global/reducer';
-import Routes from './Routes';
+import Routes from './Routes/Routes';
 
 const App = () => {
   const globalStore = usePersistedContext(useContext(Store), "state");

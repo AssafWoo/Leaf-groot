@@ -1,19 +1,19 @@
 import { Route, Switch } from "react-router"
-import SignUpQuestions from "./Pages/signup-questions";
-import OrdersComponent from "./Pages/orders"
-import Insights from "./Pages/insights"
-import APICallsComponent from "./Pages/api"
-import Login from "./Pages/login"
-import Dashboard from "./Pages/main-dashboard"
-import DocumentationsComponent from "./Pages/documentations"
-import Settings from "./Pages/settings"
-import Signup from "./Pages/sign-up"
-import Billing from "./Pages/billing"
-import ErrorPage from './Pages/404';
+import SignUpQuestions from "../Pages/signup-questions";
+import OrdersComponent from "../Pages/orders"
+import Insights from "../Pages/insights"
+import APICallsComponent from "../Pages/api"
+import Login from "../Pages/login"
+import Dashboard from "../Pages/main-dashboard"
+import DocumentationsComponent from "../Pages/documentations"
+import Settings from "../Pages/settings"
+import Signup from "../Pages/sign-up"
+import Billing from "../Pages/billing"
+import ErrorPage from '../Pages/404';
 import { useContext } from "react";
-import Store from './Context/global/global-context';
-import { Layout } from "./Layout";
-import ConsoleOForApiCalls from "./Pages/console";
+import Store from '../Context/global/global-context';
+import { Layout } from "../Layout/Layout";
+import ConsoleOForApiCalls from "../Pages/console";
 
 const Routes = () => {
     const {state, _} = useContext(Store);

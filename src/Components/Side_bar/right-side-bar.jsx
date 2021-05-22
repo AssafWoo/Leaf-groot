@@ -9,14 +9,19 @@ import { MenuItem } from '@chakra-ui/menu';
 import { MainBlue } from '../../Styles/colors';
 import { useContext } from 'react';
 import Store from '../../Context/global/global-context';
+import { useHistory } from "react-router";
 
 
 
 const RightSideBar = () => {
     const {_, dispatch} = useContext(Store);
+    const history = useHistory();
 
     const handleLogout = () => {
         dispatch({type:'USER_LOGOUT', payload: ''})
+        history.push({
+            pathname:  "/login"
+         });
     }
     return(
         <RightNav style={{position:'sticky', top:'.1rem', height:'fit-content'}}>
@@ -27,9 +32,7 @@ const RightSideBar = () => {
                             <Link to='/settings/company'>
                                 <MenuItem _focus={{background:'trasparent'}} _hover={{background:MainBlue}} color='white'>Settings</MenuItem>
                             </Link>
-                            <Link to='/login'>
                                 <MenuItem _hover={{background:MainBlue}} onClick={() => handleLogout()} color='white'>Logout</MenuItem>
-                            </Link>
                         </UserMenu>
                     </BoxSize>
                 </Flex>

@@ -18,10 +18,10 @@ const Login = () => {
 
 
     const handleLogin = async (e) => {
-        e.preventDefault();
         const data = { email:email, passsword:password};
         const demoToken = '23123412432534645grvgdfgeg234cvdfsbdhdsty'
-        dispatch({type:'USER_LOGIN', payload: demoToken})
+        dispatch({type:'USER_LOGIN', payload: demoToken});
+        // Login call and if statement incase of 200
         history.push({
             pathname:  "/"
          });
@@ -50,7 +50,7 @@ const Login = () => {
 
                                 <Field>
                                     {({ field, form }) => (
-                                    <FormControl id="email" isRequired >
+                                    <FormControl id="email" isRequired>
                                         <FormLabel color='white' fontSize="1.1rem" textAlign="left" pb="2" >Email address</FormLabel>
                                         <Input name="email" value={values.email} onChange={handleChange} onBlur={handleBlur}  border="1px solid white" bg={DarkTheme} mb="5" />
                                         <FormErrorMessage>'</FormErrorMessage>
