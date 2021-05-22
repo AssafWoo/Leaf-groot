@@ -13,11 +13,11 @@ import ErrorPage from './Pages/404';
 import { useContext } from "react";
 import Store from './Context/global/global-context';
 import { Layout } from "./Layout";
+import ConsoleOForApiCalls from "./Pages/console";
 
 const Routes = () => {
     const {state, _} = useContext(Store);
     const hasTokens = localStorage.getItem('id')
-    console.log(hasTokens);
     return(
         <Switch>
             {hasTokens ?           
@@ -25,6 +25,7 @@ const Routes = () => {
                     <Switch> 
                         <Route exact path="/docs" component={DocumentationsComponent} />
                         <Route exact path="/billing" component={Billing} />
+                        <Route exact path="/console" component={ConsoleOForApiCalls} />
                         <Route exact path="/settings/company" component={Settings} />
                         <Route exact path="/api" component={APICallsComponent} />
                         <Route exact path="/orders" component={OrdersComponent} />

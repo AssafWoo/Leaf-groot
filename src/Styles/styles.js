@@ -168,6 +168,8 @@ export const Parag = styled.p`
     font-size:1.1rem;
     font-weight:300;
     text-align:left;
+    display:inline-block;
+    width:100%;
 `
 
 export const InputProperties = {size:'sm', borderRadius:"full", variant:"solid", margin:'0.5rem 0.3rem'}

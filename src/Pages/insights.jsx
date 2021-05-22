@@ -9,8 +9,6 @@ const Insights = () => {
         <Flex>
             <Heading {...SubHeader}>Our insights</Heading>
             <BreakLine />
-
-
             <Flex>
                     <BoxSize flexSize="1" style={{background:MainPink}}>
                         <Heading {...SubHeader} style={{fontSize:'1.8rem' , marginBottom:'1rem'}} >23,000 Tonne CO2</Heading>
