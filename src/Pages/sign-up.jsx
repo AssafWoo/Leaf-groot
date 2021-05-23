@@ -5,25 +5,68 @@ import { DarkTheme,  MainGreen } from "../Styles/colors";
 import { BoxSize, LeafIcon } from "../Styles/styles";
 import LeafLogo from '../Assets/images/leaf-green.png';
 import { Input } from "@chakra-ui/input";
-import { Link } from "react-router-dom";
 import { FormControl, FormErrorMessage, FormHelperText, FormLabel } from "@chakra-ui/form-control";
 import {Formik, Form, Field} from 'formik';
+import { useReducer } from "react";
+import { useHistory } from "react-router";
+
+
+function registerReducer(state, action){
+    switch(action.type){
+        case 'field':
+            return {
+                ...state,
+                [action.field]: action.value
+            }
+        case 'register':
+            return {
+                ...state,
+                isLoading:true,
+                error:''
+            }
+        case 'error':
+            return {
+                ...state,
+                error:action.value,
+                isLoading:false,
+                email:'',
+                password:'',
+                confirmPassword:'',
+
+            }
+        default:
+            return state;
+    }
+}
+
+const initialState = {
+    email:'',
+    password:'',
+    confirmPassword:'',
+    error:'',
+    isLoading:false
+}
+
 
 const Signup = () => {
+    const [ state, dispatch] = useReducer(registerReducer, initialState);
 
+    const history = useHistory();
+    const {email, password, confirmPassword, error, isLoading} = state;
 
-    // const handleSignUp = async () => {
-    //     if(password === confirmPassword){
-    //         if(useCheckEmailValid(email)){
-    //             const data = { email:email, passsword:password};
-    //             console.log('post request', data);
-    //         } else {
-    //             console.log('email not valid')
-    //         }
-    //     } else {
-    //         console.log('passwords not matching')
-    //     }
-    // }
+    const handleRegister = async (e) => {
+        if(password !== confirmPassword) return dispatch({type:'error', value:'passwords not matching'})
+        try {
+            // await some server call with the state values
+            dispatch({type:'success'})
+            history.push({
+                pathname:  "/login"
+            });
+        } catch(e) {
+            dispatch({type:'error', value:e})
+
+        }
+    }
 
     return (
         <Flex Flex justify='center' align="center" m="auto" w="fit-content" h="93vh">
@@ -46,7 +89,7 @@ const Signup = () => {
                                     {({ field, form }) => (
                                         <FormControl id="email" isRequired>
                                             <FormLabel color='white' fontSize="1.1rem" textAlign="left" pb="2" >Email address</FormLabel>
-                                            <Input type="email" name="email" value={values.email} onChange={handleChange} onBlur={handleBlur} border="1px solid white" bg={DarkTheme} />
+                                            <Input type="email" name="email"  onChange={e => dispatch({type:'field', field:'email', value:e.target.value})} onBlur={handleBlur} border="1px solid white" bg={DarkTheme} />
                                             <FormHelperText mb="5">We'll never share your email.</FormHelperText>
                                             <FormErrorMessage>'</FormErrorMessage>
                                         </FormControl>
@@ -57,7 +100,7 @@ const Signup = () => {
                                     {({ field, form }) => (
                                         <FormControl id="password" isRequired>
                                             <FormLabel color='white' fontSize="1.1rem" textAlign="left" pb="2" >Password</FormLabel>
-                                            <Input type="password" name="password" value={values.password} onChange={handleChange} onBlur={handleBlur} border="1px solid white" bg={DarkTheme} mb="5" />
+                                            <Input type="password" name="password" onChange={e => dispatch({type:'field', field:'password', value:e.target.value})}  onBlur={handleBlur} border="1px solid white" bg={DarkTheme} mb="5" />
                                             <FormErrorMessage>'</FormErrorMessage>
                                         </FormControl>
                                     )}
@@ -66,17 +109,15 @@ const Signup = () => {
 
                                 <Field>
                                     {({ field, form }) => (
-                                        <FormControl id="confirm-password" isRequired >
+                                        <FormControl id="confirmPassword" isRequired >
                                             <FormLabel color='white' fontSize="1.1rem" textAlign="left" pb="2" >Confirm password</FormLabel>
-                                            <Input type="password" name="confirm-password" value={values.confirmPassword} onChange={handleChange} onBlur={handleBlur} border="1px solid white" bg={DarkTheme} />
+                                            <Input type="password" name="confirmPassword"  onChange={e => dispatch({type:'field', field:'confimPassword', value:e.target.value})}  onBlur={handleBlur} border="1px solid white" bg={DarkTheme} />
                                             <FormHelperText mb="5">Please match the passwords</FormHelperText>
                                             <FormErrorMessage>'</FormErrorMessage>
                                         </FormControl>
                                     )}
                                 </Field>
-                                <Link to="/signup/questions">
-                                    <Button disabled={isSubmitting} type="submit" w="100%" bg={MainGreen} color="white" colorScheme="green">Lets roll</Button>
-                                </Link>
+                                <Button disabled={isSubmitting} type="submit" w="100%" bg={MainGreen} color="white" colorScheme="green" onClick={handleRegister}>Lets roll</Button>
                             </Form>
                             )}
                         </Formik>

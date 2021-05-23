@@ -1,3 +1,4 @@
+import { useContext, useReducer } from "react";
 import { Button } from "@chakra-ui/button"
 import { Input } from "@chakra-ui/input"
 import { DarkTheme, MainBlue, MainGreen } from "../Styles/colors"
@@ -6,26 +7,66 @@ import {Flex, FormControl, FormErrorMessage, FormLabel} from '@chakra-ui/react';
 import LeafLogo from '../Assets/images/leaf-green.png';
 import { Link } from "react-router-dom"
 import {Formik, Form, Field} from 'formik';
-import { useContext, useState } from "react";
 import Store from "../Context/global/global-context";
 import { useHistory } from "react-router";
 
+
+function loginReducer(state, action){
+    switch(action.type){
+        case 'field':
+            return {
+                ...state,
+                [action.field]: action.value
+            }
+        case 'login':
+            return {
+                ...state,
+                isLoading:true,
+                error:''
+            }
+        case 'error':
+            return {
+                ...state,
+                error:action.value,
+                isLoading:false,
+                email:'',
+                password:''
+            }
+        default:
+            return state;
+    }
+}
+
+const initialState = {
+    email:'',
+    password:'',
+    error:'',
+    isLoading:false
+}
+
 const Login = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
     const {_, dispatch} = useContext(Store);
+    const [state, dispatchFunction] = useReducer(loginReducer, initialState)
+
     const history = useHistory();
 
+    const {email, password, error, isLoading} = state;
 
     const handleLogin = async (e) => {
-        const data = { email:email, passsword:password};
-        const demoToken = '23123412432534645grvgdfgeg234cvdfsbdhdsty'
-        dispatch({type:'USER_LOGIN', payload: demoToken});
-        // Login call and if statement incase of 200
-        history.push({
-            pathname:  "/"
-         });
+        const demoToken = '23123412432534645grvgdfgeg234cvdfsbdhdsty';
+        try {
+            // await some server call with the state values
+            dispatchFunction({type:'success'})
+            dispatch({type:'USER_LOGIN', payload: demoToken});
+            history.push({
+                pathname:  "/"
+             });
+
+        } catch(e) {
+            dispatchFunction({type:'error', value:e})
+
         }
+    }
 
 
     return (
@@ -52,7 +93,7 @@ const Login = () => {
                                     {({ field, form }) => (
                                     <FormControl id="email" isRequired>
                                         <FormLabel color='white' fontSize="1.1rem" textAlign="left" pb="2" >Email address</FormLabel>
-                                        <Input name="email" value={values.email} onChange={handleChange} onBlur={handleBlur}  border="1px solid white" bg={DarkTheme} mb="5" />
+                                        <Input name="email" onChange={e => dispatchFunction({type:'field', field:'email', value:e.target.value})} onBlur={handleBlur}  border="1px solid white" bg={DarkTheme} mb="5" />
                                         <FormErrorMessage>'</FormErrorMessage>
                                     </FormControl>
                                     )}
@@ -62,7 +103,7 @@ const Login = () => {
                                     {({ field, form }) => (
                                     <FormControl id="password" isRequired>
                                         <FormLabel color='white' fontSize="1.1rem" textAlign="left" pb="2" >Password</FormLabel>
-                                        <Input type="password" name="password" value={values.password} onChange={handleChange} onBlur={handleBlur} border="1px solid white" bg={DarkTheme} mb="5" />
+                                        <Input type="password" name="password" onChange={e => dispatchFunction({type:'field', field:'password', value:e.target.value})} onBlur={handleBlur} border="1px solid white" bg={DarkTheme} mb="5" />
                                         <FormErrorMessage>'</FormErrorMessage>
                                     </FormControl>
                                     )}
