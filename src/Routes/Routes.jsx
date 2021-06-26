@@ -14,13 +14,15 @@ import { useContext } from "react";
 import Store from '../Context/global/global-context';
 import { Layout } from "../Layout/Layout";
 import ConsoleOForApiCalls from "../Pages/console";
+import TransactionPage from "../Pages//transaction/transaction";
 
 const Routes = () => {
     const {state, _} = useContext(Store);
     const hasTokens = localStorage.getItem('id')
     return(
         <Switch>
-            {hasTokens ?           
+            {hasTokens ?          
+            <> 
                 <Layout>
                     <Switch> 
                         <Route exact path="/docs" component={DocumentationsComponent} />
@@ -33,13 +35,15 @@ const Routes = () => {
                         <Route exact path="/" component={Dashboard} />
                     </Switch> 
                 </Layout> 
+                <Route exact path="/transaction/:id" component={TransactionPage} />
+            </>
             : 
             <>
                 <Route exact path="/signup/questions" component={SignUpQuestions} />
                 <Route exact path="/signup" component={Signup} />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/" component={ErrorPage} />
-
+                <Route exact path="/transaction/:id" component={TransactionPage} />
             </>
             }
         </Switch>

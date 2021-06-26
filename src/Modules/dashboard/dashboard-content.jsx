@@ -27,7 +27,7 @@ const DashboardContent = ({companyName, userName, selected, handleToggleFilter, 
         <>
             <BoxSize flexSize="5" isInvisible={true} > 
             <Flex>
-                <BoxSize flexSize="3" isInvisible="true">
+                <BoxSize flexSize="3" isInvisible={true}>
                     <Heading fontSize="2rem" mb="2" textAlign="left" fontWeight="300" color='white'>Howdy <b>{userName}</b>, {CurrentTime}</Heading>
                     <p style={{textAlign:"left", color:'white'}}>Lets change the world!</p>
                     

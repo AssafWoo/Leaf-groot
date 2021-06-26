@@ -31,6 +31,8 @@ const OrderTableComponent = ({tableData = [], size}) => {
     if(tableData.length === 0 || !sortedArray){
         return <p>Error accured</p>
     }
+    // data tables
+    // react tables
 
     return(
         <>

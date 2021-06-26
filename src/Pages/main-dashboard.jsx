@@ -21,8 +21,8 @@ const Dashboard = () => {
     return(
         <Flex>
             <DashboardContent
-              companyName={state.company.name}
-              userName={state.user.name}
+              companyName={'Leaf'}
+              userName={'Assaf'}
               selected={selected}
               handleToggleFilter={handleToggleFilter}
               dashboardData={dashboardData}
