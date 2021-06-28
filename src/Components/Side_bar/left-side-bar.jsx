@@ -6,7 +6,9 @@ import LeafLogo from '../../Assets/images/leaf-green.png';
 import { useState } from 'react';
 import { SettingsIcon } from '@chakra-ui/icons';
 import {FaDollarSign, FaHome, FaEye, FaPowerOff, FaTruck, FaLock, FaBook, FaDesktop} from 'react-icons/fa';
-import Store from '../../Context/global/global-context';
+import { GlobalContext } from '../../Context/global/global-context';
+import { useHistory } from "react-router";
+import {logoutUser} from '../../Context/actions/user';
 
 const MenuNames = [
     {
@@ -60,12 +62,16 @@ const MenuNames = [
 ]
 
 const SideBar = ({size}) => {
+    const history = useHistory();
     const [activeItem, setActiveItem] = useState('');
-    const {_, dispatch} = useContext(Store);
+    const {_, userDispatch} = useContext(GlobalContext);
 
     const handleClick = ({name, children}) => {
         if(name === 'Exit') {
-           dispatch({type:'USER_LOGOUT'})
+            userDispatch(logoutUser)
+            history.push({
+                pathname:  "/login"
+             });
         }
         setActiveItem(name)
     }

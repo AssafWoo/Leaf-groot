@@ -7,9 +7,9 @@ import {Flex, FormControl, FormErrorMessage, FormLabel} from '@chakra-ui/react';
 import LeafLogo from '../Assets/images/leaf-green.png';
 import { Link } from "react-router-dom"
 import {Formik, Form, Field} from 'formik';
-import Store from "../Context/global/global-context";
+import { GlobalContext } from "../Context/global/global-context";
 import { useHistory } from "react-router";
-
+import {loginUser} from '../Context/actions/user';
 
 function loginReducer(state, action){
     switch(action.type){
@@ -45,7 +45,9 @@ const initialState = {
 }
 
 const Login = () => {
-    const {_, dispatch} = useContext(Store);
+    const {_, userDispatch} = useContext(GlobalContext);
+    const context = useContext(GlobalContext);
+    console.log(context)
     const [state, dispatchFunction] = useReducer(loginReducer, initialState)
 
     const history = useHistory();
@@ -57,11 +59,10 @@ const Login = () => {
         try {
             // await some server call with the state values
             dispatchFunction({type:'success'})
-            dispatch({type:'USER_LOGIN', payload: demoToken});
+            userDispatch(loginUser(demoToken));
             history.push({
                 pathname:  "/"
              });
-
         } catch(e) {
             dispatchFunction({type:'error', value:e})
 

@@ -1,11 +1,7 @@
 import {LOAD_TRANSACTIONS_SUCCESS, SET_TRANSACTIONS, LOAD_TRANSACTIONS_FAILURE} from '../actions/transactions';
 
-const initialState = {
-    allTransactions: [],
-    error:null
-};
 
-const reducer = (state = initialState, action) => {
+const reducer = (state, action) => {
     switch(action.type){
         case LOAD_TRANSACTIONS_FAILURE:
             return {error:action.payload}

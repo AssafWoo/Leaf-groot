@@ -8,17 +8,17 @@ import { Link } from 'react-router-dom';
 import { MenuItem } from '@chakra-ui/menu';
 import { MainBlue } from '../../Styles/colors';
 import { useContext } from 'react';
-import Store from '../../Context/global/global-context';
+import { GlobalContext } from '../../Context/global/global-context';
 import { useHistory } from "react-router";
-
+import {logoutUser} from '../../Context/actions/user';
 
 
 const RightSideBar = () => {
-    const {_, dispatch} = useContext(Store);
+    const {_, userDispatch} = useContext(GlobalContext);
     const history = useHistory();
 
     const handleLogout = () => {
-        dispatch({type:'USER_LOGOUT', payload: ''})
+        userDispatch(logoutUser)
         history.push({
             pathname:  "/login"
          });

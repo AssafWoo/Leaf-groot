@@ -10,14 +10,11 @@ import Settings from "../Pages/settings"
 import Signup from "../Pages/sign-up"
 import Billing from "../Pages/billing"
 import ErrorPage from '../Pages/404';
-import { useContext } from "react";
-import Store from '../Context/global/global-context';
 import { Layout } from "../Layout/Layout";
 import ConsoleOForApiCalls from "../Pages/console";
 import TransactionPage from "../Pages//transaction/transaction";
-
+    
 const Routes = () => {
-    const {state, _} = useContext(Store);
     const hasTokens = localStorage.getItem('id')
     return(
         <Switch>
