@@ -6,12 +6,12 @@ import { DarkerTheme, PurpleBlue } from '../../Styles/colors';
 import {useGetTime} from '../../Utils/useGetTime';
 import BarsChart from '../../Components/Charts/bar';
 import { useScreenSize } from '../../Utils/useScreenSize';
-import TableComponent from '../../Components/Table/orders_table';
 import { SwitchToggleButton } from '../../Components/Switch/switch';
 import BlogCard from '../../Components/Cards/blog_card';
 import VolunteerCard from '../../Components/Cards/volunteer_card';
-import SearchBar from '../../Components/Search/search';
 import { Button } from '@chakra-ui/button';
+import TableTemplate from '../../Components/Table/table-template';
+import { transactionsColumns } from '../../Components/Table/data-stracture';
 
 const DashboardContent = ({companyName, userName, selected, handleToggleFilter, dashboardData, tableData}) => {
     const CurrentTime = useGetTime();
@@ -70,8 +70,7 @@ const DashboardContent = ({companyName, userName, selected, handleToggleFilter, 
                 <BoxSize ref={myStackedRef} flexSize="3">
                     <Heading fontWeight="300" textAlign="left" fontSize="1.4rem">Orders & Projects</Heading>
                     <BreakLine />
-                    <SearchBar />
-                    <TableComponent size="sm" tableData={tableData} />
+                    <TableTemplate columnsType={transactionsColumns} />
                 </BoxSize>
 
                     <Flex>

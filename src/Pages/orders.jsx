@@ -1,8 +1,8 @@
 import React from 'react';
 import { Heading } from '@chakra-ui/layout';
-import { BreakLine, Flex, SubHeader } from '../Styles/styles';
-import TableComponent from '../Components/Table/orders_table';
-import { dashboardContentTableData } from '../Mocks/order_sort_types';
+import { BoxSize, BreakLine, Flex, SubHeader } from '../Styles/styles';
+import TableTemplate from '../Components/Table/table-template';
+import { transactionsColumns } from '../Components/Table/data-stracture';
 
 
 
@@ -13,7 +13,9 @@ const OrdersComponent = () => {
         <Flex>
             <Heading {...SubHeader}>Orders</Heading>
             <BreakLine />
-            <TableComponent size="lg" tableData={dashboardContentTableData} />
+            <BoxSize style={{borderRadius:'15px'}} flexSize="5" isInvisible={false}>
+                <TableTemplate columnsType={transactionsColumns} />
+            </BoxSize>
         </Flex>
     )
 }

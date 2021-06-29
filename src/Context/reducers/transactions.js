@@ -1,4 +1,4 @@
-import {LOAD_TRANSACTIONS_SUCCESS, SET_TRANSACTIONS, LOAD_TRANSACTIONS_FAILURE} from '../actions/transactions';
+import {LOAD_TRANSACTIONS_SUCCESS, SET_TRANSACTIONS,SET_LAST_TRANSACTIONS, LOAD_TRANSACTIONS_FAILURE} from '../actions/transactions';
 
 
 const reducer = (state, action) => {
@@ -9,9 +9,11 @@ const reducer = (state, action) => {
             return {allTransactions: action.payload, error:null}
         case SET_TRANSACTIONS:
             return {allTransactions: action.payload, error:null}
-        default:
+        case SET_LAST_TRANSACTIONS:
+            return {...state, lastTransactions:action.payload, error:null}
+            default:
             return state;
     }
 }
 
-export default reducer;
+export default reducer; 

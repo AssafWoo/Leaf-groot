@@ -1,5 +1,9 @@
 export const insightsInitialState = {
     allInsights: [],
-    weeklyInsights:[],
+    weeklyInsights:[{
+        co2Emissions:[],
+        orders:[]
+    }],
+    filteredInsights:[],
     error:null
 };
