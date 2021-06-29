@@ -1,5 +1,4 @@
 import { Route, Switch } from "react-router"
-import SignUpQuestions from "../Pages/signup-questions";
 import OrdersComponent from "../Pages/orders"
 import Insights from "../Pages/insights"
 import APICallsComponent from "../Pages/api"
@@ -36,7 +35,6 @@ const Routes = () => {
             </>
             : 
             <>
-                <Route exact path="/signup/questions" component={SignUpQuestions} />
                 <Route exact path="/signup" component={Signup} />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/" component={ErrorPage} />

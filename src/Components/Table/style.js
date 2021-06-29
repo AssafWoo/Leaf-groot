@@ -30,10 +30,24 @@ export const customStyles = {
     }
 }
 
+const tableCellsStyle = {
+    background:DarkTheme,
+    color:'white'
+}
 
 export const TableWrapper = styled.div`
     background:${DarkerTheme} !important;
     width:100%;
+    .kVlSIs{
+        background:transparent;
+        color:white; 
+        padding:2rem;
+    }
+    .clAJoY{
+        background:transparent;
+        color:white;
+        padding:2rem;
+    }
     .rdt_TableHeader{
         display:none;
     }
@@ -42,13 +56,11 @@ export const TableWrapper = styled.div`
         background:${DarkerTheme}
     }
     .rdt_Pagination{
-        background:${DarkTheme};
-        color:white;
+        ${tableCellsStyle}
 
     }
     header{
-        background:${DarkTheme};
-        color:white;
+        ${tableCellsStyle}
         #search {
             cursor:text;
             color:black;

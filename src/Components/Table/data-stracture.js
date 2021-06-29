@@ -1,3 +1,5 @@
+import ModalComponent from "../Modal/modal";
+
 export const transactionsColumns = [
     {
       name: 'Name',
@@ -39,6 +41,14 @@ export const transactionsColumns = [
         selector: 'action',
         sortable: false,
         right: true,
+
+        cell: row => 
+        <ModalComponent
+          openButtonContent='...'
+          header={row.name} 
+          content={`The project was bought on ${row.date} and saved ${row.co2Mass} Tonne CO2, the transaction is ${row.status}`}
+          goToActionButton='empty'
+        />,
       },
   ];
   
@@ -61,5 +71,18 @@ export const transactionsColumns = [
       sortable: true,
       right: true,
     },
+    {
+      name:'Action',
+      selector:'action',
+      sortable:false,
+      right:true,
+      cell: row => 
+      <ModalComponent
+        openButtonContent='...'
+        header={row.name} 
+        content={`The project was bought on ${row.date} and saved ${row.co2Mass} Tonne CO2, the transaction is ${row.status}`}
+        goToActionButton='empty'
+      />,
+    }
   ];
   

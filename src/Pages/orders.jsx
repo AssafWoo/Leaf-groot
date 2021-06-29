@@ -3,6 +3,7 @@ import { Heading } from '@chakra-ui/layout';
 import { BoxSize, BreakLine, Flex, SubHeader } from '../Styles/styles';
 import TableTemplate from '../Components/Table/table-template';
 import { transactionsColumns } from '../Components/Table/data-stracture';
+import {transactionsData } from '../Mocks/transactions-mock';
 
 
 
@@ -14,7 +15,7 @@ const OrdersComponent = () => {
             <Heading {...SubHeader}>Orders</Heading>
             <BreakLine />
             <BoxSize style={{borderRadius:'15px'}} flexSize="5" isInvisible={false}>
-                <TableTemplate columnsType={transactionsColumns} />
+                <TableTemplate tableData={transactionsData.data} columnsType={transactionsColumns} />
             </BoxSize>
         </Flex>
     )

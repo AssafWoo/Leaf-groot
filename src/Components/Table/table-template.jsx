@@ -1,7 +1,8 @@
 import DataTable from 'react-data-table-component';
 import {TableWrapper, TextField, ClearButton, customStyles} from './style';
-import {dashboardContentTableData} from '../../Mocks/order_sort_types';
-import { useMemo, useState } from 'react';
+import {dashboardContentTableData} from '../../Mocks/transactions-mock';
+import { useEffect, useMemo, useState } from 'react';
+import { Spinner } from '@chakra-ui/spinner';
 
 
 
@@ -12,39 +13,54 @@ const FilterComponent = ({ filterText, onFilter, onClear }) => (
     </>
   );
 
-const TableTemplate = ({columnsType}) => {
-    const [filterText, setFilterText] = useState('');
-    const [resetPaginationToggle, setResetPaginationToggle] = useState(false);
-    const filteredItems = dashboardContentTableData.data.filter(item => item.name && item.name.toLowerCase().includes(filterText.toLowerCase()));
+const TableTemplate = ({columnsType, tableData = []}) => {
+  console.log(tableData)
+  const [filterText, setFilterText] = useState('');
+  const [resetPaginationToggle, setResetPaginationToggle] = useState(false);
+  const [pending, setPending] = useState(true);
+  const [rowsData, setRowsData] = useState([]);
 
-    const subHeaderComponentMemo = useMemo(() => {
-        const handleClear = () => {
-          if (filterText) {
-            setResetPaginationToggle(!resetPaginationToggle);
-            setFilterText('');
-          }
-        };
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+        setRowsData(tableData);
+        setPending(false)
+    }, 1000)
+    return () => clearTimeout(timeout);
+  },[])
+
+  const filteredItems = rowsData.filter(item => item.name && item.name.toLowerCase().includes(filterText.toLowerCase()));
+
+  const subHeaderComponentMemo = useMemo(() => {
+    const handleClear = () => {
+      if (filterText) {
+        setResetPaginationToggle(!resetPaginationToggle);
+        setFilterText('');
+      }
+    };
     
 
-        return <FilterComponent  onFilter={e => setFilterText(e.target.value)} onClear={handleClear} filterText={filterText} />;
-    }, [filterText, resetPaginationToggle]);
+    return <FilterComponent  onFilter={e => setFilterText(e.target.value)} onClear={handleClear} filterText={filterText} />;
+  }, [filterText, resetPaginationToggle]);
 
-    return (
-        <TableWrapper>
-            <DataTable
-                title={false}
-                columns={columnsType}
-                data={filteredItems}
-                responsive={true}
-                persistTableHead={true}
-                customStyles={customStyles}
-                pagination
-                subHeader
-                subHeaderComponent={subHeaderComponentMemo}
-            />
-        </TableWrapper>
+  return (
+    <TableWrapper>
+      <DataTable
+        title={false}
+        columns={columnsType}
+        data={filteredItems}
+        responsive={true}
+        persistTableHead={true}
+        customStyles={customStyles}
+        pagination
+        subHeader
+        progressPending={pending}
+        progressComponent={<Spinner  />}
+        subHeaderComponent={subHeaderComponentMemo}
+        />
+      </TableWrapper>
 
-    )
+  )
 };
 
 export default TableTemplate;

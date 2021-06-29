@@ -1,5 +1,5 @@
-import { APISortTypes } from '../Mocks/api_sort_types';
-import {orderSortTypes} from '../Mocks/order_sort_types';
+import { APISortTypes } from '../Mocks/api_types';
+import {orderSortTypes} from '../Mocks/transactions-mock';
 
 
 const useSortedArray = (header, dataArray, sortType, tableType) => {

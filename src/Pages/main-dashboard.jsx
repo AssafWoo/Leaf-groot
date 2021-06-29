@@ -4,7 +4,7 @@ import DashboardContent from '../Modules/dashboard/dashboard-content';
 import { GlobalContext } from '../Context/global/global-context';
 import { useState } from 'react';
 import { dashboardContentCO2Data, dashboardContentOrdersData } from '../Mocks/dashboard';
-import {dashboardContentTableData } from '../Mocks/order_sort_types';
+import {transactionsData } from '../Mocks/transactions-mock';
 
 const Dashboard = () => {
     const {userState} = useContext(GlobalContext);
@@ -27,7 +27,7 @@ const Dashboard = () => {
               selected={selected}
               handleToggleFilter={handleToggleFilter}
               dashboardData={dashboardData}
-              tableData={dashboardContentTableData}
+              tableData={transactionsData.data}
             />
         </Flex>
     )
