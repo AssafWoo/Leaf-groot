@@ -1,6 +1,5 @@
 import DataTable from 'react-data-table-component';
 import {TableWrapper, TextField, ClearButton, customStyles} from './style';
-import {dashboardContentTableData} from '../../Mocks/transactions-mock';
 import { useEffect, useMemo, useState } from 'react';
 import { Spinner } from '@chakra-ui/spinner';
 
@@ -27,7 +26,7 @@ const TableTemplate = ({columnsType, tableData = []}) => {
         setPending(false)
     }, 1000)
     return () => clearTimeout(timeout);
-  },[])
+  },[tableData])
 
   const filteredItems = rowsData.filter(item => item.name && item.name.toLowerCase().includes(filterText.toLowerCase()));
 

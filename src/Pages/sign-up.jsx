@@ -69,8 +69,8 @@ const Signup = () => {
     }
 
     return (
-        <Flex Flex justify='center' align="center" m="auto" w="fit-content" h="93vh">
-                <BoxSize flexSize="5" isInvisible="true" style={{border:"1px solid white"}}>
+        <Flex justify='center' align="flex-start" m="auto" w="fit-content" h="93vh">
+                <BoxSize flexSize="5" isInvisible={true} style={{border:"1px solid white"}}>
                     <LeafIcon src={LeafLogo} />
                     <Flex>
                         <BoxSize flexSize="1" style={{padding:'1.5rem', background:'transparent'}}>
@@ -85,6 +85,17 @@ const Signup = () => {
                             >
                         {({values, isSubmitting, handleChange, handleBlur, handleSubmit}) => (
                                 <Form>
+
+                                <Field>
+                                    {({ field, form }) => (
+                                        <FormControl id="fullname" isRequired >
+                                            <FormLabel color='white' fontSize="1.1rem" textAlign="left" pb="2" >Full name</FormLabel>
+                                            <Input mb="5" type="text" name="fullname"  onChange={e => dispatch({type:'field', field:'fullname', value:e.target.value})}  onBlur={handleBlur} border="1px solid white" bg={DarkTheme} />
+                                            <FormErrorMessage>'</FormErrorMessage>
+                                        </FormControl>
+                                    )}
+                                </Field>
+
                                 <Field>
                                     {({ field, form }) => (
                                         <FormControl id="email" isRequired>
@@ -113,6 +124,16 @@ const Signup = () => {
                                             <FormLabel color='white' fontSize="1.1rem" textAlign="left" pb="2" >Confirm password</FormLabel>
                                             <Input type="password" name="confirmPassword"  onChange={e => dispatch({type:'field', field:'confimPassword', value:e.target.value})}  onBlur={handleBlur} border="1px solid white" bg={DarkTheme} />
                                             <FormHelperText mb="5">Please match the passwords</FormHelperText>
+                                            <FormErrorMessage>'</FormErrorMessage>
+                                        </FormControl>
+                                    )}
+                                </Field>
+
+                                <Field>
+                                    {({ field, form }) => (
+                                        <FormControl id="company" isRequired >
+                                            <FormLabel color='white' fontSize="1.1rem" textAlign="left" pb="2" >Company name</FormLabel>
+                                            <Input mb="5" type="text" name="company"  onChange={e => dispatch({type:'field', field:'company', value:e.target.value})}  onBlur={handleBlur} border="1px solid white" bg={DarkTheme} />
                                             <FormErrorMessage>'</FormErrorMessage>
                                         </FormControl>
                                     )}
