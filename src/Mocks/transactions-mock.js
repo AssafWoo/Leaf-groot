@@ -10,6 +10,7 @@ export const transactionsData = {
             total: 2,
             date:'10/5/21',
             action: '...',
+            id:'12312412354315'
         },
         {
             name: 'AA',
@@ -20,6 +21,8 @@ export const transactionsData = {
             total: 1,
             date:'10/5/21',
             action: '...',
+            id:'543654363464'
+
         },
         {
             name: 'Indian waterfall',
@@ -30,6 +33,8 @@ export const transactionsData = {
             total: 5,
             date:'14/4/21',
             action: '...',
+            id:'543645763421'
+
         },
         {
             name: 'Solar panels in Argentina',
@@ -40,6 +45,8 @@ export const transactionsData = {
             total: 16,
             date:'12/4/21',
             action: '...',
+            id:'34634562165345762'
+
         },
     ] 
 };

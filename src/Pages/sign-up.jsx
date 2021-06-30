@@ -9,6 +9,7 @@ import { FormControl, FormErrorMessage, FormHelperText, FormLabel } from "@chakr
 import {Formik, Form, Field} from 'formik';
 import { useReducer } from "react";
 import { useHistory } from "react-router";
+import { useToast } from "@chakra-ui/react"
 
 
 function registerReducer(state, action){
@@ -50,6 +51,7 @@ const initialState = {
 
 const Signup = () => {
     const [ state, dispatch] = useReducer(registerReducer, initialState);
+    const toast = useToast();
 
     const history = useHistory();
     const {email, password, confirmPassword, error, isLoading} = state;
@@ -58,13 +60,26 @@ const Signup = () => {
         if(password !== confirmPassword) return dispatch({type:'error', value:'passwords not matching'})
         try {
             // await some server call with the state values
-            dispatch({type:'success'})
+            dispatch({type:'success'});
+            toast({
+                title: "Account created.",
+                description: "We've created your account for you.",
+                status: "success",
+                duration: 4000,
+                isClosable: true
+            })
             history.push({
                 pathname:  "/login"
             });
         } catch(e) {
             dispatch({type:'error', value:e})
-
+            toast({
+                title: "Account wasn't created.",
+                description: "Please try again.",
+                status: "error",
+                duration: 4000,
+                isClosable: true
+            })
         }
     }
 

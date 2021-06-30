@@ -1,9 +1,10 @@
+import{Link} from 'react-router-dom';
 import { Button } from "@chakra-ui/button";
 import { useDisclosure } from "@chakra-ui/hooks";
 import { Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay } from "@chakra-ui/modal"
 import { DarkerTheme, MainGreen } from "../../Styles/colors";
 
-const ModalComponent = ({openButtonContent, trigger, header, content, goToActionButton}) => {
+const ModalComponent = ({openButtonContent, item,trigger, content, goToActionButton}) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
 
     return (
@@ -12,7 +13,7 @@ const ModalComponent = ({openButtonContent, trigger, header, content, goToAction
             <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
                 <ModalContent color="white" bg={DarkerTheme} transform={'translate(-50%, -50%) !important'} style={{position:'absolute', top:'50%', left:'50%', margin:'0'}}>
-                <ModalHeader>{header}</ModalHeader>
+                <ModalHeader>{item.name}</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody>
                     {content}
@@ -25,7 +26,9 @@ const ModalComponent = ({openButtonContent, trigger, header, content, goToAction
                         {goToActionButton}
                     </Button>
                 </ModalFooter>}
-               
+                <Link to={`/transaction/:${item.id}`}>
+                    <Button width="100%" mt="2rem" colorScheme="blue">View</Button>
+                </Link>
                 </ModalContent>
             </Modal>
         </>

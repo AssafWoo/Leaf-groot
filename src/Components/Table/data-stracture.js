@@ -45,12 +45,22 @@ export const transactionsColumns = [
         cell: row => 
         <ModalComponent
           openButtonContent='...'
-          header={row.name} 
-          content={`The project was bought on ${row.date} and saved ${row.co2Mass} Tonne CO2, the transaction is ${row.status}`}
+          item={row}
+          content={modalContent(row)}
           goToActionButton='empty'
         />,
       },
   ];
+
+  const modalContent = (props) => {
+    return(
+      <>
+        <p>CO2 saved: {props.co2Mass}</p>
+        <p>Status: {props.status}</p>
+        <p>Date: {props.date}</p>
+      </>
+    )
+  }
   
 
   export const requestsColumns = [
@@ -79,6 +89,7 @@ export const transactionsColumns = [
       cell: row => 
       <ModalComponent
         openButtonContent='...'
+        item={row}
         header={row.name} 
         content={`The project was bought on ${row.date} and saved ${row.co2Mass} Tonne CO2, the transaction is ${row.status}`}
         goToActionButton='empty'

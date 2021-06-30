@@ -17,9 +17,7 @@ const CompanyDetails = ({companyDetails}) => {
         if(editableString === 'Edit') setEditbleString('Save')
         else if(editableString ==='Save')  setEditbleString('Edit')
     }
-        
 
-    
 
     return (
         <>
