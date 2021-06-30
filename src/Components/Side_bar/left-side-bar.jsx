@@ -22,14 +22,19 @@ const MenuNames = [
         icon:<FaEye style={{margin:'auto'}} />
     },
     {
-        name:'Orders',
-        link:'/orders',
+        name:'Transactions',
+        link:'/transactions',
         icon: <FaTruck style={{margin:'auto'}} />
     },
     {
         name:'Projects',
         link:'/projects',
         icon: <FaTree style={{margin:'auto'}} />
+    },
+    {
+        name:'Console',
+        link:'/console',
+        icon:<FaDesktop style={{margin:'auto'}} />
     },
     {
         name:'API',
@@ -41,11 +46,7 @@ const MenuNames = [
         link:'/docs',
         icon:<FaBook style={{margin:'auto'}} />
     },
-    {
-        name:'Console',
-        link:'/console',
-        icon:<FaDesktop style={{margin:'auto'}} />
-    },
+
     {
         name:'Billing',
         link:'/billing',

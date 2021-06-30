@@ -8,11 +8,11 @@ import {transactionsData } from '../Mocks/transactions-mock';
 
 
 // divide sections into different files
-const OrdersComponent = () => {
+const TransactionsComponent = () => {
 
     return (
         <Flex>
-            <Heading {...SubHeader}>Orders</Heading>
+            <Heading {...SubHeader}>Transactions</Heading>
             <BreakLine />
             <BoxSize style={{borderRadius:'15px'}} flexSize="5" isInvisible={false}>
                 <TableTemplate tableData={transactionsData.data} columnsType={transactionsColumns} />
@@ -21,4 +21,4 @@ const OrdersComponent = () => {
     )
 }
 
-export default OrdersComponent;
+export default TransactionsComponent;

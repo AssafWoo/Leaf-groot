@@ -71,7 +71,7 @@ const DashboardContent = ({companyName, userName, selected, handleToggleFilter, 
                     </BoxSize>
 
                 <BoxSize ref={myStackedRef} flexSize="3">
-                    <Heading fontWeight="300" textAlign="left" fontSize="1.4rem">Orders & Projects</Heading>
+                    <Heading fontWeight="300" textAlign="left" fontSize="1.4rem">Transactions</Heading>
                     <BreakLine />
                     <TableTemplate tableData={tableData} columnsType={transactionsColumns} />
                 </BoxSize>

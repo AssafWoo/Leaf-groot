@@ -1,5 +1,5 @@
 import { Route, Switch } from "react-router"
-import OrdersComponent from "../Pages/orders"
+import TransactionsComponent from "../Pages/transactions"
 import Insights from "../Pages/insights"
 import APICallsComponent from "../Pages/api"
 import Login from "../Pages/login"
@@ -27,7 +27,7 @@ const Routes = () => {
                         <Route exact path="/console" component={ConsoleOForApiCalls} />
                         <Route exact path="/settings/company" component={Settings} />
                         <Route exact path="/api" component={APICallsComponent} />
-                        <Route exact path="/orders" component={OrdersComponent} />
+                        <Route exact path="/transactions" component={TransactionsComponent} />
                         <Route exact path="/insights" component={Insights} />
                         <Route exact path="/projects" component={ProjectsMarketplace} />
                         <Route exact path="/" component={Dashboard} />
