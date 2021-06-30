@@ -103,16 +103,14 @@ const CompanyDetails = ({companyDetails}) => {
                     </Form>
                 )}
                 </Formik>
-                <BoxSize flexSize="5">
-                    <Flex>
-                        <BoxSize flexSize="1" isInvisible="true">
-                            <Heading fontSize="1.4rem" textAlign="left" fontWeight="300">Sustaiabliity Report</Heading>
-                            <BreakLine />
-                            <Parag> Slug - 1232141</Parag>
-                            <Parag> http://asdldsfsd.com/leaf/14314dsfsdfg43/report</Parag>
-                        </BoxSize>
-                    </Flex>
-                </BoxSize>
+                <Flex style={{marginTop:'1rem'}}>
+                    <BoxSize flexSize="1" isInvisible={false}>
+                        <Heading fontSize="1.4rem" textAlign="left" fontWeight="300">Sustaiabliity Report</Heading>
+                        <BreakLine />
+                        <Parag> Slug - 1232141</Parag>
+                        <Parag> http://asdldsfsd.com/leaf/14314dsfsdfg43/report</Parag>
+                    </BoxSize>
+                </Flex>
                
                 
         </>

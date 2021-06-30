@@ -1,5 +1,6 @@
 export const projectsProtfolio = [
     {
+        id:'124121352354',
         country:'Peru',
         name:'Yamaxun River',
         purpose:'Improved Forest Mangment',
@@ -8,6 +9,7 @@ export const projectsProtfolio = [
         thumbnail:'../Assets/images/project1.jpg'
     },
     {
+        id:'5437476521367456345',
         country:'Brazil',
         name:'Amazonian River',
         purpose:'Endanger Speciecs Mangment',
@@ -16,6 +18,7 @@ export const projectsProtfolio = [
         thumbnail:'../../Assets/images/project1.jpg'
     },
     {
+        id:'58456331233247573',
         country:'Venezuela',
         name:'Coast Blanco',
         purpose:'Shores Protection',

@@ -90,7 +90,7 @@ const SideBar = ({size}) => {
                         <Flex key={index}>
                             <Item size>
                                 <Link onClick={(e) => handleClick(value)} className={activeItem === value.name ? 'active' : ''} to={`${value.link}`}>
-                                    {size ? <span>{value.icon}</span> : <span>{value.name}</span> }
+                                    {size ? <span>{value.icon}</span> : <span style={{fontWeight:'300', marginLeft:'.5rem'}}>{value.name}</span> }
                                 </Link> 
                             </Item>
                         </Flex>
