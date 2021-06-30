@@ -26,7 +26,7 @@ const ModalComponent = ({openButtonContent, item,trigger, content, goToActionBut
                         {goToActionButton}
                     </Button>
                 </ModalFooter>}
-                <Link to={`/transaction/:${item.id}`}>
+                <Link to={`/projects/:${item.id}`}>
                     <Button width="100%" mt="2rem" colorScheme="blue">View</Button>
                 </Link>
                 </ModalContent>

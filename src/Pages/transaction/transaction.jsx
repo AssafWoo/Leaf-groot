@@ -6,13 +6,13 @@ import { BoxSize, BreakLine, Flex, Parag } from "../../Styles/styles";
 import { AllWrapper, LeftMarginWrapper } from "./style";
 import { useScreenSize } from "../../Utils/useScreenSize";
 import { Button } from "@chakra-ui/button";
-
-
-
+import { useParams } from "react-router";
 
 
 const Content = () => {
     const size = useScreenSize();
+    const {id} = useParams(); // for the fetch call to get data
+    
     return(
         <Flex>
                 <BoxSize isInvisible={true} flexSize="5">
@@ -56,7 +56,7 @@ const Content = () => {
 
 
 
-const TransactionPage = () => {
+const ProjectPage = () => {
     const size = useScreenSize();
 
     return(
@@ -75,4 +75,4 @@ const TransactionPage = () => {
     )
 }
 
-export default TransactionPage;
+export default ProjectPage;

@@ -11,7 +11,7 @@ import Billing from "../Pages/billing"
 import ErrorPage from '../Pages/404';
 import { Layout } from "../Layout/Layout";
 import ConsoleOForApiCalls from "../Pages/console";
-import TransactionPage from "../Pages//transaction/transaction";
+import ProjectPage from "../Pages//transaction/transaction";
 import ProjectsMarketplace from "../Pages/projects-protfolio/projects"
     
 const Routes = () => {
@@ -33,14 +33,14 @@ const Routes = () => {
                         <Route exact path="/" component={Dashboard} />
                     </Switch> 
                 </Layout> 
-                <Route exact path="/transaction/:id" component={TransactionPage} />
+                <Route exact path="/projects/:id" component={ProjectPage} />
             </>
             : 
             <>
                 <Route exact path="/signup" component={Signup} />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/" component={ErrorPage} />
-                <Route exact path="/transaction/:id" component={TransactionPage} />
+                <Route exact path="/projects/:id" component={ProjectPage} />
             </>
             }
         </Switch>

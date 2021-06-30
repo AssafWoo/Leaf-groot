@@ -13,7 +13,6 @@ const FilterComponent = ({ filterText, onFilter, onClear }) => (
   );
 
 const TableTemplate = ({columnsType, tableData = []}) => {
-  console.log(tableData)
   const [filterText, setFilterText] = useState('');
   const [resetPaginationToggle, setResetPaginationToggle] = useState(false);
   const [pending, setPending] = useState(true);
