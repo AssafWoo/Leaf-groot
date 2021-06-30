@@ -12,6 +12,7 @@ import ErrorPage from '../Pages/404';
 import { Layout } from "../Layout/Layout";
 import ConsoleOForApiCalls from "../Pages/console";
 import TransactionPage from "../Pages//transaction/transaction";
+import ProjectsMarketplace from "../Pages/projects-protfolio/projects"
     
 const Routes = () => {
     const hasTokens = localStorage.getItem('id')
@@ -28,6 +29,7 @@ const Routes = () => {
                         <Route exact path="/api" component={APICallsComponent} />
                         <Route exact path="/orders" component={OrdersComponent} />
                         <Route exact path="/insights" component={Insights} />
+                        <Route exact path="/projects" component={ProjectsMarketplace} />
                         <Route exact path="/" component={Dashboard} />
                     </Switch> 
                 </Layout> 

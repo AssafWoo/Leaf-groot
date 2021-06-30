@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import {MainGrey } from '../../Styles/colors';
+import {DarkerTheme } from '../../Styles/colors';
 
 export const AllWrapper = styled.div`
     width:100%;
     display: inline-block;
-    background:${MainGrey};
+    background:${DarkerTheme};
 `
 export const LeftMarginWrapper = styled.div`
     margin-left: 10rem;

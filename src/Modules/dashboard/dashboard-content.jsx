@@ -40,17 +40,19 @@ const DashboardContent = ({companyName, userName, selected, handleToggleFilter, 
                 <BoxSize flexSize="3" style={{textAlign:'center'}}>
                     <Flex>
                         <BoxSize flexSize="1" isInvisible={true} style={{background:DarkerTheme}}>
-                            <Heading fontWeight="600" textAlign="center" fontSize="3rem" >15,124 </Heading>
-                            <Parag style={{textAlign:'center'}}>Tonnn of CO2 saved since started using</Parag>
-                            <Button colorScheme="green" marginTop=".5rem">View</Button>
-
+                            <Heading fontWeight="600" textAlign="center" fontSize="3rem" >1,210</Heading>
+                            <Parag style={{textAlign:'center'}}>Equivalent number of trees</Parag>
                         </BoxSize>
                         <BoxSize flexSize="1" isInvisible={true} style={{background:DarkerTheme}}>
                             <Heading fontWeight="600" textAlign="center" fontSize="3rem" >20,432$</Heading>
                             <Parag style={{textAlign:'center'}}>In donations credits</Parag>
                             <Button colorScheme="green" marginTop=".5rem">Use</Button>
                         </BoxSize>
-                       
+                        <BoxSize flexSize="1" isInvisible={true} style={{background:DarkerTheme}}>
+                            <Heading fontWeight="600" textAlign="center" fontSize="3rem" >15,124 </Heading>
+                            <Parag style={{textAlign:'center'}}>Tonnn of CO2 saved since started using</Parag>
+                            <Button colorScheme="green" marginTop=".5rem">View</Button>
+                        </BoxSize>
                     </Flex>
                 </BoxSize>
 
