@@ -40,7 +40,7 @@ const CompanyDetails = ({companyDetails}) => {
                         <Heading color='white' size="sm" textAlign="left" marginBottom="1rem">Company Information</Heading>
 
                         <Flex>
-                            <BoxSize flexSize="1" isInvisible="true">
+                            <BoxSize flexSize="1" isInvisible={true}>
                                 <Field>
                                     {({ field, form }) => (
                                         <FormControl id="accountName">
@@ -51,7 +51,7 @@ const CompanyDetails = ({companyDetails}) => {
                                     )}
                                 </Field>
                             </BoxSize>
-                            <BoxSize flexSize="1" isInvisible="true">
+                            <BoxSize flexSize="1" isInvisible={true}>
                                 <Field>
                                     {({ field, form }) => (
                                         <FormControl id="accountOwner">
@@ -62,7 +62,7 @@ const CompanyDetails = ({companyDetails}) => {
                                     )}
                                 </Field>
                             </BoxSize>
-                            <BoxSize flexSize="1" isInvisible="true">
+                            <BoxSize flexSize="1" isInvisible={true}>
                                 <Field>
                                     {({ field, form }) => (
                                         <FormControl id="email">
@@ -76,7 +76,7 @@ const CompanyDetails = ({companyDetails}) => {
                            
                         </Flex>
                         <Flex>
-                            <BoxSize flexSize="1" isInvisible="true">
+                            <BoxSize flexSize="1" isInvisible={true}>
                                 <Field>
                                     {({ field, form }) => (
                                         <FormControl id="billing">
@@ -87,7 +87,7 @@ const CompanyDetails = ({companyDetails}) => {
                                     )}
                                 </Field>
                             </BoxSize>
-                            <BoxSize flexSize="1" isInvisible="true">
+                            <BoxSize flexSize="1" isInvisible={true}>
                                 <Field>
                                     {({ field, form }) => (
                                         <FormControl id="URL">

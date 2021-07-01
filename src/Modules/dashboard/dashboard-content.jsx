@@ -59,7 +59,7 @@ const DashboardContent = ({companyName, userName, selected, handleToggleFilter, 
 
                     <BoxSize flexSize="3">
                         <Flex>
-                            <BoxSize isInvisible="true" flexSize="1">
+                            <BoxSize isInvisible={true} flexSize="1">
                                 <SwitchToggleButton
                                     selected={selected}
                                     toggleSelected={toggleFilter}

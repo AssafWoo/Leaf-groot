@@ -47,7 +47,6 @@ const initialState = {
 const Login = () => {
     const {_, userDispatch} = useContext(GlobalContext);
     const context = useContext(GlobalContext);
-    console.log(context)
     const [state, dispatchFunction] = useReducer(loginReducer, initialState)
 
     const history = useHistory();
@@ -73,50 +72,48 @@ const Login = () => {
     return (
         
         <Flex Flex justify='center' align="center" m="auto" w="fit-content" h="93vh" >
-            <BoxSize flexSize="5" isInvisible="true" style={{border:"1px solid white"}} > 
+            <BoxSize flexSize="5" isInvisible={true} style={{border:"1px solid white"}} > 
                 <LeafIcon src={LeafLogo} />
                 <Flex>
                     <BoxSize flexSize="1" style={{padding:'1.5rem', background:'transparent'}} >
+                        <Formik
+                            initialValues={{email:'', password:''}}
+                            onSubmit={async (data, {setSubmitting}) => {
+                                setSubmitting(true);
+                                //make async call
+                                console.log('submit: ', data);
+                                setSubmitting(false)
+                            } }
+                        >
+                            {({values, isSubmitting, handleChange, handleBlur, handleSubmit}) => (
+                                <Form onSubmit={handleSubmit}>
 
-                    <Formik
-                        initialValues={{email:'', password:''}}
-                        onSubmit={async (data, {setSubmitting}) => {
-                            setSubmitting(true);
-                            //make async call
-                            console.log('submit: ', data);
-                            setSubmitting(false)
-                        } }
-                    >
-                        {({values, isSubmitting, handleChange, handleBlur, handleSubmit}) => (
-                            <Form onSubmit={handleSubmit}>
+                                    <Field>
+                                        {({ field, form }) => (
+                                        <FormControl id="email" isRequired>
+                                            <FormLabel color='white' fontSize="1.1rem" textAlign="left" pb="2" >Email address</FormLabel>
+                                            <Input name="email" onChange={e => dispatchFunction({type:'field', field:'email', value:e.target.value})} onBlur={handleBlur}  border="1px solid white" bg={DarkTheme} mb="5" />
+                                            <FormErrorMessage>'</FormErrorMessage>
+                                        </FormControl>
+                                        )}
+                                    </Field>
 
-                                <Field>
-                                    {({ field, form }) => (
-                                    <FormControl id="email" isRequired>
-                                        <FormLabel color='white' fontSize="1.1rem" textAlign="left" pb="2" >Email address</FormLabel>
-                                        <Input name="email" onChange={e => dispatchFunction({type:'field', field:'email', value:e.target.value})} onBlur={handleBlur}  border="1px solid white" bg={DarkTheme} mb="5" />
-                                        <FormErrorMessage>'</FormErrorMessage>
-                                    </FormControl>
-                                    )}
-                                </Field>
-
-                                <Field>
-                                    {({ field, form }) => (
-                                    <FormControl id="password" isRequired>
-                                        <FormLabel color='white' fontSize="1.1rem" textAlign="left" pb="2" >Password</FormLabel>
-                                        <Input type="password" name="password" onChange={e => dispatchFunction({type:'field', field:'password', value:e.target.value})} onBlur={handleBlur} border="1px solid white" bg={DarkTheme} mb="5" />
-                                        <FormErrorMessage>'</FormErrorMessage>
-                                    </FormControl>
-                                    )}
-                                </Field>
-                                <Button disabled={isSubmitting} type="submit" w="100%" bg={MainGreen} color="white" colorScheme="green" onClick={handleLogin}>Lets roll</Button>
-                            </Form>
-                        )}
-                    </Formik>
-
+                                    <Field>
+                                        {({ field, form }) => (
+                                        <FormControl id="password" isRequired>
+                                            <FormLabel color='white' fontSize="1.1rem" textAlign="left" pb="2" >Password</FormLabel>
+                                            <Input type="password" name="password" onChange={e => dispatchFunction({type:'field', field:'password', value:e.target.value})} onBlur={handleBlur} border="1px solid white" bg={DarkTheme} mb="5" />
+                                            <FormErrorMessage>'</FormErrorMessage>
+                                        </FormControl>
+                                        )}
+                                    </Field>
+                                    <Button disabled={isSubmitting} type="submit" w="100%" bg={MainGreen} color="white" colorScheme="green" onClick={handleLogin}>Lets roll</Button>
+                                </Form>
+                            )}
+                        </Formik>
                         <Flex>
-                            <BoxSize flexSize="1" isInvisible="true"><span style={{fontSize:'.7rem'}}>New around?</span></BoxSize>
-                            <BoxSize flexSize="1" isInvisible="true">
+                            <BoxSize flexSize="1" isInvisible={true}><span style={{fontSize:'.7rem'}}>New around?</span></BoxSize>
+                            <BoxSize flexSize="1" isInvisible={true}>
                                 <Link to="/signup">
                                     <Button bg={MainBlue} color="white" colorScheme="pink">Sign up</Button>
                                 </Link>

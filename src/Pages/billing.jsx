@@ -1,32 +1,85 @@
+import React from 'react';
+import {Flex, BoxSize, SubHeader, BreakLine} from '../Styles/styles';
+import Cards from 'react-credit-cards';
+import 'react-credit-cards/es/styles-compiled.css'
 import { Heading } from "@chakra-ui/layout";
-import {DarkTheme, LightBlue } from "../Styles/colors";
-import { BreakLine, Flex, Parag, SubHeader } from "../Styles/styles";
-import { Card } from "../Styles/styles";
+import { useReducer } from 'react';
+import BillingDetails from '../Modules/billing/billing-fields';
 
-const Billing = () => {
-    return(
-        <Flex>
-            <Heading {...SubHeader}>Billing</Heading>
-            <BreakLine />
-            <Flex style={{width:'100%'}}>
-                <Card style={{background:DarkTheme}}>
-                    <Heading {...SubHeader} style={{fontSize:'1.5rem'}}>Simple</Heading>
-                    <BreakLine />
-                    <Parag>All basics are free</Parag>
-                </Card>
-                <Card style={{background:LightBlue}}> {/* isChoosen={true} */}
-                    <Heading {...SubHeader} style={{fontSize:'1.5rem'}}>Recommended</Heading>
-                    <BreakLine />
-                    <Parag>Better insights</Parag>
-                    <Parag>Marketing abiilties</Parag>
-                </Card>
-                <Card style={{background:DarkTheme}}>
-                    <Heading {...SubHeader} style={{fontSize:'1.5rem'}}>Premium</Heading>
-                    <BreakLine />
-                    <Parag>All included</Parag>
-                </Card>
-            </Flex>
-        </Flex>
-    )
+function paymentReducer(state, action) {
+    switch(action.type){
+        case 'field':
+            return {
+                ...state,
+                [action.field]: action.value
+            }
+        case 'submit':
+            return {
+                ...state,
+                isLoading:true,
+                error:''
+            }
+        case 'error':
+            return {
+                ...state,
+                error:action.value,
+                isLoading:false,
+                name:'',
+                number:'',
+                expiry:'',
+                cvc:'',
+                focus:''
+            }
+        default:
+            return state;
+    }
 }
-export default Billing;
+
+const initialState = {
+    name:'',
+    number:'',
+    expiry:'',
+    cvc:'',
+    focus:'',
+    error:'',
+    isLoading:false
+}
+
+
+const PaymentForm = () => {
+
+    const [state, dispatchFunction] = useReducer(paymentReducer, initialState);
+    const {name, number, expiry, cvc, focus, error, isLoading} = state;
+
+    console.log(name)
+
+    return (
+        <Flex>
+            <Heading {...SubHeader}>Billing Information</Heading>
+            <BreakLine />
+            <BoxSize isInvisible={false} flexSize="5">
+               <BillingDetails 
+                name={name}
+                number={number}
+                expiry={expiry}
+                cvc={cvc}
+                focus={focus}
+                error={error}
+                isLoading={isLoading}
+                dispatchFunction={dispatchFunction}
+               />
+            </BoxSize>
+                <BoxSize style={{padding:0}} isInvisible={true} flexSize="5">
+                    <Cards
+                    cvc={cvc}
+                    expiry={expiry}
+                    focused={focus}
+                    name={name}
+                    number={number}
+                    />
+                </BoxSize>
+      </Flex>
+    );
+}
+
+export default PaymentForm;

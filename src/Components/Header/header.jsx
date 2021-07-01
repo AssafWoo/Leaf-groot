@@ -22,7 +22,7 @@ const LeafHeaderandSearch = () => {
                 <HeaderAndSearchInnerContent>
                     <SingleUser desiredPhoto="company" />
                     <Flex>
-                        <BoxSize flexSize="3" isInvisible="true">
+                        <BoxSize flexSize="3" isInvisible={true}>
                             <Heading fontSize="2rem" mb="2" textAlign="left" fontWeight="300" color='white'>Lets change the world by finding you the best offsets!</Heading>
                             <InputGroup mt="2rem">
                                 <InputLeftElement

@@ -17,7 +17,7 @@ const Settings = () => {
         <Flex>
             <Heading {...SubHeader}>Settings</Heading>
             <BreakLine />
-            <BoxSize flexSize="5" isInvisible="true">
+            <BoxSize flexSize="5" isInvisible={true}>
                 <CompanyDetails handleSubmit={handleSubmit} companyDetails={userState.user} />
             </BoxSize>
         </Flex>
