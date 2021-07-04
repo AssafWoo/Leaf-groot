@@ -4,6 +4,7 @@ import { BoxSize, BreakLine, Flex, SubHeader } from '../Styles/styles';
 import TableTemplate from '../Components/Table/table-template';
 import { transactionsColumns } from '../Components/Table/data-stracture';
 import {transactionsData } from '../Mocks/transactions-mock';
+import { DarkerTheme, DarkTheme } from '../Styles/colors';
 
 
 
@@ -14,7 +15,7 @@ const TransactionsComponent = () => {
         <Flex>
             <Heading {...SubHeader}>Transactions</Heading>
             <BreakLine />
-            <BoxSize style={{borderRadius:'15px'}} flexSize="5" isInvisible={false}>
+            <BoxSize flexSize="5" isInvisible={false} style={{background:DarkerTheme, border:`4px solid ${DarkTheme}`, borderRadius:'15px'}}>
                 <TableTemplate tableData={transactionsData.data} columnsType={transactionsColumns} />
             </BoxSize>
         </Flex>

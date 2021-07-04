@@ -2,14 +2,13 @@ import React, { useRef }  from 'react';
 import { Heading } from '@chakra-ui/layout';
 import { Flex, BoxSize, BreakLine, Parag } from '../../Styles/styles'
 import SingleUser from '../../Components/UserAvatar/SingelUser';
-import { DarkerTheme, PurpleBlue } from '../../Styles/colors';
+import { DarkerTheme, DarkTheme, PurpleBlue } from '../../Styles/colors';
 import {useGetTime} from '../../Utils/useGetTime';
 import BarsChart from '../../Components/Charts/bar';
 import { useScreenSize } from '../../Utils/useScreenSize';
 import { SwitchToggleButton } from '../../Components/Switch/switch';
 import BlogCard from '../../Components/Cards/blog_card';
 import VolunteerCard from '../../Components/Cards/volunteer_card';
-import { Button } from '@chakra-ui/button';
 import TableTemplate from '../../Components/Table/table-template';
 import { transactionsColumns } from '../../Components/Table/data-stracture';
 // import useFetch from '../../Utils/useFetch';
@@ -40,25 +39,24 @@ const DashboardContent = ({user, selected, handleToggleFilter, dashboardData, ta
                     <SingleUser desiredPhoto="company" />
                 </BoxSize> : ''}
             </Flex>
-                <BoxSize flexSize="3" style={{textAlign:'center'}}>
+                <BoxSize flexSize="3" style={{textAlign:'center'}} isInvisible={true}>
                     <Flex style={{alignItems:'stretch'}}>
-                        <BoxSize flexSize="1" isInvisible={true} style={{background:DarkerTheme}}>
+                        <BoxSize flexSize="1" isInvisible={true} style={{border: `4px solid ${DarkTheme}`}}>
                             <Heading fontWeight="300" textAlign="center" fontSize="3rem" >{user.userData.treesEquilavant}</Heading>
                             <Parag style={{textAlign:'center'}}>Equivalent number of trees planted</Parag>
                         </BoxSize>
-                        <BoxSize flexSize="1" isInvisible={true} style={{background:DarkerTheme}}>
-                            <Heading fontWeight="300" textAlign="center" fontSize="3rem" >{user.userData.totalCO2Saved} Kg</Heading>
+                        <BoxSize flexSize="1" isInvisible={true} style={{border: `4px solid ${DarkTheme}`}}>
+                            <Heading fontWeight="300" textAlign="center" fontSize="3rem" >{user.userData.totalCO2Saved}</Heading>
                             <Parag style={{textAlign:'center'}}>Kg of CO2 saved since started using</Parag>
                         </BoxSize>
-                        <BoxSize flexSize="1" isInvisible={true} style={{background:DarkerTheme}}>
+                        <BoxSize flexSize="1" isInvisible={true} style={{border: `4px solid ${DarkTheme}`}}>
                             <Heading fontWeight="300" textAlign="center" fontSize="3rem" >{user.userData.credits}$</Heading>
                             <Parag style={{textAlign:'center'}}>In donations credits</Parag>
                         </BoxSize>
-
                     </Flex>
                 </BoxSize>
 
-                    <BoxSize flexSize="3">
+                    <BoxSize flexSize="3" style={{background:DarkerTheme, border:`4px solid ${DarkTheme}`}}>
                         <Flex>
                             <BoxSize isInvisible={true} flexSize="1">
                                 <SwitchToggleButton
@@ -71,7 +69,7 @@ const DashboardContent = ({user, selected, handleToggleFilter, dashboardData, ta
                         <BarsChart data={dashboardData} />
                     </BoxSize>
 
-                <BoxSize ref={myStackedRef} flexSize="3">
+                <BoxSize ref={myStackedRef} flexSize="3" style={{background:DarkerTheme, border:`4px solid ${DarkTheme}`}}>
                     <Heading fontWeight="300" textAlign="left" fontSize="1.4rem">Transactions</Heading>
                     <BreakLine />
                     <TableTemplate tableData={tableData} columnsType={transactionsColumns} />

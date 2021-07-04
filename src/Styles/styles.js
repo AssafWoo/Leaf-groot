@@ -120,8 +120,8 @@ export const TableWrapper = styled.div`
     }
 `
 export const SwitchWrapper = styled.div`
-    width: 10rem;
-    background-color: ${DarkerTheme};
+    width: 15rem;
+    background-color: ${DarkTheme};
     cursor: pointer;
     user-select: none;
     border-radius: 15px;
@@ -203,11 +203,11 @@ export const SwitchContent = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 5rem;
+    width: 7.5rem;
     border-radius:15px;
     box-sizing: border-box;
     position: absolute;
-    left: 5rem;
+    left: 7.5rem;
     transition: all 0.3s ease;
 
 

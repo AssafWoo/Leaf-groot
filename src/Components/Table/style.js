@@ -1,42 +1,43 @@
 import styled from 'styled-components';
-import { DarkerTheme, DarkTheme, MainRed } from '../../Styles/colors';
+import { DarkerTheme, MainRed } from '../../Styles/colors';
 
 
 export const customStyles = {
     headCells:{
         style:{
-            background:'#2c3c5b',
+            background:'#233048',
             color:'white',
             fontSize:'1rem'
         }
     },
     cells:{
         style:{
-            background:'#2c3c5b',
+            background:'#233048',
             color:'white'
         }
     },
     nav:{
         style:{
-            background:'#2c3c5b',
+            background:'#233048',
             color:'white',
         }
     },
     row:{
         style:{
-            background:'#2c3c5b',
+            background:'#233048',
             color:'white'
         }
     }
 }
 
 const tableCellsStyle = {
-    background:DarkTheme,
+    background:DarkerTheme,
     color:'white'
 }
 
 export const TableWrapper = styled.div`
     background:${DarkerTheme} !important;
+
     width:100%;
     .kVlSIs{
         background:transparent;
@@ -47,13 +48,15 @@ export const TableWrapper = styled.div`
         background:transparent;
         color:white;
         padding:2rem;
+        
     }
     .rdt_TableHeader{
         display:none;
     }
     .rdt_Table {
+        background:${DarkerTheme};
         border-radius:15px;
-        background:${DarkerTheme}
+
     }
     .rdt_Pagination{
         ${tableCellsStyle}
