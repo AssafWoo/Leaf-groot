@@ -14,7 +14,8 @@ import TableTemplate from '../../Components/Table/table-template';
 import { transactionsColumns } from '../../Components/Table/data-stracture';
 // import useFetch from '../../Utils/useFetch';
 
-const DashboardContent = ({companyName, userName, selected, handleToggleFilter, dashboardData, tableData}) => {
+const DashboardContent = ({user, selected, handleToggleFilter, dashboardData, tableData}) => {
+    console.log(user)
     const CurrentTime = useGetTime();
     const screenSize = useScreenSize();
     // const data = useFetch('https://randomuser.me/api', 'transactions');
@@ -30,7 +31,7 @@ const DashboardContent = ({companyName, userName, selected, handleToggleFilter, 
             <BoxSize flexSize="5" isInvisible={true} > 
             <Flex>
                 <BoxSize flexSize="3" isInvisible={true}>
-                    <Heading fontSize="2rem" mb="2" textAlign="left" fontWeight="300" color='white'>Howdy <b>{userName}</b>, {CurrentTime}</Heading>
+                    <Heading fontSize="2rem" mb="2" textAlign="left" fontWeight="300" color='white'>Howdy <b>{user.userData.name}</b>, {CurrentTime}</Heading>
                     <p style={{textAlign:"left", color:'white'}}>Lets change the world!</p>
                     
                 </BoxSize>
@@ -42,18 +43,16 @@ const DashboardContent = ({companyName, userName, selected, handleToggleFilter, 
                 <BoxSize flexSize="3" style={{textAlign:'center'}}>
                     <Flex style={{alignItems:'stretch'}}>
                         <BoxSize flexSize="1" isInvisible={true} style={{background:DarkerTheme}}>
-                            <Heading fontWeight="300" textAlign="center" fontSize="3rem" >1,210</Heading>
-                            <Parag style={{textAlign:'center'}}>Equivalent number of trees</Parag>
+                            <Heading fontWeight="300" textAlign="center" fontSize="3rem" >{user.userData.treesEquilavant}</Heading>
+                            <Parag style={{textAlign:'center'}}>Equivalent number of trees planted</Parag>
                         </BoxSize>
                         <BoxSize flexSize="1" isInvisible={true} style={{background:DarkerTheme}}>
-                            <Heading fontWeight="300" textAlign="center" fontSize="3rem" >15,124 </Heading>
-                            <Parag style={{textAlign:'center'}}>Tonnn of CO2 saved since started using</Parag>
-                            <Button colorScheme="green" marginTop=".5rem">View</Button>
+                            <Heading fontWeight="300" textAlign="center" fontSize="3rem" >{user.userData.totalCO2Saved} Kg</Heading>
+                            <Parag style={{textAlign:'center'}}>Kg of CO2 saved since started using</Parag>
                         </BoxSize>
                         <BoxSize flexSize="1" isInvisible={true} style={{background:DarkerTheme}}>
-                            <Heading fontWeight="300" textAlign="center" fontSize="3rem" >20,432$</Heading>
+                            <Heading fontWeight="300" textAlign="center" fontSize="3rem" >{user.userData.credits}$</Heading>
                             <Parag style={{textAlign:'center'}}>In donations credits</Parag>
-                            <Button colorScheme="green" marginTop=".5rem">Use</Button>
                         </BoxSize>
 
                     </Flex>

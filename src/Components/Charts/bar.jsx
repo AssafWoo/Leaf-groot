@@ -5,12 +5,13 @@ import { Wrapper } from './styles';
 
 
 const BarsChart = ({width, data}) => {
+  console.log(data)
   const chartData = data.data;
     return (
         <Wrapper>
             <ResponsiveContainer width={width} height={200}>
                 <BarChart data={chartData}>
-                    <Bar barSize={20}  dataKey={data.name === 'orders' ? 'orders' : 'co2'} fill={data.name === 'orders' ? MainGreen: LightBlue} />
+                    <Bar barSize={20} dataKey={data.name === 'transactions' ? 'transactions' : 'co2'} fill={data.name !== 'co2' ? MainGreen: LightBlue} />
                     <XAxis tick={{fill:'white'}} dataKey="name" />
                     <YAxis tick={{fill:'white'}} />
                     <Tooltip cursor={{fill:DarkerTheme, fillOpacity:0.5}} />

@@ -1,15 +1,15 @@
-import {LOAD_INSIGHTS_SUCCESS,SET_WEEKLY_INSIGHTS,  SET_INSIGHT, LOAD_INSIGHTS_FAILURE} from '../actions/insights';
+import {LOAD_ACHIEVMENTS_SUCCESS,SET_WEEKLY_ACHIEVMENTS,  SET_ACHIEVMENT, LOAD_ACHIEVMENTS_FAILURE} from '../actions/achievments';
 
 
 const reducer = (state , action) => {
     switch(action.type){
-        case LOAD_INSIGHTS_FAILURE:
+        case LOAD_ACHIEVMENTS_FAILURE:
             return {error:action.payload}
-        case LOAD_INSIGHTS_SUCCESS:
+        case LOAD_ACHIEVMENTS_SUCCESS:
             return {allInsights: action.payload, error:null}
-        case SET_INSIGHT:
+        case SET_ACHIEVMENT:
             return {allInsights: action.payload, error:null}
-        case SET_WEEKLY_INSIGHTS:
+        case SET_WEEKLY_ACHIEVMENTS:
             console.log('moasjda')
             return {...state, weeklyInsights:action.payload, error:null}
         default:

@@ -3,27 +3,25 @@ import { Flex  } from '../Styles/styles'
 import DashboardContent from '../Modules/dashboard/dashboard-content';
 import { GlobalContext } from '../Context/global/global-context';
 import { useState } from 'react';
-import { dashboardContentCO2Data, dashboardContentOrdersData } from '../Mocks/dashboard';
 import {transactionsData } from '../Mocks/transactions-mock';
 
 const Dashboard = () => {
-    const {userState} = useContext(GlobalContext);
-    
+    const {userState, achievmentsState} = useContext(GlobalContext);
     const[selected, setSelected] = useState(true)
-    const[dashboardData, setDashboardData] = useState(dashboardContentCO2Data)
+    const[dashboardData, setDashboardData] = useState(achievmentsState.weeklyAchievments.co2Emissions)
     const handleToggleFilter = () => {
         if(selected){
-            setDashboardData(dashboardContentOrdersData)
+            setDashboardData(achievmentsState.weeklyAchievments.transactions)
         } else {
-            setDashboardData(dashboardContentCO2Data)
+            setDashboardData(achievmentsState.weeklyAchievments.co2Emissions) 
+
         } 
         setSelected(!selected)
     };
     return(
         <Flex>
             <DashboardContent
-              companyName={userState.user.company}
-              userName={userState.user.name}
+              user={userState}
               selected={selected}
               handleToggleFilter={handleToggleFilter}
               dashboardData={dashboardData}
