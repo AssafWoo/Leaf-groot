@@ -1,6 +1,6 @@
 import { Route, Switch } from "react-router"
 import TransactionsComponent from "../Pages/transactions"
-import Insights from "../Pages/insights"
+import Achievments from "../Pages/achievments"
 import APICallsComponent from "../Pages/api"
 import Login from "../Pages/login"
 import Dashboard from "../Pages/main-dashboard"
@@ -28,7 +28,7 @@ const Routes = () => {
                         <Route exact path="/settings/company" component={Settings} />
                         <Route exact path="/api" component={APICallsComponent} />
                         <Route exact path="/transactions" component={TransactionsComponent} />
-                        <Route exact path="/insights" component={Insights} />
+                        <Route exact path="/achievments" component={Achievments} />
                         <Route exact path="/projects" component={ProjectsMarketplace} />
                         <Route exact path="/" component={Dashboard} />
                     </Switch> 

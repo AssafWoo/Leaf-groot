@@ -12,10 +12,12 @@ import VolunteerCard from '../../Components/Cards/volunteer_card';
 import { Button } from '@chakra-ui/button';
 import TableTemplate from '../../Components/Table/table-template';
 import { transactionsColumns } from '../../Components/Table/data-stracture';
+// import useFetch from '../../Utils/useFetch';
 
 const DashboardContent = ({companyName, userName, selected, handleToggleFilter, dashboardData, tableData}) => {
     const CurrentTime = useGetTime();
     const screenSize = useScreenSize();
+    // const data = useFetch('https://randomuser.me/api', 'transactions');
 
     const myStackedRef = useRef();
 

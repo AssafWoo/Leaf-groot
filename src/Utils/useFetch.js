@@ -1,27 +1,50 @@
-// basic use fetch hook for the whole company data from the server
+import { useQuery } from "react-query";
+import { Spinner } from '@chakra-ui/spinner';
+import { useToast } from "@chakra-ui/toast";
 
-import { useEffect, useState } from "react"
+const fetchData = async (URL) => {
+    const response = await fetch(URL);
+    const data = await response.json();
+    return data;
+}
 
-const useFetch = (url) => {
-    const [response, setResponse] = useState(null);
-    const [error, setError] = useState(null);
-    const [isLoading, setIsLoading] = useState(null);
-    
-    useEffect(() => {
-        const fetchData = async () => {
-            setIsLoading(true);
-            try {
-                const res = await fetch(url);
-                const json = await res.json();
-                setResponse(json.results);
-                setIsLoading(false)
-            } catch (error) {
-                setError(error)
-            }
-        };
-        fetchData();
-    },[url])
-    return {response, error, isLoading};
+
+const useFetch = (queryURL, queryName) => {
+    const toast = useToast();
+
+    const {
+        isLoading,
+        isError,
+        error,
+        data
+        } = useQuery(queryName, () => fetchData(queryURL), {
+        refetchAllOnWindowFocus:true,
+        retry:2,
+    });
+
+    // console.log(status, data, error)
+
+
+    if(isLoading) {
+        return(
+            <Spinner />
+        )
+    }
+    if(isError) {
+        return(
+            toast({
+                title: "Error accured.",
+                description: `${error}`,
+                status: "error",
+                duration: 2000,
+                isClosable: true
+            })
+        )
+    }
+
+
+    return {data}
+
 }
 
 export default useFetch;

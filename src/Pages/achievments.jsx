@@ -7,7 +7,7 @@ const Insights = () => {
 
     return(
         <Flex>
-            <Heading {...SubHeader}>Our insights</Heading>
+            <Heading {...SubHeader}>Your Achievments</Heading>
             <BreakLine />
             <Flex>
                     <BoxSize flexSize="1" style={{background:MainPink}}>

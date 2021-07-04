@@ -5,14 +5,21 @@ import App from './App';
 import theme from './Components/Theme/theme';
 import { ChakraProvider } from '@chakra-ui/react';
 import { ThemeProvider } from 'styled-components';
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
+
+const queryClient = new QueryClient();
 
 ReactDOM.render(
   <>
-    <ThemeProvider theme={theme}>
-      <ChakraProvider vider theme={theme}>
-            <App />
-      </ChakraProvider>
-    </ThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider theme={theme}>
+        <ChakraProvider vider theme={theme}>
+              <App />
+        </ChakraProvider>
+      </ThemeProvider>
+      <ReactQueryDevtools initialIsOpen={true} />
+    </QueryClientProvider>
   </>,
   document.getElementById('root')
 );

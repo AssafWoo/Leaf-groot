@@ -17,8 +17,8 @@ const MenuNames = [
         icon:<FaHome style={{margin:'auto'}} />
     },
     {
-        name:'Insights',
-        link:'/insights',
+        name:'Achievments',
+        link:'/achievments',
         icon:<FaEye style={{margin:'auto'}} />
     },
     {
