@@ -1,4 +1,4 @@
-import {LOAD_ACHIEVMENTS_SUCCESS,SET_WEEKLY_ACHIEVMENTS,  SET_ACHIEVMENT, LOAD_ACHIEVMENTS_FAILURE} from '../actions/achievments';
+import {LOAD_ACHIEVMENTS_SUCCESS,SET_WEEKLY_ACHIEVMENTS,  SET_ACHIEVMENT, LOAD_ACHIEVMENTS_FAILURE} from '../actions/achievments.ts';
 
 
 const reducer = (state , action) => {

@@ -1,13 +1,16 @@
-export const userInitialState = {
+import { UserType } from "../../interfaces/user";
+
+
+export const userInitialState: UserType = {
     userData: {
         name:'Assaf',
         email:'assaf@gmail.com',
         company:'Leaf',
-        credits:'1,230',
+        credits:1230,
         profileImage:'',
         accountOwner:'',
-        totalCO2Saved:'2,213',
-        treesEquilavant:'201',
+        totalCO2Saved:2213,
+        treesEquilavant:201,
         siteURL:'',
         billingPack:''
     },

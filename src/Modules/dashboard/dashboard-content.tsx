@@ -11,10 +11,21 @@ import BlogCard from '../../Components/Cards/blog_card';
 import VolunteerCard from '../../Components/Cards/volunteer_card';
 import TableTemplate from '../../Components/Table/table-template';
 import { transactionsColumns } from '../../Components/Table/data-stracture';
+import { UserType } from '../../interfaces/user';
+import {Idata} from '../../Components/Charts/bar';
 // import useFetch from '../../Utils/useFetch';
 
-const DashboardContent = ({user, selected, handleToggleFilter, dashboardData, tableData}) => {
-    console.log(user)
+interface Iprops {
+    user: UserType;
+    selected:boolean,
+    handleToggleFilter:() => void;
+    dashboardData:Array<Idata>;
+    tableData:Array<any>;
+};
+
+const DashboardContent = ({user, selected, handleToggleFilter, dashboardData, tableData}:Iprops) => {
+    
+    console.log(dashboardData)
     const CurrentTime = useGetTime();
     const screenSize = useScreenSize();
     // const data = useFetch('https://randomuser.me/api', 'transactions');

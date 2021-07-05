@@ -1,3 +1,4 @@
+import { UserType } from '../../interfaces/user';
 export const LOAD_USER = '[user] load';
 export const LOAD_USER_SUCCESS = '[user] success';
 export const LOAD_USER_FAILURE = '[user] failure';
@@ -10,22 +11,22 @@ export const loadUser = {
     type:LOAD_USER,
 }
 
-export const loadUserSuccess = user => ({
+export const loadUserSuccess = (user:UserType) => ({
     type:LOAD_USER_SUCCESS,
     payload:user
 });
 
-export const loadUserFailure = error => ({
+export const loadUserFailure = (error:any) => ({
     type:LOAD_USER_FAILURE,
     payload:error,
 });
 
-export const setUser = user => ({
+export const setUser = (user:UserType) => ({
     type:SET_USER,
     payload:user
 });
 
-export const putUser = user => ({
+export const putUser = (user:UserType) => ({
     type:PUT_USER,
     payload:user
 });
@@ -34,7 +35,7 @@ export const logoutUser = {
     type:LOG_OUT_USER,
 };
 
-export const loginUser = token => ({
+export const loginUser = (token:string) => ({
     type:USER_LOGIN,
     payload:token
 });
