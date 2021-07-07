@@ -7,7 +7,7 @@ import { AllWrapper, LeftMarginWrapper } from "./style";
 import { useScreenSize } from "../../Utils/useScreenSize";
 import { Button } from "@chakra-ui/button";
 import { useParams } from "react-router";
-
+import GoogleMapComponent from '../../Components/Map/map';
 
 const Content = () => {
     const size = useScreenSize();
@@ -48,7 +48,7 @@ const Content = () => {
                         </Flex>
                 </BoxSize>
                 <BoxSize style={{flex: size === '3-cols' ? '5' : '1 0  100%'}} isInvisible={false}>
-                    <p>im the map</p>
+                    <GoogleMapComponent />
                 </BoxSize>
             </Flex>
     )
