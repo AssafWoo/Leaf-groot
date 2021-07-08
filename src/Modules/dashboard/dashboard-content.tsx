@@ -58,11 +58,11 @@ const DashboardContent = ({user, selected, handleToggleFilter, dashboardData, ta
                         </BoxSize>
                         <BoxSize flexSize="1" isInvisible={true} style={{border: `4px solid ${DarkTheme}`}}>
                             <Heading fontWeight="300" textAlign="center" fontSize="3rem" >{user.userData.totalCO2Saved}</Heading>
-                            <Parag style={{textAlign:'center'}}>Kg of CO2 saved since started using</Parag>
+                            <Parag style={{textAlign:'center'}}>Kg of CO2 saved since beggining</Parag>
                         </BoxSize>
                         <BoxSize flexSize="1" isInvisible={true} style={{border: `4px solid ${DarkTheme}`}}>
                             <Heading fontWeight="300" textAlign="center" fontSize="3rem" >{user.userData.credits}$</Heading>
-                            <Parag style={{textAlign:'center'}}>In donations credits</Parag>
+                            <Parag style={{textAlign:'center'}}>Donated since beggining</Parag>
                         </BoxSize>
                     </Flex>
                 </BoxSize>

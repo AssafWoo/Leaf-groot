@@ -7,6 +7,7 @@ export const FooterWrapper = styled.div`
     background-color: ${Black};
     color:white;
     text-align: center;
+    margin-top: 10rem;
 `
 
 export const UlWrapper = styled.ul`

@@ -18,7 +18,7 @@ ReactDOM.render(
               <App />
         </ChakraProvider>
       </ThemeProvider>
-      <ReactQueryDevtools initialIsOpen={true} />
+      {/* <ReactQueryDevtools initialIsOpen={false} /> */}
     </QueryClientProvider>
   </>,
   document.getElementById('root')
