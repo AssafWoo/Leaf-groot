@@ -176,7 +176,7 @@ export const InputProperties = {size:'sm', borderRadius:"full", variant:"solid",
 
 
 export const LeafIcon = styled.img`
-    width:25%;
+    width: ${props => props.isSmall ? '15%' :'25%'};
     display:block;
     margin:auto;
 `
