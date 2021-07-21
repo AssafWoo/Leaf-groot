@@ -1,5 +1,4 @@
-import styled from 'styled-components';
-import { MainRed } from '../../Styles/colors';
+import styled from "styled-components";
 
 export const Marker = styled.div`
 .pin2 {
@@ -26,4 +25,4 @@ export const Marker = styled.div`
 }
 }
 
-`
+`;

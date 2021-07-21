@@ -2,7 +2,7 @@ import React, { useRef }  from 'react';
 import { Heading } from '@chakra-ui/layout';
 import { Flex, BoxSize, BreakLine, Parag } from '../../Styles/styles'
 import SingleUser from '../../Components/UserAvatar/SingelUser';
-import { DarkerTheme, DarkTheme, PurpleBlue } from '../../Styles/colors';
+import { DarkerTheme, DarkTheme, MainBlue } from '../../Styles/colors';
 import {useGetTime} from '../../Utils/useGetTime';
 import BarsChart from '../../Components/Charts/bar';
 import { useScreenSize } from '../../Utils/useScreenSize';
@@ -87,7 +87,7 @@ const DashboardContent = ({user, selected, handleToggleFilter, dashboardData, ta
                 </BoxSize>
 
                     <Flex>
-                        <BoxSize flexSize="3" style={{background:PurpleBlue}}>
+                        <BoxSize flexSize="3" style={{background:MainBlue}}>
                             <Heading  fontWeight="300" textAlign="left" fontSize="1.4rem">Volunteer</Heading>
                             <BreakLine />
                             <VolunteerCard />
