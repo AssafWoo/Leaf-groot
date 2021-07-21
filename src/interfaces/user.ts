@@ -9,7 +9,7 @@ export interface UserType {
         totalCO2Saved:number;
         treesEquilavant:number;
         siteURL:string;
-        billingPack:string;
+        billingPack:boolean;
     };
     loggedIn:boolean;
     error:any;

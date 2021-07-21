@@ -12,7 +12,7 @@ export const userInitialState: UserType = {
         totalCO2Saved:2213,
         treesEquilavant:201,
         siteURL:'',
-        billingPack:''
+        billingPack:true,
     },
     loggedIn:false,
     error:null
