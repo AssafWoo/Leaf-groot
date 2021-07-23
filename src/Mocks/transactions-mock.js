@@ -1,7 +1,7 @@
 import { GiPaperWindmill, GiPineTree } from "react-icons/gi";
 import { IoIosWater } from "react-icons/io";
 
-const OFFSET_TYPE = {
+export const OFFSET_TYPE = {
 	WATER: <IoIosWater size="1.5rem" />,
 	FORREST: <GiPineTree size="1.5rem" />,
 	AIR: <GiPaperWindmill size="1.5rem" />,
