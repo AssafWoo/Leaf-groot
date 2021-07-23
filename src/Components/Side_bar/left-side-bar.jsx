@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Flex, LeafIcon } from "../../Styles/styles";
-import { ItemsNav, SideBarWrapper, Item } from "./style";
+import { ItemsNav, SideBarWrapper, Item, StyledSpan } from "./style";
 import LeafLogo from "../../Assets/images/leaf-green.png";
 import { useState } from "react";
 import { SettingsIcon } from "@chakra-ui/icons";
@@ -56,7 +56,7 @@ const MenuNames = [
 		icon: <SettingsIcon style={{ margin: "auto", display: "block" }} />,
 	},
 	{
-		name: "Exit",
+		name: "",
 		link: "/login",
 		icon: <FaPowerOff style={{ margin: "auto", display: "block" }} />,
 	},
@@ -88,19 +88,15 @@ const SideBar = ({ size }) => {
 				{MenuNames.map((value, index) => (
 					<Flex key={index}>
 						<Item size>
-							<Link
-								onClick={(e) => handleClick(value)}
-								className={activeItem === value.name ? "active" : ""}
-								to={`${value.link}`}
-							>
+							<NavLink exact to={`${value.link}`} activeClassName="active">
 								{size ? (
-									<span>{value.icon}</span>
+									<StyledSpan>{value.icon}</StyledSpan>
 								) : (
-									<span style={{ fontWeight: "300", marginLeft: ".5rem" }}>
+									<StyledSpan style={{ marginLeft: ".5rem" }}>
 										{value.name}
-									</span>
+									</StyledSpan>
 								)}
-							</Link>
+							</NavLink>
 						</Item>
 					</Flex>
 				))}

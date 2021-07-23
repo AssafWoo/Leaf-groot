@@ -21,6 +21,9 @@ const ModalComponent = ({
 }) => {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 
+	// add offset box and name box
+	// move the id to the header
+
 	return (
 		<>
 			<Button

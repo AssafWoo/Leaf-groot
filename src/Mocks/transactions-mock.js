@@ -1,10 +1,19 @@
+import { GiPaperWindmill, GiPineTree } from "react-icons/gi";
+import { IoIosWater } from "react-icons/io";
+
+const OFFSET_TYPE = {
+	WATER: <IoIosWater size="1.5rem" />,
+	FORREST: <GiPineTree size="1.5rem" />,
+	AIR: <GiPaperWindmill size="1.5rem" />,
+};
+
 export const transactionsData = {
 	data: [
 		{
 			name: "Amazon Tribe",
 			status: "Success",
 			orders: "",
-			type: "Forestation",
+			type: OFFSET_TYPE.WATER,
 			amountCo2: "170",
 			amountDollars: 2,
 			date: "10/5/21",
@@ -15,7 +24,7 @@ export const transactionsData = {
 			name: "AA",
 			status: "Success",
 			orders: "",
-			type: "Water",
+			type: OFFSET_TYPE.AIR,
 			amountCo2: "190",
 			amountDollars: 1,
 			date: "10/5/21",
@@ -26,7 +35,7 @@ export const transactionsData = {
 			name: "Indian waterfall",
 			status: "Success",
 			orders: "",
-			type: "Forestation",
+			type: OFFSET_TYPE.FORREST,
 			amountCo2: "124",
 			amountDollars: 5,
 			date: "14/4/21",
@@ -37,7 +46,7 @@ export const transactionsData = {
 			name: "Solar panels in Argentina",
 			status: "Failed",
 			orders: "",
-			type: "Forestation",
+			type: OFFSET_TYPE.WATER,
 			amountCo2: "168",
 			amountDollars: 16,
 			date: "12/4/21",
