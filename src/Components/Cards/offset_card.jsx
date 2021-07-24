@@ -1,53 +1,72 @@
 import { Link } from "react-router-dom";
-import { Heading } from "@chakra-ui/layout";
-import { ImageContainer } from "../../Pages/projects-protfolio/style";
-import { BoxSize, Flex, Parag } from "../../Styles/styles";
+import { Checkbox } from "@chakra-ui/react";
+
 import { OffsetCardWrapper } from "./offset_card_style";
 import { GiPaperWindmill, GiPineTree } from "react-icons/gi";
 import { IoIosWater } from "react-icons/io";
+import { useState } from "react";
 
 export const OFFSET_TYPE = {
-	WATER: <IoIosWater size="8rem" color="white" display="inline-block" />,
-	FORREST: <GiPineTree size="8rem" color="white" display="inline-block" />,
-	AIR: <GiPaperWindmill size="8rem" color="white" display="inline-block" />,
+	WATER: {
+		name: "water",
+		icon: <IoIosWater size="8rem" color="white" display="inline-block" />,
+		color: "LightBlue",
+	},
+	FORREST: {
+		name: "forest",
+		icon: <GiPineTree size="8rem" color="white" display="inline-block" />,
+		color: "MainGreen",
+	},
+	AIR: {
+		name: "air",
+		icon: <GiPaperWindmill size="8rem" color="white" display="inline-block" />,
+		color: "LightBlue",
+	},
 };
 
-{
-	/*
+const OffsetCard = ({ item, image, handleClick }) => {
+	const [choosen, setChoosen] = useState(false);
 
+	const handleSubmit = (item) => {
+		setChoosen(!choosen);
+		handleClick(item);
+	};
 
-country: "Peru"
-id: "124121352354"
-name: "Yamaxun River"
-purpose: "Improved Forest Mangment"
-size: "4,321 Hecters"
-thumbnail: "../Assets/images/project1.jpg"
-verifier: "Gold Standart"*/
-}
-const OffsetCard = ({ item, image }) => {
-	console.log(item);
 	return (
-		<Link to={`/projects/${item.id}`}>
-			<OffsetCardWrapper>
-				<div className="container">
-					<div className="card">
-						<div className="imgBx">{OFFSET_TYPE.FORREST}</div>
-						<div className="contentBx">
-							<h2>{item.name}</h2>
-							<div className="size">
-								<h3>{item.country}</h3>
-							</div>
-							<div className="color">
-								<h3>{item.verifier}</h3>
-							</div>
-							<div className="color">
-								<h3>{item.purpose}</h3>
-							</div>
+		// <Link to={`/projects/${item.id}`}>
+		<OffsetCardWrapper onClick={() => handleSubmit(item)}>
+			<div className="container">
+				<div className="card">
+					<div className="imgBx">{OFFSET_TYPE.AIR.icon}</div>
+					<Checkbox
+						isChecked={choosen}
+						position="absolute"
+						borderRadius="50%"
+						colorScheme="whiteAlpha"
+						top="2.5%"
+						left="90%"
+						zIndex="1000"
+					/>
+
+					<div className="contentBx">
+						<h2>{item.name}</h2>
+						<div className="size">
+							<h3>Country: </h3>
+							<p>{item.country}</p>
+						</div>
+						<div className="color">
+							<h3>Verifier: </h3>
+							<p>{item.verifier}</p>
+						</div>
+						<div className="color">
+							<h3>Goal: </h3>
+							<p>{item.purpose}</p>
 						</div>
 					</div>
 				</div>
-			</OffsetCardWrapper>
-		</Link>
+			</div>
+		</OffsetCardWrapper>
+		// </Link>
 	);
 };
 

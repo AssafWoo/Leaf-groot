@@ -34,6 +34,7 @@ const Routes = () => {
 							/>
 							<Route exact path="/achievments" component={Achievments} />
 							<Route exact path="/projects" component={ProjectsMarketplace} />
+
 							<Route exact path="/" component={Dashboard} />
 						</Switch>
 					</Layout>

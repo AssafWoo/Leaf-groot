@@ -34,8 +34,12 @@ const ModalComponent = ({
 			>
 				{openButtonContent}
 			</Button>
-			<Modal isOpen={isOpen} onClose={onClose}>
-				<ModalOverlay />
+			<Modal
+				isOpen={isOpen}
+				onClose={onClose}
+				style={{ transition: "0.5s ease-in-out" }}
+			>
+				<ModalOverlay style={{ transition: "0.5s ease-in-out" }} />
 				<ModalContent
 					color="white"
 					bg={DarkerTheme}
