@@ -1,9 +1,13 @@
 import styled from "styled-components";
-import { DarkTheme, MainGreen } from "../../Styles/colors";
+import { DarkTheme, LightBlue } from "../../Styles/colors";
 
 export const OffsetCardWrapper = styled.div`
 	.container {
 		position: relative;
+	}
+	a {
+		left: 50%;
+		transform: translate(0, -50%);
 	}
 
 	.container .card {
@@ -11,7 +15,7 @@ export const OffsetCardWrapper = styled.div`
 		width: 280px;
 		margin: 2rem;
 		height: 400px;
-		background: ${MainGreen};
+		background: ${LightBlue};
 		border-radius: 20px;
 		overflow: hidden;
 	}
@@ -30,15 +34,6 @@ export const OffsetCardWrapper = styled.div`
 
 	.container .card:hover:before {
 		clip-path: circle(300px at 80% -20%);
-	}
-
-	.container .card:after {
-		position: absolute;
-		top: 30%;
-		left: -20%;
-		font-size: 12em;
-		font-weight: 800;
-		color: rgba(255, 255, 25, 0.05);
 	}
 
 	.container .card .imgBx {
@@ -87,8 +82,8 @@ export const OffsetCardWrapper = styled.div`
 		margin: 0;
 	}
 
-	.container .card .contentBx .size,
-	.container .card .contentBx .color {
+	.container .card .contentBx .content,
+	.container .card .contentBx .content {
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -100,7 +95,7 @@ export const OffsetCardWrapper = styled.div`
 		padding-bottom: 0;
 	}
 
-	.container .card:hover .contentBx .size {
+	.container .card:hover .contentBx .content {
 		opacity: 1;
 		visibility: visible;
 		transition-delay: 0.5s;
@@ -164,26 +159,5 @@ export const OffsetCardWrapper = styled.div`
 
 	.container .card .contentBx .color span:nth-child(4) {
 		background: #e91e63;
-	}
-
-	.container .card .contentBx a {
-		display: inline-block;
-		padding: 10px 20px;
-		background: #fff;
-		border-radius: 4px;
-		margin-top: 10px;
-		text-decoration: none;
-		font-weight: 600;
-		color: #111;
-		opacity: 0;
-		transform: translateY(50px);
-		transition: 0.5s;
-		margin-top: 0;
-	}
-
-	.container .card:hover .contentBx a {
-		opacity: 1;
-		transform: translateY(0px);
-		transition-delay: 0.75s;
 	}
 `;

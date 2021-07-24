@@ -3,9 +3,8 @@ import { BoxSize, Flex, Parag } from "../../Styles/styles";
 import { Heading } from "@chakra-ui/layout";
 
 const ModalContent = (props) => {
-	console.log(props);
 	return (
-		<Flex>
+		<Flex style={{ alignItems: "stretch" }}>
 			<Flex>
 				<BoxSize
 					isInvisible={true}
@@ -15,7 +14,7 @@ const ModalContent = (props) => {
 					flexSize="5"
 				>
 					<Heading fontSize="1rem" color="white" fontWeight="400">
-						Transaction ID:
+						Name:
 					</Heading>
 					<Parag
 						style={{
@@ -25,7 +24,28 @@ const ModalContent = (props) => {
 							color: MainGreen,
 						}}
 					>
-						{props.id}
+						{props.name}
+					</Parag>
+				</BoxSize>
+				<BoxSize
+					isInvisible={true}
+					style={{
+						background: DarkTheme,
+					}}
+					flexSize="5"
+				>
+					<Heading fontSize="1rem" color="white" fontWeight="400">
+						Location:
+					</Heading>
+					<Parag
+						style={{
+							textAlign: "center",
+							fontSize: "1.2rem",
+							fontWeight: "500",
+							color: MainGreen,
+						}}
+					>
+						{props.location}
 					</Parag>
 				</BoxSize>
 			</Flex>
@@ -77,7 +97,7 @@ const ModalContent = (props) => {
 					style={{ background: DarkTheme }}
 					flexSize="3"
 				>
-					<Heading fontSize="1rem" color="white" fontWeight="400">
+					<Heading fontSize="1rem" color="white" fontWeight="400" mb="1rem">
 						Instrument Type:
 					</Heading>
 					<Parag

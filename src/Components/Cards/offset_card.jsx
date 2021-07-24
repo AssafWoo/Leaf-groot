@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
-import { Checkbox } from "@chakra-ui/react";
-
+import { Checkbox, Heading, Tag, TagLabel } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/button";
 import { OffsetCardWrapper } from "./offset_card_style";
 import { GiPaperWindmill, GiPineTree } from "react-icons/gi";
 import { IoIosWater } from "react-icons/io";
 import { useState } from "react";
+import { BreakLine, Flex } from "../../Styles/styles";
+import { DarkerTheme } from "../../Styles/colors";
 
 export const OFFSET_TYPE = {
 	WATER: {
@@ -42,25 +44,37 @@ const OffsetCard = ({ item, image, handleClick }) => {
 						isChecked={choosen}
 						position="absolute"
 						borderRadius="50%"
-						colorScheme="whiteAlpha"
+						colorScheme="blue"
 						top="2.5%"
 						left="90%"
 						zIndex="1000"
 					/>
 
 					<div className="contentBx">
-						<h2>{item.name}</h2>
-						<div className="size">
-							<h3>Country: </h3>
-							<p>{item.country}</p>
-						</div>
-						<div className="color">
-							<h3>Verifier: </h3>
-							<p>{item.verifier}</p>
-						</div>
-						<div className="color">
-							<h3>Goal: </h3>
-							<p>{item.purpose}</p>
+						<Heading
+							padding=".5rem"
+							fontWeight="300"
+							textAlign="center"
+							fontSize="1.5rem"
+						>
+							{item.name}
+						</Heading>
+						<div className="content">
+							<Flex>
+								<Tag margin="3px" bg={DarkerTheme} color="white" left="1px">
+									<TagLabel padding=".2rem">{item.country}</TagLabel>
+								</Tag>
+								<Tag margin="3px" bg={DarkerTheme} color="white" left="1px">
+									<TagLabel padding=".2rem">{item.verifier}</TagLabel>
+								</Tag>
+								<Tag margin="3px" bg={DarkerTheme} color="white" left="1px">
+									<TagLabel padding=".2rem">{item.purpose}</TagLabel>
+								</Tag>
+								<BreakLine />
+								<Link to={`/projects/${item.id}`}>
+									<Button colorScheme="yellow">Discover</Button>
+								</Link>
+							</Flex>
 						</div>
 					</div>
 				</div>
@@ -71,25 +85,3 @@ const OffsetCard = ({ item, image, handleClick }) => {
 };
 
 export default OffsetCard;
-
-{
-	/*
-
-            <BoxSize flexSize="1 0 100%" isInvisible={false} style={{cursor:'pointer'}}>
-                <Flex>
-                    <BoxSize flexSize="3" isInvisible={true} style={{padding:0}}>
-                        <ImageContainer src={image} style={{width:'100%'}} />
-                    </BoxSize>
-                    <BoxSize flexSize="5" isInvisible={true}>
-                        <Heading mb=".5rem" fontSize=".9rem" color="green.300" fontWeight="400" textAlign="left">{item.country}</Heading>
-                        <Heading mb=".5rem" fontSize="1.5rem" fontWeight="300" textAlign="left">{item.name}</Heading>
-                        <hr />
-                        <Parag style={{lineHeight:'2.5rem'}}>{item.purpose}</Parag>
-                        <Parag style={{lineHeight:'2.5rem'}}>{item.size}</Parag>
-                        <Parag style={{lineHeight:'2.5rem'}}>Verified by: {item.verifier}</Parag>
-                    </BoxSize>
-                </Flex>
-            </BoxSize>
-
-*/
-}

@@ -11,6 +11,7 @@ export const transactionsData = {
 	data: [
 		{
 			name: "Amazon Tribe",
+			location: "Brazil",
 			status: "Success",
 			orders: "",
 			type: OFFSET_TYPE.WATER,
@@ -22,6 +23,8 @@ export const transactionsData = {
 		},
 		{
 			name: "AA",
+			location: "Peru",
+
 			status: "Success",
 			orders: "",
 			type: OFFSET_TYPE.AIR,
@@ -33,6 +36,8 @@ export const transactionsData = {
 		},
 		{
 			name: "Indian waterfall",
+			location: "India",
+
 			status: "Success",
 			orders: "",
 			type: OFFSET_TYPE.FORREST,
@@ -44,6 +49,8 @@ export const transactionsData = {
 		},
 		{
 			name: "Solar panels in Argentina",
+			location: "Argentina",
+
 			status: "Failed",
 			orders: "",
 			type: OFFSET_TYPE.WATER,

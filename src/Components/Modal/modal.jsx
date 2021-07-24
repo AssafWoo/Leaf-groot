@@ -11,6 +11,7 @@ import {
 	ModalOverlay,
 } from "@chakra-ui/modal";
 import { DarkerTheme, MainGreen } from "../../Styles/colors";
+import { SlideEffect } from "../../Styles/effects";
 
 const ModalComponent = ({
 	openButtonContent,
@@ -34,19 +35,15 @@ const ModalComponent = ({
 			>
 				{openButtonContent}
 			</Button>
-			<Modal
-				isOpen={isOpen}
-				onClose={onClose}
-				style={{ transition: "0.5s ease-in-out" }}
-			>
-				<ModalOverlay style={{ transition: "0.5s ease-in-out" }} />
+			<Modal isOpen={isOpen} onClose={onClose} style={{ SlideEffect }}>
+				<ModalOverlay />
 				<ModalContent
 					color="white"
 					bg={DarkerTheme}
 					transform={"translate(-50%, -50%) !important"}
 					style={{ position: "absolute", top: "50%", left: "50%", margin: "0" }}
 				>
-					<ModalHeader>Offset: {item.name}</ModalHeader>
+					<ModalHeader>ID: {item.id}</ModalHeader>
 					<ModalCloseButton />
 					<ModalBody>{content}</ModalBody>
 					{goToActionButton === "empty" ? (
