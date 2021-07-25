@@ -9,13 +9,13 @@ export const transactionsColumns = [
 	},
 	{
 		name: "Status",
-		selector: "status",
+		selector: "transaction_status",
 		sortable: true,
 		right: true,
 	},
 	{
 		name: "Type",
-		selector: "type",
+		selector: "offset_type",
 		sortable: true,
 		right: true,
 	},
@@ -33,7 +33,7 @@ export const transactionsColumns = [
 	},
 	{
 		name: "Data",
-		selector: "date",
+		selector: "created_at",
 		sortable: true,
 		right: true,
 	},

@@ -1,5 +1,5 @@
 import DataTable from "react-data-table-component";
-import { TableWrapper, TextField, ClearButton, customStyles } from "./style";
+import { TableWrapper, TextField, customStyles } from "./style";
 import { useEffect, useMemo, useState } from "react";
 import { Spinner } from "@chakra-ui/spinner";
 
@@ -8,7 +8,7 @@ const FilterComponent = ({ filterText, onFilter, onClear }) => (
 		<TextField
 			id="search"
 			type="text"
-			placeholder="Filter By Name"
+			placeholder="Filter By ID"
 			aria-label="Search Input"
 			value={filterText}
 			onChange={onFilter}
@@ -22,7 +22,6 @@ const TableTemplate = ({ columnsType, tableData = [] }) => {
 	const [resetPaginationToggle, setResetPaginationToggle] = useState(false);
 	const [pending, setPending] = useState(true);
 	const [rowsData, setRowsData] = useState([]);
-
 	useEffect(() => {
 		const timeout = setTimeout(() => {
 			setRowsData(tableData);
@@ -33,7 +32,7 @@ const TableTemplate = ({ columnsType, tableData = [] }) => {
 
 	const filteredItems = rowsData.filter(
 		(item) =>
-			item.name && item.name.toLowerCase().includes(filterText.toLowerCase())
+			item.id && item.id.toLowerCase().includes(filterText.toLowerCase())
 	);
 
 	const subHeaderComponentMemo = useMemo(() => {
@@ -63,6 +62,7 @@ const TableTemplate = ({ columnsType, tableData = [] }) => {
 				persistTableHead
 				customStyles={customStyles}
 				pagination
+				paginationPerPage={5}
 				subHeader
 				highlightOnHover
 				progressPending={pending}

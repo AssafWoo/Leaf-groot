@@ -35,7 +35,6 @@ const OffsetCard = ({ item, image, handleClick }) => {
 	};
 
 	return (
-		// <Link to={`/projects/${item.id}`}>
 		<OffsetCardWrapper onClick={() => handleSubmit(item)}>
 			<div className="container">
 				<div className="card">
@@ -81,7 +80,6 @@ const OffsetCard = ({ item, image, handleClick }) => {
 				</div>
 			</div>
 		</OffsetCardWrapper>
-		// </Link>
 	);
 };
 

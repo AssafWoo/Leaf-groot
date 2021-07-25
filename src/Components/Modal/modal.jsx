@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/modal";
 import { DarkerTheme, MainGreen } from "../../Styles/colors";
 import { SlideEffect } from "../../Styles/effects";
+import { BreakLine } from "../../Styles/styles";
 
 const ModalComponent = ({
 	openButtonContent,
@@ -43,6 +44,7 @@ const ModalComponent = ({
 					transform={"translate(-50%, -50%) !important"}
 					style={{ position: "absolute", top: "50%", left: "50%", margin: "0" }}
 				>
+					<BreakLine />
 					<ModalHeader>ID: {item.id}</ModalHeader>
 					<ModalCloseButton />
 					<ModalBody>{content}</ModalBody>

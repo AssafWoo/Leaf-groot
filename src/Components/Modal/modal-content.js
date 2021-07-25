@@ -24,7 +24,7 @@ const ModalContent = (props) => {
 							color: MainGreen,
 						}}
 					>
-						{props.name}
+						{props.offset_name}
 					</Parag>
 				</BoxSize>
 				<BoxSize
@@ -108,7 +108,7 @@ const ModalContent = (props) => {
 							color: MainGreen,
 						}}
 					>
-						{props.type}
+						{props.offset_type}
 					</Parag>
 				</BoxSize>
 				<BoxSize
