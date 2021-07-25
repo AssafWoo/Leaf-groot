@@ -6,7 +6,6 @@ import LeafLogo from "../../Assets/images/leaf-green.png";
 import { useState } from "react";
 import { SettingsIcon } from "@chakra-ui/icons";
 import {
-	FaDollarSign,
 	FaHome,
 	FaEye,
 	FaPowerOff,
@@ -43,11 +42,6 @@ const MenuNames = [
 		name: "API",
 		link: "/api",
 		icon: <FaLock style={{ margin: "auto" }} />,
-	},
-	{
-		name: "Billing",
-		link: "/billing",
-		icon: <FaDollarSign style={{ margin: "auto" }} />,
 	},
 
 	{
