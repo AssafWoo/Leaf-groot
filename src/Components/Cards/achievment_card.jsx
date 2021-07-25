@@ -1,4 +1,4 @@
-import { AchievmentCardWrapper } from "./achievment_card";
+import { AchievmentCardWrapper } from "./achievment_card_style";
 
 const AchievmentCard = ({ item }) => {
 	return (

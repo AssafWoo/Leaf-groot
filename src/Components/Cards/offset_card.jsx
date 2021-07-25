@@ -47,7 +47,8 @@ const OffsetCard = ({ item, image, handleClick }) => {
 						colorScheme="blue"
 						top="2.5%"
 						left="90%"
-						zIndex="1000"
+						zIndex="1"
+						onClick={() => handleSubmit(item)}
 					/>
 
 					<div className="contentBx">
@@ -71,10 +72,10 @@ const OffsetCard = ({ item, image, handleClick }) => {
 									<TagLabel padding=".2rem">{item.purpose}</TagLabel>
 								</Tag>
 								<BreakLine />
-								<Link to={`/projects/${item.id}`}>
-									<Button colorScheme="yellow">Discover</Button>
-								</Link>
 							</Flex>
+							<Link to={`/projects/${item.id}`}>
+								<Button colorScheme="yellow">Discover</Button>
+							</Link>
 						</div>
 					</div>
 				</div>

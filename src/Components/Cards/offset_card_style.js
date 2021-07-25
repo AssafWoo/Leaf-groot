@@ -12,7 +12,7 @@ export const OffsetCardWrapper = styled.div`
 
 	.container .card {
 		position: relative;
-		width: 280px;
+		width: 23rem;
 		margin: 2rem;
 		height: 400px;
 		background: ${LightBlue};

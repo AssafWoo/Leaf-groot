@@ -7,7 +7,6 @@ export const projectsProtfolio = [
 		type: "forest",
 		size: "4,321 Hecters",
 		verifier: "Gold Standart",
-		thumbnail: "../Assets/images/project1.jpg",
 		checked: false,
 	},
 	{
@@ -18,7 +17,6 @@ export const projectsProtfolio = [
 		purpose: "Endanger Speciecs Mangment",
 		size: "2,321 Hecters",
 		verifier: "Gold Standart",
-		thumbnail: "../../Assets/images/project1.jpg",
 		checked: false,
 	},
 	{
@@ -29,7 +27,16 @@ export const projectsProtfolio = [
 		purpose: "Shores Protection",
 		size: "8,321 Hecters",
 		verifier: "Gold Standart",
-		thumbnail: "../../Assets/images/project1.jpg",
+		checked: false,
+	},
+	{
+		id: "231244514461234",
+		country: "Costra Rica",
+		name: "Coast Blanco",
+		type: "water",
+		purpose: "Shores Protection",
+		size: "6,321 Hecters",
+		verifier: "Gold Standart",
 		checked: false,
 	},
 ];
