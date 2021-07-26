@@ -10,7 +10,6 @@ import { setTransactions } from "../Context/actions/transactions";
 const Dashboard = () => {
 	const { userState, achievmentsState } = useContext(GlobalContext);
 	const { transactionsState, transactionsDispatch } = useContext(GlobalContext);
-
 	const [transactionsData, setTransactionsData] = useState(
 		transactionsState.allTransactions
 	);
@@ -40,7 +39,10 @@ const Dashboard = () => {
 					"http://localhost:3001/backoffice/transactions",
 					config
 				);
+
+				// the problem is this code is running before the data was complete so we get undefined
 				setTransactionsData(data.data.data);
+
 				transactionsDispatch(setTransactions(transactionsData));
 			} catch (e) {
 				console.log(e);

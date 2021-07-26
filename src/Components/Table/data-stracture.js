@@ -13,12 +13,12 @@ export const transactionsColumns = [
 		sortable: true,
 		right: true,
 	},
-	{
-		name: "Type",
-		selector: "offset_type",
-		sortable: true,
-		right: true,
-	},
+	// {
+	// 	name: "Type",
+	// 	selector: "offset_type",
+	// 	sortable: true,
+	// 	right: true,
+	// },
 	{
 		name: "Amount(CO2)",
 		selector: "amountCo2",

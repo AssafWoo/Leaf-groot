@@ -1,4 +1,4 @@
-import { useContext, useReducer } from "react";
+import { useContext, useReducer, useState } from "react";
 import { Button } from "@chakra-ui/button";
 import { Input } from "@chakra-ui/input";
 import { DarkTheme, MainBlue, MainGreen } from "../Styles/colors";
@@ -52,15 +52,12 @@ const initialState = {
 };
 
 const Login = () => {
-	const { _, userDispatch } = useContext(GlobalContext);
+	const { userState, userDispatch } = useContext(GlobalContext);
 	const context = useContext(GlobalContext);
 	const [state, dispatchFunction] = useReducer(loginReducer, initialState);
 	const toast = useToast();
-
 	const history = useHistory();
-
 	const { email, password, error, isLoading } = state;
-
 	const handleLogin = async (e) => {
 		try {
 			// await some server call with the state values
@@ -77,9 +74,7 @@ const Login = () => {
 			});
 			dispatchFunction({ type: "success" });
 			userDispatch(loginUser(data.data.data.access_token));
-			history.push({
-				pathname: "/",
-			});
+			history.push("/dashboard");
 		} catch (e) {
 			dispatchFunction({ type: "error", value: e });
 			dispatchFunction({ type: "field", field: "email", value: "" });
@@ -199,7 +194,6 @@ const Login = () => {
 										bg={MainGreen}
 										color="white"
 										colorScheme="green"
-										onClick={handleLogin}
 									>
 										Lets roll
 									</Button>

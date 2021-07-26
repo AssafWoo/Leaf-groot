@@ -10,6 +10,7 @@ import { GlobalContext } from "../Context/global/global-context";
 const TransactionsComponent = () => {
 	// const [state, dispatchFunction] = useReducer(transactionR, initialState);
 	const { transactionsState, _ } = useContext(GlobalContext);
+	console.log(transactionsState);
 
 	return (
 		<Flex>

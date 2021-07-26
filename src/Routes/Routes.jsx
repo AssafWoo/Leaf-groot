@@ -13,12 +13,24 @@ import { Layout } from "../Layout/Layout";
 import ConsoleOForApiCalls from "../Pages/console";
 import ProjectPage from "../Pages//transaction/transaction";
 import ProjectsMarketplace from "../Pages/projects-protfolio/projects";
+import { GlobalContext } from "../Context/global/global-context";
+import { useContext, useState } from "react";
+import { useEffect } from "react";
 
 const Routes = () => {
-	const hasTokens = localStorage.getItem("id");
+	const { userState, _ } = useContext(GlobalContext);
+	const [authUser, setAuthUser] = useState(false);
+	useEffect(() => {
+		if (localStorage.getItem("id")) {
+			setAuthUser(true);
+		} else {
+			setAuthUser(false);
+		}
+	}, [userState]);
+
 	return (
 		<Switch>
-			{hasTokens ? (
+			{authUser ? (
 				<>
 					<Layout>
 						<Switch>
@@ -34,7 +46,7 @@ const Routes = () => {
 							/>
 							<Route exact path="/achievments" component={Achievments} />
 							<Route exact path="/projects" component={ProjectsMarketplace} />
-
+							<Route exact path="/dashboard" component={Dashboard} />
 							<Route exact path="/" component={Dashboard} />
 						</Switch>
 					</Layout>
@@ -44,7 +56,7 @@ const Routes = () => {
 				<>
 					<Route exact path="/signup" component={Signup} />
 					<Route exact path="/login" component={Login} />
-					<Route exact path="/" component={ErrorPage} />
+					<Route exact path="/error" component={ErrorPage} />
 					<Route exact path="/projects/:id" component={ProjectPage} />
 				</>
 			)}

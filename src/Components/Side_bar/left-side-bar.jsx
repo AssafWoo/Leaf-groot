@@ -20,7 +20,7 @@ import { logoutUser } from "../../Context/actions/user";
 const MenuNames = [
 	{
 		name: "Dashboard",
-		link: "/",
+		link: "/dashboard",
 		icon: <FaHome style={{ margin: "auto" }} />,
 	},
 	{
@@ -46,7 +46,7 @@ const MenuNames = [
 
 	{
 		name: "Profile",
-		link: "/profile/company",
+		link: "/profile",
 		icon: <SettingsIcon style={{ margin: "auto", display: "block" }} />,
 	},
 	{

@@ -12,5 +12,6 @@ export interface UserType {
         billingPack:boolean;
     };
     loggedIn:boolean;
+    authKey:string;
     error:any;
 }

@@ -58,6 +58,7 @@ const TableTemplate = ({ columnsType, tableData = [] }) => {
 				title={false}
 				columns={columnsType}
 				data={filteredItems}
+				wrap
 				responsive
 				persistTableHead
 				customStyles={customStyles}

@@ -1,11 +1,5 @@
 import styled from "styled-components";
-import {
-	Black,
-	DarkTheme,
-	LightBlue,
-	MainBlue,
-	MainGreen,
-} from "../../Styles/colors";
+import { DarkTheme, LightBlue } from "../../Styles/colors";
 import { ShadowEffect, TransitionEffect } from "../../Styles/effects";
 
 export const SideBarWrapper = styled.div`
@@ -28,7 +22,7 @@ export const ItemsNav = styled.div`
 	top: 1.3rem;
 	text-align: left;
 	position: sticky;
-	height: fit-content;
+	height: auto;
 `;
 
 export const Item = styled.div`

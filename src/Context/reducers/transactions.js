@@ -13,7 +13,8 @@ const reducer = (state, action) => {
 		case LOAD_TRANSACTIONS_SUCCESS:
 			return { allTransactions: action.payload, error: null };
 		case SET_TRANSACTIONS:
-			return { allTransactions: action.payload, error: null };
+			console.log(action.payload);
+			return { ...state, allTransactions: action.payload, error: null };
 		case SET_LAST_TRANSACTIONS:
 			return { ...state, lastTransactions: action.payload, error: null };
 		default:

@@ -15,5 +15,6 @@ export const userInitialState: UserType = {
         billingPack:true,
     },
     loggedIn:false,
+    authKey:'',
     error:null
 };

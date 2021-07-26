@@ -16,6 +16,7 @@ export const customStyles = {
 		style: {
 			background: "#233048",
 			color: "white",
+			width: "1rem !important",
 		},
 	},
 	nav: {

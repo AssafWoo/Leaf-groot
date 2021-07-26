@@ -33,8 +33,6 @@ const DashboardContent = ({
 }: Iprops) => {
 	const CurrentTime = useGetTime();
 	const screenSize = useScreenSize();
-	// const data = useFetch('https://randomuser.me/api', 'transactions');
-    console.log(user)
 	const myStackedRef = useRef();
 
 	const toggleFilter = () => {
@@ -53,7 +51,7 @@ const DashboardContent = ({
 							fontWeight="300"
 							color="white"
 						>
-							Howdy <b>{user.userData.name}</b>, {CurrentTime}
+							Howdy <b>{user?.userData?.name}</b>, {CurrentTime}
 						</Heading>
 						<p style={{ textAlign: "left", color: "white" }}>
 							Lets change the world!
@@ -71,123 +69,104 @@ const DashboardContent = ({
 						""
 					)}
 				</Flex>
-				{user?.userData?.billingPack ? (
-					<>
+				<BoxSize
+					flexSize="3"
+					style={{ textAlign: "center" }}
+					isInvisible={true}
+				>
+					<Flex style={{ alignItems: "stretch" }}>
 						<BoxSize
-							flexSize="3"
-							style={{ textAlign: "center" }}
+							flexSize="1"
 							isInvisible={true}
+							style={{ border: `4px solid ${DarkTheme}` }}
 						>
-							<Flex style={{ alignItems: "stretch" }}>
-								<BoxSize
-									flexSize="1"
-									isInvisible={true}
-									style={{ border: `4px solid ${DarkTheme}` }}
-								>
-									<Heading fontWeight="300" textAlign="center" fontSize="3rem">
-										{user.userData.treesEquilavant}
-									</Heading>
-									<Parag style={{ textAlign: "center" }}>
-										Equivalent number of trees planted
-									</Parag>
-								</BoxSize>
-								<BoxSize
-									flexSize="1"
-									isInvisible={true}
-									style={{ border: `4px solid ${DarkTheme}` }}
-								>
-									<Heading fontWeight="300" textAlign="center" fontSize="3rem">
-										{user.userData.totalCO2Saved}
-									</Heading>
-									<Parag style={{ textAlign: "center" }}>
-										Kg of CO2 saved since beggining
-									</Parag>
-								</BoxSize>
-								<BoxSize
-									flexSize="1"
-									isInvisible={true}
-									style={{ border: `4px solid ${DarkTheme}` }}
-								>
-									<Heading fontWeight="300" textAlign="center" fontSize="3rem">
-										{user.userData.credits}$
-									</Heading>
-									<Parag style={{ textAlign: "center" }}>
-										Donated since beggining
-									</Parag>
-								</BoxSize>
-							</Flex>
-						</BoxSize>
-
-						<BoxSize
-							flexSize="3"
-							style={{
-								background: DarkerTheme,
-								border: `4px solid ${DarkTheme}`,
-							}}
-						>
-							<Flex>
-								<BoxSize isInvisible={true} flexSize="1">
-									<SwitchToggleButton
-										selected={selected}
-										toggleSelected={toggleFilter}
-									/>
-								</BoxSize>
-							</Flex>
-							<BreakLine />
-							<BarsChart data={dashboardData} />
-						</BoxSize>
-
-						<BoxSize
-							ref={myStackedRef}
-							flexSize="3"
-							style={{
-								background: DarkerTheme,
-								border: `4px solid ${DarkTheme}`,
-							}}
-						>
-							<Heading fontWeight="300" textAlign="left" fontSize="1.4rem">
-								Transactions
-							</Heading>
-							<BreakLine />
-							<TableTemplate
-								tableData={tableData}
-								columnsType={transactionsColumns}
-							/>
-						</BoxSize>
-
-						<Flex>
-							<BoxSize flexSize="3" style={{ background: MainBlue }}>
-								<Heading fontWeight="300" textAlign="left" fontSize="1.4rem">
-									Volunteer
-								</Heading>
-								<BreakLine />
-								<VolunteerCard />
-							</BoxSize>
-							<BoxSize flexSize="3">
-								<Heading fontWeight="300" textAlign="left" fontSize="1.4rem">
-									Our Blog
-								</Heading>
-								<BreakLine />
-								<BlogCard />
-							</BoxSize>
-						</Flex>
-					</>
-				) : (
-					<BoxSize
-						flexSize="1"
-						isInvisible={true}
-						style={{ border: `4px solid ${DarkTheme}` }}
-					>
-						<Link to="/billing">
 							<Heading fontWeight="300" textAlign="center" fontSize="3rem">
-								No Api Key Yet...
+								{user?.userData?.treesEquilavant}
 							</Heading>
 							<Parag style={{ textAlign: "center" }}>
-								Lets get one already!
+								Equivalent number of trees planted
 							</Parag>
-						</Link>
+						</BoxSize>
+						<BoxSize
+							flexSize="1"
+							isInvisible={true}
+							style={{ border: `4px solid ${DarkTheme}` }}
+						>
+							<Heading fontWeight="300" textAlign="center" fontSize="3rem">
+								{user?.userData?.totalCO2Saved}
+							</Heading>
+							<Parag style={{ textAlign: "center" }}>
+								Kg of CO2 saved since beggining
+							</Parag>
+						</BoxSize>
+						<BoxSize
+							flexSize="1"
+							isInvisible={true}
+							style={{ border: `4px solid ${DarkTheme}` }}
+						>
+							<Heading fontWeight="300" textAlign="center" fontSize="3rem">
+								{user?.userData?.credits}$
+							</Heading>
+							<Parag style={{ textAlign: "center" }}>
+								Donated since beggining
+							</Parag>
+						</BoxSize>
+					</Flex>
+				</BoxSize>
+
+				<BoxSize
+					flexSize="3"
+					style={{
+						background: DarkerTheme,
+						border: `4px solid ${DarkTheme}`,
+					}}
+				>
+					<Flex>
+						<BoxSize isInvisible={true} flexSize="1">
+							<SwitchToggleButton
+								selected={selected}
+								toggleSelected={toggleFilter}
+							/>
+						</BoxSize>
+					</Flex>
+					<BreakLine />
+					<BarsChart data={dashboardData} />
+				</BoxSize>
+
+				<BoxSize
+					ref={myStackedRef}
+					flexSize="3"
+					style={{
+						background: DarkerTheme,
+						border: `4px solid ${DarkTheme}`,
+					}}
+				>
+					<Heading fontWeight="300" textAlign="left" fontSize="1.4rem">
+						Transactions
+					</Heading>
+					<BreakLine />
+					<TableTemplate
+						tableData={tableData}
+						columnsType={transactionsColumns}
+					/>
+				</BoxSize>
+
+				<Flex>
+					<BoxSize flexSize="3" style={{ background: MainBlue }}>
+						<Heading fontWeight="300" textAlign="left" fontSize="1.4rem">
+							Volunteer
+						</Heading>
+						<BreakLine />
+						<VolunteerCard />
 					</BoxSize>
-				)}
+					<BoxSize flexSize="3">
+						<Heading fontWeight="300" textAlign="left" fontSize="1.4rem">
+							Our Blog
+						</Heading>
+						<BreakLine />
+						<BlogCard />
+					</BoxSize>
+				</Flex>
 			</BoxSize>
 		</>
 	);
