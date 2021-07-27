@@ -13,12 +13,6 @@ export const transactionsColumns = [
 		sortable: true,
 		right: true,
 	},
-	// {
-	// 	name: "Type",
-	// 	selector: "offset_type",
-	// 	sortable: true,
-	// 	right: true,
-	// },
 	{
 		name: "Amount(CO2)",
 		selector: "amountCo2",
@@ -54,21 +48,32 @@ export const transactionsColumns = [
 	},
 ];
 
-export const requestsColumns = [
+export const ProjectsColumns = [
 	{
-		name: "id",
+		name: "Id",
 		selector: "id",
 		sortable: true,
 	},
 	{
-		name: "Status",
-		selector: "status",
+		name: "Name",
+		selector: "name",
 		sortable: true,
-		right: true,
 	},
 	{
 		name: "Type",
 		selector: "type",
+		sortable: true,
+		right: true,
+	},
+	{
+		name: "Location",
+		selector: "location",
+		sortable: true,
+		right: true,
+	},
+	{
+		name: "Goal",
+		selector: "goal",
 		sortable: true,
 		right: true,
 	},
@@ -81,8 +86,7 @@ export const requestsColumns = [
 			<ModalComponent
 				openButtonContent="..."
 				item={row}
-				header={row.name}
-				content={`The project was bought on ${row.date} and saved ${row.co2Mass} Tonne CO2, the transaction is ${row.status}`}
+				content={ModalContent(row)}
 				goToActionButton="empty"
 			/>
 		),

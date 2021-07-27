@@ -6,7 +6,7 @@ import { GiPaperWindmill, GiPineTree } from "react-icons/gi";
 import { IoIosWater } from "react-icons/io";
 import { useState } from "react";
 import { BreakLine, Flex } from "../../Styles/styles";
-import { DarkerTheme } from "../../Styles/colors";
+import { DarkerTheme, MainRed } from "../../Styles/colors";
 
 export const OFFSET_TYPE = {
 	WATER: {
@@ -26,12 +26,16 @@ export const OFFSET_TYPE = {
 	},
 };
 
-const OffsetCard = ({ item, image, handleClick }) => {
+const OffsetCard = ({ item, handleClick }) => {
 	const [choosen, setChoosen] = useState(false);
 
 	const handleSubmit = (item) => {
 		setChoosen(!choosen);
 		handleClick(item);
+	};
+
+	const handleDelete = (item) => {
+		console.log("delete this offset from fav");
 	};
 
 	return (
@@ -49,7 +53,7 @@ const OffsetCard = ({ item, image, handleClick }) => {
 						zIndex="1"
 						onClick={() => handleSubmit(item)}
 					/>
-
+					)}
 					<div className="contentBx">
 						<Heading
 							padding=".5rem"

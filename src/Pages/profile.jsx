@@ -1,10 +1,11 @@
-import { BoxSize, BreakLine, Flex, SubHeader } from "../Styles/styles";
+import { BoxSize, BreakLine, Flex, Parag, SubHeader } from "../Styles/styles";
 import CompanyDetails from "../Modules/settings/company-details";
 import { GlobalContext } from "../Context/global/global-context";
 import { useContext, useState } from "react";
 import { Heading } from "@chakra-ui/layout";
 import { TabList, Tabs, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
-import PaymentForm from "./billing";
+import PaymentForm from "../Modules/billing/billing";
+import OffsetDetails from "../Modules/settings/offset-details";
 
 const Settings = () => {
 	const { userState } = useContext(GlobalContext);
@@ -21,7 +22,8 @@ const Settings = () => {
 			<BoxSize flexSize="5" isInvisible={true}>
 				<Tabs colorScheme="cyan">
 					<TabList>
-						<Tab>Company Profile</Tab>
+						<Tab>Company Settings</Tab>
+						<Tab>Offsets Settings</Tab>
 						<Tab>Billing</Tab>
 					</TabList>
 					<TabPanels>
@@ -32,6 +34,11 @@ const Settings = () => {
 							/>
 						</TabPanel>
 						<TabPanel>
+							<OffsetDetails />
+						</TabPanel>
+						<TabPanel>
+							<Parag>Your billing information</Parag>
+							<BreakLine />
 							<PaymentForm />
 						</TabPanel>
 					</TabPanels>

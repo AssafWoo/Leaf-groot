@@ -3,9 +3,8 @@ import { Flex } from "../Styles/styles";
 import DashboardContent from "../Modules/dashboard/dashboard-content";
 import { GlobalContext } from "../Context/global/global-context";
 import { useState } from "react";
-import { getToken } from "../Utils/getToken";
-import axios from "axios";
 import { setTransactions } from "../Context/actions/transactions";
+import useFetch from "../Utils/useFetch";
 
 const Dashboard = () => {
 	const { userState, achievmentsState } = useContext(GlobalContext);
@@ -17,6 +16,18 @@ const Dashboard = () => {
 	const [dashboardData, setDashboardData] = useState(
 		achievmentsState.weeklyAchievments.co2Emissions
 	);
+
+	const transactionsResponse = useFetch(
+		"http://localhost:3001/backoffice/transactions",
+		"Transactions"
+	);
+	const { data } = transactionsResponse;
+
+	useEffect(() => {
+		setTransactionsData(data);
+		transactionsDispatch(setTransactions(data));
+	}, [data, transactionsDispatch]);
+
 	const handleToggleFilter = () => {
 		if (selected) {
 			setDashboardData(achievmentsState.weeklyAchievments.transactions);
@@ -25,30 +36,6 @@ const Dashboard = () => {
 		}
 		setSelected(!selected);
 	};
-
-	useEffect(() => {
-		(async () => {
-			try {
-				let validToken = getToken();
-				let config = {
-					headers: {
-						Authorization: "Bearer " + validToken,
-					},
-				};
-				const data = await axios.get(
-					"http://localhost:3001/backoffice/transactions",
-					config
-				);
-
-				// the problem is this code is running before the data was complete so we get undefined
-				setTransactionsData(data.data.data);
-
-				transactionsDispatch(setTransactions(transactionsData));
-			} catch (e) {
-				console.log(e);
-			}
-		})();
-	}, []);
 
 	return (
 		<Flex>

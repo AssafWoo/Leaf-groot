@@ -1,7 +1,6 @@
 import { Heading } from "@chakra-ui/layout";
 import { BreakLine, Flex, SubHeader } from "../../Styles/styles";
 import { projectsProtfolio } from "../../Mocks/projects";
-import ProjectImage from "../../Assets/images/project1.jpg";
 import OffsetCard from "../../Components/Cards/offset_card";
 import { useState } from "react";
 
@@ -31,11 +30,7 @@ const ProjectsMarketplace = () => {
 			<Heading {...SubHeader}>Our Projects</Heading>
 			<BreakLine />
 			{projectsProtfolio.map((item) => (
-				<OffsetCard
-					handleClick={handleClick}
-					item={item}
-					image={[ProjectImage]}
-				/>
+				<OffsetCard handleClick={handleClick} item={item} />
 			))}
 		</Flex>
 	);

@@ -4,13 +4,10 @@ import Achievments from "../Pages/achievments";
 import APICallsComponent from "../Pages/api";
 import Login from "../Pages/login";
 import Dashboard from "../Pages/main-dashboard";
-import DocumentationsComponent from "../Pages/documentations";
 import Profile from "../Pages/profile";
 import Signup from "../Pages/sign-up";
-import Billing from "../Pages/billing";
 import ErrorPage from "../Pages/404";
 import { Layout } from "../Layout/Layout";
-import ConsoleOForApiCalls from "../Pages/console";
 import ProjectPage from "../Pages//transaction/transaction";
 import ProjectsMarketplace from "../Pages/projects-protfolio/projects";
 import { GlobalContext } from "../Context/global/global-context";
@@ -34,10 +31,7 @@ const Routes = () => {
 				<>
 					<Layout>
 						<Switch>
-							<Route exact path="/docs" component={DocumentationsComponent} />
-							<Route exact path="/billing" component={Billing} />
-							<Route exact path="/console" component={ConsoleOForApiCalls} />
-							<Route exact path="/profile/company" component={Profile} />
+							<Route exact path="/profile" component={Profile} />
 							<Route exact path="/api" component={APICallsComponent} />
 							<Route
 								exact

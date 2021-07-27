@@ -1,10 +1,9 @@
 import React from "react";
-import { Flex, BoxSize, SubHeader, BreakLine } from "../Styles/styles";
+import { Flex, BoxSize } from "../../Styles/styles";
 import Cards from "react-credit-cards";
 import "react-credit-cards/es/styles-compiled.css";
-import { Heading } from "@chakra-ui/layout";
 import { useReducer } from "react";
-import BillingDetails from "../Modules/billing/billing-fields";
+import BillingDetails from "./billing-fields";
 
 function paymentReducer(state, action) {
 	switch (action.type) {
