@@ -1,5 +1,9 @@
 import ModalComponent from "../Modal/modal";
 import ModalContent from "../Modal/modal-content";
+import { FaTrash, FaEye } from "react-icons/fa";
+import { Flex } from "@chakra-ui/react";
+import { MainRed } from "../../Styles/colors";
+import { Link } from "react-router-dom";
 
 export const transactionsColumns = [
 	{
@@ -67,13 +71,13 @@ export const ProjectsColumns = [
 	},
 	{
 		name: "Location",
-		selector: "location",
+		selector: "country",
 		sortable: true,
 		right: true,
 	},
 	{
 		name: "Goal",
-		selector: "goal",
+		selector: "purpose",
 		sortable: true,
 		right: true,
 	},
@@ -83,12 +87,21 @@ export const ProjectsColumns = [
 		sortable: false,
 		right: true,
 		cell: (row) => (
-			<ModalComponent
-				openButtonContent="..."
-				item={row}
-				content={ModalContent(row)}
-				goToActionButton="empty"
-			/>
+			<Flex>
+				<Link to={`/projects/${row.id}`}>
+					<FaEye
+						style={{ marginRight: ".4rem" }}
+						size="1rem"
+						cursor="pointer"
+					/>
+				</Link>
+				<FaTrash
+					style={{ marginLeft: ".4rem" }}
+					color={MainRed}
+					size="1rem"
+					cursor="pointer"
+				/>
+			</Flex>
 		),
 	},
 ];

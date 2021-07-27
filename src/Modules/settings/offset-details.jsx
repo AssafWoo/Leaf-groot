@@ -17,6 +17,7 @@ import {
 import { useState } from "react";
 import TableTemplate from "../../Components/Table/table-template";
 import { ProjectsColumns } from "../../Components/Table/data-stracture";
+import { projectsProtfolio } from "../../Mocks/projects";
 
 const OffsetDetails = () => {
 	const [editable, setEditble] = useState(false);
@@ -135,7 +136,10 @@ const OffsetDetails = () => {
 				>
 					<Parag>Favorite offsets</Parag>
 
-					<TableTemplate tableData={[]} columnsType={ProjectsColumns} />
+					<TableTemplate
+						tableData={projectsProtfolio}
+						columnsType={ProjectsColumns}
+					/>
 				</BoxSize>
 			</Flex>
 		</>

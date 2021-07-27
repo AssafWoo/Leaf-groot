@@ -52,8 +52,7 @@ const initialState = {
 };
 
 const Login = () => {
-	const { userState, userDispatch } = useContext(GlobalContext);
-	const context = useContext(GlobalContext);
+	const { _, userDispatch } = useContext(GlobalContext);
 	const [state, dispatchFunction] = useReducer(loginReducer, initialState);
 	const toast = useToast();
 	const history = useHistory();
@@ -74,6 +73,7 @@ const Login = () => {
 			});
 			dispatchFunction({ type: "success" });
 			userDispatch(loginUser(data.data.data.access_token));
+			console.log(data);
 			history.push("/dashboard");
 		} catch (e) {
 			dispatchFunction({ type: "error", value: e });
@@ -87,7 +87,6 @@ const Login = () => {
 			});
 		}
 	};
-
 	return (
 		<Flex
 			Flex

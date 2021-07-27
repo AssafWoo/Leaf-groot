@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Heading } from "@chakra-ui/layout";
 import { Flex, BoxSize, BreakLine, Parag } from "../../Styles/styles";
 import SingleUser from "../../Components/UserAvatar/SingelUser";
-import { DarkerTheme, DarkTheme, MainBlue } from "../../Styles/colors";
+import { DarkerTheme, DarkTheme, LightBlue, MainBlue } from "../../Styles/colors";
 import { useGetTime } from "../../Utils/useGetTime";
 import BarsChart from "../../Components/Charts/bar";
 import { useScreenSize } from "../../Utils/useScreenSize";
@@ -14,7 +14,6 @@ import TableTemplate from "../../Components/Table/table-template";
 import { transactionsColumns } from "../../Components/Table/data-stracture";
 import { UserType } from "../../interfaces/user";
 import { Idata } from "../../Components/Charts/bar";
-// import useFetch from '../../Utils/useFetch';
 
 interface Iprops {
 	user: UserType;
@@ -152,7 +151,7 @@ const DashboardContent = ({
 				</BoxSize>
 
 				<Flex>
-					<BoxSize flexSize="3" style={{ background: MainBlue }}>
+					<BoxSize flexSize="3" style={{ background: LightBlue }}>
 						<Heading fontWeight="300" textAlign="left" fontSize="1.4rem">
 							Volunteer
 						</Heading>

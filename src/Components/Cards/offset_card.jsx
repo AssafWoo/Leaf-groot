@@ -33,11 +33,6 @@ const OffsetCard = ({ item, handleClick }) => {
 		setChoosen(!choosen);
 		handleClick(item);
 	};
-
-	const handleDelete = (item) => {
-		console.log("delete this offset from fav");
-	};
-
 	return (
 		<OffsetCardWrapper onClick={() => handleSubmit(item)}>
 			<div className="container">
@@ -53,7 +48,7 @@ const OffsetCard = ({ item, handleClick }) => {
 						zIndex="1"
 						onClick={() => handleSubmit(item)}
 					/>
-					)}
+
 					<div className="contentBx">
 						<Heading
 							padding=".5rem"
