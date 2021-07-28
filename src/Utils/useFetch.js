@@ -25,6 +25,7 @@ const useFetch = (queryURL, queryName) => {
 		{
 			refetchAllOnWindowFocus: true,
 			retry: 2,
+			refetchInterval: 30000,
 		}
 	);
 

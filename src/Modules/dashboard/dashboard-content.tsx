@@ -1,9 +1,8 @@
 import React, { useRef } from "react";
-import { Link } from "react-router-dom";
 import { Heading } from "@chakra-ui/layout";
 import { Flex, BoxSize, BreakLine, Parag } from "../../Styles/styles";
 import SingleUser from "../../Components/UserAvatar/SingelUser";
-import { DarkerTheme, DarkTheme, LightBlue, MainBlue } from "../../Styles/colors";
+import { DarkerTheme, DarkTheme, LightBlue } from "../../Styles/colors";
 import { useGetTime } from "../../Utils/useGetTime";
 import BarsChart from "../../Components/Charts/bar";
 import { useScreenSize } from "../../Utils/useScreenSize";

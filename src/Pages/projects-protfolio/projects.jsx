@@ -2,29 +2,18 @@ import { Heading } from "@chakra-ui/layout";
 import { BreakLine, Flex, SubHeader } from "../../Styles/styles";
 import { projectsProtfolio } from "../../Mocks/projects";
 import OffsetCard from "../../Components/Cards/offset_card";
-import { useState } from "react";
+import { useContext } from "react";
+import { GlobalContext } from "../../Context/global/global-context";
+import { setFavoriteProject } from "../../Context/actions/projects";
 
 const ProjectsMarketplace = () => {
-	const [choosenProjects, setChoosenProjects] = useState([]);
+	const { projectsState, projectsDispatch } = useContext(GlobalContext);
 
 	const handleClick = (project) => {
-		const index = choosenProjects.indexOf(project);
-		if (choosenProjects.length === 0) {
-			setChoosenProjects(choosenProjects.concat(project));
-			return;
-		}
-		if (index < 0) {
-			setChoosenProjects(choosenProjects.concat(project));
-			return;
-		}
-		if (index >= 0) {
-			const newProjectsArrayAfterDeletion = choosenProjects.filter(
-				(item) => item.id !== project.id
-			);
-			setChoosenProjects(newProjectsArrayAfterDeletion);
-			return;
-		}
+		projectsDispatch(setFavoriteProject(project));
 	};
+	console.log(projectsState.favoriteProjects);
+
 	return (
 		<Flex>
 			<Heading {...SubHeader}>Our Projects</Heading>

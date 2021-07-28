@@ -3,6 +3,7 @@ export interface ProjectType {
     country:string,
     name:string,
     purpose:string,
+    pricePerTon:number,
     size:string,
     verifier:string,
     thumbnail:string,

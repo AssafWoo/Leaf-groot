@@ -22,9 +22,8 @@ export const transactionsData = [
 		location: "Brazil",
 		status: "Success",
 		orders: "",
-		type: OFFSET_TYPE.WATER.name,
+		type: "Hydraloic pumps",
 		icon: OFFSET_TYPE.WATER.icon,
-
 		amountCo2: "170",
 		amountDollars: 2,
 		date: "10/5/21",
@@ -37,7 +36,7 @@ export const transactionsData = [
 
 		status: "Success",
 		orders: "",
-		type: OFFSET_TYPE.AIR.name,
+		type: "Forestation",
 		icon: OFFSET_TYPE.AIR.icon,
 
 		amountCo2: "190",
@@ -67,7 +66,7 @@ export const transactionsData = [
 
 		status: "Failed",
 		orders: "",
-		type: OFFSET_TYPE.WATER.name,
+		type: "Hydraloic pumps",
 		icon: OFFSET_TYPE.WATER.icon,
 		amountCo2: "168",
 		amountDollars: 16,

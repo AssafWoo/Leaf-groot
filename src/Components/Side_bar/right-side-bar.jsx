@@ -23,13 +23,11 @@ const RightSideBar = () => {
 		});
 	};
 	return (
-		<RightNav
-			style={{ position: "sticky", top: ".1rem", height: "fit-content" }}
-		>
+		<RightNav style={{ position: "sticky", top: ".1rem", height: "100%" }}>
 			<BoxSize
 				flexSize="1"
 				isInvisible={true}
-				style={{ position: "sticky", top: "1rem", padding: "0px" }}
+				style={{ position: "sticky", to: "0.1rem", padding: "0px" }}
 			>
 				<Flex>
 					<BoxSize

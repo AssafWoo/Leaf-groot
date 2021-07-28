@@ -6,7 +6,7 @@ import { GiPaperWindmill, GiPineTree } from "react-icons/gi";
 import { IoIosWater } from "react-icons/io";
 import { useState } from "react";
 import { BreakLine, Flex } from "../../Styles/styles";
-import { DarkerTheme, MainRed } from "../../Styles/colors";
+import { DarkerTheme } from "../../Styles/colors";
 
 export const OFFSET_TYPE = {
 	WATER: {
@@ -28,7 +28,7 @@ export const OFFSET_TYPE = {
 
 const OffsetCard = ({ item, handleClick }) => {
 	const [choosen, setChoosen] = useState(false);
-
+	console.log(item);
 	const handleSubmit = (item) => {
 		setChoosen(!choosen);
 		handleClick(item);

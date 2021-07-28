@@ -18,7 +18,7 @@ export const Flex = styled.div`
 	grid-area: content;
 	align-content: flex-start;
 	justify-content: flex-start;
-	align-items: flex-start;
+	align-items: stretch;
 `;
 
 export const AppWrapper = styled.div`

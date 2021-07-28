@@ -18,7 +18,7 @@ const ModalContent = (props) => {
 					</Heading>
 					<Parag
 						style={{
-							textAlign: "center",
+							textAlign: "left",
 							fontSize: "1.2rem",
 							fontWeight: "500",
 							color: MainGreen,
@@ -35,11 +35,32 @@ const ModalContent = (props) => {
 					flexSize="5"
 				>
 					<Heading fontSize="1rem" color="white" fontWeight="400">
+						Date:
+					</Heading>
+					<Parag
+						style={{
+							textAlign: "left",
+							fontSize: "1.2rem",
+							fontWeight: "500",
+							color: MainGreen,
+						}}
+					>
+						{props.created_at}
+					</Parag>
+				</BoxSize>
+				<BoxSize
+					isInvisible={true}
+					style={{
+						background: DarkTheme,
+					}}
+					flexSize="5"
+				>
+					<Heading fontSize="1rem" color="white" fontWeight="400">
 						Location:
 					</Heading>
 					<Parag
 						style={{
-							textAlign: "center",
+							textAlign: "left",
 							fontSize: "1.2rem",
 							fontWeight: "500",
 							color: MainGreen,
@@ -62,7 +83,7 @@ const ModalContent = (props) => {
 					</Heading>
 					<Parag
 						style={{
-							textAlign: "center",
+							textAlign: "left",
 							fontSize: "1.2rem",
 							fontWeight: "500",
 							color: MainGreen,
@@ -81,7 +102,7 @@ const ModalContent = (props) => {
 					</Heading>
 					<Parag
 						style={{
-							textAlign: "center",
+							textAlign: "left",
 							fontSize: "1.2rem",
 							fontWeight: "500",
 							color: "black",
@@ -102,7 +123,7 @@ const ModalContent = (props) => {
 					</Heading>
 					<Parag
 						style={{
-							textAlign: "center",
+							textAlign: "left",
 							fontSize: "1.2rem",
 							fontWeight: "500",
 							color: MainGreen,
@@ -121,7 +142,7 @@ const ModalContent = (props) => {
 					</Heading>
 					<Parag
 						style={{
-							textAlign: "center",
+							textAlign: "left",
 							fontSize: "1.2rem",
 							fontWeight: "500",
 							color: MainGreen,

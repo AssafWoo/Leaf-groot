@@ -1,5 +1,4 @@
 import { RequestType } from "../../interfaces/request";
-
 export const LOAD_REQUESTS = '[requests] load';
 export const LOAD_REQUESTS_SUCCESS = '[requests] success';
 export const LOAD_REQUESTS_FAILURE = '[requests] failure';

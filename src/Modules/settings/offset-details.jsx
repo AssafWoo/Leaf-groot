@@ -14,14 +14,16 @@ import {
 	FormErrorMessage,
 	FormLabel,
 } from "@chakra-ui/form-control";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import TableTemplate from "../../Components/Table/table-template";
 import { ProjectsColumns } from "../../Components/Table/data-stracture";
 import { projectsProtfolio } from "../../Mocks/projects";
+import { GlobalContext } from "../../Context/global/global-context";
 
 const OffsetDetails = () => {
 	const [editable, setEditble] = useState(false);
 	const [editableString, setEditbleString] = useState("Edit");
+	const { projectsState, _ } = useContext(GlobalContext);
 
 	const onEditableChange = () => {
 		if (editableString === "Edit") setEditbleString("Save");
@@ -135,9 +137,8 @@ const OffsetDetails = () => {
 					style={{ border: `1px solid ${MainGrey}` }}
 				>
 					<Parag>Favorite offsets</Parag>
-
 					<TableTemplate
-						tableData={projectsProtfolio}
+						tableData={projectsState.favoriteProjects}
 						columnsType={ProjectsColumns}
 					/>
 				</BoxSize>
