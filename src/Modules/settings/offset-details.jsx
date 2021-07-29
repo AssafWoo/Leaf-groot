@@ -29,6 +29,7 @@ const OffsetDetails = () => {
 		if (editableString === "Edit") setEditbleString("Save");
 		else if (editableString === "Save") setEditbleString("Edit");
 	};
+	// we need to do a fetch request here for favorite projects and not show the data in the context
 
 	return (
 		<>

@@ -39,7 +39,7 @@ const OffsetCard = ({ item, handleClick }) => {
 				<div className="card">
 					<div className="imgBx">{OFFSET_TYPE.AIR.icon}</div>
 					<Checkbox
-						isChecked={choosen}
+						isChecked={item.isChecked}
 						position="absolute"
 						borderRadius="50%"
 						colorScheme="blue"
