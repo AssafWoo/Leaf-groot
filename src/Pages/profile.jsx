@@ -6,6 +6,17 @@ import { Heading } from "@chakra-ui/layout";
 import { TabList, Tabs, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import PaymentForm from "../Modules/billing/billing";
 import OffsetDetails from "../Modules/settings/offset-details";
+import { Black, LightBlue } from "../Styles/colors";
+import AccountDetails from "../Modules/settings/account-details";
+
+const tabsStyle = {
+	color: "white",
+	bg: LightBlue,
+	borderTopRightRadius: "15px",
+	borderTopLeftRadius: "15px",
+	boxShadow: `1px -4px 21px -10px ${Black} `,
+	transition: "ease-in .3s",
+};
 
 const Settings = () => {
 	const { userState } = useContext(GlobalContext);
@@ -22,9 +33,10 @@ const Settings = () => {
 			<BoxSize flexSize="5" isInvisible={true}>
 				<Tabs colorScheme="cyan">
 					<TabList>
-						<Tab>Company Settings</Tab>
-						<Tab>Offsets Settings</Tab>
-						<Tab>Billing</Tab>
+						<Tab _selected={tabsStyle}>Company Settings</Tab>
+						<Tab _selected={tabsStyle}>Account Settings</Tab>
+						<Tab _selected={tabsStyle}>Offsets Settings</Tab>
+						<Tab _selected={tabsStyle}>Billing</Tab>
 					</TabList>
 					<TabPanels>
 						<TabPanel>
@@ -32,6 +44,9 @@ const Settings = () => {
 								handleSubmit={handleSubmit}
 								companyDetails={userState.user}
 							/>
+						</TabPanel>
+						<TabPanel>
+							<AccountDetails accountDetails={userState.user} />
 						</TabPanel>
 						<TabPanel>
 							<OffsetDetails />

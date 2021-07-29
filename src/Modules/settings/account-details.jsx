@@ -5,40 +5,32 @@ import {
 	DarkTheme,
 	LightBlue,
 	MainGreen,
-	MainGrey,
 } from "../../Styles/colors";
-import { BoxSize, BreakLine, Flex, Parag } from "../../Styles/styles";
+import { BoxSize, Flex } from "../../Styles/styles";
 import { Formik, Form, Field } from "formik";
 import {
 	FormControl,
 	FormErrorMessage,
 	FormLabel,
 } from "@chakra-ui/form-control";
-import { useContext, useState } from "react";
-import TableTemplate from "../../Components/Table/table-template";
-import { ProjectsColumns } from "../../Components/Table/data-stracture";
-import { GlobalContext } from "../../Context/global/global-context";
+import { useState } from "react";
 
-const OffsetDetails = () => {
+const AccountDetails = ({ accountDetails }) => {
 	const [editable, setEditble] = useState(false);
 	const [editableString, setEditbleString] = useState("Edit");
-	const { projectsState, _ } = useContext(GlobalContext);
 
 	const onEditableChange = () => {
 		if (editableString === "Edit") setEditbleString("Save");
 		else if (editableString === "Save") setEditbleString("Edit");
 	};
-	// we need to do a fetch request here for favorite projects and not show the data in the context
 
 	return (
 		<>
-			<Parag>Offset Pricing</Parag>
-			<BreakLine />
 			<Formik
 				initialValues={{
-					minPrice: 0,
-					maxPrice: 0,
-					Favorites: [],
+					userName: "Assaf",
+					email: "Assaf@gmail.com",
+					password: "Assaf123123",
 				}}
 				onSubmit={async (data, { setSubmitting }) => {
 					setSubmitting(true);
@@ -72,22 +64,46 @@ const OffsetDetails = () => {
 							<BoxSize flexSize="1" isInvisible={true}>
 								<Field>
 									{({ field, form }) => (
-										<FormControl id="minPrice">
+										<FormControl id="userName">
 											<FormLabel
 												color="white"
 												fontSize="1.1rem"
 												textAlign="left"
 												pb="2"
 											>
-												Minimum price($)
+												User Name
 											</FormLabel>
 											<Input
 												disabled={!editable}
 												background={DarkerTheme}
 												border="none"
-												type="number"
-												name="minPrice"
-												value={values.minPrice}
+												name="userName"
+												value={values.userName}
+												onChange={handleChange}
+												onBlur={handleBlur}
+												mb="5"
+											/>
+											<FormErrorMessage>'</FormErrorMessage>
+										</FormControl>
+									)}
+								</Field>
+								<Field>
+									{({ field, form }) => (
+										<FormControl id="email">
+											<FormLabel
+												color="white"
+												fontSize="1.1rem"
+												textAlign="left"
+												pb="2"
+											>
+												Email
+											</FormLabel>
+											<Input
+												disabled={!editable}
+												background={DarkerTheme}
+												border="none"
+												name="email"
+												value={values.email}
 												onChange={handleChange}
 												onBlur={handleBlur}
 												mb="5"
@@ -97,25 +113,24 @@ const OffsetDetails = () => {
 									)}
 								</Field>
 							</BoxSize>
-							<BoxSize isInvisible={true} flexSize="1">
+							<BoxSize flexSize="1" isInvisible={true}>
 								<Field>
 									{({ field, form }) => (
-										<FormControl id="maxPrice">
+										<FormControl id="password">
 											<FormLabel
 												color="white"
 												fontSize="1.1rem"
 												textAlign="left"
 												pb="2"
 											>
-												Maximum price($)
+												Password
 											</FormLabel>
 											<Input
 												disabled={!editable}
 												background={DarkerTheme}
 												border="none"
-												name="maxPrice"
-												type="number"
-												value={values.maxPrice}
+												name="password"
+												value={values.password}
 												onChange={handleChange}
 												onBlur={handleBlur}
 												mb="5"
@@ -129,21 +144,7 @@ const OffsetDetails = () => {
 					</Form>
 				)}
 			</Formik>
-			<BreakLine />
-			<Flex>
-				<BoxSize
-					isInvisible={true}
-					flexSize="3"
-					style={{ border: `1px solid ${MainGrey}` }}
-				>
-					<Parag>Favorite offsets</Parag>
-					<TableTemplate
-						tableData={projectsState.favoriteProjects}
-						columnsType={ProjectsColumns}
-					/>
-				</BoxSize>
-			</Flex>
 		</>
 	);
 };
-export default OffsetDetails;
+export default AccountDetails;
