@@ -6,7 +6,7 @@ import {
 	LightBlue,
 	MainGreen,
 } from "../../Styles/colors";
-import { BoxSize, Flex } from "../../Styles/styles";
+import { BoxSize, BreakLine, Flex } from "../../Styles/styles";
 import { Formik, Form, Field } from "formik";
 import {
 	FormControl,
@@ -14,6 +14,7 @@ import {
 	FormLabel,
 } from "@chakra-ui/form-control";
 import { useState } from "react";
+import { Tag } from "@chakra-ui/react";
 
 const AccountDetails = ({ accountDetails }) => {
 	const [editable, setEditble] = useState(false);
@@ -87,6 +88,8 @@ const AccountDetails = ({ accountDetails }) => {
 										</FormControl>
 									)}
 								</Field>
+							</BoxSize>
+							<BoxSize flexSize="1" isInvisible={true}>
 								<Field>
 									{({ field, form }) => (
 										<FormControl id="email">
@@ -113,7 +116,122 @@ const AccountDetails = ({ accountDetails }) => {
 									)}
 								</Field>
 							</BoxSize>
-							<BoxSize flexSize="1" isInvisible={true}>
+						</Flex>
+					</Form>
+				)}
+			</Formik>
+			<br />
+			<Tag colorScheme="blue" float="left">
+				Password privacy
+			</Tag>
+			<BreakLine />
+			<Flex>
+				<BoxSize isInvisible={false} flexSize="5">
+					<Formik
+						initialValues={{
+							password: "",
+							newPassword: "",
+						}}
+						onSubmit={async (data, { setSubmitting }) => {
+							setSubmitting(true);
+							//async call
+							console.log("submit: ", data);
+							setSubmitting(false);
+						}}
+					>
+						{({
+							values,
+							isSubmitting,
+							handleChange,
+							handleBlur,
+							handleSubmit,
+						}) => (
+							<Form
+								style={{
+									background: DarkTheme,
+									borderRadius: "15px",
+									padding: "1rem",
+								}}
+							>
+								<Button
+									float="right"
+									type="submit"
+									bg={MainGreen}
+									colorScheme={"green"}
+									onClick={() => {
+										console.log("async call");
+									}}
+								>
+									Change
+								</Button>
+								<Flex>
+									<BoxSize flexSize="1" isInvisible={true}>
+										<Field>
+											{({ field, form }) => (
+												<FormControl id="password">
+													<FormLabel
+														color="white"
+														fontSize="1.1rem"
+														textAlign="left"
+														pb="2"
+													>
+														Password
+													</FormLabel>
+													<Input
+														background={DarkerTheme}
+														border="none"
+														name="password"
+														value={values.password}
+														onChange={handleChange}
+														onBlur={handleBlur}
+														mb="5"
+													/>
+													<FormErrorMessage>'</FormErrorMessage>
+												</FormControl>
+											)}
+										</Field>
+									</BoxSize>
+									<BoxSize flexSize="1" isInvisible={true}>
+										<Field>
+											{({ field, form }) => (
+												<FormControl id="newPassword">
+													<FormLabel
+														color="white"
+														fontSize="1.1rem"
+														textAlign="left"
+														pb="2"
+													>
+														New assword
+													</FormLabel>
+													<Input
+														background={DarkerTheme}
+														border="none"
+														name="newPassword"
+														value={values.newPassword}
+														onChange={handleChange}
+														onBlur={handleBlur}
+														mb="5"
+													/>
+													<FormErrorMessage>'</FormErrorMessage>
+												</FormControl>
+											)}
+										</Field>
+									</BoxSize>
+								</Flex>
+							</Form>
+						)}
+					</Formik>
+				</BoxSize>
+			</Flex>
+		</>
+	);
+};
+export default AccountDetails;
+
+{
+	/*
+
+
 								<Field>
 									{({ field, form }) => (
 										<FormControl id="password">
@@ -138,13 +256,5 @@ const AccountDetails = ({ accountDetails }) => {
 											<FormErrorMessage>'</FormErrorMessage>
 										</FormControl>
 									)}
-								</Field>
-							</BoxSize>
-						</Flex>
-					</Form>
-				)}
-			</Formik>
-		</>
-	);
-};
-export default AccountDetails;
+								</Field>*/
+}
