@@ -1,5 +1,11 @@
 import styled from "styled-components";
-import { DarkTheme, LightBlue } from "../../Styles/colors";
+import {
+	DarkerTheme,
+	DarkTheme,
+	LightBlue,
+	MainBlue,
+	MainGreen,
+} from "../../Styles/colors";
 
 export const OffsetCardWrapper = styled.div`
 	.container {
@@ -12,8 +18,8 @@ export const OffsetCardWrapper = styled.div`
 
 	.container .card {
 		position: relative;
-		width: 23rem;
-		margin: 2rem;
+		width: 22rem;
+		margin: 1rem;
 		height: 400px;
 		background: ${LightBlue};
 		border-radius: 20px;
@@ -27,7 +33,7 @@ export const OffsetCardWrapper = styled.div`
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background: ${DarkTheme};
+		background: ${MainBlue};
 		clip-path: circle(100px at 80% 10%);
 		transition: 0.5s ease-in-out;
 	}
@@ -39,8 +45,7 @@ export const OffsetCardWrapper = styled.div`
 	.container .card .imgBx {
 		position: absolute;
 		text-align: center;
-		top: 40%;
-		transform: translateY(-50%, -40%);
+		top: 20%;
 		z-index: 100;
 		width: 100%;
 		height: 220px;

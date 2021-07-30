@@ -17,6 +17,7 @@ import { useHistory } from "react-router";
 import { loginUser } from "../Context/actions/user";
 import axios from "axios";
 import { useToast } from "@chakra-ui/react";
+import getJWT from "../Utils/useJWTDecode";
 
 function loginReducer(state, action) {
 	switch (action.type) {
@@ -72,8 +73,8 @@ const Login = () => {
 				isClosable: true,
 			});
 			dispatchFunction({ type: "success" });
-			userDispatch(loginUser(data.data.data.access_token));
-			console.log(data);
+			const accessToken = data.data.data.access_token;
+			userDispatch(loginUser(accessToken));
 			history.push("/dashboard");
 		} catch (e) {
 			dispatchFunction({ type: "error", value: e });

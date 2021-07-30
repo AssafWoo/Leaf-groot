@@ -3,18 +3,19 @@ import { UserType } from "../../interfaces/user";
 
 export const userInitialState: UserType = {
     userData: {
-        name:'Assaf',
-        email:'assaf@gmail.com',
-        company:'Leaf',
-        credits:1230,
+        name:'',
+        email:'',
+        company:'',
+        credits:0,
         profileImage:'',
         accountOwner:'',
-        totalCO2Saved:2213,
-        treesEquilavant:201,
+        totalCO2Saved:0,
+        treesEquilavant:0,
         siteURL:'',
-        billingPack:true,
+        accessKey:'',
     },
     loggedIn:false,
     authKey:'',
     error:null
 };
+

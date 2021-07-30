@@ -11,17 +11,29 @@ import { DarkerTheme } from "../../Styles/colors";
 export const OFFSET_TYPE = {
 	WATER: {
 		name: "water",
-		icon: <IoIosWater size="8rem" color="white" display="inline-block" />,
+		icon: <IoIosWater size="5rem" color="white" display="inline-block" />,
 		color: "LightBlue",
 	},
 	FORREST: {
 		name: "forest",
-		icon: <GiPineTree size="8rem" color="white" display="inline-block" />,
+		icon: <GiPineTree size="5rem" color="white" display="inline-block" />,
 		color: "MainGreen",
 	},
 	AIR: {
 		name: "air",
-		icon: <GiPaperWindmill size="8rem" color="white" display="inline-block" />,
+		icon: (
+			<GiPaperWindmill
+				style={{
+					position: "absolute",
+					top: "50%",
+					left: "50%",
+					transform: "translate(-50%, -50%)",
+				}}
+				size="5rem"
+				color="white"
+				display="inline-block"
+			/>
+		),
 		color: "LightBlue",
 	},
 };
@@ -71,10 +83,12 @@ const OffsetCard = ({ item, handleClick }) => {
 								</Tag>
 								<BreakLine />
 							</Flex>
-							<Link to={`/projects/${item.id}`}>
-								<Button colorScheme="yellow">Discover</Button>
-							</Link>
 						</div>
+						<Link to={`/projects/${item.id}`}>
+							<Button mg="1rem" colorScheme="yellow">
+								Discover
+							</Button>
+						</Link>
 					</div>
 				</div>
 			</div>

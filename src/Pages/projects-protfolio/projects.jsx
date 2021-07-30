@@ -6,12 +6,10 @@ import { useContext, useState } from "react";
 import { GlobalContext } from "../../Context/global/global-context";
 import { setFavoriteProject } from "../../Context/actions/projects";
 import { Button } from "@chakra-ui/react";
-import { MainGreen } from "../../Styles/colors";
+import { LightBlue } from "../../Styles/colors";
 
 const ProjectsMarketplace = () => {
 	const { projectsState, projectsDispatch } = useContext(GlobalContext);
-	const [editable, setEditble] = useState(false);
-	const [editableString, setEditbleString] = useState("Edit");
 
 	const onSave = () => {
 		console.log(projectsState.favoriteProjects);
@@ -32,8 +30,8 @@ const ProjectsMarketplace = () => {
 			<Button
 				left="85%"
 				type="submit"
-				bg={MainGreen}
-				colorScheme={"green"}
+				bg={LightBlue}
+				colorScheme={"blue"}
 				onClick={() => {
 					onSave();
 				}}

@@ -14,7 +14,6 @@ const reducer = (state, action) => {
 		case LOAD_USER_SUCCESS:
 			return { user: action.payload, error: null };
 		case USER_LOGIN:
-			console.log("logged in");
 			localStorage.setItem("id", action.payload);
 			return {
 				...state,
@@ -22,7 +21,17 @@ const reducer = (state, action) => {
 				authKey: action.payload,
 			};
 		case SET_USER:
-			return { ...state, error: null, loggedIn: true };
+			const globalStore = JSON.parse(localStorage.getItem("userInformation"));
+			return {
+				...state,
+				userData: {
+					...state.userData,
+					name: globalStore.merchant.name,
+					email: globalStore.email,
+					accessKey: globalStore.accessKey,
+				},
+				loggedIn: true,
+			};
 		case PUT_USER:
 			return { user: action.payload, error: null };
 		case LOG_OUT_USER:

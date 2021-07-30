@@ -21,7 +21,7 @@ const tabsStyle = {
 const Settings = () => {
 	const { userState } = useContext(GlobalContext);
 	const [status, setStatus] = useState("");
-
+	console.log(userState);
 	const handleSubmit = ({ status }) => {
 		setStatus(status);
 	};
@@ -42,7 +42,7 @@ const Settings = () => {
 						<TabPanel>
 							<CompanyDetails
 								handleSubmit={handleSubmit}
-								companyDetails={userState.user}
+								companyDetails={userState.userData}
 							/>
 						</TabPanel>
 						<TabPanel>

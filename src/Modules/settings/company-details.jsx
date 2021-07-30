@@ -19,7 +19,6 @@ import { useState } from "react";
 const CompanyDetails = ({ companyDetails }) => {
 	const [editable, setEditble] = useState(false);
 	const [editableString, setEditbleString] = useState("Edit");
-
 	const onEditableChange = () => {
 		if (editableString === "Edit") setEditbleString("Save");
 		else if (editableString === "Save") setEditbleString("Edit");
@@ -30,10 +29,10 @@ const CompanyDetails = ({ companyDetails }) => {
 			<Formik
 				initialValues={{
 					name: "Leaf Inc.",
-					accountOwner: "Assaf",
+					accountOwner: companyDetails.name,
 					companyName: "Assaf",
 					companyAddress: "Israel",
-					email: "assaf@gmail.com",
+					email: companyDetails.email,
 					billing: "medium",
 					URL: "1231245",
 				}}
