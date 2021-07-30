@@ -13,6 +13,7 @@ import TableTemplate from "../../Components/Table/table-template";
 import { transactionsColumns } from "../../Components/Table/data-stracture";
 import { UserType } from "../../interfaces/user";
 import { Idata } from "../../Components/Charts/bar";
+import { Spinner } from "@chakra-ui/react";
 
 interface Iprops {
 	user: UserType;
@@ -143,10 +144,11 @@ const DashboardContent = ({
 						Transactions
 					</Heading>
 					<BreakLine />
+					{tableData ? 
 					<TableTemplate
 						tableData={tableData}
 						columnsType={transactionsColumns}
-					/>
+					/> : <Spinner />}
 				</BoxSize>
 
 				<Flex>

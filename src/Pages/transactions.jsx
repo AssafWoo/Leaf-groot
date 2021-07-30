@@ -7,12 +7,15 @@ import { DarkerTheme, DarkTheme } from "../Styles/colors";
 import { GlobalContext } from "../Context/global/global-context";
 import useFetch from "../Utils/useFetch";
 import { setTransactions } from "../Context/actions/transactions";
+import { Spinner } from "@chakra-ui/react";
 
-// divide sections into different files
 const TransactionsComponent = () => {
-	// const [state, dispatchFunction] = useReducer(transactionR, initialState);
 	const { transactionsState, transactionsDispatch } = useContext(GlobalContext);
-	const [_, setTransactionsData] = useState(transactionsState.allTransactions);
+	const [transactionsData, setTransactionsData] = useState(
+		transactionsState.allTransactions
+	);
+
+	// using reactquery fetch to get transactions data from server
 	const transactionsResponse = useFetch(
 		"http://localhost:3001/backoffice/transactions",
 		"Transactions"
@@ -21,6 +24,8 @@ const TransactionsComponent = () => {
 
 	useEffect(() => {
 		setTransactionsData(data);
+		console.log(transactionsData);
+
 		transactionsDispatch(setTransactions(data));
 	}, [data, transactionsDispatch]);
 
@@ -37,10 +42,14 @@ const TransactionsComponent = () => {
 					borderRadius: "15px",
 				}}
 			>
-				<TableTemplate
-					tableData={transactionsState.allTransactions}
-					columnsType={transactionsColumns}
-				/>
+				{transactionsData ? (
+					<TableTemplate
+						tableData={transactionsState.allTransactions}
+						columnsType={transactionsColumns}
+					/>
+				) : (
+					<Spinner />
+				)}
 			</BoxSize>
 		</Flex>
 	);

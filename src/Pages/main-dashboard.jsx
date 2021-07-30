@@ -22,15 +22,19 @@ const Dashboard = () => {
 		achievmentsState.weeklyAchievments.co2Emissions
 	);
 
+	// using reactquery fetch to get transactions data from server
 	const transactionsResponse = useFetch(
 		"http://localhost:3001/backoffice/transactions",
 		"Transactions"
 	);
 	const { data } = transactionsResponse;
-	const userInformation = getJWT(localStorage.getItem("id"));
 
+	// decoding the accesstoken jwt to information about user
+	const userInformation = getJWT(localStorage.getItem("id"));
+	// putting the information in the store
 	usePersistedReducer(useReducer(reducer, userInformation));
 
+	// on mount and on dependencies, setting transactions data, user information and such
 	useEffect(() => {
 		setTransactionsData(data);
 		transactionsDispatch(setTransactions(data));
