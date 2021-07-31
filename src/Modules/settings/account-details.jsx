@@ -14,24 +14,49 @@ import {
 	FormLabel,
 } from "@chakra-ui/form-control";
 import { useState } from "react";
-import { Tag } from "@chakra-ui/react";
+import { Tag, useToast } from "@chakra-ui/react";
 
 const AccountDetails = ({ accountDetails }) => {
 	const [editable, setEditble] = useState(false);
 	const [editableString, setEditbleString] = useState("Edit");
+	const toast = useToast();
 
 	const onEditableChange = () => {
 		if (editableString === "Edit") setEditbleString("Save");
-		else if (editableString === "Save") setEditbleString("Edit");
+		else if (editableString === "Save") {
+			(async () => {
+				try {
+					await console.log("hey");
+					toast({
+						title: "Changed successfully",
+						description: "",
+						status: "success",
+						duration: 1000,
+						isClosable: true,
+					});
+					// another call to the changed information
+				} catch (e) {
+					toast({
+						title: "Failed, please try again.",
+						description: "",
+						status: "error",
+						duration: 1000,
+						isClosable: true,
+					});
+				}
+			})();
+
+			setEditbleString("Edit");
+		}
 	};
 
 	return (
 		<>
 			<Formik
 				initialValues={{
-					userName: "Assaf",
-					email: "Assaf@gmail.com",
-					password: "Assaf123123",
+					userName: accountDetails.name,
+					email: accountDetails.email,
+					password: "",
 				}}
 				onSubmit={async (data, { setSubmitting }) => {
 					setSubmitting(true);
@@ -159,7 +184,14 @@ const AccountDetails = ({ accountDetails }) => {
 									bg={MainGreen}
 									colorScheme={"green"}
 									onClick={() => {
-										console.log("async call");
+										//async call and toast
+										toast({
+											title: "Changed successfully",
+											description: "",
+											status: "success",
+											duration: 1000,
+											isClosable: true,
+										});
 									}}
 								>
 									Change
@@ -227,34 +259,3 @@ const AccountDetails = ({ accountDetails }) => {
 	);
 };
 export default AccountDetails;
-
-{
-	/*
-
-
-								<Field>
-									{({ field, form }) => (
-										<FormControl id="password">
-											<FormLabel
-												color="white"
-												fontSize="1.1rem"
-												textAlign="left"
-												pb="2"
-											>
-												Password
-											</FormLabel>
-											<Input
-												disabled={!editable}
-												background={DarkerTheme}
-												border="none"
-												name="password"
-												value={values.password}
-												onChange={handleChange}
-												onBlur={handleBlur}
-												mb="5"
-											/>
-											<FormErrorMessage>'</FormErrorMessage>
-										</FormControl>
-									)}
-								</Field>*/
-}

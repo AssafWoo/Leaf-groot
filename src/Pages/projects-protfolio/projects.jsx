@@ -2,17 +2,36 @@ import { Heading } from "@chakra-ui/layout";
 import { BreakLine, Flex, SubHeader } from "../../Styles/styles";
 import { projectsProtfolio } from "../../Mocks/projects";
 import OffsetCard from "../../Components/Cards/offset_card";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { GlobalContext } from "../../Context/global/global-context";
 import { setFavoriteProject } from "../../Context/actions/projects";
-import { Button } from "@chakra-ui/react";
+import { Button, useToast } from "@chakra-ui/react";
 import { LightBlue } from "../../Styles/colors";
 
 const ProjectsMarketplace = () => {
 	const { projectsState, projectsDispatch } = useContext(GlobalContext);
+	const toast = useToast();
 
-	const onSave = () => {
+	const onSave = async () => {
 		console.log(projectsState.favoriteProjects);
+		try {
+			await console.log("hey");
+			toast({
+				title: "Changed successfully",
+				description: "",
+				status: "success",
+				duration: 1000,
+				isClosable: true,
+			});
+		} catch (e) {
+			toast({
+				title: "Failed, please try again.",
+				description: "",
+				status: "error",
+				duration: 1000,
+				isClosable: true,
+			});
+		}
 	};
 	const handleClick = (project) => {
 		if (project.isChecked) {

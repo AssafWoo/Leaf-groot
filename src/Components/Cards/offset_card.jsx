@@ -40,7 +40,6 @@ export const OFFSET_TYPE = {
 
 const OffsetCard = ({ item, handleClick }) => {
 	const [choosen, setChoosen] = useState(false);
-	console.log(item);
 	const handleSubmit = (item) => {
 		setChoosen(!choosen);
 		handleClick(item);

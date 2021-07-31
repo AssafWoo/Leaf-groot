@@ -18,15 +18,34 @@ import { useContext, useState } from "react";
 import TableTemplate from "../../Components/Table/table-template";
 import { ProjectsColumns } from "../../Components/Table/data-stracture";
 import { GlobalContext } from "../../Context/global/global-context";
+import { useToast } from "@chakra-ui/react";
 
 const OffsetDetails = () => {
 	const [editable, setEditble] = useState(false);
 	const [editableString, setEditbleString] = useState("Edit");
 	const { projectsState, _ } = useContext(GlobalContext);
 
+	const toast = useToast();
+
 	const onEditableChange = () => {
 		if (editableString === "Edit") setEditbleString("Save");
-		else if (editableString === "Save") setEditbleString("Edit");
+		else if (editableString === "Save") {
+			(async () => {
+				try {
+					await console.log("hey");
+					toast({
+						title: "Changed successfully",
+						description: "",
+						status: "success",
+						duration: 1000,
+						isClosable: true,
+					});
+					// another call to the changed information
+				} catch (e) {}
+			})();
+
+			setEditbleString("Edit");
+		}
 	};
 	// we need to do a fetch request here for favorite projects and not show the data in the context
 

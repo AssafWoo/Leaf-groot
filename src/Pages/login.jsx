@@ -1,4 +1,4 @@
-import { useContext, useReducer, useState } from "react";
+import { useContext, useReducer } from "react";
 import { Button } from "@chakra-ui/button";
 import { Input } from "@chakra-ui/input";
 import { DarkTheme, MainBlue, MainGreen } from "../Styles/colors";
@@ -17,7 +17,6 @@ import { useHistory } from "react-router";
 import { loginUser } from "../Context/actions/user";
 import axios from "axios";
 import { useToast } from "@chakra-ui/react";
-import getJWT from "../Utils/useJWTDecode";
 
 function loginReducer(state, action) {
 	switch (action.type) {

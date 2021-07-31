@@ -15,13 +15,40 @@ import {
 	FormLabel,
 } from "@chakra-ui/form-control";
 import { useState } from "react";
+import { useToast } from "@chakra-ui/react";
 
 const CompanyDetails = ({ companyDetails }) => {
 	const [editable, setEditble] = useState(false);
 	const [editableString, setEditbleString] = useState("Edit");
+	const toast = useToast();
+
 	const onEditableChange = () => {
 		if (editableString === "Edit") setEditbleString("Save");
-		else if (editableString === "Save") setEditbleString("Edit");
+		else if (editableString === "Save") {
+			(async () => {
+				try {
+					await console.log("hey");
+					toast({
+						title: "Changed successfully",
+						description: "",
+						status: "success",
+						duration: 1000,
+						isClosable: true,
+					});
+					// another call to the changed information
+				} catch (e) {
+					toast({
+						title: "Failed, please try again.",
+						description: "",
+						status: "error",
+						duration: 1000,
+						isClosable: true,
+					});
+				}
+			})();
+
+			setEditbleString("Edit");
+		}
 	};
 
 	return (
