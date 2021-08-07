@@ -23,7 +23,7 @@ export const setProjects = (projects:Array<ProjectType>) => ({
     type:SET_PROJECTS,
     payload:projects
 });
-export const setFavoriteProject = (project:ProjectType) => ({
+export const setFavoriteProject = (project:any) => ({
     type:SET_FAVORITE_PROJECT,
     payload:project
 });

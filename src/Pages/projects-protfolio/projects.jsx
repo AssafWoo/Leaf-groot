@@ -1,21 +1,47 @@
 import { Heading } from "@chakra-ui/layout";
 import { BreakLine, Flex, SubHeader } from "../../Styles/styles";
-import { projectsProtfolio } from "../../Mocks/projects";
 import OffsetCard from "../../Components/Cards/offset_card";
 import { useContext } from "react";
 import { GlobalContext } from "../../Context/global/global-context";
 import { setFavoriteProject } from "../../Context/actions/projects";
-import { Button, useToast } from "@chakra-ui/react";
+import { Button, Spinner, useToast } from "@chakra-ui/react";
 import { LightBlue } from "../../Styles/colors";
+import useFetch from "../../Utils/useFetch";
+import { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
+import { getToken } from "../../Utils/getToken";
 
 const ProjectsMarketplace = () => {
 	const { projectsState, projectsDispatch } = useContext(GlobalContext);
+	const [projects, setProjects] = useState([]);
 	const toast = useToast();
 
+	const projectsResponse = useFetch(
+		"http://localhost:3001/backoffice/offsets",
+		"Projects"
+	);
+	const { data } = projectsResponse;
+
+	useEffect(() => {
+		setProjects(data);
+	}, [projects, data]);
+
 	const onSave = async () => {
-		console.log(projectsState.favoriteProjects);
+		let validToken = getToken();
+		let config = {
+			headers: {
+				Authorization: "Bearer " + validToken,
+			},
+		};
 		try {
-			await console.log("hey");
+			console.log(projectsState.favoriteProjects);
+			const responseData = await axios.put(
+				"http://localhost:3001/backoffice/merchants/allowed-offsets",
+				{ allowed_offsets_ids: projectsState.favoriteProjects },
+				config
+			);
+			console.log(responseData);
 			toast({
 				title: "Changed successfully",
 				description: "",
@@ -33,21 +59,22 @@ const ProjectsMarketplace = () => {
 			});
 		}
 	};
+
 	const handleClick = (project) => {
 		if (project.isChecked) {
 			project.isChecked = false;
 		} else {
 			project.isChecked = true;
 		}
-		projectsDispatch(setFavoriteProject(project));
+		projectsDispatch(setFavoriteProject(project.id));
 	};
-
+	console.log(projectsState.favoriteProjects);
 	return (
 		<Flex>
 			<Heading {...SubHeader}>Our Projects</Heading>
 			<BreakLine />
 			<Button
-				left="85%"
+				left="90%"
 				type="submit"
 				bg={LightBlue}
 				colorScheme={"blue"}
@@ -57,10 +84,20 @@ const ProjectsMarketplace = () => {
 			>
 				Save
 			</Button>
-			<Flex>
-				{projectsProtfolio.map((item) => (
-					<OffsetCard handleClick={handleClick} item={item} />
-				))}
+			<BreakLine />
+			<Flex style={{ marginTop: "4rem" }}>
+				{projects ? (
+					<>
+						{projects?.map((item) => (
+							<OffsetCard handleClick={handleClick} item={item} />
+						))}
+					</>
+				) : (
+					<Spinner
+						style={{ position: "absolute", top: "50%", left: "50%" }}
+						color="white"
+					/>
+				)}
 			</Flex>
 		</Flex>
 	);

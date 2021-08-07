@@ -4,32 +4,32 @@ import { useToast } from "@chakra-ui/toast";
 import { getToken } from "./getToken";
 import axios from "axios";
 
-const fetchData = async (URL) => {
+const fetchData = async (URL, queryData) => {
 	let validToken = getToken();
 	let config = {
 		headers: {
 			Authorization: "Bearer " + validToken,
 		},
 	};
-	const response = await axios.get(URL, config);
+	const response = await axios.put(URL, queryData, config);
 	const data = await response.data.data;
 	return data;
 };
 
-const useFetch = (queryURL, queryName) => {
+const usePut = (queryURL, queryData, queryName) => {
 	const toast = useToast();
 
 	const { isLoading, isError, error, data } = useQuery(
 		queryName,
-		() => fetchData(queryURL),
+		() => fetchData(queryURL, queryData),
 		{
 			refetchAllOnWindowFocus: true,
 			retry: 2,
-			// refetchInterval: 30000,
+			refetchInterval: 30000,
 		}
 	);
 
-	// console.log(status, data, error)
+	console.log(data, error);
 
 	if (isLoading) {
 		return <Spinner />;
@@ -47,4 +47,4 @@ const useFetch = (queryURL, queryName) => {
 	return { data };
 };
 
-export default useFetch;
+export default usePut;

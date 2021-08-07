@@ -17,28 +17,22 @@ const reducer = (state, action) => {
 		case SET_PROJECTS:
 			return { ...state, allProjects: action.payload, error: null };
 		case SET_FAVORITE_PROJECT:
-			const doesExists = state.favoriteProjects.filter((item) => {
-				return item.id === action.payload.id;
-			});
-			if (doesExists.length > 0) {
-				const newFavoriteProjectsArray = state.favoriteProjects.filter(
-					(item) => {
-						return item.id !== action.payload.id;
-					}
-				);
-				return {
-					...state,
-					favoriteProjects: newFavoriteProjectsArray, // splice returns the new array
-					error: null,
-				};
-			} else {
+			const isItemExists = state.favoriteProjects.includes(action.payload);
+			if (isItemExists === false) {
 				return {
 					...state,
 					favoriteProjects: state.favoriteProjects.concat(action.payload),
 					error: null,
 				};
 			}
-
+			const filteredFavorite = state.favoriteProjects.filter(
+				(e) => e !== action.payload
+			);
+			return {
+				...state,
+				favoriteProjects: filteredFavorite,
+				error: null,
+			};
 		default:
 			return state;
 	}

@@ -41,7 +41,15 @@ const OffsetDetails = () => {
 						isClosable: true,
 					});
 					// another call to the changed information
-				} catch (e) {}
+				} catch (e) {
+					toast({
+						title: "Failed, please try again.",
+						description: "",
+						status: "error",
+						duration: 1000,
+						isClosable: true,
+					});
+				}
 			})();
 
 			setEditbleString("Edit");
