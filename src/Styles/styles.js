@@ -186,7 +186,7 @@ export const InputProperties = {
 export const LeafIcon = styled.img`
 	width: ${(props) => (props.isSmall ? "15%" : "25%")};
 	display: block;
-	margin: auto;
+	margin: ${(props) => (props.isSmall ? "" : "auto")};
 `;
 export const Card = styled.div`
 	flex: 2;

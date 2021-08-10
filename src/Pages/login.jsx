@@ -72,7 +72,8 @@ const Login = () => {
 				isClosable: true,
 			});
 			dispatchFunction({ type: "success" });
-			const accessToken = data.data.data.access_token;
+			const accessToken = data.data.data.accessKey;
+			console.log(accessToken);
 			userDispatch(loginUser(accessToken));
 			history.push("/dashboard");
 		} catch (e) {
@@ -80,7 +81,7 @@ const Login = () => {
 			dispatchFunction({ type: "field", field: "email", value: "" });
 			toast({
 				title: "Error Accured.",
-				description: error,
+				description: "error",
 				status: "error",
 				duration: 1000,
 				isClosable: true,
