@@ -4,4 +4,4 @@
 
 ## Contribute
 
-Leaf will be soon open to contributers.
+Leaf will be soon open to contributers!
