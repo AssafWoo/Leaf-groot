@@ -215,3 +215,16 @@ export const SwitchContent = styled.div`
 	left: 7.5rem;
 	transition: all 0.3s ease;
 `;
+
+// ul for signup
+export const List = {
+	background: "white",
+	listStyle: "none",
+	color: "black",
+	borderRadius: "15px",
+	padding: "1rem",
+	position: "absolute",
+	zIndex: "1",
+	top: "5.2rem",
+	width: "100%",
+};

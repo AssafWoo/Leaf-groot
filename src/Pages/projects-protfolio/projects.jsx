@@ -35,13 +35,11 @@ const ProjectsMarketplace = () => {
 			},
 		};
 		try {
-			console.log(projectsState.favoriteProjects);
 			const responseData = await axios.put(
 				"http://localhost:3001/backoffice/merchants/allowed-offsets",
 				{ allowed_offsets_ids: projectsState.favoriteProjects },
 				config
 			);
-			console.log(responseData);
 			toast({
 				title: "Changed successfully",
 				description: "",
@@ -68,7 +66,6 @@ const ProjectsMarketplace = () => {
 		}
 		projectsDispatch(setFavoriteProject(project.id));
 	};
-	console.log(projectsState.favoriteProjects);
 	return (
 		<Flex>
 			<Heading {...SubHeader}>Our Projects</Heading>

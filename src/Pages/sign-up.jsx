@@ -1,9 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { Button } from "@chakra-ui/button";
 import { Flex } from "@chakra-ui/layout";
-import { DarkTheme, MainGreen } from "../Styles/colors";
-import { BoxSize, BreakLine, LeafIcon, SubHeader } from "../Styles/styles";
-import LeafLogo from "../Assets/images/leaf-logo-green-leaf.png";
+import { DarkTheme } from "../Styles/colors";
+import { BoxSize, SubHeader, List } from "../Styles/styles";
 import { Input } from "@chakra-ui/input";
 import {
 	FormControl,
@@ -11,10 +9,16 @@ import {
 	FormLabel,
 } from "@chakra-ui/form-control";
 import { Formik, Form, Field } from "formik";
-import { useReducer } from "react";
+import { useReducer, useState, useRef } from "react";
 import { useHistory } from "react-router";
 import { Center, Heading, useToast } from "@chakra-ui/react";
 import axios from "axios";
+import { countries } from "../Mocks/countries";
+import { inputNames, secondaryInputNames } from "../Modules/sign-up/fields";
+import { RegisterSchema } from "../Modules/sign-up/register_schema";
+import RegisterContent from "../Modules/sign-up/content";
+import { useEffect } from "react";
+import { useDebounce } from "../Utils/useDebounce";
 
 function registerReducer(state, action) {
 	switch (action.type) {
@@ -47,19 +51,6 @@ function registerReducer(state, action) {
 	}
 }
 
-const inputNames = [
-	{ name: "Name", required: true, type: "text" },
-	{ name: "Email", required: true, type: "text" },
-	{ name: "Password", required: true, type: "password" },
-	{ name: "Company", required: true, type: "text" },
-];
-const secondaryInputNames = [
-	{ name: "Country", required: true, type: "text" },
-	{ name: "State", required: false, type: "text" },
-	{ name: "City", required: false, type: "text" },
-	{ name: "Site_URL", required: false, type: "text" },
-];
-
 const initialState = {
 	Name: "",
 	Email: "",
@@ -78,6 +69,12 @@ const initialState = {
 
 const Signup = () => {
 	const [state, dispatch] = useReducer(registerReducer, initialState);
+	const [searchTerm, setSearchTerm] = useState("");
+	// State and setter for search results
+	const [results, setResults] = useState([]);
+	// State for search status (whether there is a pending API request)
+	const [isSearching, setIsSearching] = useState(false);
+	const [isCountrySelected, setIsCountrySeleceted] = useState(false);
 	const toast = useToast();
 
 	const history = useHistory();
@@ -94,7 +91,35 @@ const Signup = () => {
 		isLoading,
 	} = state;
 
+	const debouncedSearchTerm = useDebounce(searchTerm, 1500);
+
+	useEffect(
+		() => {
+			// Make sure we have a value (user has entered something in input)
+			if (debouncedSearchTerm) {
+				// Set isSearching state
+				setIsSearching(true);
+				// Fire off our API call
+				const foundCountries = countries.filter(
+					(countryName) => countryName.name === debouncedSearchTerm
+				);
+				// Set back to false since request finished
+				setIsSearching(false);
+				// Set results state
+				setResults(foundCountries);
+			} else {
+				setResults([]);
+			}
+		},
+		// This is the useEffect input array
+		// Our useEffect function will only execute if this value changes ...
+		// ... and thanks to our hook it will only change if the original ...
+		// value (searchTerm) hasn't changed for more than 500ms.
+		[debouncedSearchTerm]
+	);
+
 	const handleRegister = async (e) => {
+		// only if the validation has passed the tests
 		try {
 			const responseData = await axios.post(
 				"http://localhost:3001/backoffice/auth/register",
@@ -134,6 +159,7 @@ const Signup = () => {
 			});
 		}
 	};
+	// need to make the ul display none when country is clicked
 
 	return (
 		<Flex Flex justify="center" align="center" margin="4rem" w="fit-content">
@@ -153,6 +179,7 @@ const Signup = () => {
 									company: "",
 									address: "",
 								}}
+								validationSchema={RegisterSchema}
 								onSubmit={async (data, { setSubmitting }) => {
 									handleRegister();
 								}}
@@ -206,10 +233,62 @@ const Signup = () => {
 													</Field>
 												))}
 											</BoxSize>
+
 											<BoxSize
 												flexSize="5"
 												style={{ padding: "1.5rem", background: "transparent" }}
 											>
+												<Field>
+													{({ field, form }) => (
+														<FormControl id={"Country"} isRequired={true}>
+															<FormLabel
+																color="white"
+																fontSize="1.1rem"
+																textAlign="left"
+																pb="2"
+															>
+																Country
+															</FormLabel>
+															<Input
+																type="text"
+																mb="5"
+																name="Country"
+																// onChange={(e) =>
+																// 	dispatch({
+																// 		type: "field",
+																// 		field: "Country",
+																// 		value: e.target.value,
+																// 	})
+																// }
+																onChange={(e) => setSearchTerm(e.target.value)}
+																onBlur={handleBlur}
+																border="none"
+																bg={DarkTheme}
+															/>
+															{debouncedSearchTerm ? (
+																<ul style={List}>
+																	{results.map((item) => (
+																		<li
+																			onClick={(e) =>
+																				dispatch({
+																					type: "field",
+																					field: "Country",
+																					value: item.alpha2,
+																				})
+																			}
+																		>
+																			{item.name}
+																		</li>
+																	))}
+																</ul>
+															) : (
+																""
+															)}
+
+															<FormErrorMessage>'</FormErrorMessage>
+														</FormControl>
+													)}
+												</Field>
 												{secondaryInputNames.map((input) => (
 													<Field>
 														{({ field, form }) => (
@@ -253,32 +332,7 @@ const Signup = () => {
 						</Flex>
 					</BoxSize>
 
-					<BoxSize
-						isInvisible={true}
-						flexSize="5"
-						style={{
-							width: "fit-content",
-						}}
-					>
-						<LeafIcon style={{ margin: "0" }} isSmall={true} src={LeafLogo} />
-						<BreakLine />
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo
-						voluptates veniam numquam perferendis. Voluptate aut alias omnis,
-						magnam similique nam aliquam sequi quasi. Earum nihil architecto
-						possimus accusantium, voluptates dicta. Lorem, ipsum dolor sit amet
-						consectetur adipisicing elit. Quo voluptates veniam numquam
-						<Button
-							type="submit"
-							w="100%"
-							mt="1rem"
-							bg={MainGreen}
-							color="white"
-							colorScheme="green"
-							onClick={handleRegister}
-						>
-							Go Go Go
-						</Button>
-					</BoxSize>
+					<RegisterContent handleRegister={handleRegister} />
 				</Flex>
 			</Center>
 		</Flex>
