@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { Flex } from "@chakra-ui/layout";
 import { DarkTheme } from "../Styles/colors";
-import { BoxSize, SubHeader, List } from "../Styles/styles";
+import { BoxSize, SubHeader } from "../Styles/styles";
 import { Input } from "@chakra-ui/input";
 import {
 	FormControl,
@@ -9,7 +9,7 @@ import {
 	FormLabel,
 } from "@chakra-ui/form-control";
 import { Formik, Form, Field } from "formik";
-import { useReducer, useState, useRef } from "react";
+import { useReducer } from "react";
 import { useHistory } from "react-router";
 import { Center, Heading, useToast } from "@chakra-ui/react";
 import axios from "axios";
@@ -17,64 +17,16 @@ import { countries } from "../Mocks/countries";
 import { inputNames, secondaryInputNames } from "../Modules/sign-up/fields";
 import { RegisterSchema } from "../Modules/sign-up/register_schema";
 import RegisterContent from "../Modules/sign-up/content";
-import { useEffect } from "react";
-import { useDebounce } from "../Utils/useDebounce";
-
-function registerReducer(state, action) {
-	switch (action.type) {
-		case "field":
-			return {
-				...state,
-				[action.field]: action.value,
-			};
-		case "register":
-			return {
-				...state,
-				isLoading: true,
-				error: "",
-			};
-		case "error":
-			return {
-				error: action.value,
-				isLoading: false,
-				Name: "",
-				Email: "",
-				Password: "",
-				Company: "",
-				Country: "",
-				State: "",
-				City: "",
-				Site_URL: "",
-			};
-		default:
-			return state;
-	}
-}
-
-const initialState = {
-	Name: "",
-	Email: "",
-	Password: "",
-	Company: "",
-	Country: "",
-	State: "",
-	City: "",
-	Site_URL: "",
-	error: "",
-	isLoading: false,
-};
+import { initialState, registerReducer } from "../Modules/sign-up/reducer";
+import Autocomplete from "../Utils/autoComplete";
 
 // need to display errors in some kind of text above the signup page
 // need to erase state once error is done
 
 const Signup = () => {
 	const [state, dispatch] = useReducer(registerReducer, initialState);
-	const [searchTerm, setSearchTerm] = useState("");
 	// State and setter for search results
-	const [results, setResults] = useState([]);
 	// State for search status (whether there is a pending API request)
-	const [isSearching, setIsSearching] = useState(false);
-	const [isCountrySelected, setIsCountrySeleceted] = useState(false);
 	const toast = useToast();
 
 	const history = useHistory();
@@ -91,32 +43,10 @@ const Signup = () => {
 		isLoading,
 	} = state;
 
-	const debouncedSearchTerm = useDebounce(searchTerm, 1500);
-
-	useEffect(
-		() => {
-			// Make sure we have a value (user has entered something in input)
-			if (debouncedSearchTerm) {
-				// Set isSearching state
-				setIsSearching(true);
-				// Fire off our API call
-				const foundCountries = countries.filter(
-					(countryName) => countryName.name === debouncedSearchTerm
-				);
-				// Set back to false since request finished
-				setIsSearching(false);
-				// Set results state
-				setResults(foundCountries);
-			} else {
-				setResults([]);
-			}
-		},
-		// This is the useEffect input array
-		// Our useEffect function will only execute if this value changes ...
-		// ... and thanks to our hook it will only change if the original ...
-		// value (searchTerm) hasn't changed for more than 500ms.
-		[debouncedSearchTerm]
-	);
+	const handleCountrySelect = (item) => {
+		state.Country = item;
+		console.log(state.Country);
+	};
 
 	const handleRegister = async (e) => {
 		// only if the validation has passed the tests
@@ -249,41 +179,10 @@ const Signup = () => {
 															>
 																Country
 															</FormLabel>
-															<Input
-																type="text"
-																mb="5"
-																name="Country"
-																// onChange={(e) =>
-																// 	dispatch({
-																// 		type: "field",
-																// 		field: "Country",
-																// 		value: e.target.value,
-																// 	})
-																// }
-																onChange={(e) => setSearchTerm(e.target.value)}
-																onBlur={handleBlur}
-																border="none"
-																bg={DarkTheme}
+															<Autocomplete
+																handleCountrySelect={handleCountrySelect}
+																suggestions={countries}
 															/>
-															{debouncedSearchTerm ? (
-																<ul style={List}>
-																	{results.map((item) => (
-																		<li
-																			onClick={(e) =>
-																				dispatch({
-																					type: "field",
-																					field: "Country",
-																					value: item.alpha2,
-																				})
-																			}
-																		>
-																			{item.name}
-																		</li>
-																	))}
-																</ul>
-															) : (
-																""
-															)}
 
 															<FormErrorMessage>'</FormErrorMessage>
 														</FormControl>
